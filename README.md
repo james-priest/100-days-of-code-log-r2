@@ -29,6 +29,27 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ## Log
 
+### Day 9: July 2, 2017 - Sunday
+
+**Today's Project(s):**
+
+- javascript-array-methods - Vanilla JavaScript project to show what each JS Array object method does
+- FCC Code Challenges
+
+**Progress:**
+
+- Completed migration of javascript-array-methods v1.0.0 to GitHub
+- Started jQuery selector section of FCC
+
+**Link to work:**
+
+- JavaScript Array Methods: [repo](https://github.com/james-priest/javascript-array-methods "GitHub repo") |  [demo](https://rawgit.com/james-priest/javascript-array-methods/master/javascript-array-methods/default.html "Using rawgit.com")
+- [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+
+**Thoughts:** Finally good to get the JavaScript Array Methods app up on GitHub. Next I need to modify it to use Bootstrap and Objects to hold data rather than arrays.
+
+---
+
 ### Day 8: June 30, 2017 - Friday
 
 **~~Today's~~ Last Week's Project(s):**
@@ -77,7 +98,7 @@ I also don't trip on whether I'm doing a tutorial or coding something from scrat
 
 The one challenge I need to get in check is following through to the end of one project, learning path, or class with a single mindedness of purpose before getting distracted or caught up in another. I feel I might be missing something if I don't investigate and dig deep into a concept I don't fully understand. This is the thinking that gets me spread out with 10 browser instances of 20 open tabs each and then scrambling to keep it all straight. [OneTab Chrome extension](https://www.one-tab.com/ "Reduces tab clutter and memory footprint by 95%") is **great** for this.
 
-Bottom line is I'm making progress and learning how to organize and keep 10 plates spinning at any given time. The next soft skill to incorporate will be the concept of _balance_! 
+Bottom line is I'm making progress and learning how to organize and keep 10 plates spinning at any given time. The next soft skill to incorporate will be the concept of _balance_!
 
 ---
 
