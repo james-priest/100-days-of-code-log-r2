@@ -31,6 +31,32 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 # Log
 
+## GitHub Page for this log
+
+### Day 10: July 4, 2017 - Tuesday
+
+**Today's Project(s):**
+
+- Created GitHub Page for this repo and code log
+- Watched [Intro to ASP.NET Core 1.1](https://mva.microsoft.com/en-US/training-courses/introduction-to-asp-net-core-1-0-16841) on Microsoft Virtual Academy
+
+**Progress:**
+
+- Completed the setup of a GitHub Page for this log
+- Got about halfway through Intro ASP.NET Core training
+
+**Link to work:**
+
+- [100 Days of Code Log GitHub Page](https://james-priest.github.io/100-days-of-code-log/)  (this page)
+
+**Thoughts:**
+
+Created the GitHub Page through GitHub. It uses Jekyll and one of the pre-built templates. It also add a yaml file. I may look into how to modify the template in order to correct for limited number of links on the sidebar as well as modification of the top nav bar
+
+The Intro to ASP.NET Core class is great. It's hosted by Scott Hanselman and Maria Naggaga. I love both of them. I can't wait to finish the FCC Front End Development cert so I can switch to .NET Core Back End with C#.
+
+---
+
 ## JavaScript Array Methods
 
 ### Day 9: July 2, 2017 - Sunday
@@ -346,7 +372,9 @@ It'll go something like this:
 **Thoughts:** Glad to be starting this.
 
 <!--
-## Day #: June 1, 2017 - Thursday
+## 
+
+### Day _: June 1, 2017 - Thursday
 
 **Today's Project(s):**
 
