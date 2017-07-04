@@ -27,9 +27,11 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
   - Maybe [Udacity's Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?utm_medium=referral&utm_campaign=api) program
   - Maybe [Coding Dojo's Full Stack Developer Bootcamp](http://www.codingdojo.com/web-development-accelerators)
 
-## Log
+# Log
 
-### Day 9: July 2, 2017 - Sunday
+## Day 9: Built JavaScript app showing effect of Array object methods on sample code
+
+### July 2, 2017 - Sunday
 
 **Today's Project(s):**
 
@@ -43,14 +45,18 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Link to work:**
 
-- JavaScript Array Methods: [repo](https://github.com/james-priest/javascript-array-methods "GitHub repo") |  [demo](https://rawgit.com/james-priest/javascript-array-methods/master/javascript-array-methods/default.html "Using rawgit.com")
+[![https://gyazo.com/0a5f8557493931c87ebf87e9cabcfb85](https://i.gyazo.com/0a5f8557493931c87ebf87e9cabcfb85.png)](http://javascript-array-methods.netlify.com/)
+
+- [JavaScript Array Methods](https://github.com/james-priest/javascript-array-methods "GitHub repo") on  GitHub - click image to see demo
 - [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
 
 **Thoughts:** Finally good to get the JavaScript Array Methods app up on GitHub. Next I need to modify it to use Bootstrap and Objects to hold data rather than arrays.
 
 ---
 
-### Day 8: June 30, 2017 - Friday
+## Day 8: Log of all code and non-code related DEV activities
+
+### June 30, 2017 - Friday
 
 **~~Today's~~ Last Week's Project(s):**
 
@@ -102,7 +108,9 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 
 ---
 
-### Day 7: June 24, 2017 - Saturday
+## Day 7: Started Responsive Design with Bootstrap 
+
+### June 24, 2017 - Saturday
 
 **Today's Project(s):**
 
@@ -120,7 +128,9 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 
 ---
 
-### Day 6: June 22, 2017 - Thursday
+## Day 6: Hoisting, Closures, and Module Patterns in JavaScript
+
+### June 22, 2017 - Thursday
 
 **Today's Project(s):**
 
@@ -134,13 +144,17 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 **Link to work:**
 
 - [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+- [Understanding Hoisting in JavaScript](https://dev.to/imwiss/understanding-hoisting-in-javascript)
+- [What is a Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [JavaScript Module System Showdown: CommonJS vs AMD vs ES2015](https://t.co/l3SLLnxvZf "JavaScript article on auth0.com")
 
 **Thoughts:** I'm taking time to read about technologies, methodologies and language conventions. Right now it's a jumble of information but I know eventually it will all start to click and make sense.
 
 ---
 
-### Day 5: June 20, 2017 - Tuesday
+## Day 5: Finished HTML & CSS in FreeCodeCamp
+
+### June 20, 2017 - Tuesday
 
 **Today's Project(s):**
 
@@ -160,7 +174,9 @@ The key is to get and find efficiencies in your daily process and turn those int
 
 ---
 
-### Day 4: June 15, 2017 - Thursday
+## Day 4: Continued HTML5 Exercises
+
+### June 15, 2017 - Thursday
 
 **Today's Project(s):**
 
@@ -181,7 +197,9 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 ---
 
-### Day 3: June 14, 2017 - Wednesday
+## Day 3: My Personal Kanban
+
+### June 14, 2017 - Wednesday
 
 **Today's Project(s):**
 
@@ -202,7 +220,9 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 ---
 
-### Day 2: June 13, 2017 - Tuesday
+## Day 2: My Time Map for the week
+
+### June 13, 2017 - Tuesday
 
 **Today's Project(s):**
 
@@ -225,7 +245,9 @@ My goal is to do 4 Pomodoros for each two-hour Study block (in blue).
 
 ---
 
-### Day 1: June 12, 2017 - Monday
+## Day 1: The Web Developer Bootcamp series on Udemy
+
+### June 12, 2017 - Monday
 
 **Today's Project(s):**
 
@@ -252,7 +274,9 @@ It'll go something like this:
 
 ---
 
-### Day (0): June 11, 2017 - Sunday
+## Day (0): Finished Learning How to Learn course
+
+### June 11, 2017 - Sunday
 
 **Today's Project(s):**
 
@@ -272,7 +296,9 @@ It'll go something like this:
 
 ---
 
-### Day (-1): June 10, 2017 - Saturday
+## Day (-1): Coursera's Learning How to Learn (4 week course)
+
+### June 10, 2017 - Saturday
 
 **Today's Project(s):**
 
@@ -293,7 +319,9 @@ It'll go something like this:
 
 ---
 
-### Day (-2): June 9, 2017 - Friday
+## Day (-2): GitHub, Twitter & Free Code Camp prep work
+
+### June 9, 2017 - Friday
 
 **Today's Project(s):**
 
@@ -316,7 +344,7 @@ It'll go something like this:
 **Thoughts:** Glad to be starting this.
 
 <!--
-### Day #: June 1, 2017 - Thursday
+## Day #: June 1, 2017 - Thursday
 
 **Today's Project(s):**
 
