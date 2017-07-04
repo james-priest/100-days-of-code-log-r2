@@ -1,4 +1,6 @@
-# 100 Days Of Code - Log
+# James Priest
+
+## 100 Days Of Code Log
 
 **Commitment:** ***I will ~~code~~ learn for at least an hour a day for the next 100 days.***
 
@@ -29,9 +31,9 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 # Log
 
-## Day 9: Built JavaScript app showing effect of Array object methods on sample code
+## JavaScript Array Methods
 
-### July 2, 2017 - Sunday
+### Day 9: July 2, 2017 - Sunday
 
 **Today's Project(s):**
 
@@ -54,9 +56,9 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-## Day 8: Log of all code and non-code related DEV activities
+## Code & Dev activities
 
-### June 30, 2017 - Friday
+### Day 8: June 30, 2017 - Friday
 
 **~~Today's~~ Last Week's Project(s):**
 
@@ -108,9 +110,9 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 
 ---
 
-## Day 7: Started Responsive Design with Bootstrap 
+## Bootstrap Responsive Design
 
-### June 24, 2017 - Saturday
+### Day 7: June 24, 2017 - Saturday
 
 **Today's Project(s):**
 
@@ -128,9 +130,9 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 
 ---
 
-## Day 6: Hoisting, Closures, and Module Patterns in JavaScript
+## Hoisting, Closures, and Module Patterns
 
-### June 22, 2017 - Thursday
+### Day 6: June 22, 2017 - Thursday
 
 **Today's Project(s):**
 
@@ -152,9 +154,9 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 
 ---
 
-## Day 5: Finished HTML & CSS in FreeCodeCamp
+## HTML & CSS in FreeCodeCamp
 
-### June 20, 2017 - Tuesday
+### Day 5: June 20, 2017 - Tuesday
 
 **Today's Project(s):**
 
@@ -174,9 +176,9 @@ The key is to get and find efficiencies in your daily process and turn those int
 
 ---
 
-## Day 4: Continued HTML5 Exercises
+## HTML5 Exercises
 
-### June 15, 2017 - Thursday
+### Day 4: June 15, 2017 - Thursday
 
 **Today's Project(s):**
 
@@ -197,9 +199,9 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 ---
 
-## Day 3: My Personal Kanban
+## My Personal Kanban
 
-### June 14, 2017 - Wednesday
+### Day 3: June 14, 2017 - Wednesday
 
 **Today's Project(s):**
 
@@ -220,9 +222,9 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 ---
 
-## Day 2: My Time Map for the week
+## My Time Map
 
-### June 13, 2017 - Tuesday
+### Day 2: June 13, 2017 - Tuesday
 
 **Today's Project(s):**
 
@@ -245,9 +247,9 @@ My goal is to do 4 Pomodoros for each two-hour Study block (in blue).
 
 ---
 
-## Day 1: The Web Developer Bootcamp series on Udemy
+## The Web Developer Bootcamp
 
-### June 12, 2017 - Monday
+### Day 1: June 12, 2017 - Monday
 
 **Today's Project(s):**
 
@@ -274,9 +276,9 @@ It'll go something like this:
 
 ---
 
-## Day (0): Finished Learning How to Learn course
+## Learning How to Learn in 4 weeks
 
-### June 11, 2017 - Sunday
+### Day (0): June 11, 2017 - Sunday
 
 **Today's Project(s):**
 
@@ -296,9 +298,9 @@ It'll go something like this:
 
 ---
 
-## Day (-1): Coursera's Learning How to Learn (4 week course)
+## Learning How to Learn on Coursera
 
-### June 10, 2017 - Saturday
+### Day (-1): June 10, 2017 - Saturday
 
 **Today's Project(s):**
 
@@ -319,9 +321,9 @@ It'll go something like this:
 
 ---
 
-## Day (-2): GitHub, Twitter & Free Code Camp prep work
+## GitHub, Twitter & Free Code Camp
 
-### June 9, 2017 - Friday
+### Day (-2): June 9, 2017 - Friday
 
 **Today's Project(s):**
 
