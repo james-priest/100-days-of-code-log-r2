@@ -89,6 +89,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
   1. Install ruby, gems, git & jekyll
   1. Clone repo & then it's: modify (VS Code), build (Jekyll), test (local) & deploy (git) 
 - I'll finish those this week.
+
 ---
 
 ## GitHub Page for this log
