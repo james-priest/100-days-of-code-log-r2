@@ -31,6 +31,66 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 # Log
 
+## Windows 10, Ubuntu 16.04, Jekyll, & GitHub Pages
+
+### Day 11: July 9, 2017 - Sunday
+
+**~~Today's~~ This Week's Project(s):**
+
+- FCC Code Challenges
+- Created GitHub personal page
+  - Cloned repo
+  - Followed this process: _work locally, push changes, review & repeat..._
+  - Decided to get the Jekyll static site generator runnung locally so I don't have to push changes live in order to view/test them
+  - Docs said to enable Bash on Ubuntu on Windows 10... I'm running a highly customized Windows 8.1. 😣
+- Upgraded VMware Workstation to version 12.5.7
+- Upgraded virtual instance of Ubuntu 9.10 to 14.04
+  - this upgrade choked miserably and required lots of manual fixes
+  - had to fix bootloader
+  - reset passwords
+  - reinstall display drivers, etc...
+- Installed FRESH copy of Ubuntu 16.04 in a VM - all went well 😅
+- Installed a fresh copy of Windows 10 Pro Creators update in a VM - so far so good 😊
+- Sync'd bookmarks across browsers (Chrome, FF, Edge, Safari) and platforms (Win, Linux, Mac) with [Xmarks](http://xmarks.com)
+  - This plugin is awesome. It works with the synchronization that Google, Microsoft & Firefox do within their browsers but you have to turn off bookmark sync for theses and let Xmarks do the Bookmark sync. I run many VMs so this works great to keep everything in check.
+- Windows 7 VM
+  - Streamlined OS - removed hibernation and paging. Returned them after defragmentation of virtual disk
+  - Uninstalled unnecessary applications, removed duplicate data and removed old snapshots for smaller disk footprint
+  - Reduced vmdk (virtual disk) size to reclaim space
+- Ubuntu 16.04 VM
+  - Installed & updated all default packages
+  - installed vmware tools for host/guest OS integration
+  - apt-got git, ruby, rubygems, jekyll and nodejs 😉
+  - now I'm ready to clone my GitHub portfolio page and go to town
+- Windows 10 VM
+  - Researched, installed, & configured OS features. Now I'm testing, modifying and evaluating.
+  - Holding off on upgrading host OS until I can make sure all 8.1 customizations will transfer/upgrade gracefully.
+  - Enabled _Developer mode_ in VM hosted instance of Win 10
+  - Installed `Windows Subsystem for Linux` which is basically an Ubuntu-based Bash shell for Windows. Yay! 👏😍
+
+**Progress:**
+
+- Continued jQuery DOM manipulation exercises of FCC
+- Started online portfolio / resume / profile on GitHub
+
+**Link to work:**
+
+- [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+- My Online Resume and personal page: [https://james-priest.github.io/](https://james-priest.github.io/)
+
+**Thoughts:**
+
+- Getting my personal GitHub page going was way more involved than I thought it would be. To be fair, it's very straight forward to choose a theme and set up a personal page on GitHub. Customizing requires a bit more. Here are the steps I took:
+   1. Created a repo for my personal account profile page and named it `james-priest.github.io`.
+   1. Went into Settings for that repo and turned on GitHub Pages and chose a theme.
+   1. Modified the README.md
+- So far so good! This would have been it if I didn't need a higher level of customization. Fortunately, GitHub provides [very clear docs](https://help.github.com/articles/using-jekyll-as-a-static-site-generator-with-github-pages/ "Using Jekyll as a static site generator with GitHub Pages") on how to modify the CSS (scss), HTML, and create a local dev environment with Jekyll - a Ruby-based static site generator. This allows you to modify and preview without a commit to GitHub for each change. So here are the remaining steps:
+  1. Upgrade my OS to Win10 to use the integrated bash shell
+  1. Install ruby, gems, git & jekyll
+  1. Clone repo & then it's: modify (VS Code), build (Jekyll), test (local) & deploy (git) 
+- I'll finish those this week.
+---
+
 ## GitHub Page for this log
 
 ### Day 10: July 4, 2017 - Tuesday
@@ -372,11 +432,13 @@ It'll go something like this:
 **Thoughts:** Glad to be starting this.
 
 <!--
-## 
+##
 
-### Day _: June 1, 2017 - Thursday
+### Day : July 1, 2017 - Thursday
 
 **Today's Project(s):**
+
+-
 
 **Progress:**
 
