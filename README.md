@@ -31,6 +31,34 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 # Log
 
+## Finished jQuery on FCC
+
+### Day 12: July 12, 2017 - Wednesday
+
+**Today's Project(s):**
+
+- Free Code Camp exercises - jQuery manipulation of DOM
+
+**Progress:**
+
+- Steady... I finished the jQuery section today
+
+**Link to work:**
+
+- [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+
+**Thoughts:**
+
+- I've now finished up the following FCC sections:
+  - HTML5 and CSS
+  - Responsive Design with Bootstrap
+  - jQuery
+- Next are the two Front End Development Projects to test the skills learned. These are:
+  - Build a Tribute Page
+  - Build a Personal Portfolio Webpage
+
+---
+
 ## Windows 10, Ubuntu 16.04, Jekyll, & GitHub Pages
 
 ### Day 11: July 9, 2017 - Sunday
