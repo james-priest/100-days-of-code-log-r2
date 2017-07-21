@@ -52,7 +52,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Link to work:**
 
 - [README.md](https://github.com/james-priest/james-priest.github.io/blob/master/README.md "Link to GitHub README.md") from my Personal Page. This is the raw source that the template engine uses to build the site.
-- [Generated Site](http://james-priest.github.io "Link to my GitHub Personal Page") This is Jekyll static site that is generated on GitHub whenever I updated my content.
+- [Generated Site](http://james-priest.github.io "Link to my GitHub Personal Page") This is the Jekyll static site that's generated on GitHub whenever I update, commit and push my REAME.md.
 
 **Thoughts:**
 
