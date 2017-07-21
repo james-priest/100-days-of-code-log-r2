@@ -31,6 +31,37 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 # Log
 
+## Jekyll Build Environment
+
+### Day 13: July 20, 2017 - Thursday
+
+**~~Today's~~ Last Week's Project(s):**
+
+- Created Jekyll Build Environment on Ubuntu 16.04. This is for testing locally before committing changes to GitHub Pages.
+
+**Progress:**
+
+- Completed the following
+  1. Spun up a Linux VM
+  1. Installed, configured & updated Ubuntu
+  1. Installed Nodejs, NPM, Git, Ruby, RubyGems, Bundle, Jekyll, Visual Studio Code & Chrome
+  1. Cloned my Personal Page repo from GitHub
+  1. Started Jekyll server - `bundle exec jekyll serve` - this watches for changes to code or content and rebuilds the site when it detects any. It also runs a lightweight http server to view changes on the fly. Pretty cool!
+  1. Started local development & testing
+
+**Link to work:**
+
+- [README.md](https://github.com/james-priest/james-priest.github.io/blob/master/README.md "Link to GitHub README.md") from my Personal Page. This is the raw source that the template engine uses to build the site.
+- [Generated Site](http://james-priest.github.io "Link to my GitHub Personal Page") This is Jekyll static site that is generated on GitHub whenever I updated my content.
+
+**Thoughts:**
+
+- This was a good exercise in building a complete end-to-end dev solution.
+- I started with `jekyll-theme-leap-day`, one of GitHub's officially supported templates and made modifications to the html, css, & javascript.
+- This also gave me a good opportunity to practice Bash shell scripting, npm package management and VS Code plug-in configuration
+
+---
+
 ## Finished jQuery on FCC
 
 ### Day 12: July 12, 2017 - Wednesday
