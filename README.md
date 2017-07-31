@@ -66,12 +66,12 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ### Day 16: July 24, 2017 - Monday
 
 ---
-
+-->
 ## JSHint
 ### Day 15: July 23, 2017 - Sunday
 
 **Today's Project(s):**
-- JSHint linting
+- Linting with JSHint
 
 **Progress:**
 - installed globally
@@ -87,11 +87,11 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 - [https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/linting#jshint](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/linting#jshint)
 
 **Thoughts:**
-- Config required learning the various JavaScript issues ppl run into. Things like for..in iterators, `new` keyword and "option strict".
+- Configuring JSHint required that I learn & understand the various JavaScript pitfalls developers run into so I can understand why each recommendation is made by JSHint. Things like no `for..in` iterators, use of the `new` keyword and `"option strict"` for functions.
 - [http://jshint.com](http://jshint.com) has a configurable code test playground on the homepage for quick code block tests
 
 ---
--->
+
 ## JSLint
 ### Day 14: July 21, 2017 - Friday
 
