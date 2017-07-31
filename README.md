@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD022 MD032 -->
 # James Priest
 
 ## 100 Days Of Code Log
@@ -30,9 +31,84 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
   - Maybe [Coding Dojo's Full Stack Developer Bootcamp](http://www.codingdojo.com/web-development-accelerators)
 
 # Log
+<!--
+## Object Literals & Namespaces
+### Day 22: July 31, 2017 - Monday
+
+---
+
+## JavaScript VM Internals
+### Day 21: July 30, 2017 - Sunday
+
+---
+
+## JS Namespaces
+### Day 20: July 28, 2017 - Friday
+
+---
+
+## JS Object Literals
+### Day 19: July 27, 2017 - Thursday
+
+---
+
+## npm, packages.json,  launch.json, tasks
+### Day 18: July 26, 2017 - Wednesday
+
+---
+
+## Flow
+### Day 17: July 25, 2017 - Tuesday
+
+---
+
+## ESLint
+### Day 16: July 24, 2017 - Monday
+
+---
+
+## JSHint
+### Day 15: July 23, 2017 - Sunday
+
+**Today's Project(s):**
+- JSHint linting
+
+**Progress:**
+- installed globally
+  - `npm install -g jshint@latest`
+- created `.jshintrc` in my home directory & `./src` directory
+  - configured using [docs](http://jshint.com/docs/options/) and this [reference](https://github.com/jshint/jshint/blob/master/examples/.jshintrc)
+- run
+  - `jshint a.js`
+- installed VSCode JSHint extension
+- [http://jshint.com](http://jshint.com) has a configurable code test playground on the homepage
+
+**Link to work:**
+- [https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/linting#jshint](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/linting#jshint)
+
+**Thoughts:**
+- Config required learning the various JavaScript issues ppl run into. Things like for..in iterators, `new` keyword and "option strict".
+- [http://jshint.com](http://jshint.com) has a configurable code test playground on the homepage for quick code block tests
+
+---
+-->
+## JSLint
+### Day 14: July 21, 2017 - Friday
+
+**Today's Project(s):**
+- JSLint command line linting
+
+**Progress:**
+- Did an npm global install.
+
+**Link to work:**
+- [https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/linting#jslint](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/linting#jslint)
+
+**Thoughts:** This is the granddaddy of them all and was originally written by Douglas Crockford in 2002 with the latest stable version released in 2011. It offers no config and is highly opinionated as to what "The Good Parts" are. See [JavaScript: The Good Parts](http://bdcampbell.net/javascript/book/javascript_the_good_parts.pdf "Book in pdf"). Still, this is the staple linter to use if you are just starting out and want to see where it all began. Simple install. No configuration needed.
+
+---
 
 ## Jekyll Build Environment
-
 ### Day 13: July 20, 2017 - Thursday
 
 **~~Today's~~ Last Week's Project(s):**
@@ -52,7 +128,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Link to work:**
 
 - [README.md](https://github.com/james-priest/james-priest.github.io/blob/master/README.md "Link to GitHub README.md") from my Personal Page. This is the raw source that the template engine uses to build the site.
-- [Generated Site](http://james-priest.github.io "Link to my GitHub Personal Page") This is the Jekyll static site that's generated on GitHub whenever I update, commit and push my REAME.md.
+- [Generated Site](http://james-priest.github.io "Link to my GitHub Personal Page") This is the Jekyll static site that's generated on GitHub whenever I update, commit and push my README.md.
 
 **Thoughts:**
 
@@ -63,7 +139,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 
 ## Finished jQuery on FCC
-
 ### Day 12: July 12, 2017 - Wednesday
 
 **Today's Project(s):**
@@ -91,7 +166,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 
 ## Windows 10, Ubuntu 16.04, Jekyll, & GitHub Pages
-
 ### Day 11: July 9, 2017 - Sunday
 
 **~~Today's~~ This Week's Project(s):**
@@ -152,7 +226,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 
 ## GitHub Page for this log
-
 ### Day 10: July 4, 2017 - Tuesday
 
 **Today's Project(s):**
@@ -178,7 +251,6 @@ The Intro to ASP.NET Core class is great. It's hosted by Scott Hanselman and Mar
 ---
 
 ## JavaScript Array Methods
-
 ### Day 9: July 2, 2017 - Sunday
 
 **Today's Project(s):**
@@ -203,7 +275,6 @@ The Intro to ASP.NET Core class is great. It's hosted by Scott Hanselman and Mar
 ---
 
 ## Code & Dev activities
-
 ### Day 8: June 30, 2017 - Friday
 
 **~~Today's~~ Last Week's Project(s):**
@@ -257,7 +328,6 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 ---
 
 ## Bootstrap Responsive Design
-
 ### Day 7: June 24, 2017 - Saturday
 
 **Today's Project(s):**
@@ -277,7 +347,6 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 ---
 
 ## Hoisting, Closures, and Module Patterns
-
 ### Day 6: June 22, 2017 - Thursday
 
 **Today's Project(s):**
@@ -301,7 +370,6 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 ---
 
 ## HTML & CSS in FreeCodeCamp
-
 ### Day 5: June 20, 2017 - Tuesday
 
 **Today's Project(s):**
@@ -323,7 +391,6 @@ The key is to get and find efficiencies in your daily process and turn those int
 ---
 
 ## HTML5 Exercises
-
 ### Day 4: June 15, 2017 - Thursday
 
 **Today's Project(s):**
@@ -346,7 +413,6 @@ The important thing is that I did get something done and posted. I'm keeping it 
 ---
 
 ## My Personal Kanban
-
 ### Day 3: June 14, 2017 - Wednesday
 
 **Today's Project(s):**
@@ -369,7 +435,6 @@ The important thing is that I did get something done and posted. I'm keeping it 
 ---
 
 ## My Time Map
-
 ### Day 2: June 13, 2017 - Tuesday
 
 **Today's Project(s):**
@@ -394,7 +459,6 @@ My goal is to do 4 Pomodoros for each two-hour Study block (in blue).
 ---
 
 ## The Web Developer Bootcamp
-
 ### Day 1: June 12, 2017 - Monday
 
 **Today's Project(s):**
@@ -423,7 +487,6 @@ It'll go something like this:
 ---
 
 ## Learning How to Learn in 4 weeks
-
 ### Day (0): June 11, 2017 - Sunday
 
 **Today's Project(s):**
@@ -468,7 +531,6 @@ It'll go something like this:
 ---
 
 ## GitHub, Twitter & Free Code Camp
-
 ### Day (-2): June 9, 2017 - Friday
 
 **Today's Project(s):**
@@ -493,7 +555,6 @@ It'll go something like this:
 
 <!--
 ##
-
 ### Day : July 1, 2017 - Thursday
 
 **Today's Project(s):**
