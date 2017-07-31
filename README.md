@@ -35,38 +35,81 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ## Object Literals & Namespaces
 ### Day 22: July 31, 2017 - Monday
 
+**Today's Project(s):**
+**Progress:**
+**Link to work:**
+**Thoughts:**
 ---
 
 ## JavaScript VM Internals
 ### Day 21: July 30, 2017 - Sunday
 
+**Today's Project(s):**
+**Progress:**
+**Link to work:**
+**Thoughts:**
 ---
 
 ## JS Namespaces
 ### Day 20: July 28, 2017 - Friday
 
+**Today's Project(s):**
+**Progress:**
+**Link to work:**
+**Thoughts:**
 ---
 
 ## JS Object Literals
 ### Day 19: July 27, 2017 - Thursday
 
+**Today's Project(s):**
+**Progress:**
+**Link to work:**
+**Thoughts:**
 ---
 
 ## npm, packages.json,  launch.json, tasks
 ### Day 18: July 26, 2017 - Wednesday
 
+**Today's Project(s):**
+**Progress:**
+**Link to work:**
+**Thoughts:**
 ---
 
 ## Flow
 ### Day 17: July 25, 2017 - Tuesday
 
+**Today's Project(s):**
+**Progress:**
+**Link to work:**
+**Thoughts:**
 ---
-
+-->
 ## ESLint
 ### Day 16: July 24, 2017 - Monday
 
+**Today's Project(s):**
+- ESLint - config, fine-tune, & test
+
+**Progress:**
+- installed globally and as a dev dependency
+  - `npm install -g eslint@latest`
+  - `npm install eslint@latest --save-dev`
+- created `.eslintrc.json` in script `./src` directory and a global config in my home directory
+  - `eslint --init`
+- run
+  - `eslint a.js`
+- installed VSCode ESLint extension
+- Test Playground: [http://eslint.org/demo/](http://eslint.org/demo/)
+
+**Link to work:**
+- [https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/linting#eslint](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/linting#eslint)
+
+**Thoughts:** This was the third linter I tried and looks to be the most flexible. I like the extensibility capabilities and ability to choose between various different style guides.
+
 ---
--->
+
 ## JSHint
 ### Day 15: July 23, 2017 - Sunday
 
