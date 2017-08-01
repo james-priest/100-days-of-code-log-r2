@@ -63,29 +63,49 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ### Day 19: July 27, 2017 - Thursday
 
 **Today's Project(s):**
+- Object literals
 **Progress:**
 **Link to work:**
 **Thoughts:**
 ---
 
-## npm, packages.json,  launch.json, tasks
+## npm, packages and scripts
 ### Day 18: July 26, 2017 - Wednesday
 
-**Today's Project(s):**
-**Progress:**
-**Link to work:**
-**Thoughts:**
----
+**Today's Project(s):** Set up a js project environment
 
-## Flow
+**Progress:** Practiced...
+
+- set up a `package.json` file through `npm init`
+- added runtime and dev-only packages through `npm install` and `npm install --save-dev`
+- `npm uninstall` and `npm update`
+- created `build`, `test`, `prepublish` and `flow` scripts
+- used `npm run`
+
+**Link to work:**
+- [https://github.com/james-priest/code-exercises/blob/master/package.json](https://github.com/james-priest/code-exercises/blob/master/package.json)
+
+**Thoughts:** I love npm and its documentation. Organized well. Super simple. Intuitive.
+
+---
+-->
+## Flow type checker
 ### Day 17: July 25, 2017 - Tuesday
 
 **Today's Project(s):**
+- Flow JavaScript type checker
+
 **Progress:**
+- Completed installation & testing
+
 **Link to work:**
+- [https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/flow](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/flow)
+
 **Thoughts:**
+- Flow was put out by Facebook and it allows static type checking of JavaScript code as well as a deeper capability to make smart decisions by understanding the code at a deeper level.
+
 ---
--->
+
 ## ESLint
 ### Day 16: July 24, 2017 - Monday
 
