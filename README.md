@@ -68,7 +68,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Link to work:**
 **Thoughts:**
 ---
-
+-->
 ## npm, packages and scripts
 ### Day 18: July 26, 2017 - Wednesday
 
@@ -88,7 +88,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:** I love npm and its documentation. Organized well. Super simple. Intuitive.
 
 ---
--->
+
 ## Flow type checker
 ### Day 17: July 25, 2017 - Tuesday
 
