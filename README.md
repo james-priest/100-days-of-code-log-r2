@@ -31,32 +31,157 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
   - Maybe [Coding Dojo's Full Stack Developer Bootcamp](http://www.codingdojo.com/web-development-accelerators)
 
 # Log
-<!--
-## Object Literals & Namespaces
-### Day 22: July 31, 2017 - Monday
+<!-- 
+## 25. Patterns & Closures & IIFEs (pronounced iffy's), oh my!
+ ### Day 25: August 3, 2017 - Wednesday 
+| Day 25 | Wednesday | August 3, 2017 |
+| :-- | --- | --: |
+
+**Today's ~~Project~~ Challenge:**
+- To define a private function within an object literal that incorporates a for..loop and a recursive setTimeout function that's wrapped in a closure.
+
+**Progress:**
+- Set up two test environments for tracing and debugging
+  - CodePen for quick proof-of-concept testing
+  - VSCode to run node, debugging, and more extensive linting
+- ...
+
+**Link to work:**
+
+**Thoughts:** This was not easy.😓 I initially wrote this as a Pen but needed additional debug info to trace scope so I also ran this with node in the integrated Bash terminal I got going inside of VSCode.
+
+I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discussed IIFEs & scope. [Kirupa: Immediately Invoked Function Expressions a.k.a IIFEs](https://www.kirupa.com/html5/immediately_invoked_function_expressions_iife.htm)
+
+---
+
+## CodePen account
+### Day 24: August 2, 2017 - Wednesday
 
 **Today's Project(s):**
+- CodePen account setup
+
 **Progress:**
+- Set up my profile
+- Created two test pens & a prototyping pen
+  - saved all progress
+  - had same pen open in different tabs; closed one tab & saved the other
+  - overwrote my work by saving "wrong" tab. 😠😭
+  - rewrote code from memory. Ended up being unintended Spaced Repetition which helped me understand the code even better.😁
+
 **Link to work:**
-**Thoughts:**
+
+**Thoughts:** So, I learned that CodePen doesn't have version control. This makes me real careful and deliberate with my changes.
+
+---
+
+## JSBin vs. Plunker vs. CodePen
+### Day 23: Aug 1, 2017 - Tuesday
+
+**Today's Project(s):**
+- Evaluated JSBin, Plunker and CodePen.
+
+**Progress:**
+- Set up accounts in each
+- Created Gists from which to save and pull my code
+- Tested out each code environment 
+
+**Link to work:**
+- JSBin
+- Plunker
+- CodePen
+
+**Thoughts:** After working with each I fell in love with the design of CodePen. (Design: How it works not what it looks like - Steve Jobs)
+
+**JSBin** - This is my goto js playground for testing syntax & short proof-of-concepts
+- Pros
+  - quick setup
+  - Console tab is predominantly featured - great for quick debug
+  - version control - multiple snapshots
+- Cons
+  - AutoSave and snapshots are clunky to use/administer; they require manual steps to keep organized
+  - Gists don't import/export right
+  - loading & switching bins is slow & errs at times
+  - collaboration does not work as advertised
+  - less used features are not/is not inherently intuitive.
+  - editor is limited to one html, css & js file
+
+**Plunker** - great multi-file environment
+- Pros
+  - Editor is spacious
+  - can have multiple js, css, html & md files in a plunk
+  - saved templates, multiple libraries, integrated gitter, built-in linting
+  - multiple js frameworks available
+  - version control
+- Cons
+  - no integrated Console
+
+**CodePen** - great UX (fully featured experience)
+- Pros
+  - Intuitive and configurable ui
+  - Pen or Project based workspace
+  - clean & focused documentation
+  - great social factor - huge community, profile setup & ability to post
+- Cons
+  - no version control - easy to overwrite saved version with old version
+
+Beyond what I listed, CodePen just works - it "feels" good to use, its responsive, it's intuitive, and it doesn't err out.
+
 ---
 
 ## JavaScript VM Internals
+### Day 22: July 31, 2017 - Monday
+
+**Today's Project(s):**
+
+**Progress:**
+
+**Link to work:**
+
+**Thoughts:**
+
+---
+
+## JS Namespaces Singletons
 ### Day 21: July 30, 2017 - Sunday
 
 **Today's Project(s):**
+
 **Progress:**
+
 **Link to work:**
+
 **Thoughts:**
+
 ---
 
-## JS Namespaces
+## Singleton Design Pattern with IIFEs
 ### Day 20: July 28, 2017 - Friday
 
 **Today's Project(s):**
+- Singleton pattern using Immediately Invoked Function Expression (IIFE)
+
 **Progress:**
+- Wri
+
 **Link to work:**
-**Thoughts:**
+
+**Thoughts:** Writing the function by following a pattern is pretty straight forward.  The key is to
+1. understand what's going on under the hood
+2. know when to use it
+3. know why you're using it
+
+Here are the key take-aways:
+- The function executes in its own bubble. It comes into existence, does its work, and then disappears. No reference is created to the function so there's no way to access it after execution.
+- An IIFE leaves behind no evidence of its existence after it has run. This is largely because IIFEs are anonymous functions that are nameless.
+- Because the code runs in it's own function scope it's protected from accidental modificaton by code outside of it.
+- IIFEs are great for protecting the IIFE code from the rest of your js, but they don't stop your IIFE code from wreaking havoc on the code outside of your IIFE.
+- It executes immediately. No waiting time and no instantiating a var to then invoke the function with.
+- Side Note: The reason the function executes immediately is because the compiler is ~~tricked~~ told to treat the function, which is normally just a _declaration_, as an _expression_.
+- There are ways other than using wrapping parentheses to reach a valid point in the grammar so that your function is treated as an expression.
+  - void function(e){ console.log(e) }('hi')
+!function(e){ console.log(e) }('hi')
+typeof function(e){ console.log(e) }('hi')
+
 ---
 
 ## JS Object Literals
@@ -64,22 +189,29 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Today's Project(s):**
 - Object literals
+
 **Progress:**
+- Created three types of objects using object-literal notation.
+
 **Link to work:**
-**Thoughts:**
----
+- https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/design-patterns/object-literals
+
+**Thoughts:** Object literals are a beautiful way to organize your code. It uses key/value pairs and nests well for deeper hierarchies. It also reads well and is easy to understand if structured properly.
+
+--- 
 -->
-## npm, packages and scripts
+
+## Npm, packages and scripts
 ### Day 18: July 26, 2017 - Wednesday
 
 **Today's Project(s):** Set up a js project environment
 
-**Progress:** Practiced...
+**Progress:**
 
 - set up a `package.json` file through `npm init`
-- added runtime and dev-only packages through `npm install` and `npm install --save-dev`
-- `npm uninstall` and `npm update`
-- created `build`, `test`, `prepublish` and `flow` scripts
+- added dev-only and runtime packages through `npm install --save-dev` and `npm install`
+- used `npm uninstall` and `npm update`
+- created _build_, _test_, _prepublish_ and _flow_ scripts
 - used `npm run`
 
 **Link to work:**
