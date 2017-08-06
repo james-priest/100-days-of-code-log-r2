@@ -3,7 +3,7 @@
 
 ## 100 Days Of Code Log
 
-**Commitment:** ***I will ~~code~~ learn for at least an hour a day for the next 100 days.***
+**Commitment:** ***I will code for at least an hour a day for the next 100 days.***
 
 This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallaway/100-days-of-code "the official repo") challenge. More details about the challenge can be found here: [100daysofcode.com](http://100daysofcode.com/ "100daysofcode.com").
 
@@ -31,11 +31,30 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
   - Maybe [Coding Dojo's Full Stack Developer Bootcamp](http://www.codingdojo.com/web-development-accelerators)
 
 # Log
-<!-- 
-## 25. Patterns & Closures & IIFEs (pronounced iffy's), oh my!
- ### Day 25: August 3, 2017 - Wednesday 
-| Day 25 | Wednesday | August 3, 2017 |
-| :-- | --- | --: |
+
+<!--
+## 27. 
+
+---
+
+## 26. Updated My CV site
+### Day 26: August 5, 2017 - Saturday
+
+**Progress:**
+- Added jQuery Nav
+- Added FontAwsome
+- Updated icons & links to my various social media & online profiles .
+
+**Link to work:**
+- [https://james-priest.github.io](https://james-priest.github.io/ "My online CV")
+
+**Thought:**
+- Used jQuery for on-page navigation; dynamic building of the TOC & for basic usability: breadcrumbs, highlights, etc.
+
+---
+
+## 25. Patterns & Closures & IIFEs, Oh My!
+### Day 25: August 3, 2017 - Wednesday
 
 **Today's ~~Project~~ Challenge:**
 - To define a private function within an object literal that incorporates a for..loop and a recursive setTimeout function that's wrapped in a closure.
@@ -54,7 +73,7 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 
 ---
 
-## CodePen account
+## 24. CodePen account
 ### Day 24: August 2, 2017 - Wednesday
 
 **Today's Project(s):**
@@ -74,7 +93,7 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 
 ---
 
-## JSBin vs. Plunker vs. CodePen
+## 23. JSBin vs. Plunker vs. CodePen
 ### Day 23: Aug 1, 2017 - Tuesday
 
 **Today's Project(s):**
@@ -128,7 +147,7 @@ Beyond what I listed, CodePen just works - it "feels" good to use, its responsiv
 
 ---
 
-## JavaScript VM Internals
+## 22. JavaScript VM Internals
 ### Day 22: July 31, 2017 - Monday
 
 **Today's Project(s):**
@@ -141,7 +160,7 @@ Beyond what I listed, CodePen just works - it "feels" good to use, its responsiv
 
 ---
 
-## JS Namespaces Singletons
+## 21. JS Namespaces Singletons
 ### Day 21: July 30, 2017 - Sunday
 
 **Today's Project(s):**
@@ -154,7 +173,7 @@ Beyond what I listed, CodePen just works - it "feels" good to use, its responsiv
 
 ---
 
-## Singleton Design Pattern with IIFEs
+## 20. Singleton Design Pattern with IIFEs
 ### Day 20: July 28, 2017 - Friday
 
 **Today's Project(s):**
@@ -181,10 +200,11 @@ Here are the key take-aways:
   - void function(e){ console.log(e) }('hi')
 !function(e){ console.log(e) }('hi')
 typeof function(e){ console.log(e) }('hi')
+-->
 
 ---
 
-## JS Object Literals
+## 19. JS Object Literals
 ### Day 19: July 27, 2017 - Thursday
 
 **Today's Project(s):**
@@ -194,14 +214,13 @@ typeof function(e){ console.log(e) }('hi')
 - Created three types of objects using object-literal notation.
 
 **Link to work:**
-- https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/design-patterns/object-literals
+- [https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/design-patterns/object-literals](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/design-patterns/object-literals)
 
 **Thoughts:** Object literals are a beautiful way to organize your code. It uses key/value pairs and nests well for deeper hierarchies. It also reads well and is easy to understand if structured properly.
 
---- 
--->
+---
 
-## Npm, packages and scripts
+## **18.** Npm, packages and scripts
 ### Day 18: July 26, 2017 - Wednesday
 
 **Today's Project(s):** Set up a js project environment
@@ -221,7 +240,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## Flow type checker
+## 17. Flow testing
 ### Day 17: July 25, 2017 - Tuesday
 
 **Today's Project(s):**
@@ -238,7 +257,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## ESLint
+## 16. ESLint testing
 ### Day 16: July 24, 2017 - Monday
 
 **Today's Project(s):**
@@ -262,7 +281,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## JSHint
+## 15. JSHint testing
 ### Day 15: July 23, 2017 - Sunday
 
 **Today's Project(s):**
@@ -287,7 +306,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## JSLint
+## 14. JSLint testing
 ### Day 14: July 21, 2017 - Friday
 
 **Today's Project(s):**
@@ -303,7 +322,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## Jekyll Build Environment
+## 13. Jekyll Build Environment
 ### Day 13: July 20, 2017 - Thursday
 
 **~~Today's~~ Last Week's Project(s):**
@@ -333,7 +352,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## Finished jQuery on FCC
+## 12. Finished jQuery on FCC
 ### Day 12: July 12, 2017 - Wednesday
 
 **Today's Project(s):**
@@ -360,7 +379,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## Windows 10, Ubuntu 16.04, Jekyll, & GitHub Pages
+## 11. Windows 10, Ubuntu 16.04, Jekyll, & GitHub Pages
 ### Day 11: July 9, 2017 - Sunday
 
 **~~Today's~~ This Week's Project(s):**
@@ -420,7 +439,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## GitHub Page for this log
+## 10. GitHub Page for this log
 ### Day 10: July 4, 2017 - Tuesday
 
 **Today's Project(s):**
@@ -445,7 +464,7 @@ The Intro to ASP.NET Core class is great. It's hosted by Scott Hanselman and Mar
 
 ---
 
-## JavaScript Array Methods
+## 9. JavaScript Array Methods
 ### Day 9: July 2, 2017 - Sunday
 
 **Today's Project(s):**
@@ -469,7 +488,7 @@ The Intro to ASP.NET Core class is great. It's hosted by Scott Hanselman and Mar
 
 ---
 
-## Code & Dev activities
+## 8. Code & Dev activities
 ### Day 8: June 30, 2017 - Friday
 
 **~~Today's~~ Last Week's Project(s):**
@@ -522,7 +541,7 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 
 ---
 
-## Bootstrap Responsive Design
+## 7. Bootstrap Responsive Design
 ### Day 7: June 24, 2017 - Saturday
 
 **Today's Project(s):**
@@ -541,7 +560,7 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 
 ---
 
-## Hoisting, Closures, and Module Patterns
+## 6. Hoisting, Closures, and Module Patterns
 ### Day 6: June 22, 2017 - Thursday
 
 **Today's Project(s):**
@@ -564,7 +583,7 @@ Bottom line is I'm making progress and learning how to organize and keep 10 plat
 
 ---
 
-## HTML & CSS in FreeCodeCamp
+## 5. HTML & CSS in FreeCodeCamp
 ### Day 5: June 20, 2017 - Tuesday
 
 **Today's Project(s):**
@@ -585,7 +604,7 @@ The key is to get and find efficiencies in your daily process and turn those int
 
 ---
 
-## HTML5 Exercises
+## 4. HTML5 Exercises
 ### Day 4: June 15, 2017 - Thursday
 
 **Today's Project(s):**
@@ -607,7 +626,7 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 ---
 
-## My Personal Kanban
+## 3. My Personal Kanban
 ### Day 3: June 14, 2017 - Wednesday
 
 **Today's Project(s):**
@@ -625,11 +644,11 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 **Thoughts:** This took a little while to get started on.  I'm reading Personal Kanban by Jim Benson. Here's a link to the companion site: [Personal Kanban](http://www.personalkanban.com/pk/ "Short Overview and YouTube video of Personal Kanban").
 
-![My Kanban Board](images/KanbanBoard.jpg "My Kanban board")
+![My Kanban Board](/assets/images/KanbanBoard.jpg "My Kanban board")
 
 ---
 
-## My Time Map
+## 2. My Time Map
 ### Day 2: June 13, 2017 - Tuesday
 
 **Today's Project(s):**
@@ -649,11 +668,11 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 My goal is to do 4 Pomodoros for each two-hour Study block (in blue).
 
-![Time Map Schedule](images/TimeMap.jpg)
+![Time Map Schedule](/assets/images/TimeMap.jpg)
 
 ---
 
-## The Web Developer Bootcamp
+## 1. The Web Developer Bootcamp
 ### Day 1: June 12, 2017 - Monday
 
 **Today's Project(s):**
@@ -681,8 +700,8 @@ It'll go something like this:
 
 ---
 
-## Learning How to Learn in 4 weeks
-### Day (0): June 11, 2017 - Sunday
+## Pre-launch - Learning How to Learn in 4 weeks
+### Day 0: June 11, 2017 - Sunday
 
 **Today's Project(s):**
 
@@ -702,9 +721,9 @@ It'll go something like this:
 
 ---
 
-## Learning How to Learn on Coursera
+## Pre-launch - Learning How to Learn on Coursera
 
-### Day (-1): June 10, 2017 - Saturday
+### Day 0: June 10, 2017 - Saturday
 
 **Today's Project(s):**
 
@@ -725,8 +744,8 @@ It'll go something like this:
 
 ---
 
-## GitHub, Twitter & Free Code Camp
-### Day (-2): June 9, 2017 - Friday
+## Pre-launch - GitHub, Twitter & Free Code Camp
+### Day 0: June 9, 2017 - Friday
 
 **Today's Project(s):**
 

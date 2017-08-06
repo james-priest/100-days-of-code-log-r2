@@ -2,3 +2,95 @@
 ---
 
 @import "{{ site.theme }}";
+// .wrapper {
+//     position: static;
+//     width: auto;
+// }
+// nav {
+//     //width: 300px;*/
+//     position: static;
+//     top: auto;
+//     left: auto;
+//     text-align: right;
+//     float: left;
+//     margin-left: auto;
+//     margin-right: 20px;
+//     margin-top: 200px;
+// }
+// section {
+//     width: 590px;
+//     position: static;
+//     float: left;
+// }
+// h1 {
+//     margin-bottom: 24px;
+// }
+// h2 {
+//     font-size:20px;
+// }
+// footer {
+//     position: static;
+// }
+
+// This looks good but is fixed...
+// nav {
+//     position: static;
+//     float: left;
+//     top: auto;
+//     margin-left:-240px;
+//     width: 220px;
+//     margin-right: 20px;
+//     margin-top: 10px;
+// }
+// nav>ul {
+//     padding: 0 0 0 20px;
+// }
+// section {
+//     position: relative;
+// }
+// End fixed
+
+// Beign v3
+nav {
+    overflow-y: scroll;
+    padding-right: 20px;
+    margin-left: -574px;
+    top: 190px;
+    max-height: 70vh;
+}
+// End v3
+
+nav li.active {
+    background-color: #ffeca0;
+    border-top: 1px solid #dba500;
+    border-bottom: 1px solid #dba500;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), 0px 1px 1px rgba(0, 0, 0, 0.1)
+}
+nav li.active a {
+    font-weight: bold;
+    color: #333;
+    
+}
+a:focus { outline: none; }
+
+section>p {
+    margin: 0;
+}
+hr { margin: 20px 0; }
+
+h1, h2, h3 {
+    line-height: 1.0;
+}
+h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size:1.5em;
+}
+h3 {
+    font-size:1.2em;
+}
+footer {
+    position: static;
+}
