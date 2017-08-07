@@ -52,7 +52,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Progress:**
 - Added jQuery Nav
-- Added FontAwsome
+- Added FontAwesome
 - Updated icons & links to my various social media & online profiles .
 
 **Link to work:**
@@ -230,7 +230,7 @@ typeof function(e){ console.log(e) }('hi')
 
 ---
 
-## **18.** Npm, packages and scripts
+## 18. Npm, packages and scripts
 ### Day 18: July 26, 2017 - Wednesday
 
 **Today's Project(s):** Set up a js project environment
