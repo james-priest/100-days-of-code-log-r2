@@ -33,7 +33,17 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 # Log
 
 <!--
-## 27. 
+## 27. Updated GitHub Page for my 100DaysOfCode log
+### Day 27: August 6, 2017 - Sunday
+
+**Progress:**
+-
+
+**Link to work:**
+-
+
+**Thought:**
+-
 
 ---
 
