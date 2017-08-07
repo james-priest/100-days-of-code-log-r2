@@ -228,6 +228,8 @@ typeof function(e){ console.log(e) }('hi')
 
 **Thoughts:** Object literals are a beautiful way to organize your code. It uses key/value pairs and nests well for deeper hierarchies. It also reads well and is easy to understand if structured properly.
 
+![Object Literal Notation](/assets/images/vscode_object_literals.png "VS Code Editor")
+
 ---
 
 ## 18. Npm, packages and scripts
