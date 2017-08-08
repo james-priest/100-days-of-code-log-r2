@@ -213,6 +213,7 @@ Here are the key take-aways about IIFEs from @kirupa:
   - !function(e){ console.log(e) }('hi')
   - typeof function(e){ console.log(e) }('hi')
 
+![Singleton with IIFEs](/assets/images/vscode-singleton-iife.png)
 
 ---
 
