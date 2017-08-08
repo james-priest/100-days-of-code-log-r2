@@ -80,5 +80,19 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+      <script type="text/javascript">
+        $(document).ready(function() {
+            // if a hash exists then assign to this var
+            var hash = window.location.hash.substr(0)
+            //alert(hash);
+            if(hash){
+                console.log("hash: " + hash);
+                var pos = $(hash).offset().top - 190;
+                $("html, body").animate({scrollTop: pos}, 400);
+                //window.location.hash = hash;
+                //event.preventDefault();
+            }
+        });
+    </script>
   </body>
 </html>
