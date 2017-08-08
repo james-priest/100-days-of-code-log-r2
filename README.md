@@ -180,7 +180,7 @@ Beyond what I listed, CodePen just works - it "feels" good to use, its responsiv
 **Link to work:**
 
 **Thoughts:**
-
+-->
 ---
 
 ## 20. Singleton Design Pattern with IIFEs
@@ -190,27 +190,29 @@ Beyond what I listed, CodePen just works - it "feels" good to use, its responsiv
 - Singleton pattern using Immediately Invoked Function Expression (IIFE)
 
 **Progress:**
-- Wri
+- Read [great post on IIFEs](https://www.kirupa.com/html5/immediately_invoked_function_expressions_iife.htm "Part of his JavaScript 101 tutorials")
+by [@kirupa](https://twitter.com/kirupa "Twitter profile")
 
 **Link to work:**
+- [global-instance-iife.js](https://github.com/james-priest/code-exercises/blob/master/javascript_exercises/design-patterns/singleton/global-instance-iife.js) on GitHub
 
 **Thoughts:** Writing the function by following a pattern is pretty straight forward.  The key is to
 1. understand what's going on under the hood
-2. know when to use it
-3. know why you're using it
+1. know when to use it
+1. know why you're using it
 
-Here are the key take-aways:
+Here are the key take-aways about IIFEs from @kirupa:
 - The function executes in its own bubble. It comes into existence, does its work, and then disappears. No reference is created to the function so there's no way to access it after execution.
 - An IIFE leaves behind no evidence of its existence after it has run. This is largely because IIFEs are anonymous functions that are nameless.
-- Because the code runs in it's own function scope it's protected from accidental modificaton by code outside of it.
+- Because the code runs in it's own function scope it's protected from accidental modification by code outside of it.
 - IIFEs are great for protecting the IIFE code from the rest of your js, but they don't stop your IIFE code from wreaking havoc on the code outside of your IIFE.
 - It executes immediately. No waiting time and no instantiating a var to then invoke the function with.
 - Side Note: The reason the function executes immediately is because the compiler is ~~tricked~~ told to treat the function, which is normally just a _declaration_, as an _expression_.
-- There are ways other than using wrapping parentheses to reach a valid point in the grammar so that your function is treated as an expression.
+- There are ways other than using wrapping parentheses to reach a valid point in the grammar so that your function is treated as an expression. (Although, parens should be used for readability since they are the convention)
   - void function(e){ console.log(e) }('hi')
-!function(e){ console.log(e) }('hi')
-typeof function(e){ console.log(e) }('hi')
--->
+  - !function(e){ console.log(e) }('hi')
+  - typeof function(e){ console.log(e) }('hi')
+
 
 ---
 
