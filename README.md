@@ -224,7 +224,7 @@ Beyond what I listed, CodePen just works - it "feels" good to use, its responsiv
 -->
 ---
 
-## 21. JS Namespaces Patterns
+## 21. JS Namespace Patterns
 ### Day 21: July 30, 2017 - Sunday
 
 **Progress:**
