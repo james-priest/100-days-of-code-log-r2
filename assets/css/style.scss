@@ -74,7 +74,7 @@ nav li.active a {
 a:focus { outline: none; }
 
 section>p {
-    margin: 0;
+    margin: 10px;
 }
 hr { margin: 20px 0; }
 
@@ -91,6 +91,8 @@ h2 {
 h3 {
     font-size:1.2em;
 }
+pre{ line-height: 1em; }
+code {font-family:Courier New, Courier, monospace; font-size: 0.8em;}
 footer {
     position: static;
 }

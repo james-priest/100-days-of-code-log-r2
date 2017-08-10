@@ -33,6 +33,60 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 # Log
 
 <!--
+## 28. JS Closures & Variable Scope
+### Day 28. August 8, 2017 - Tuesday
+
+**Progress:**
+- My goal was to create an object literal that contained a recursive function wrapped in a closure.
+- Worked on this for days before I got it right!
+
+```javascript
+// my five year old nephew's favorite joke...
+var comedian = {
+    pauseReps: 3,
+    pauseTime: 2000,
+    setupJoke: function() {
+        console.log("What's invisible and smells like carrots...");
+    },
+    timeThePunchLine: function () {
+        var pauseRep = this.pauseReps;
+        var pauseTime = this.pauseTime;
+        var punchLine = this.punchLine;
+
+        function timeoutHandler() {
+            if (pauseRep == 0) {
+                console.log(punchLine());
+                return;
+            } else {
+                console.log(".");
+                pauseRep--;
+                setTimeout(timeoutHandler, pauseTime);
+            }
+        }
+
+        timeoutHandler();
+    },
+    punchLine: function() {
+        return "bunny farts.😲😂😐";
+    }
+};
+
+var myNephew = comedian;
+myNephew.setupJoke();
+myNephew.timeThePunchLine();
+```
+
+**Link to work:** [https://codepen.io/james-priest/pen/EvydgE?editors=1011](https://codepen.io/james-priest/pen/EvydgE?editors=1011)
+
+**Thoughts:** I read three articles by Kirupa ([@Kirupa on Twitter](https://twitter.com/kirupa)) of [http://www.kirupa.com](http://www.kirupa.com) that helped explain the concepts I needed to have down before successfully combining closures with object literals, recursion, variable hoisting, and scope chaining. They were from the [Learn JavaScript 101](https://www.kirupa.com/javascript/learn_javascript.htm) section of the site. These were:
+
+- [Variable Scope in JavaScript](https://www.kirupa.com/html5/variable_scope_js.htm)
+- [Variable and Function Hoisting](https://www.kirupa.com/html5/hoisting.htm)
+- [Closures in JavaScript](https://www.kirupa.com/html5/closures_in_javascript.htm)
+
+I also got syntactic help from here [https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters](https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters).
+
+
 ## 27. Updated GitHub Page for my 100DaysOfCode log
 ### Day 27: August 6, 2017 - Sunday
 
@@ -167,20 +221,38 @@ Beyond what I listed, CodePen just works - it "feels" good to use, its responsiv
 **Link to work:**
 
 **Thoughts:**
-
+-->
 ---
 
-## 21. JS Namespaces Singletons
+## 21. JS Namespaces Patterns
 ### Day 21: July 30, 2017 - Sunday
 
-**Today's Project(s):**
-
 **Progress:**
+- Practiced creating various namespace objects
+- Created namespace objects with different singleton conventions
+
+```javascript
+// Option 1
+var myApp = myApp || {};
+
+// Option 2
+if (!myApp) { myApp = {}; }
+
+// Option 3 - useful only in a parameter/argument scenario
+window.myApp || (window.myApp = {});
+
+// Option 4 - jQuery plug-in
+var myApplication = $.fn.myApplication = function () { };
+
+// Option 5 - Long form (unnecessary)
+var myApplication = myApplication === undefined ? {} : myApplication;
+```
 
 **Link to work:**
+- [https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/design-patterns/namespace](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/design-patterns/namespace)
 
-**Thoughts:**
--->
+**Thoughts:** Played with six different namespace design patterns. These incorporated a Singleton pattern to ensure one (and only one) instance is ever created. Some used coercion to test if an instance already existed, some instantiate an empty object and add properties to the object after the fact. Some define/declare the entire namespace object as an object literal. Some use IIFEs to immediate invoke and return  an object.
+
 ---
 
 ## 20. Singleton Design Pattern with IIFEs
@@ -190,13 +262,14 @@ Beyond what I listed, CodePen just works - it "feels" good to use, its responsiv
 - Singleton pattern using Immediately Invoked Function Expression (IIFE)
 
 **Progress:**
-- Read [great post on IIFEs](https://www.kirupa.com/html5/immediately_invoked_function_expressions_iife.htm "Part of his JavaScript 101 tutorials")
-by [@kirupa](https://twitter.com/kirupa "Twitter profile")
+- Read [The Singleton Pattern](https://addyosmani.com/resources/essentialjsdesignpatterns/book/#singletonpatternjavascript) in Addy Osmani's Essential JavaScript Design Patterns.
 
 **Link to work:**
-- [global-instance-iife.js](https://github.com/james-priest/code-exercises/blob/master/javascript_exercises/design-patterns/singleton/global-instance-iife.js) on GitHub
+- [https://github.com/james-priest/code-exercises/blob/master/javascript_exercises/design-patterns/singleton/global-instance-iife.js](https://github.com/james-priest/code-exercises/blob/master/javascript_exercises/design-patterns/singleton/global-instance-iife.js)
 
-**Thoughts:** Writing the function by following a pattern is pretty straight forward.  The key is to
+**Thoughts:** Read a great post by [@kirupa](https://twitter.com/kirupa "Twitter profile") of [http://kirupa.com](http://kirupa.com) called [Immediately Invoked Function Expressions (aka IIFE)](https://www.kirupa.com/html5/immediately_invoked_function_expressions_iife.htm)  this is part of his site's [Learning JavaScript 101](https://www.kirupa.com/javascript/learn_javascript.htm) section.
+
+Writing the function by following a pattern is pretty straight forward.  The key is to
 1. understand what's going on under the hood
 1. know when to use it
 1. know why you're using it
