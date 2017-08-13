@@ -331,11 +331,11 @@ Let's look at this example...
 10     function g() {     // d | d=6    |   | d=18
 11         var e = 0;     // g | g="λg" |---|------> Lambda "g"
 12         d = 3 * d;     //   | e=1    |   |
-13         return d;
-14     }                  // Local execution scope for g()
-15                        // e | e=0
-16     return  g();
-17     var e;
+13         return d;      // ------------------------
+14     }
+15                        // Local execution scope for g()
+16     return  g();       // e | e=0
+17     var e;             // ------------------------
 18 }
 19
 20 f(1); //18
