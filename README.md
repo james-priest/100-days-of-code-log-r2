@@ -222,29 +222,35 @@ I also got syntactic help from here [https://stackoverflow.com/questions/2588995
 **Thoughts:** This was not easy.😓 I initially wrote this as a Pen but needed additional debug info to trace scope so I also ran this with node in the integrated Bash terminal I have going inside of VSCode.
 
 I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discussed IIFEs & scope. [Kirupa: Immediately Invoked Function Expressions a.k.a IIFEs](https://www.kirupa.com/html5/immediately_invoked_function_expressions_iife.htm)
-
+-->
 ---
 
-## 24. CodePen account
+## 24. CodePen Lesson!
 ### Day 24: August 2, 2017 - Wednesday
 
 **Today's Project(s):**
-- CodePen account setup
+- Creating some proof of concept pens and testing out the environment
+
+[![Plunker](/assets/images/codepen-singleton-pattern.png)](https://codepen.io/james-priest/pen/PKmMzP?editors=1111)
 
 **Progress:**
 - Set up my profile
 - Created two test pens & a prototyping pen
   - saved all progress
-  - had same pen open in different tabs; closed one tab & saved the other
+  - had one pen open in two different tabs (my bad); closed one tab & saved the other
   - overwrote my work by saving "wrong" tab. 😠😭
   - rewrote code from memory. Ended up being unintended Spaced Repetition which helped me understand the code even better.😁
 
+So I rewrote the proof-of-concept code from memory which was server to help me remember it better.
+
 **Link to work:**
+- [https://codepen.io/james-priest/pen/PKmMzP?editors=1011](https://codepen.io/james-priest/pen/PKmMzP?editors=1011)
 
 **Thoughts:** So, I learned that CodePen doesn't have version control. This makes me real careful and deliberate with my changes.
 
+In the end it turned out fine. By re-coding the exercise I inadvertently ended up employing a learning technique called Spaced Repetition.😁
+
 ---
--->
 
 ## 23. JSBin vs. Plunker vs. CodePen
 ### Day 23: Aug 1, 2017 - Tuesday
