@@ -244,6 +244,7 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 **Thoughts:** So, I learned that CodePen doesn't have version control. This makes me real careful and deliberate with my changes.
 
 ---
+-->
 
 ## 23. JSBin vs. Plunker vs. CodePen
 ### Day 23: Aug 1, 2017 - Tuesday
@@ -257,11 +258,11 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 - Tested out each code environment 
 
 **Link to work:**
-- JSBin
-- Plunker
-- CodePen
+- [JSBin](http://jsbin.com/?html,js,output)
+- [Plunker](https://plnkr.co/edit/?p=catalogue)
+- [CodePen](https://codepen.io/)
 
-**Thoughts:** After working with each I fell in love with the design of CodePen. (Design: How it works not what it looks like - Steve Jobs)
+**Thoughts:** After working with each I fell in love with the design of CodePen. ("Design is how something works, not what it looks like." - Steve Jobs)
 
 **JSBin** - This is my goto js playground for testing syntax & short proof-of-concepts
 - Pros
@@ -280,9 +281,9 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 - Pros
   - Editor is spacious
   - can have multiple js, css, html & md files in a plunk
-  - saved templates, multiple libraries, integrated gitter, built-in linting
+  - saved templates, multiple libraries, integrated gitter, live preview
   - multiple js frameworks available
-  - version control
+  - version control, linting, chat, toolbox, and collaboration
 - Cons
   - no integrated Console
 
@@ -295,10 +296,9 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 - Cons
   - no version control - easy to overwrite saved version with old version
 
-Beyond what I listed, CodePen just works - it "feels" good to use, its responsive, it's intuitive, and it doesn't err out.
+Beyond what I listed, CodePen is designed right. It just works - it "feels" good to use, its responsive, it's intuitive, and it's robust - it doesn't err out like some of the other playgrounds.
 
 ---
--->
 
 ## 22. JavaScript VM Internals
 ### Day 22: July 31, 2017 - Monday
