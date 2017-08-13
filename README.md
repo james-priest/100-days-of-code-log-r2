@@ -264,6 +264,7 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 
 **Thoughts:** After working with each I fell in love with the design of CodePen. ("Design is how something works, not what it looks like." - Steve Jobs)
 
+![JSBin](/assets/images/jsbin.png)
 **JSBin** - This is my goto js playground for testing syntax & short proof-of-concepts
 - Pros
   - quick setup
@@ -277,6 +278,7 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
   - less used features are not/is not inherently intuitive.
   - editor is limited to one html, css & js file
 
+![Plunker](/assets/images/plunker.png)
 **Plunker** - great multi-file environment
 - Pros
   - Editor is spacious
@@ -287,6 +289,7 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 - Cons
   - no integrated Console
 
+![CodePen](/assets/images/codepen.png)
 **CodePen** - great UX (fully featured experience)
 - Pros
   - Intuitive and configurable ui
