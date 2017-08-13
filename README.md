@@ -262,7 +262,7 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 - [Plunker](https://plnkr.co/edit/?p=catalogue)
 - [CodePen](https://codepen.io/)
 
-**Thoughts:** After working with each I fell in love with the design of CodePen. ("Design is how something works, not what it looks like." - Steve Jobs)
+**Thoughts:** Here are my two cents...
 
 ![JSBin](/assets/images/jsbin.png)
 **JSBin** - This is my goto js playground for testing syntax & short proof-of-concepts
@@ -299,7 +299,11 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 - Cons
   - no version control - easy to overwrite saved version with old version
 
-Beyond what I listed, CodePen is designed right. It just works - it "feels" good to use, its responsive, it's intuitive, and it's robust - it doesn't err out like some of the other playgrounds.
+Beyond what I listed, CodePen is designed right. It just works - it "feels" good to use, its responsive, it's intuitive, and it's robust which means it doesn't seem to choke as easily as some others.
+
+In the end, it's the design that makes CodePen attractive.
+
+>"Design is how something works, not what it looks like." - Steve Jobs
 
 ---
 
