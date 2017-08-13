@@ -33,8 +33,96 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 # Log
 
 <!--
+## 32. Node.js HTTP Server
+### Day 32: August 13 2017 - Sunday
+
+**Projects:**
+- Setup a Node.js http server for running web apps locally
+
+**Progress:**
+1. Installed simple http-server: `npm install http-server -g`
+1. Ran server from local directory `http-server . -p 8000`
+1. Tested web app
+
+**Link to work:**
+- [https://threejs.org/docs/#manual/introduction/How-to-run-thing-locally](https://threejs.org/docs/#manual/introduction/How-to-run-thing-locally)
+
+**Thoughts:** Found a great article on the [http://threejs.org](http://threejs.org) site that showed how to get a local http server running with any one of the following technologies:
+
+- Python
+- Ruby
+- PHP
+- Node.js
+- lighttpd
+
+Use the link on **Link to work:** to read the article
+
+---
+
+## 31. VSCode Debug JS with Node
+### Day 31: August 12 2017 - Saturday
+
+**Projects:**
+- Debug js code from within Visual Studio Code
+
+**Progress:**
+1. Set up Node debug configuration
+1. Configured launch.json file
+1. Set breakpoints
+1. Ran debugger and stepped through code
+
+**Link to work:**
+- [https://github.com/james-priest/code-exercises/blob/master/javascript_exercises/js-internals/vm-internals.js](https://github.com/james-priest/code-exercises/blob/master/javascript_exercises/js-internals/vm-internals.js)
+- [https://code.visualstudio.com/docs/editor/debugging](https://code.visualstudio.com/docs/editor/debugging)
+
+**Thoughts:** Debugging from within VSCode is absolutely essential to tracking down errors and evaluating code during execution.
+
+---
+
+## 30. My WordPress Site
+### Day 30: August, 11 2017 - Friday
+
+**Project:**
+- Setup a WordPress site for a blog on the 100 Days of Code challenge
+
+**Progress:**
+1. Registered for an account
+1. Chose a theme
+1. Customized the template (sidebar, header & footer)
+1. Wrote my first post!
+
+**Link to work:**
+- [https://100daycodeblog.wordpress.com/](https://100daycodeblog.wordpress.com/)
+
+**Thoughts:** So all of this took me 3-4 hours (off and on) and an entire day to do but it's done.😁
+
+While writing a WordPress blog is not something I thought I'd do I am glad I've started the process.  Writing a blog is a surefire way of letting prospective employers know about your mastery, skill set and breadth of knowledge.
+
+I was actually inspired to do a WordPress blog by [@AdrianaHasburn](https://twitter.com/AdrianaHasbun) while reading her [Process to CSS Images](http://adrianahasbun.com/css/the-process-to-css-images) post. (Thanks Ariana!)
+
+---
+
+## 29. Chrome DevTools Workspaces and Source Maps
+### Day 29: August 10, 2017 - Thursday
+
+**Project:**
+- Setup for Chrome DevTools
+
+**Progress:**
+- Read sections on:
+  - Code Editor Setup - They recommend Sublime/I use VSCode
+  - Persistence with DevTools Workspaces - Setting up source file mapping allows code changes to persist to source files
+  - CSS & JS Preprocessors - Using Source Maps allow direct references to preprocessed source files for saving changes directly from DevTools
+
+**Link to work:**
+- Link to [DevTools Getting Started Docs](https://developers.google.com/web/tools/setup/)
+
+**Thoughts:** I learned how to effectively use Chrome DevTools as part of my debug process. The combination of VSCode with Chrome DevTools gives me the power and control that Visual Studio 2017 provides for back end development.
+
+---
+
 ## 28. JS Closures & Variable Scope
-### Day 28. August 8, 2017 - Tuesday
+### Day 28: August 8, 2017 - Tuesday
 
 **Progress:**
 - My goal was to create an object literal that contained a recursive function wrapped in a closure.
@@ -91,13 +179,13 @@ I also got syntactic help from here [https://stackoverflow.com/questions/2588995
 ### Day 27: August 6, 2017 - Sunday
 
 **Progress:**
--
+- Updated CSS, jQuery, and Jekyll HTML template
 
 **Link to work:**
--
+- [https://james-priest.github.io/100-days-of-code-log/](https://james-priest.github.io/100-days-of-code-log/)
 
-**Thought:**
--
+**Thoughts:**
+- Needed to come up with a way of expanding the nav to accommodate a long TOC
 
 ---
 
@@ -131,7 +219,7 @@ I also got syntactic help from here [https://stackoverflow.com/questions/2588995
 
 **Link to work:**
 
-**Thoughts:** This was not easy.😓 I initially wrote this as a Pen but needed additional debug info to trace scope so I also ran this with node in the integrated Bash terminal I got going inside of VSCode.
+**Thoughts:** This was not easy.😓 I initially wrote this as a Pen but needed additional debug info to trace scope so I also ran this with node in the integrated Bash terminal I have going inside of VSCode.
 
 I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discussed IIFEs & scope. [Kirupa: Immediately Invoked Function Expressions a.k.a IIFEs](https://www.kirupa.com/html5/immediately_invoked_function_expressions_iife.htm)
 
@@ -210,18 +298,65 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
 Beyond what I listed, CodePen just works - it "feels" good to use, its responsive, it's intuitive, and it doesn't err out.
 
 ---
+-->
 
 ## 22. JavaScript VM Internals
 ### Day 22: July 31, 2017 - Monday
 
-**Today's Project(s):**
+**Today's Project(s):** Watched Arindam Paul's YouTube vid: [JavaScript VM Internals, Event loops, Async and Scope Chains](https://youtu.be/QyUFheng6J0)
 
-**Progress:**
+**Progress:** Followed along with the video and coded the proof of concepts 
 
 **Link to work:**
+- [https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/js-internals](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/js-internals)
 
-**Thoughts:**
--->
+**Thoughts:** JavaScript goes through a two phase process when a program is run. Phase one is the _compilation phase_ and phase two is the _execution phase_. The compiler actually alternates between these two phases as it digs deeper into nested functions. These nested function environments are referred to as _local scope_ or _lexical scope_ (The scope of the variable can be defined by its position in the source code).
+
+When JavaScript goes through the _compilation phase_ it actually just extracts out declarations - the variable declarations and the function declarations (the value doesn't matter at this point). It moves them to the top of the code block and then prepares the memory so that it can execute the code. It is through this extraction that variable hoisting occurs.
+
+Let's look at this example...
+
+(column 1 & columns 3: _compilation phase_; column 2 & column 4: _execution phase_)
+
+```javascript
+ 1 var a = 2;             // Global Scope (Window)
+ 2 b = 1;                 // a | a=2    |   |
+ 3                        // f | f="λf" |---|------> Lambda "f"
+ 4 function f(z) {        //   | b=1    |   | b=3    ('b' created at runtime)
+ 5     b = 3;             //   |        |   | c=4
+ 6     c = 4;             // ------------------------
+ 7     var d = 6;
+ 8     e = 1;             // Local execution scope for f()
+ 9                        // z | z=1    |   |
+10     function g() {     // d | d=6    |   | d=18
+11         var e = 0;     // g | g="λg" |---|------> Lambda "g"
+12         d = 3 * d;     //   | e=1    |   |
+13         return d;
+14     }                  // Local execution scope for g()
+15                        // e | e=0
+16     return  g();
+17     var e;
+18 }
+19
+20 f(1); //18
+```
+
+The compiler goes through the global scope, extracts the declarations `a` and `f` (column 1). It does not know what `b` is referring to at this point so it skips it. It then checks `f` for syntax, saves the contents of `function f` as a string blob - `Lambda "f"`, and then skips to line 18. This concludes the _compilation phase_ which then immediately kicks off the _execution phase_. This is where values are assigned to `a` and `f`. `b` is created at runtime and assigned a value as well (column 2).
+
+Code execution continues onto line 20, `function f` is executed and the compiler creates a memory allocation in heap for `f` which can be thought of as a _local execution context_. This is where it enters into `f` and starts the _compilation phase_ once again. As soon as the compiler sees `z` as the function parameter, it declares it as a local variable. `b` and `c` are skipped over and `d` is declared. `e` is skipped and `g` is declared. Finally `e` on line 17 is declared before the _execution phase_ begins. This declaration of `e` is an example of variable hoisting because it occurs after the assignment in code but is actually _hoisted_ to be declared before execution. This concludes the _compilation phase_ for `f`.
+
+We now enter the _execution phase_ for `f`. The first thing that happens is the value passed to `f` is assigned to the variable declaration `z`. JavaScript then encounter an assignment to `b` which it has no local reference to. It then checks it's stack pointer back to the parent function to see if `b` exists there (which it does) and then happily assigns `b` the new value of 3.
+
+During the _execution phase_ JavaScript will follow the pointer chain all the way back to global scope looking for the referenced variable regardless of how many scope chains it has to go through. If it finds the variable before reaching global scope it will assign the value. If not, it will create the variable in global scope and then assign the value. This is what happens with variable `c` during execution.
+
+Next, `d` is assigned the value of 6 followed by `e` being assigned the value of 1. `g` is then assigned the contents of `function g` as a string blob before line 16 is reached where the code says, "function g, execute self". At this point a heap memory allocation is created as a _local execution context_ for `g`. We then enter the _compilation phase_ for `g`. 
+
+At this point the _compilation phase_ for `g` creates a pointer back to the _local execution scope_ for `f`. `e` is declared and that is all that happens in the _compilation phase_ for `g`.
+
+The _execution phase_ for `g` looks for a local reference to `d` which it does not find so it goes up the scope chain and finds it it in the lexical scope of `f`. It then assigns `d` the value of 18 before hitting line 13 where it actually returns the value of  `d` which is 18. Execution context then continues to line 16 where `g()` is replaced with the value 18 which is then returned back to `f(1)` on line 20.
+
+After F of 1 is done there is no reachability or reference to anything other than the Global scope. In JavaScript, if you have an object, or a function definition, or a function execution, or any other type of thing, if you do not have a way to reach it, it will be garbage collected.
+
 ---
 
 ## 21. JS Namespace Patterns
