@@ -204,25 +204,96 @@ I also got syntactic help from here [https://stackoverflow.com/questions/2588995
 - Used jQuery for on-page navigation; dynamic building of the TOC & for basic usability: breadcrumbs, highlights, etc.
 
 ---
+-->
 
-## 25. Patterns & Closures & IIFEs, Oh My!
+## 25. Objects, Expressions & Closures, Oh My!
 ### Day 25: August 3, 2017 - Wednesday
 
-**Today's ~~Project~~ Challenge:**
-- To define a private function within an object literal that incorporates a for..loop and a recursive setTimeout function that's wrapped in a closure.
+**Today's Challenge:**
+- I set out to define different JavaScript constructs that incorporate recursion, setTimeout, and a closure.
 
 **Progress:**
 - Set up two test environments for tracing and debugging
   - CodePen for quick proof-of-concept testing
-  - VSCode to run node, debugging, and more extensive linting
-- ...
+  - VSCode to run Node & step through code using debugger.
 
 **Link to work:**
+- [CodePen - setTimeout Patterns](https://codepen.io/james-priest/pen/jLmxvZ "https://codepen.io/james-priest/pen/jLmxvZ")
+- [GitHub - setTimeout-patterns.js](https://github.com/james-priest/code-exercises/blob/master/javascript_exercises/design-patterns/closure/setTimeout-patterns.js)
 
-**Thoughts:** This was not easy.😓 I initially wrote this as a Pen but needed additional debug info to trace scope so I also ran this with node in the integrated Bash terminal I have going inside of VSCode.
+**Thoughts:** This was not easy.😓 I initially wrote this as a Pen but needed additional debug info to trace scope so I also ran this with Node in the integrated Bash terminal I have going inside of VSCode.
 
 I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discussed IIFEs & scope. [Kirupa: Immediately Invoked Function Expressions a.k.a IIFEs](https://www.kirupa.com/html5/immediately_invoked_function_expressions_iife.htm)
--->
+
+Example 1: setTimeout in IIFE
+```javascript
+var reps = 3;
+
+(function doStuff() {
+    if (reps == 0)
+        return;
+    console.log(reps);
+
+    reps--;
+    setTimeout(doStuff, 1000);
+})();
+```
+
+Example 2: setTimeout in object literal
+```javascript
+var obj2 = {
+    count: 3,
+    repeat: function () {
+        // bring vars down here so inner function can contain the variable count in it's closure scope
+        var enclosedCount = this.count;
+        
+        function doSomething() {
+            if (enclosedCount == 0) {
+                return;
+            } else {
+                console.log(enclosedCount);
+                enclosedCount--;
+                setTimeout(doSomething, 1000);
+            }
+        }
+
+        doSomething();
+    }
+};
+
+var inst = obj2;
+inst.repeat();
+```
+
+Example 3: setTimeout in function expression
+```javascript
+var myFunc = function () {
+    
+    var outer = 3;
+
+    function doStuff() {
+        var inner = 3;
+        if (outer == 0) {
+            return;
+        } else {
+            for (; inner> 0; inner--) {
+                console.log("in: " + inner);
+            }
+            console.log("outer: " + outer);
+            outer--;
+            setTimeout(doStuff, 1000);
+        }
+        
+    }
+
+    doStuff();
+    return "done"; // occurs after first loop completes. Use Async?
+};
+
+var doIt = myFunc();
+console.log(doIt);
+```
+
 ---
 
 ## 24. CodePen Lesson!
@@ -239,9 +310,8 @@ I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discusse
   - saved all progress
   - had one pen open in two different tabs (my bad); closed one tab & saved the other
   - overwrote my work by saving "wrong" tab. 😠😭
-  - rewrote code from memory. Ended up being unintended Spaced Repetition which helped me understand the code even better.😁
 
-So I rewrote the proof-of-concept code from memory which was server to help me remember it better.
+So I rewrote the proof-of-concept code from memory.
 
 **Link to work:**
 - [https://codepen.io/james-priest/pen/PKmMzP?editors=1011](https://codepen.io/james-priest/pen/PKmMzP?editors=1011)
