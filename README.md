@@ -340,7 +340,7 @@ In the end it turned out fine. By re-coding the exercise I inadvertently ended u
 
 **Thoughts:** Here are my two cents...
 
-![JSBin](/assets/images/jsbin.png)
+[![JSBin](/assets/images/jsbin.png)](http://jsbin.com/howuzec/3/edit?html,js,output)
 **JSBin** - This is my goto js playground for testing syntax & short proof-of-concepts
 - Pros
   - quick setup
@@ -354,7 +354,7 @@ In the end it turned out fine. By re-coding the exercise I inadvertently ended u
   - less used features are not/is not inherently intuitive.
   - editor is limited to one html, css & js file
 
-![Plunker](/assets/images/plunker.png)
+[![Plunker](/assets/images/plunker.png)](https://plnkr.co/edit/O73CdaJyTJenpBshvjzR?p=info)
 **Plunker** - great multi-file environment
 - Pros
   - Editor is spacious
@@ -365,7 +365,7 @@ In the end it turned out fine. By re-coding the exercise I inadvertently ended u
 - Cons
   - no integrated Console
 
-![CodePen](/assets/images/codepen.png)
+[![CodePen](/assets/images/codepen.png)](https://codepen.io/james-priest/pen/jLmxvZ)
 **CodePen** - great UX (fully featured experience)
 - Pros
   - Intuitive and configurable ui
