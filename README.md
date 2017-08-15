@@ -33,6 +33,22 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 # Log
 
 <!--
+## 33. FCC Tribute Page
+### Day 33: August 14, 2017 - Monday
+
+**Projects:**
+- Finished FCC Tribute Page on CodePen.io
+
+**Proegress:**
+- Knocked it out in a night
+
+**Link to work:**
+- [https://codepen.io/james-priest/pen/MvEdOV?editors=1100](https://codepen.io/james-priest/pen/MvEdOV?editors=1100)
+
+**Thoughts:** Could have used bootstrap. Instead it was all hand-coded css & html
+
+---
+
 ## 32. Node.js HTTP Server
 ### Day 32: August 13 2017 - Sunday
 
@@ -120,6 +136,7 @@ I was actually inspired to do a WordPress blog by [@AdrianaHasburn](https://twit
 **Thoughts:** I learned how to effectively use Chrome DevTools as part of my debug process. The combination of VSCode with Chrome DevTools gives me the power and control that Visual Studio 2017 provides for back end development.
 
 ---
+-->
 
 ## 28. JS Closures & Variable Scope
 ### Day 28: August 8, 2017 - Tuesday
@@ -172,10 +189,9 @@ myNephew.timeThePunchLine();
 - [Variable and Function Hoisting](https://www.kirupa.com/html5/hoisting.htm)
 - [Closures in JavaScript](https://www.kirupa.com/html5/closures_in_javascript.htm)
 
-I also got syntactic help from here [https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters](https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters).
+I also got syntactic help from [https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters](https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters).
 
 ---
--->
 
 ## 27. Updated GitHub Page for my 100DaysOfCode log
 ### Day 27: August 6, 2017 - Sunday
