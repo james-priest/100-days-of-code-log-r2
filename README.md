@@ -131,6 +131,8 @@ I was actually inspired to do a WordPress blog by [@AdrianaHasburn](https://twit
   - Persistence with DevTools Workspaces - Setting up source file mapping allows code changes to persist to source files
   - CSS & JS Preprocessors - Using Source Maps allow direct references to preprocessed source files for saving changes directly from DevTools
 
+[![Chrome DevTools](/assets/images/chrome-devtools.png)](https://developers.google.com/web/tools/setup/)
+
 **Link to work:**
 - Link to [DevTools Getting Started Docs](https://developers.google.com/web/tools/setup/)
 
