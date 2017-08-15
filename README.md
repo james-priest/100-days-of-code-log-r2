@@ -174,6 +174,7 @@ myNephew.timeThePunchLine();
 
 I also got syntactic help from here [https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters](https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters).
 
+---
 
 ## 27. Updated GitHub Page for my 100DaysOfCode log
 ### Day 27: August 6, 2017 - Sunday
@@ -188,23 +189,29 @@ I also got syntactic help from here [https://stackoverflow.com/questions/2588995
 - Needed to come up with a way of expanding the nav to accommodate a long TOC
 
 ---
+-->
 
-## 26. Updated My CV site
+## 26. Jekyll, jQuery, & FontAwesome
 ### Day 26: August 5, 2017 - Saturday
+
+**Projects:**
+- Updated GitHub Page for my Resume/CV site
 
 **Progress:**
 - Added jQuery Nav
-- Added FontAwesome
-- Updated icons & links to my various social media & online profiles .
+- Added FontAwesome for social media profile links & icons
+- FontAwesome for nav pointer (breadcrumb)
+- Updated CSS to indicate active link
+
+[![CV Site](/assets/images/cv-site.png)](https://james-priest.github.io/)
 
 **Link to work:**
 - [https://james-priest.github.io](https://james-priest.github.io/ "My online CV")
 
 **Thought:**
-- Used jQuery for on-page navigation; dynamic building of the TOC & for basic usability: breadcrumbs, highlights, etc.
+- Used jQuery for on-page navigation; dynamic building of the TOC & for basic usability: breadcrumbs highlights, etc.
 
 ---
--->
 
 ## 25. Objects, Expressions & Closures, Oh My!
 ### Day 25: August 3, 2017 - Wednesday
