@@ -175,6 +175,7 @@ myNephew.timeThePunchLine();
 I also got syntactic help from here [https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters](https://stackoverflow.com/questions/25889950/settimeout-and-recursive-function-with-parameters).
 
 ---
+-->
 
 ## 27. Updated GitHub Page for my 100DaysOfCode log
 ### Day 27: August 6, 2017 - Sunday
@@ -187,9 +188,9 @@ I also got syntactic help from here [https://stackoverflow.com/questions/2588995
 
 **Thoughts:**
 - Needed to come up with a way of expanding the nav to accommodate a long TOC
+- Updated nav css overflow to accommodate scroll
 
 ---
--->
 
 ## 26. Jekyll, jQuery, & FontAwesome
 ### Day 26: August 5, 2017 - Saturday
