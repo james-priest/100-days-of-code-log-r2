@@ -117,8 +117,9 @@ While writing a WordPress blog is not something I thought I'd do I am glad I've 
 I was actually inspired to do a WordPress blog by [@AdrianaHasburn](https://twitter.com/AdrianaHasbun) while reading her [Process to CSS Images](http://adrianahasbun.com/css/the-process-to-css-images) post. (Thanks Ariana!)
 
 ---
+-->
 
-## 29. Chrome DevTools Workspaces and Source Maps
+## 29. Chrome DevTools, Workspaces, and Source Maps
 ### Day 29: August 10, 2017 - Thursday
 
 **Project:**
@@ -133,10 +134,9 @@ I was actually inspired to do a WordPress blog by [@AdrianaHasburn](https://twit
 **Link to work:**
 - Link to [DevTools Getting Started Docs](https://developers.google.com/web/tools/setup/)
 
-**Thoughts:** I learned how to effectively use Chrome DevTools as part of my debug process. The combination of VSCode with Chrome DevTools gives me the power and control that Visual Studio 2017 provides for back end development.
+**Thoughts:** I learned how to effectively use Chrome DevTools as part of my debug process. The combination of VSCode with Chrome DevTools gives me the type of end-to-end control that Visual Studio 2017 provides for back end development.
 
 ---
--->
 
 ## 28. JS Closures & Variable Scope
 ### Day 28: August 8, 2017 - Tuesday
