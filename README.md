@@ -74,8 +74,9 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 Use the link on **Link to work:** to read the article
 
 ---
+-->
 
-## 31. VSCode Debug JS with Node
+## 31. Debug JS with Node in VSCode
 ### Day 31: August 12 2017 - Saturday
 
 **Projects:**
@@ -93,11 +94,12 @@ Use the link on **Link to work:** to read the article
 
 **Thoughts:** Debugging from within VSCode is absolutely essential to tracking down errors and evaluating code during execution.
 
+[![VSCode Debug](/assets/images/vscode-debug.png)](https://code.visualstudio.com/docs/editor/debugging)
+
 ---
--->
 
 ## 30. WordPress Site
-### Day 30: August, 11 2017 - Friday
+### Day 30: August 11, 2017 - Friday
 
 **Project:**
 - Setup a WordPress site for a blog on the 100 Days of Code challenge
