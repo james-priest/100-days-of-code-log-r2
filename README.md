@@ -94,6 +94,7 @@ Use the link on **Link to work:** to read the article
 **Thoughts:** Debugging from within VSCode is absolutely essential to tracking down errors and evaluating code during execution.
 
 ---
+-->
 
 ## 30. My WordPress Site
 ### Day 30: August, 11 2017 - Friday
@@ -107,6 +108,8 @@ Use the link on **Link to work:** to read the article
 1. Customized the template (sidebar, header & footer)
 1. Wrote my first post!
 
+[![Wordpress Blog](/assets/images/wordpress-blog.png)](https://100daycodeblog.wordpress.com/)
+
 **Link to work:**
 - [https://100daycodeblog.wordpress.com/](https://100daycodeblog.wordpress.com/)
 
@@ -117,9 +120,8 @@ While writing a WordPress blog is not something I thought I'd do I am glad I've 
 I was actually inspired to do a WordPress blog by [@AdrianaHasburn](https://twitter.com/AdrianaHasbun) while reading her [Process to CSS Images](http://adrianahasbun.com/css/the-process-to-css-images) post. (Thanks Ariana!)
 
 ---
--->
 
-## 29. Chrome DevTools, Workspaces, and Source Maps
+## 29. Chrome DevTools and Source Maps
 ### Day 29: August 10, 2017 - Thursday
 
 **Project:**
