@@ -96,7 +96,7 @@ Use the link on **Link to work:** to read the article
 ---
 -->
 
-## 30. My WordPress Site
+## 30. WordPress Site
 ### Day 30: August, 11 2017 - Friday
 
 **Project:**
@@ -197,7 +197,7 @@ I also got syntactic help from [https://stackoverflow.com/questions/25889950/set
 
 ---
 
-## 27. Updated GitHub Page for my 100DaysOfCode log
+## 27. GitHub Page for my 100DaysOfCode log
 ### Day 27: August 6, 2017 - Sunday
 
 **Progress:**
