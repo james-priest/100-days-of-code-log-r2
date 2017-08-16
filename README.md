@@ -33,13 +33,23 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 # Log
 
 <!--
+## 34. Bootstrap FCC Portfolio
+### Day 34: August 15, 2017
+
+**Project:**
+**Progress:**
+**Link to Work:**
+**Thoughts:**
+
+---
+
 ## 33. FCC Tribute Page
 ### Day 33: August 14, 2017 - Monday
 
 **Projects:**
 - Finished FCC Tribute Page on CodePen.io
 
-**Proegress:**
+**Progress:**
 - Knocked it out in a night
 
 **Link to work:**
@@ -48,6 +58,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:** Could have used bootstrap. Instead it was all hand-coded css & html
 
 ---
+-->
 
 ## 32. Node.js HTTP Server
 ### Day 32: August 13 2017 - Sunday
@@ -74,7 +85,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 Use the link on **Link to work:** to read the article
 
 ---
--->
 
 ## 31. Debug JS with Node in VSCode
 ### Day 31: August 12 2017 - Saturday

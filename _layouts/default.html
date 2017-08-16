@@ -86,7 +86,9 @@
             var hash = window.location.hash.substr(0)
             //alert(hash);
             if(hash){
-                console.log("hash: " + hash);
+                $("nav ul li.active").removeClass("active");
+                $("nav ul li a[href='" + hash + "']").parent().addClass("active");
+                //console.log("hash: " + hash);
                 var pos = $(hash).offset().top - 190;
                 $("html, body").animate({scrollTop: pos}, 400);
                 //window.location.hash = hash;
