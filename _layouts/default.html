@@ -83,16 +83,34 @@
       <script type="text/javascript">
         $(document).ready(function() {
             // if a hash exists then assign to this var
-            var hash = window.location.hash.substr(0)
+            var hash = window.location.hash.substr(0);
             //alert(hash);
             if(hash){
                 $("nav ul li.active").removeClass("active");
                 $("nav ul li a[href='" + hash + "']").parent().addClass("active");
                 //console.log("hash: " + hash);
-                var pos = $(hash).offset().top - 190;
+                //var pos = $(hash).offset().top - 190;
+                //var pos = $(hash)[0].offsetTop - 88;
+                // TODO: Fix nav & section scroll on hash
+                var pos = $(hash).first().offset().top - 268;
+                console.log("pos: " + pos);
+                var p1 = $(hash).offset().top;
+                var p2 = $(hash)[0].offsetTop;
+                console.log("p1: " + p1);
+                console.log("p2: " + p2);
+                console.log("p1-p2=" + Number(p1-p2));
                 $("html, body").animate({scrollTop: pos}, 400);
+                
                 //window.location.hash = hash;
                 //event.preventDefault();
+                //var navpos = $("nav ul li a[href='" + hash + "']").parent().offset().top;
+                //var navPos = $("nav ul li a[href='" + hash + "']").offsetParent().scrollTop();
+                var navPos = $("nav ul li a[href='" + hash + "']")[0].offsetTop - 10;
+                console.log("navPos: " + navPos);
+                //alert(navPos);
+                $("nav").animate({scrollTop: navPos}, 400);
+                //$("div.wrapper.nav")
+                //$("nav ul li a[href='" + $(this).attr("href") + "']").parent().addClass("active");
             }
         });
     </script>
