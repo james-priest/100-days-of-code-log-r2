@@ -58,6 +58,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:** This was basic/beginning HTML/CSS but was a good refresher.
 
 ---
+-->
 
 ## 36. HTML5 & CSS3 Intermediate Training
 ### Day 36: August 18, 2017 - Friday
@@ -72,8 +73,8 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Thoughts:** I like the format of Code School's content. It's focused and clear.
 
+![VSCode Editor](/assets/images/vscode-css-colors.png)
 ---
--->
 
 ## 35. FCC Personal Portfolio with Bootstrap 3
 ### Day 35: August 16, 2017 - Wednesday
