@@ -91,6 +91,10 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 Where I had trouble was in trying to change Bootstraps 3's structural format by eliminating unnecessary elements. I wanted to reduce Bootstrap's element clutter by removing unnecessary div elements and making the HTML more semantic by attaching class names to HTML5 elements. Things like changing divs to header, section, and article elements.
 
+This didn't work so well so I chaged back to the div heavy structure.
+
+[![Pen using Bootstrap 3](/assets/images/codepen-bootstrap3.png)](https://codepen.io/james-priest/pen/prpjEK)
+
 ---
 
 ## 34. FCC Personal Portfolio with Bootstrap 4
