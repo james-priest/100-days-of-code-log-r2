@@ -73,6 +73,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:** I like the format of Code School's content. It's focused and clear.
 
 ---
+-->
 
 ## 35. FCC Personal Portfolio with Bootstrap 3
 ### Day 35: August 16, 2017 - Wednesday
@@ -91,7 +92,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 Where I had trouble was in trying to change Bootstraps 3's structural format by eliminating unnecessary elements. I wanted to reduce Bootstrap's element clutter by removing unnecessary div elements and making the HTML more semantic by attaching class names to HTML5 elements. Things like changing divs to header, section, and article elements.
 
 ---
--->
 
 ## 34. FCC Personal Portfolio with Bootstrap 4
 ### Day 34: August 15, 2017 - Tuesday
