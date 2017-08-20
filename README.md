@@ -33,8 +33,9 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 # Log
 
 <!--
-## 34. Bootstrap FCC Portfolio
-### Day 34: August 15, 2017 - Tuesday
+
+## XX.
+### Day XX: August 16, 2017 - Wednesday
 
 **Project:**
 **Progress:**
@@ -43,7 +44,73 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
+
+## 37. HTML5 & CSS3 Basic Training
+### Day 37: August 19, 2017 - Saturday
+
+**Project:** Completed the [Code School](https://www.codeschool.com) class: [Front End Foundations](http://campus.codeschool.com/courses/front-end-foundations/).
+
+**Progress:** Worked on this throughout the day
+
+**Link to Work:**
+- [Code School Report Card](https://www.codeschool.com/users/james-priest)
+
+**Thoughts:** This was basic/beginning HTML/CSS but was a good refresher.
+
+---
+
+## 36. HTML5 & CSS3 Intermediate Training
+### Day 36: August 18, 2017 - Friday
+
+**Project:** Completed the [Code School](https://www.codeschool.com) class: [Front End Formations](https://www.codeschool.com/account/courses/front-end-formations).
+
+**Progress:** It took about 5-6 hours to complete. This included tutorials, typing out code exercises, creating my own code proof-of-concepts and taking quizzes & tests.
+
+**Link to Work:**
+- [Code School Report Card](https://www.codeschool.com/users/james-priest)
+- [My test code for Front End Formations on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/front-end-formations)
+
+**Thoughts:** I like the format of Code School's content. It's focused and clear.
+
+---
+
+## 35. FCC Personal Portfolio with Bootstrap 3
+### Day 35: August 16, 2017 - Wednesday
+
+**Project:** - FCC Personal Portfolio Webpage project
+
+**Progress:** Switched to Bootstrap 3
+- Created new Pen using Bootstrap 3
+- Worked on Responsive/Collapsible Menu
+
+**Link to Work:**
+- [FCC Portfolio Page - Bootstrap3](https://codepen.io/james-priest/pen/prpjEK)
+
+**Thoughts:** I had to play with Bootstrap and reference the docs and samples a lot in order to get things working.
+
+Where I had trouble was in trying to change Bootstraps 3's structural format by eliminating unnecessary elements. I wanted to reduce Bootstrap's element clutter by removing unnecessary div elements and making the HTML more semantic by attaching class names to HTML5 elements. Things like changing divs to header, section, and article elements.
+
+---
 -->
+
+## 34. FCC Personal Portfolio with Bootstrap 4
+### Day 34: August 15, 2017 - Tuesday
+
+**Project:** - FCC Personal Portfolio Webpage project
+
+**Progress:** - Started with Bootstrap 4
+- Added Bootstrap 4 css
+- Added Bootstrap 4 js
+- Worked on Responsive/Collapsible Menu with limited success
+
+**Link to Work:**
+- Created multiple Pens to test Bootstrap in CodePen
+  - [FCC Portfolio Page - Bootstrap4](https://codepen.io/james-priest/pen/zdPdVP)
+  - [Bootstrap4 Jumbotron](https://codepen.io/james-priest/pen/Ojzygj)
+
+**Thoughts:** It seems the code samples are not collapsing properly for the responsive menu. I played with this for a while before deciding to switch to Bootstrap 3. I enjoy the challenge of debugging and fine-tuning html/css but I think I'll wait until Bootstrap 4 is no longer in Alpha to use it on "production" assignments.
+
+---
 
 ## 33. FCC Tribute Page
 ### Day 33: August 14, 2017 - Monday
