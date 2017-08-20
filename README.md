@@ -44,36 +44,52 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
+## 38.
+### Day 38: August 16, 2017 - Wednesday
+
+**Project:**
+**Progress:**
+**Link to Work:**
+**Thoughts:**
+
+---
+
+-->
 
 ## 37. HTML5 & CSS3 Basic Training
 ### Day 37: August 19, 2017 - Saturday
 
-**Project:** Completed the [Code School](https://www.codeschool.com) class: [Front End Foundations](http://campus.codeschool.com/courses/front-end-foundations/).
+**Project:** Completed the [Code School](https://www.codeschool.com) class: [Front End Foundations](https://www.codeschool.com/courses/front-end-foundations).
 
 **Progress:** Worked on this throughout the day
 
 **Link to Work:**
-- [Code School Report Card](https://www.codeschool.com/users/james-priest)
+- [Code School HTML/CSS Course Path](https://www.codeschool.com/learn/html-css)
+- [My Code School Report Card](https://www.codeschool.com/users/james-priest)
+- [Test code for Front End Foundation on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/front-end-foundations)
 
 **Thoughts:** This was basic/beginning HTML/CSS but was a good refresher.
 
+[![VSCode Editor](/assets/images/vscode-html5.png)](https://rawgit.com/james-priest/code-exercises/master/html_exercises/front-end-foundations/magic-cake.html)
+
 ---
--->
 
 ## 36. HTML5 & CSS3 Intermediate Training
 ### Day 36: August 18, 2017 - Friday
 
-**Project:** Completed the [Code School](https://www.codeschool.com) class: [Front End Formations](https://www.codeschool.com/account/courses/front-end-formations).
+**Project:** Completed the [Code School](https://www.codeschool.com) class: [Front End Formations](https://www.codeschool.com/courses/front-end-formations).
 
 **Progress:** It took about 5-6 hours to complete. This included tutorials, typing out code exercises, creating my own code proof-of-concepts and taking quizzes & tests.
 
 **Link to Work:**
-- [Code School Report Card](https://www.codeschool.com/users/james-priest)
+- [Code School HTML/CSS Course Path](https://www.codeschool.com/learn/html-css)
+- [My Code School Report Card](https://www.codeschool.com/users/james-priest)
 - [My test code for Front End Formations on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/front-end-formations)
 
 **Thoughts:** I like the format of Code School's content. It's focused and clear.
 
 ![VSCode Editor](/assets/images/vscode-css-colors.png)
+
 ---
 
 ## 35. FCC Personal Portfolio with Bootstrap 3
