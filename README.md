@@ -34,7 +34,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 <!--
 ## 34. Bootstrap FCC Portfolio
-### Day 34: August 15, 2017
+### Day 34: August 15, 2017 - Tuesday
 
 **Project:**
 **Progress:**
@@ -43,6 +43,8 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
+-->
+
 ## 33. FCC Tribute Page
 ### Day 33: August 14, 2017 - Monday
 
@@ -50,15 +52,16 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 - Finished FCC Tribute Page on CodePen.io
 
 **Progress:**
-- Knocked it out in a night
+- Knocked it out in a night without too much trouble. 😌
 
 **Link to work:**
 - [https://codepen.io/james-priest/pen/MvEdOV?editors=1100](https://codepen.io/james-priest/pen/MvEdOV?editors=1100)
 
-**Thoughts:** Could have used bootstrap. Instead it was all hand-coded css & html
+**Thoughts:** Could have used bootstrap. Instead I hand-coded the css.
+
+[![CodePen](/assets/images/fcc-tribute-page.png)](https://codepen.io/james-priest/pen/MvEdOV?editors=1100)
 
 ---
--->
 
 ## 32. Node.js HTTP Server
 ### Day 32: August 13 2017 - Sunday
