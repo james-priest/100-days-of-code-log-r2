@@ -56,6 +56,29 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 -->
 
+## 38. Intermediate CSS Training
+### Day 38: August 20, 2017 - Sunday
+
+**Project:** Completed [Code School](https://www.codeschool.com) class: [CSS Cross Country](https://www.codeschool.com/courses/css-cross-country).
+
+**Progress:** Worked on this throughout the day
+
+**Link to Work:**
+- [Code School HTML/CSS Course Path](https://www.codeschool.com/courses/css-cross-country)
+- [My Code School Report Card](https://www.codeschool.com/users/james-priest)
+- [Test code for Front End Foundation on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/css-cross-country)
+- [Page in browser](https://rawgit.com/james-priest/code-exercises/master/html_exercises/css-cross-country/index.html)
+
+**Thoughts:** Worked on some of the deeper aspects of css such as
+- Specificity
+- Floats, Clearfixes, & layouts
+- selector best practices
+
+[![VSCode Editor](/assets/images/vscode-css-specificity.png)](https://rawgit.com/james-priest/code-exercises/master/html_exercises/css-cross-country/index.html)
+
+---
+
+
 ## 37. HTML5 & CSS3 Basic Training
 ### Day 37: August 19, 2017 - Saturday
 
@@ -67,6 +90,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 - [Code School HTML/CSS Course Path](https://www.codeschool.com/learn/html-css)
 - [My Code School Report Card](https://www.codeschool.com/users/james-priest)
 - [Test code for Front End Foundation on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/front-end-foundations)
+- [Page in browser](https://rawgit.com/james-priest/code-exercises/master/html_exercises/front-end-foundations/magic-cake.html)
 
 **Thoughts:** This was basic/beginning HTML/CSS but was a good refresher.
 
