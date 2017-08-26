@@ -56,6 +56,27 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 -->
 
+## 39. Bootstrap 3 Training
+### Day 39: August 21, 2017 - Monday
+
+**Project:** Completed [Code School](https://www.codeschool.com) class: [Blasting Off with Bootstrap](https://www.codeschool.com/courses/blasting-off-with-bootstrap).
+
+**Progress:** Worked on this all day. It covered Bootstrap 3, CSS & Font Awesome
+
+**Link to Work:**
+- [My Code School Report Card](https://www.codeschool.com/users/james-priest)
+- [Test code for Blasting Off with Bootstrap on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/blasting-bootstrap)
+- [Hosted Page](http://bootstrap-blast-off.netlify.com) on Netlify
+
+**Thoughts:** This course helped tremendously on my WIP freeCodeCamp Bootstrap Portfolio project. It was just what I needed to understand the following:
+- grids, offsets, and layouts
+- components, glyphs, and plugins
+- icons, fonts and behavior
+
+[![Blast Off with Bootstrap webpage](/assets/images/code-school-bootstrap.png)](http://bootstrap-blast-off.netlify.com)
+
+---
+
 ## 38. Intermediate CSS Training
 ### Day 38: August 20, 2017 - Sunday
 
@@ -64,12 +85,12 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Progress:** Worked on this throughout the day
 
 **Link to Work:**
-- [Code School HTML/CSS Course Path](https://www.codeschool.com/courses/css-cross-country)
+- [Code School HTML/CSS Course Path](https://www.codeschool.com/learn/html-css)
 - [My Code School Report Card](https://www.codeschool.com/users/james-priest)
-- [Test code for Front End Foundation on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/css-cross-country)
+- [Test code for CSS Cross Country on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/css-cross-country)
 - [Page in browser](https://rawgit.com/james-priest/code-exercises/master/html_exercises/css-cross-country/index.html)
 
-**Thoughts:** Worked on some of the deeper aspects of css such as
+**Thoughts:** Worked on some of the deeper aspects of css such as:
 - Specificity
 - Floats, Clearfixes, & layouts
 - selector best practices
