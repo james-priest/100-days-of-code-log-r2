@@ -54,7 +54,36 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
+## 41. SPYCats Portfolio Website
+### Day 41: August 25, 2017 - Friday
+
+**Project:** SPYCats Portfolio Website
+
+**Progress:** My FCC Personal Portfolio page morphed into the SPYCats Portfolio page - A website advertising the undercover services of an elite undercover team of cats.
+
+**Link to Work:** [SPYCats Website](https://spycats.netlify.com/) on Netlify
+
+**Thoughts:** I will go back and put together a portfolio site once I have a recent sampling of work. For now I decided to have fun with the project.
+
+![SPYCats webpage on Netlify](/assets/images/netlify-spycats-wide1.png)
+
+---
 -->
+
+## 40. FCC Personal Portfolio Project on CodePen
+### Day 40: August 23, 2017 - Wednesday
+
+**Project:** Personal Portfolio project from freeCodeCamp
+
+**Progress:** It was slow going trying to develop on CodePen. Don't get me wrong, I love the environment but I love my code editor more.😁 (VSCode)
+
+**Link to Work:** [FCC Portfolio Page - Bootstrap 3](https://codepen.io/james-priest/pen/prpjEK) on CodePen
+
+**Thoughts:** CodePen has some great features and I love how flexible it is. It's an awesome platform for sharing code and showcasing projects but difficult to do extensive development in.
+
+[![CodePen Screenshot](/assets/images/codepen-fcc-portfolio.png)](https://codepen.io/james-priest/pen/prpjEK)
+
+---
 
 ## 39. Bootstrap 3 Training
 ### Day 39: August 21, 2017 - Monday
