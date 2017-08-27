@@ -53,22 +53,22 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 ---
+-->
 
-## 41. SPYCats Portfolio Website
+## 41. SPYCats Website on Netlify
 ### Day 41: August 25, 2017 - Friday
 
-**Project:** SPYCats Portfolio Website
+**Project:** Moved the site to Netlify
 
-**Progress:** My FCC Personal Portfolio page morphed into the SPYCats Portfolio page - A website advertising the undercover services of an elite undercover team of cats.
+**Progress:** My FCC Personal Portfolio page morphed into the SPYCats project - A website advertising the undercover services of an elite team of cats.
 
 **Link to Work:** [SPYCats Website](https://spycats.netlify.com/) on Netlify
 
-**Thoughts:** I will go back and put together a portfolio site once I have a recent sampling of work. For now I decided to have fun with the project.
+**Thoughts:** I will go back and put together a personal portfolio site once I have a recent sampling of work. For now I decided to have fun with the project. I can also add more pages if I want to play with it since its on Netlify.
 
 ![SPYCats webpage on Netlify](/assets/images/netlify-spycats-wide1.png)
 
 ---
--->
 
 ## 40. FCC Personal Portfolio Project on CodePen
 ### Day 40: August 23, 2017 - Wednesday
