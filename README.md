@@ -44,8 +44,8 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-## 38.
-### Day 38: August 16, 2017 - Wednesday
+## 42.
+### Day 42: August 16, 2017 - Wednesday
 
 **Project:**
 **Progress:**
@@ -54,6 +54,21 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+
+## 42. FCC Basic JavaScript Challenges
+### Day 42: August 27, 2017 - Sunday
+
+**Project:** Free Code Camp Basic JavaScript challenges
+
+**Progress:** Completed two thirds of the Basic JavaScript section (about 70 challenges today)
+
+**Link to Work:** - [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+
+**Thoughts:** Left off on counting cards challenge. Will pick it up tomorrow.
+
+![FCC Counting Cards](/assets/images/fcc-counting-cards.png)
+
+---
 
 ## 41. SPYCats Website on Netlify
 ### Day 41: August 25, 2017 - Friday
