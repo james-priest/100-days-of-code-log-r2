@@ -55,6 +55,24 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 44. FCC Object Oriented and Function Programming
+### Day 44: August 29, 2017 - Tuesday
+
+**Project:** Completed FCC Object Oriented and Function Programming section
+
+**Progress:** This covered about about a dozen 30 challenges
+
+**Link to Work:** - 
+- [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+- [Sample code on GitHub](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/fcc/OO-and-FP)
+
+
+**Thoughts:** Covered specific Array methods: concat, filter, join, map, reduce, reverse, sort & split. Also covered Object Oriented concepts such as creating objects as variables, constructing objects with functions, object instances with constructor function, passing parameters to constructor function and making object properties private.
+
+![FCC Screenshot](/assets/images/fcc-finish-oo-and-fp.png)
+
+---
+
 ## 43. Completed FCC Basic JavaScript Challenges
 ### Day 43: August 28, 2017 - Monday
 
