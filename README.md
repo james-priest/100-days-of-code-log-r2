@@ -55,10 +55,10 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
-## 44. FCC Object Oriented and Function Programming
+## 44. FCC Object Oriented and Functional Programming
 ### Day 44: August 29, 2017 - Tuesday
 
-**Project:** Completed FCC Object Oriented and Function Programming section
+**Project:** Completed FCC Object Oriented and Functional Programming section
 
 **Progress:** This covered about about a dozen 30 challenges
 
