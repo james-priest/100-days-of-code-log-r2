@@ -55,6 +55,21 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 43. Completed FCC Basic JavaScript Challenges
+### Day 43: August 28, 2017 - Monday
+
+**Project:** Free Code Camp Basic JavaScript challenges
+
+**Progress:** Completed Basic JavaScript section (about 30 challenges today)
+
+**Link to Work:** - [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+
+**Thoughts:** Covered Arrays, Multi-dimensional arrays, loops, objects, Math object, etc.
+
+![FCC Screenshot](/assets/images/fcc-finish-basic-javascript.png)
+
+---
+
 ## 42. FCC Basic JavaScript Challenges
 ### Day 42: August 27, 2017 - Sunday
 
