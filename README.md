@@ -55,6 +55,25 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 45. FCC Basic Algorithm Scripting
+### Day 45: August 30, 2017 - Wednesday
+
+**Project:** FCC Basic Algorithm Scripting
+
+**Progress:** Completed first half of 12 challenges
+
+**Link to Work:** -
+- [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+- [Sample code on GitHub](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/fcc/js-algorithms)
+
+**Thoughts:** I'm working through these with the examples from the Object Oriented & Functional Programming sections open in my VS Code Editor.
+
+This has been a bit slow at times but I can tell some real learning is taking place; that point were we go from merely understanding and following a solution to creatively constructing and developing our own. It is this critical part that deeply engrains the mental patterns necessary to truly gain efficiency and then mastery of the material.
+
+![fcc-algorithms](/assets/images/fcc-algorithms1.png)
+
+---
+
 ## 44. FCC Object Oriented and Functional Programming
 ### Day 44: August 29, 2017 - Tuesday
 
@@ -65,7 +84,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Link to Work:** - 
 - [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
 - [Sample code on GitHub](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/fcc/OO-and-FP)
-
 
 **Thoughts:** Covered specific Array methods: concat, filter, join, map, reduce, reverse, sort & split. Also covered Object Oriented concepts such as creating objects as variables, constructing objects with functions, object instances with constructor function, passing parameters to constructor function and making object properties private.
 
