@@ -54,6 +54,24 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+## 46. Completed FCC Basic Algorithm Scripting
+### Day 46: September 1, 2017 - Friday
+
+**Project:** FCC Basic Algorithm Scripting
+
+**Progress:** Completed all the challenges.
+
+**Link to Work:** -
+- [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+- [Sample code on GitHub](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/fcc/js-algorithms)
+
+**Thoughts:** It took one day to figure out 11 of them and two and a half days to struggle through the "seek and destroy" challenge. This one killed me. I didn't want to look up the answer so I struggled through it and would tweet and like other ppls posts as a distraction.
+
+It finally worked out though. I had fun marking up my screenshot below. It helped me vent. :)
+
+![fcc-algorithms](/assets/images/fcc-finish-basic-algorithms.png)
+
+---
 
 ## 45. FCC Basic Algorithm Scripting
 ### Day 45: August 30, 2017 - Wednesday
