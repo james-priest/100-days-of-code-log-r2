@@ -65,9 +65,11 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 - [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
 - [Sample code on GitHub](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/fcc/js-algorithms)
 
-**Thoughts:** It took one day to figure out 11 of them and two and a half days to struggle through the "seek and destroy" challenge. This one killed me. I didn't want to look up the answer so I struggled through it and would tweet and like other ppls posts as a distraction.
+**Thoughts:** It took one day to figure out 15 of them and two and a half days to struggle through the remaining one - the "seek and destroy" challenge. This one killed me. I didn't want to look up the answer so I struggled through it and would tweet excessively as a distraction. (Sorry #100DaysOfCode party-ppl)
 
-It finally worked out though. I had fun marking up my screenshot below. It helped me vent. :)
+This did help to spark that diffuse mode of thinking and finally worked out. It was combining the Array.filter function with the built-in arguments object, throwing it in a loop and wrapping it all in a callback that screwed me up. (Won't make that mistake again :))
+
+Marking up my screenshot with derogatory callouts did help me work out my frustration a bit. It helped me vent. :)
 
 ![fcc-algorithms](/assets/images/fcc-finish-basic-algorithms.png)
 
