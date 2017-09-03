@@ -54,6 +54,23 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+## 47. Completed FCC JSON, APIs & Ajax
+### Day 47: September 2, 2017 - Saturday
+
+**Project:** FCC JSON, APIs & Ajax section
+
+**Progress:** Completed each exercise.
+
+**Link to Work:** -
+- [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
+- [Sample code on GitHub](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/fcc/json-api-ajax)
+
+**Thoughts:** Completing the JSON, API, and Ajax section was very straight forward compared to the hairpulling exercise of a couple of the algorithms challenges.
+
+![fcc-algorithms](/assets/images/fcc-finish-json-apis-ajax.png)
+
+---
+
 ## 46. Completed FCC Basic Algorithm Scripting
 ### Day 46: September 1, 2017 - Friday
 
