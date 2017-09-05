@@ -54,6 +54,28 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+
+## 48. FCC Random Quote Generator on CodePen
+### Day 48: September 4, 2017 - Monday
+
+**Project:** Build A Random Quote Machine from freeCodeCamp
+
+**Progress:** I built this over two days and hit some stumbling blocks when it came to using JSON. Instead I had to use the JSONP format. Here's short list of the things this project required:
+1. Investigate available free quote generation web APIs
+1. Look up jQuery methods for `$.getJSON()` and `$.ajax()`
+1. Look up Twitter API to include a Tweet button.
+
+**Link to Work:** [FCC Random Quote Generator](https://codepen.io/james-priest/full/RZdGNo/) on CodePen
+
+**Thoughts:** Practiced the art of reading docs and writing code based on API documentation. I thought it would take a day to finish the project but it took longer due to the CORS security restrictions around cross-domain json. Once I got this working I practiced adding in the following:
+- CSS box-shadows, transitions & blockquote formatting
+- SVG backgrounds
+- Use of Google fonts
+
+[![CodePen Screenshot](/assets/images/codepen-fcc-quote-gen.png)](https://codepen.io/james-priest/pen/RZdGNo/)
+
+---
+
 ## 47. Completed FCC JSON, APIs & Ajax
 ### Day 47: September 2, 2017 - Saturday
 
@@ -180,7 +202,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Progress:** It was slow going trying to develop on CodePen. Don't get me wrong, I love the environment but I love my code editor more.😁 (VSCode)
 
-**Link to Work:** [FCC Portfolio Page - Bootstrap 3](https://codepen.io/james-priest/pen/prpjEK) on CodePen
+**Link to Work:** [FCC Portfolio Page - Bootstrap 3](https://codepen.io/james-priest/full/prpjEK) on CodePen
 
 **Thoughts:** CodePen has some great features and I love how flexible it is. It's an awesome platform for sharing code and showcasing projects but difficult to do extensive development in.
 
