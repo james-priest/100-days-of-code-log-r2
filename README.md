@@ -65,7 +65,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ![Raw JSON data](assets/images/fcc-weather2.png)
 
 I wrote this :
-![Weather app code](assets/images/fcc-weather1.png)
+![Weather app code](assets/images/fcc-weather4.png)
 
 To get this:
 ![Weather app formatted json](assets/images/fcc-weather3.png)
