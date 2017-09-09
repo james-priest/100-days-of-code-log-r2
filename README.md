@@ -55,6 +55,41 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 49. FCC Local Weather App
+### Day 49: September 8, 2017 - Friday
+
+**Project:** Build A Local Weather App from freeCodeCamp
+
+**Progress:** So I've been working on this for 4 days. Most of the work was on writing code to use Geolocation to get JSON data back from a weather service that uses your location as input. The data that came back looked like this:
+
+![Raw JSON data](assets/images/fcc-weather2.png)
+
+I wrote this :
+![Weather app code](assets/images/fcc-weather1.png)
+
+To get this:
+![Weather app formatted json](assets/images/fcc-weather3.png)
+
+Here's short list of the things I researched for this project:
+1. Iterating through an object
+1. Conversion formulas
+1. Frameworks including:
+  - Bootstrap 3
+  - Bootstrap 4
+  - Bulma
+  - Foundation
+1. Look up jQuery methods for `$.getJSON()` and `$.ajax()`
+
+**Link to Work:** 
+- [traverse-json.html page](https://rawgit.com/james-priest/code-exercises/master/javascript_exercises/fcc/json-api-ajax/traverse-json.html)
+- [traverse-json.html code](https://github.com/james-priest/code-exercises/blob/master/javascript_exercises/fcc/json-api-ajax/traverse-json.html) on GitHub
+
+**Thoughts:** I saw some great looking weather app projects including this one [https://nawnaw7.github.io/weatherapp/](https://nawnaw7.github.io/weatherapp/) from [Nawnaw](https://twitter.com/sirbu_ioana). The code is clean and the interface is beautiful. Great use of open space.
+
+This confirmed to me that I need to a framework in order to best layout the information. That along with images, font, icons and functionality should be all my project needs. :)
+
+---
+
 ## 48. FCC Random Quote Generator on CodePen
 ### Day 48: September 4, 2017 - Monday
 
