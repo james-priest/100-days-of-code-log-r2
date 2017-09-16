@@ -21,7 +21,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ### Secondary goals
 
-- Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Certification - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
+- Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
 - Knock out the following...
   - Complete [FCC Front End Development Certification](https://www.freecodecamp.com/james-priest "FCC Profile") program
   - Complete [Udemy The Web Developer Bootcamp](https://www.udemy.com/the-web-developer-bootcamp/ "The Web Developer Bootcamp by Colt Steele") certificate program
@@ -61,7 +61,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Progress:** I spent two days reading documentation and playing around with layout combinations.
 
-**Link to Work:** None yet.
+**Link to Work:** Links coming in next post.
 
 ![Mobile ui](assets/images/fcc-semantic-ui-6.png)
 
