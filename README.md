@@ -54,6 +54,38 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+## 51. Local Weather App
+### Day 51: September 15, 2017 - Friday
+
+**Project:** Completed FCC Local Weather App
+
+**Progress:** Originally estimated 2-3 days to complete but I had fun and put more effort into it.
+
+**Link to Work:** [http://local-weather-app.netlify.com/](http://local-weather-app.netlify.com/)
+
+![Mobile ui](assets/images/fcc-weather5.png)
+
+**Thoughts:** So, it took me five days to complete this once I got started but it feels like I've been working on this for weeks. Here's a list of features:
+
+- Built with Semantic-UI for responsive layout
+- Used both jQuery and standard javascript ajax to pull from the following APIs
+  - freeCodeCamp weather API based on [http://openweathermap.org](http://openweathermap.org)
+  - Google Maps Timezone API for local time
+  - Google Maps Geolocation API (will integrate this later; currently using FCC API for geolocation)
+- Created an SVG compass that uses CSS transform and rotate along with transitions to show wind direction. It also animates on mouse-over.
+- Added Debug panel which uses tabbed display. It can be opened with the gear in the upper right corner
+- Created a series of colored buttons to allow cycling of all background images.
+- Included toggle switch for conversion of imperial and metric units of measurement.
+- Lastly, had fun creating messages to Twitter friends by playing extensively with the Popup Module.
+
+Open items / Needs
+- Preload images
+- CSS transitions between clicks
+
+In the end it was fun and I got a lot of practical experience with js, jquery, json/ajax, css, & semantic-ui. 
+
+---
+
 ## 50. Semantic-UI CSS framework
 ### Day 50: September 10, 2017 - Sunday
 
