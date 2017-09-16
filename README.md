@@ -54,6 +54,22 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+## 50. Semantic-UI CSS framework
+### Day 50: September 10, 2017 - Sunday
+
+**Project:** Testing and evaluating Semantic-UI
+
+**Progress:** I spent two days reading documentation and playing around with layout combinations.
+
+**Link to Work:** None yet.
+
+![Mobile ui](assets/images/fcc-semantic-ui-6.png)
+
+**Thoughts:** Sematic-UI definitely gets my vote as far as a clean framework to develop from. It has semantic layout and many variations to choose from. There are quite a few components available and lots of ability for fine-grain control of behavior through js. UI features are broken down into elements, collections, views, and modules but these are all really just UI components.
+
+One thing I can say though is that I struggled with the responsive portion for a few days before it fell into place. Now it works brilliantly and is actually very flexible without having to add any extra html elements (divs, spans, wraps, etc). I would definitely recommend this framework as a Bootstrap alternative and maybe even over bootstrap.
+
+---
 
 ## 49. FCC Local Weather App
 ### Day 49: September 8, 2017 - Friday
