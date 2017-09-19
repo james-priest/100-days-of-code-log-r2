@@ -54,6 +54,33 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+## 52. True Crossfade Effect
+### Day 52: September 18, 2017 - Monday
+
+**Project:** Completed a CSS Crossfade & Carousel Effect using stacked divs, css, & jquery
+
+**Progress:** I thought this would take me 2-3 hours but took more like 1-2 days
+
+**Link to Work:**
+- CodePen - Crossfade: [https://codepen.io/james-priest/pen/boEVXR](https://codepen.io/james-priest/pen/boEVXR)
+- Crossfade on Netlify: [https://local-weather-app.netlify.com/crossfade.html](https://local-weather-app.netlify.com/crossfade.html)
+- CodePen - Carousel: [https://codepen.io/james-priest/pen/EwPpaw](https://codepen.io/james-priest/pen/EwPpaw)
+- Carousel on Netlify: [https://local-weather-app.netlify.com/carousel.html](https://local-weather-app.netlify.com/carousel.html)
+
+![screenshot](assets/images/codepen-crossfade.png)
+
+**Thoughts:** There were lots online references to jQuery fadeIn, fadeOut, and fadeToggle but these didn't do the trick. One image would fade all the way down and then the next would fade up. This wasn't as clean.  You can see here.
+
+[https://local-weather-app.netlify.com/transition1.html](https://local-weather-app.netlify.com/transition1.html)
+
+I went through LOTS of posts, jquery docs, & stack overflow q&a's until I found something that I could adapt. That was here:
+
+[http://www.simonbattersby.com/blog/simple-jquery-image-crossfade/](http://www.simonbattersby.com/blog/simple-jquery-image-crossfade/)
+
+I had to change quite a few things around to adapt the sample to what I had in mind but the basic structure/logic was sound and worked great!
+
+---
+
 ## 51. Local Weather App
 ### Day 51: September 15, 2017 - Friday
 
@@ -79,7 +106,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 - Lastly, had fun creating messages to Twitter friends by playing extensively with the Popup Module.
 
 Open items / Needs
-- Preload images
+- Pre-load images
 - CSS transitions between clicks
 
 In the end it was fun and I got a lot of practical experience with js, jquery, json/ajax, css, & semantic-ui. 
