@@ -15,20 +15,26 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 - Code daily
 - Expand portfolio
-- Hone Git CLI skills
-- Get established in the GitHub community
+- Hone Git skills (especially CLI)
 - Get through as many MOOCs, certifications, and bootcamp classes as possible
+- Get established in Twitter dev community
+  - This has been awesome! 
+  - Great support and encouragement!
+  - Use #100DaysOfCode, #CodeNewbie, & #freecodecamp hashtags.
 
-### Secondary goals
 
-- Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
+### Secondary Goals & Resources
+
 - Knock out the following...
   - Complete [FCC Front End Development Certification](https://www.freecodecamp.com/james-priest "FCC Profile") program
   - Complete [Udemy The Web Developer Bootcamp](https://www.udemy.com/the-web-developer-bootcamp/ "The Web Developer Bootcamp by Colt Steele") certificate program
   - Complete [Udemy JavaScript: Understanding the Weird Parts](https://www.udemy.com/understand-javascript "JavaScript: Understanding the Weird Parts by Anthony Alicia") certificate program
+  - Any and all [Code School courses](https://www.codeschool.com). These are highly focused, beginning to intermediate, subject matter classes that can be completed in 2-3 days each.
 - Considering...
   - Maybe [Udacity's Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?utm_medium=referral&utm_campaign=api) program
   - Maybe [Coding Dojo's Full Stack Developer Bootcamp](http://www.codingdojo.com/web-development-accelerators)
+- Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
+
 
 # Log
 
