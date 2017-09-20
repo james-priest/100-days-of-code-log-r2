@@ -22,7 +22,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
   - Great support and encouragement!
   - Use #100DaysOfCode, #CodeNewbie, & #freecodecamp hashtags.
 
-
 ### Secondary Goals & Resources
 
 - Knock out the following...
@@ -34,7 +33,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
   - Maybe [Udacity's Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?utm_medium=referral&utm_campaign=api) program
   - Maybe [Coding Dojo's Full Stack Developer Bootcamp](http://www.codingdojo.com/web-development-accelerators)
 - Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
-
 
 # Log
 
@@ -60,6 +58,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+
 ## 53. Weather App on CodePen
 ### Day 53: September 19, 2017 - Tuesday
 
