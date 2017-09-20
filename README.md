@@ -54,6 +54,25 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+## 53. Weather App on CodePen
+### Day 53: September 19, 2017 - Tuesday
+
+**Project:** Weather App on CodePen
+
+**Progress:** Added background crossfade transitions to the Weather App, updated it on netlify, and posted it on CodePen. I had to make some modifications on the CodePen version to get everything to work alright.
+
+**Link to Work:** 
+- [Weather App on CodePen](https://codepen.io/james-priest/pen/XaQQaO)
+- [Weather on Netlify](https://local-weather-app.netlify.com)
+
+![Weather App on CodePen screenshot](assets/images/codepen-weather-app.png)
+
+**Thoughts:** The changes needed for CodePen involved removing styling from the body tag and instead creating a container that I could wrap my application in and style as needed. 
+
+I also had issues with linking directly to SVGs on GitHub. These were being served as 'text/plain' rather than 'svg+xml' mime type. Instead I accessed these through Netlify and all was good.
+
+---
+
 ## 52. True Crossfade Effect
 ### Day 52: September 18, 2017 - Monday
 
@@ -88,7 +107,7 @@ I had to change quite a few things around to adapt the sample to what I had in m
 
 **Progress:** Originally estimated 2-3 days to complete but I had fun and put more effort into it.
 
-**Link to Work:** [http://local-weather-app.netlify.com/](http://local-weather-app.netlify.com/)
+**Link to Work:** [https://local-weather-app.netlify.com/](https://local-weather-app.netlify.com/)
 
 ![Mobile ui](assets/images/fcc-weather5.png)
 
