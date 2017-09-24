@@ -59,6 +59,29 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 54. JavaScript Road Trip Part&nbsp;1
+### Day 54: September 21, 2017 - Thursday
+
+**Project:** Completed Code School's JavaScript Road Trip Part 1 course
+
+**Progress:** This took about a day to complete
+
+**Link to Work:**  [Code School JavaScript Path](https://www.codeschool.com/learn/javascript)
+
+![JavaScript Part 1 course](assets/images/code-school-js-part1.png)
+
+**Thoughts:** All challenges took place in the browser and covered things like Booleans, Strings, and  Variables. Additionally, we covered some intrinsic js object methods such as String.charAt, String.indexOf, concatenation & arithmetic operations including modulus(%).
+
+Besides writing code in the browser environment provided in the course, I also opened up Console in Chrome DevTools for quick proof-of-concept tests.
+
+![Chrome DevTools Console](assets/images/code-school-js-part1-console.png)
+
+For longer tests I usually create a js file in VS Code and then run the file with node. This gives me the added benefit of syntax highlighting, linting, & debugging if necessary. For the purposes of this course the console was enough.
+
+In all, Part 1 of this course covers only the most basic JavaScript concepts and is good for those new to programming or those, like me, who enjoy quick refreshers.
+
+---
+
 ## 53. Weather App on CodePen
 ### Day 53: September 19, 2017 - Tuesday
 
