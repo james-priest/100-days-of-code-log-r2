@@ -72,7 +72,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Thoughts:** All challenges took place in the browser and covered things like Booleans, Strings, and  Variables. Additionally, we covered some intrinsic js object methods such as String.charAt, String.indexOf, concatenation & arithmetic operations including modulus(%).
 
-Besides writing code in the browser environment provided in the course, I also opened up Console in Chrome DevTools for quick proof-of-concept tests.
+Besides coding in the browser environment provided by the course, I also opened up Console in Chrome DevTools for quick proof-of-concept tests.
 
 ![Chrome DevTools Console](assets/images/code-school-js-part1-console.png)
 
