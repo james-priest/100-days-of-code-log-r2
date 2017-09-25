@@ -62,9 +62,9 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ## 55. Mac VM on Windows - macOS Sierra 10.12.6
 ### Day 55: September 24, 2017 - Sunday
 
-**Project:** Set up macOS Sierra 10.12.6 (previously Mac OS X) on Windows as a VM
+**Project:** Set up macOS Sierra 10.12.6 (previously Mac OS X) on Windows as a Virtual Machine(VM)
 
-**Progress:** This was a three day process. It took one day to download the vdsk, install the VM, & update the OS. I took another two days to install Brew, Node, Git, Chrome, VS Code, Xcode Command Line Tools, Git Bash for Mac and some npm packages (http-server, eslint, etc.). Once done, I had a proper test environment.
+**Progress:** It took one day to download the vdsk, install the VM, & update the OS. I took another couple days to install Brew, Node, Git, Chrome, VS Code, Xcode Command Line Tools, Git Bash for Mac and some npm packages (http-server, eslint, etc.). Once done, I had a proper test environment to work from.
 
 ![macOS VM Instructions](assets/images/macOS-sierra-vm.png)
 
