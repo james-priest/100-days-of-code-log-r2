@@ -59,6 +59,46 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 56. Weather App Fix & GitHub Pull Request
+### Day 56: September 25, 2017 - Monday
+
+**Project:** Updated Weather App on CodePen & Netlify with CSS Prefixes, JavaScript retooling, & cross-browser testing. (Whew!😅)
+
+**Progress:** Once I had the Mac VM in place I was able to reproduce and fix _some_ of the errors that folks reported. I got help regarding CSS pre-fixes from one of our [#100DaysOfCode](https://twitter.com/search?q=%23100daysofcode&src=tyah) members who suggested Grunt, Gulp, or Webpack to automate the process.
+
+The final bits of fine-tuning came from another [#100DaysOfCode](https://twitter.com/search?q=%23100daysofcode&src=tyah) friend who was awesome enough to clone the repo, streamline the bad bits, and submit a Pull Request to integrate the changes.
+
+- **Thank you Peter ([@PeteCapeCod](https://twitter.com/PeteCapeCod)) for the spark of insight and point in the right direction!**
+- **Thank you Vlad ([@_vladbogdan](https://twitter.com/_vladbogdan)) for code fixes, cross-browser testing, & the GitHub Pull Request!**
+
+![Screenshot](assets/images/codepen-weather-app-fix.png)
+
+**Links:**
+- [Weather App on Code Pen](https://codepen.io/james-priest/)
+- [Weather App on Netlify](https://local-weather-app.netlify.com)
+
+**Thoughts:** Testing on Safari & Mac OS required setting up a Mac VM in which to debug both the stand-alone & CodePen version of the app. Once this was done I proceeded to retool the the markup, css, & javascript. 
+
+I added CSS pre-fixes to target specific versions of older browsers and integrated help from Vlad which consisted of switching ES6 to ES5 syntax (`let` to `var`) and using `forEach` rather than `for` to fix a scope issue.
+
+The prefixing was done through a great tool that takes your CSS and adds the prefixing where needed. All you do is paste your source and the updated CSS is produced.
+
+- [Autoprefixer CSS online](https://autoprefixer.github.io/)
+
+I'll look into automating this process with Grunt, Gulp, or Webpack in the future.. possibly once I integrate Sass or SCSS into my process.😁
+
+Now that I'm done, I can say it took longer to set up the test environment than it did to debug the code but was definitely a good experience. I now have three separate guest VMs from which to test and develop from:
+
+- Windows 10
+- Ubuntu 16.04
+- Mac Sierra 10.12.6
+
+Pretty cool!😎😀
+
+Also, I got to integrate my first outside Pull Request. (Thanks again to Vlad!) I had done this on my own as practice but hadn't actually collaborated on any codebase. I guess its time for me to practice contributing to someone else's codebase by submitting my first pull request as well. 
+
+---
+
 ## 55. Mac VM on Windows - macOS Sierra 10.12.6
 ### Day 55: September 24, 2017 - Sunday
 
