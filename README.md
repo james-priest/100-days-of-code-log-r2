@@ -58,6 +58,45 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+<!--
+## 59.
+### Day 59: September 30, 2017 - Saturday
+
+**Project:**
+**Progress:**
+**Link to Work:**
+**Thoughts:**
+
+---
+
+## 58.
+### Day 58: September 28, 2017 - Thursday
+
+**Project:**
+**Progress:**
+**Link to Work:**
+**Thoughts:**
+
+---
+-->
+## 57. JavaScript Road Trip Part&nbsp;2
+### Day 57: September 26, 2017 - Tuesday
+
+**Project:** JavaScript Road Trip Part 2 course on Code School
+
+**Progress:** This took about a day and a half to complete
+
+**Link to Work:** [Code School JavaScript Path](https://www.codeschool.com/learn/javascript)
+
+![Code Schole JavaScript Part 2](assets/images/code-school-js-part2.png)
+
+**Thoughts:** Part 2 covered Loops, Conditionals, Build-ins, Functions and Arrays. It was pretty straight forward and provided a good refresher to each of these code constructs.
+
+Additionally, the course focused on how to optimize each of the constructs for efficiency and readability.
+
+I enjoy these lessons because they can be completed in a day or two and are pretty straight forward to grasp. I have lots of notes and sample code that I can refer to when building my next FCC project.
+
+---
 
 ## 56. Weather App Fix & GitHub Pull Request
 ### Day 56: September 25, 2017 - Monday
@@ -123,7 +162,7 @@ I also applied the latest updates and logged in with my Apple ID to integrate iC
 
 **Progress:** This took about a day to complete
 
-**Link to Work:**  [Code School JavaScript Path](https://www.codeschool.com/learn/javascript)
+**Link to Work:** [Code School JavaScript Path](https://www.codeschool.com/learn/javascript)
 
 ![JavaScript Part 1 course](assets/images/code-school-js-part1.png)
 
