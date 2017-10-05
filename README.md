@@ -68,17 +68,36 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 ---
+-->
 
-## 58.
-### Day 58: September 28, 2017 - Thursday
+## 58. JavaScript Road Trip Part&nbsp;3
+### Day 58: September 30, 2017 - Saturday
 
-**Project:**
-**Progress:**
-**Link to Work:**
-**Thoughts:**
+**Project:** JavaScript Road Trip Part 3 course
+
+**Progress:** This took 3-4 days to complete and covered some advanced JavaScript subjects
+
+**Link to Work:** 
+- [GitHub repo with my code examples and notes](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-roadtrip3)
+- [Code School - JavaScript Learning Path](https://www.codeschool.com/learn/javascript)
+
+![VS Code Editor](assets/images/code-school-js-part3.png)
+
+**Thoughts:** The subject matter areas covered  ere:
+- Function Expressions - Used to assign a function (usually anonymous funciton) to a variable or to assign a function to an object property to create a property method.
+- Closures - Used in factory patterns and creating function "makers".
+- Hoisting - Refers to the order in which the compiler reserves memory for variables through declaration. All formally declared variables and function statements are hoisted on the compiler's first pass; function expressions are not. They are processed during the compiler's execution stage in which the code is actually run.
+- Objects - creation and manipulation of objects in all forms.
+- Prototypes - Creation of function constructor's and moving of shared methods to an object's prototype for efficient memory footprint when many objects are created and used.
+
+This course was really the missing set of lessons I needed to in order to know how to best structure my code. I now have a set of code examples to refer to when building the structure of my Free Code Camp projects.
+
+Beyond the many in-browser exercises, I also copied much of the code into my VS Code editor and ran these from terminal with node. At other times I ran various code examples in Console right through Chrome DevTools.
+
+This course is not for the faint of heart but is great for those with an intermediate grasp of JavaScript who want to kick it up to the next level.
 
 ---
--->
+
 ## 57. JavaScript Road Trip Part&nbsp;2
 ### Day 57: September 26, 2017 - Tuesday
 
