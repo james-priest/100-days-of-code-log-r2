@@ -48,16 +48,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-## 42.
-### Day 42: August 16, 2017 - Wednesday
-
-**Project:**
-**Progress:**
-**Link to Work:**
-**Thoughts:**
-
----
--->
 <!--
 ## 59.
 ### Day 59: September 30, 2017 - Saturday
@@ -69,6 +59,53 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+## 60. Creating JavaScript Objects
+### Day 60: October 14, 2017 - Saturday
+
+**Project:** Completed "Creating Javascript Objects" repo on GitHub - This is taken from the Essential JavaScript chapter of [Programming in HTML5 with JavaScript and CSS3](https://www.amazon.com/Training-Guide-Programming-JavaScript-Microsoft/dp/0735674388) (MS Press)
+
+It applies object-oriented design techniques to JavaScript and shows you how to architect your code to use objects, prototypes, constructors, and inheritance. It also touches on using the following design patterns:
+
+- object literal pattern
+- factory pattern
+- prototype pattern
+- module pattern
+
+The sample code also uses a Test Driven Design (TDD) approach to test the functionality of properties and methods of the objects we create.
+
+**Progress:** Finished both the object-oriented walk-thru and the accompanying code samples for each section.
+
+**Link to Work:** GitHub repo: [Creating JavaScript Objects](https://github.com/james-priest/javascript-objects#creating-javascript-objects)
+
+**Thoughts:** This took about a week to complete. I mostly did this as an exercise to walk through writing out each section of the book's chapter. I also took my time in writing out all the sample code and testing it with a light-weight TDD framework called [Tape](https://github.com/substack/tape). This allows you to write tests (assertions) to verify the code is doing what you expect it to do. These are small unit tests which are performed as a group and can be very helpful for proof-of-concept code.
+
+Here's a sample of the kind of code this walk through builds:
+
+```javascript
+var Vehicle = (function() {
+    function Vehicle( theYear, theMake, theModel ) {
+        this.year = theYear;
+        this.make = theMake;
+        this.model = theModel;
+    }
+    Vehicle.prototype.getInfo = function() {
+        return this.year + ' ' + this.make + ' ' + this.model;
+    };
+    Vehicle.prototype.startEngine = function() {
+        return 'Vroom';
+    };
+    return Vehicle;
+})();
+
+var v = new Vehicle( 2012, 'Toyota', 'Rav4' );
+var actual = v.getInfo();
+var expected = '2012 Toyota Rav4';
+```
+
+It also explains exactly what is happening and why we construct the code as shown.
+
+---
+
 ## 59. JavaScript Best Practices
 ### Day 59: October 7, 2017 - Saturday
 
