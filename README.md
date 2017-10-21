@@ -69,12 +69,15 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Progress:** Finished over two days
 
 **Link to Work:**
-- CodePen pens: [SVG Badge](https://codepen.io/james-priest/pen/aLXyYG), [SVG Home](https://codepen.io/james-priest/pen/qPgXZx), [SVG Absctract #1](https://codepen.io/james-priest/pen/mBvWXZ)
 - [Code School - HTML/CSS Learning Path](https://www.codeschool.com/learn/html-css)
+- CodePens:
+  - [SVG Badge](https://codepen.io/james-priest/pen/aLXyYG)
+  - [SVG Home](https://codepen.io/james-priest/pen/qPgXZx)
+  - [SVG Absctract #1](https://codepen.io/james-priest/pen/mBvWXZ)
 
 [![SVG images](assets/images/codepen-svg.png)](https://codepen.io/dashboard/)
 
-**Thoughts:** This was a great class that covered the basics of writing SVG by hand as an exercise toward understanding its structure under the hood. SVG stands for Scalable Vector Graphics and is supported in all major browsers.
+**Thoughts:** This was a great class that covered the basics of writing SVG by hand as an exercise toward understanding it  s structure under the hood. SVG stands for Scalable Vector Graphics and is supported in all major browsers.
 
 While its recommended that we use a vector-based image editing program when creating these, it is useful to know how to read, understand, and modify the text output of an SVG file.
 
