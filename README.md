@@ -59,6 +59,31 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+
+
+## 61. You, Me, & SVG
+### Day 61: October 18, 2017 - Wednesday
+
+**Project:** Completed [Code School](http://www.codeschool.com) You, Me, & SVG class
+
+**Progress:** Finished over two days
+
+**Link to Work:**
+- [SVG Badge](https://codepen.io/james-priest/pen/aLXyYG)
+- [SVG Home](https://codepen.io/james-priest/pen/qPgXZx)
+- [SVG Absctract #1](https://codepen.io/james-priest/pen/mBvWXZ)
+- [Code School - HTML/CSS Learning Path](https://www.codeschool.com/learn/html-css)
+
+[![SVG images](assets/images/codepen-svg.png)](https://codepen.io/dashboard/)
+
+**Thoughts:** This was a great class that covered the basics of writing SVG by hand as an exercise toward understanding its structure under the hood. SVG stands for Scalable Vector Graphics and is supported in all major browsers.
+
+While its recommended that we use a vector-based image editing program when creating these, it is useful to know how to read, understand, and modify the text output of an SVG file.
+
+Knowing how these are structured also allows use to modify these through CSor JavaScript and to even animate SVG though CSS transform directives.
+
+---
+
 ## 60. Creating JavaScript Objects
 ### Day 60: October 14, 2017 - Saturday
 
