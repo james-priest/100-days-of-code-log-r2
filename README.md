@@ -69,9 +69,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Progress:** Finished over two days
 
 **Link to Work:**
-- [SVG Badge](https://codepen.io/james-priest/pen/aLXyYG)
-- [SVG Home](https://codepen.io/james-priest/pen/qPgXZx)
-- [SVG Absctract #1](https://codepen.io/james-priest/pen/mBvWXZ)
+- CodePen pens: [SVG Badge](https://codepen.io/james-priest/pen/aLXyYG), [SVG Home](https://codepen.io/james-priest/pen/qPgXZx), [SVG Absctract #1](https://codepen.io/james-priest/pen/mBvWXZ)
 - [Code School - HTML/CSS Learning Path](https://www.codeschool.com/learn/html-css)
 
 [![SVG images](assets/images/codepen-svg.png)](https://codepen.io/dashboard/)
