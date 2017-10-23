@@ -16,11 +16,12 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 - Code daily
 - Expand portfolio
 - Hone Git skills (especially CLI)
-- Get through as many MOOCs, certifications, and bootcamp classes as possible
+- Complete as many courses, classes, challenges, & certifications as possible
 - Get established in Twitter dev community
-  - This has been awesome! 
-  - Great support and encouragement!
+  - This has been awesome!
+  - Great support and encouragement from my Twitter family!
   - Use #100DaysOfCode, #CodeNewbie, & #freecodecamp hashtags.
+- Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
 
 ### Secondary Goals & Resources
 
@@ -32,7 +33,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 - Considering...
   - Maybe [Udacity's Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?utm_medium=referral&utm_campaign=api) program
   - Maybe [Coding Dojo's Full Stack Developer Bootcamp](http://www.codingdojo.com/web-development-accelerators)
-- Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
+
 
 # Log
 
@@ -60,6 +61,30 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 62. Try jQuery
+### Day 62: October 21, 2017 - Saturday
+
+**Project:** Completed Code School's [Try jQuery](http://try.jquery.com) course
+
+**Progress:** Spent 2-3 days working through this and taking notes. It also has a great slide deck you can download.
+
+**Link to Work:** [Free Try jQuery course](http://try.jquery.com)
+
+[![Try jQuery](assets/images/code-school-try-jquery2.png)](assets/images/code-school-try-jquery2.png)
+
+**Thoughts:** This was a great introductory course on jQuery. It covered the following:
+- CSS Selectors
+- Traversing the DOM
+- jQuery methods
+- DOM Manipulation
+- Refactoring and Filtering
+- Event Handling
+- CSS Styling
+- Effect and Animations
+
+This takes what I learned from Free Code Camp and expands on my understanding of what's possible through the jQuery library. In total it took 6-8 hours to complete. The exercises were all done in the browser but I also worked out the code in my editor. Very well worth it!
+
+---
 
 ## 61. You, Me, & SVG
 ### Day 61: October 18, 2017 - Wednesday
@@ -1766,7 +1791,7 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 My goal is to do 4 Pomodoros for each two-hour Study block (in blue).
 
-![Time Map Schedule](/assets/images/TimeMap.jpg)
+[![Time Map Schedule](/assets/images/TimeMap.jpg)](/assets/images/TimeMap.jpg)
 
 ---
 
