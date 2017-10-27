@@ -61,6 +61,34 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 63. Real-time Web with Node.js
+### Day 63: October 25, 2017 - Wednesday
+
+**Project:** Completed Code School's [Real Time Web with Node.js](https://www.codeschool.com/courses/real-time-web-with-node-js) course
+
+**Progress:** Took me 5 days to complete.
+
+**Link to Work:** [Real Time Web with Node.js](https://www.codeschool.com/courses/real-time-web-with-node-js)
+
+[![Code School Node.js](assets/images/code-school-nodejs.png)](assets/images/code-school-nodejs.png)
+
+**Thoughts:** This course was a great introduction to Node.js and the many technologies surrounding it. I had to table my need to understand every detail and just watch the videos, listen to the lectures, and take notes. The challenges reinforced what I learned and gave me a sense that I could write the code without fully understanding every detail of what was going on under the hood.
+
+This course covered:
+- Creating non-blocking, http node servers.
+- Event emitters & event requests
+- Streams
+- Creating and requiring modules
+- NPM & packages
+- Web framework with Express
+- JavaScript templating library with EJS (Embedded JavaScript)
+- Web Sockets with Socket.io
+- Persisting data with Redis (a NoSQL, in-memory, key-value data store)
+
+The course was created in 2014 but is very much current and a great introduction to the node.js toolset, environment, and ecosystem. I would definitely recommend this course.
+
+---
+
 ## 62. Try jQuery
 ### Day 62: October 21, 2017 - Saturday
 
