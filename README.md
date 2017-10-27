@@ -324,10 +324,10 @@ var mySword = ARMORY.makeWeaponRequest( "Excalibur" );
 - [GitHub repo with my code examples and notes](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-roadtrip3)
 - [Code School - JavaScript Learning Path](https://www.codeschool.com/learn/javascript)
 
-![VS Code Editor](assets/images/code-school-js-part3.png)
+[![VS Code Editor](assets/images/code-school-js-part3.png)](assets/images/code-school-js-part3.png)
 
 **Thoughts:** The subject matter areas covered  ere:
-- Function Expressions - Used to assign a function (usually anonymous funciton) to a variable or to assign a function to an object property to create a property method.
+- Function Expressions - Used to assign a function (usually anonymous function) to a variable or to assign a function to an object property to create a property method.
 - Closures - Used in factory patterns and creating function "makers".
 - Hoisting - Refers to the order in which the compiler reserves memory for variables through declaration. All formally declared variables and function statements are hoisted on the compiler's first pass; function expressions are not. They are processed during the compiler's execution stage in which the code is actually run.
 - Objects - creation and manipulation of objects in all forms.
@@ -350,7 +350,7 @@ This course is not for the faint of heart but is great for those with an interme
 
 **Link to Work:** [Code School JavaScript Path](https://www.codeschool.com/learn/javascript)
 
-![Code Schole JavaScript Part 2](assets/images/code-school-js-part2.png)
+[![Code School JavaScript Part 2](assets/images/code-school-js-part2.png)](assets/images/code-school-js-part2.png)
 
 **Thoughts:** Part 2 covered Loops, Conditionals, Build-ins, Functions and Arrays. It was pretty straight forward and provided a good refresher to each of these code constructs.
 
@@ -372,7 +372,7 @@ The final bits of fine-tuning came from another [#100DaysOfCode](https://twitter
 - **Thank you Peter ([@PeteCapeCod](https://twitter.com/PeteCapeCod)) for the spark of insight and point in the right direction!**
 - **Thank you Vlad ([@_vladbogdan](https://twitter.com/_vladbogdan)) for code fixes, cross-browser testing, & the GitHub Pull Request!**
 
-![Screenshot](assets/images/codepen-weather-app-fix.png)
+[![Screenshot](assets/images/codepen-weather-app-fix.png)](assets/images/codepen-weather-app-fix.png)
 
 **Links:**
 - [Weather App on Code Pen](https://codepen.io/james-priest/)
@@ -396,7 +396,7 @@ Now that I'm done, I can say it took longer to set up the test environment than 
 
 Pretty cool!😎😀
 
-Also, I got to integrate my first outside Pull Request. (Thanks again to Vlad!) I had done this on my own as practice but hadn't actually collaborated on any codebase. I guess its time for me to practice contributing to someone else's codebase by submitting my first pull request as well. 
+Also, I got to integrate my first outside Pull Request. (Thanks again to Vlad!) I had done this on my own as practice but hadn't actually collaborated on any codebase. I guess its time for me to practice contributing to someone else's codebase by submitting my first pull request as well.
 
 ---
 
@@ -426,13 +426,13 @@ I also applied the latest updates and logged in with my Apple ID to integrate iC
 
 **Link to Work:** [Code School JavaScript Path](https://www.codeschool.com/learn/javascript)
 
-![JavaScript Part 1 course](assets/images/code-school-js-part1.png)
+[![JavaScript Part 1 course](assets/images/code-school-js-part1.png)](assets/images/code-school-js-part1.png)
 
 **Thoughts:** All challenges took place in the browser and covered things like Booleans, Strings, and  Variables. Additionally, we covered some intrinsic js object methods such as String.charAt, String.indexOf, concatenation & arithmetic operations including modulus(%).
 
 Besides coding in the browser environment provided by the course, I also opened up Console in Chrome DevTools for quick proof-of-concept tests.
 
-![Chrome DevTools Console](assets/images/code-school-js-part1-console.png)
+[![Chrome DevTools Console](assets/images/code-school-js-part1-console.png)](assets/images/code-school-js-part1-console.png)
 
 For longer tests I usually create a js file in VS Code and then run the file with node. This gives me the added benefit of syntax highlighting, linting, & debugging if necessary. For the purposes of this course the console was enough.
 
@@ -451,7 +451,7 @@ In all, Part 1 of this course covers only the most basic JavaScript concepts and
 - [Weather App on CodePen](https://codepen.io/james-priest/pen/XaQQaO)
 - [Weather on Netlify](https://local-weather-app.netlify.com)
 
-![Weather App on CodePen screenshot](assets/images/codepen-weather-app.png)
+[![Weather App on CodePen screenshot](assets/images/codepen-weather-app.png)](assets/images/codepen-weather-app.png)
 
 **Thoughts:** The changes needed for CodePen involved removing styling from the body tag and instead creating a container that I could wrap my application in and style as needed. 
 
@@ -472,7 +472,7 @@ I also had issues with linking directly to SVGs on GitHub. These were being serv
 - CodePen - Carousel: [https://codepen.io/james-priest/pen/EwPpaw](https://codepen.io/james-priest/pen/EwPpaw)
 - Carousel on Netlify: [https://local-weather-app.netlify.com/carousel.html](https://local-weather-app.netlify.com/carousel.html)
 
-![screenshot](assets/images/codepen-crossfade.png)
+[![screenshot](assets/images/codepen-crossfade.png)](assets/images/codepen-crossfade.png)
 
 **Thoughts:** There were lots online references to jQuery fadeIn, fadeOut, and fadeToggle but these didn't do the trick. One image would fade all the way down and then the next would fade up. This wasn't as clean.  You can see here.
 
@@ -495,7 +495,7 @@ I had to change quite a few things around to adapt the sample to what I had in m
 
 **Link to Work:** [https://local-weather-app.netlify.com/](https://local-weather-app.netlify.com/)
 
-![Mobile ui](assets/images/fcc-weather5.png)
+[![Mobile ui](assets/images/fcc-weather5.png)](assets/images/fcc-weather5.png)
 
 **Thoughts:** So, it took me five days to complete this once I got started but it feels like I've been working on this for weeks. Here's a list of features:
 
@@ -527,7 +527,7 @@ In the end it was fun and I got a lot of practical experience with js, jquery, j
 
 **Link to Work:** Links coming in next post.
 
-![Mobile ui](assets/images/fcc-semantic-ui-6.png)
+[![Mobile ui](assets/images/fcc-semantic-ui-6.png)](assets/images/fcc-semantic-ui-6.png)
 
 **Thoughts:** Sematic-UI definitely gets my vote as far as a clean framework to develop from. It has semantic layout and many variations to choose from. There are quite a few components available and lots of ability for fine-grain control of behavior through js. UI features are broken down into elements, collections, views, and modules but these are all really just UI components.
 
@@ -542,13 +542,13 @@ One thing I can say though is that I struggled with the responsive portion for a
 
 **Progress:** So I've been working on this for 4 days. Most of the work was on writing code to use Geolocation to get JSON data back from a weather service that uses your location as input. The data that came back looked like this:
 
-![Raw JSON data](assets/images/fcc-weather2.png)
+[![Raw JSON data](assets/images/fcc-weather2.png)](assets/images/fcc-weather2.png)
 
 I wrote this :
-![Weather app code](assets/images/fcc-weather4.png)
+[![Weather app code](assets/images/fcc-weather4.png)](assets/images/fcc-weather4.png)
 
 To get this:
-![Weather app formatted json](assets/images/fcc-weather3.png)
+[![Weather app formatted json](assets/images/fcc-weather3.png)](assets/images/fcc-weather3.png)
 
 Here's short list of the things I researched for this project:
 1. Iterating through an object
@@ -604,7 +604,7 @@ This confirmed to me that I need to a framework in order to best layout the info
 
 **Thoughts:** Completing the JSON, API, and Ajax section was very straight forward compared to the hairpulling exercise of a couple of the algorithms challenges.
 
-![fcc-algorithms](/assets/images/fcc-finish-json-apis-ajax.png)
+[![fcc-algorithms](/assets/images/fcc-finish-json-apis-ajax.png)](/assets/images/fcc-finish-json-apis-ajax.png)
 
 ---
 
@@ -625,7 +625,7 @@ This did help to spark that diffuse mode of thinking and finally worked out. It 
 
 Marking up my screenshot with derogatory callouts did help me work out my frustration a bit. It helped me vent. :)
 
-![fcc-algorithms](/assets/images/fcc-finish-basic-algorithms.png)
+[![fcc-algorithms](/assets/images/fcc-finish-basic-algorithms.png)](/assets/images/fcc-finish-basic-algorithms.png)
 
 ---
 
@@ -644,7 +644,7 @@ Marking up my screenshot with derogatory callouts did help me work out my frustr
 
 This has been a bit slow at times but I can tell some real learning is taking place; that point were we go from merely understanding and following a solution to creatively constructing and developing our own. It is this critical part that deeply engrains the mental patterns necessary to truly gain efficiency and then mastery of the material.
 
-![fcc-algorithms](/assets/images/fcc-algorithms1.png)
+[![fcc-algorithms](/assets/images/fcc-algorithms1.png)](/assets/images/fcc-algorithms1.png)
 
 ---
 
@@ -661,7 +661,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** Covered specific Array methods: concat, filter, join, map, reduce, reverse, sort & split. Also covered Object Oriented concepts such as creating objects as variables, constructing objects with functions, object instances with constructor function, passing parameters to constructor function and making object properties private.
 
-![FCC Screenshot](/assets/images/fcc-finish-oo-and-fp.png)
+[![FCC Screenshot](/assets/images/fcc-finish-oo-and-fp.png)](/assets/images/fcc-finish-oo-and-fp.png)
 
 ---
 
@@ -676,7 +676,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** Covered Arrays, Multi-dimensional arrays, loops, objects, Math object, etc.
 
-![FCC Screenshot](/assets/images/fcc-finish-basic-javascript.png)
+[![FCC Screenshot](/assets/images/fcc-finish-basic-javascript.png)](/assets/images/fcc-finish-basic-javascript.png)
 
 ---
 
@@ -691,7 +691,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** Left off on counting cards challenge. Will pick it up tomorrow.
 
-![FCC Counting Cards](/assets/images/fcc-counting-cards.png)
+[![FCC Counting Cards](/assets/images/fcc-counting-cards.png)](/assets/images/fcc-counting-cards.png)
 
 ---
 
@@ -706,7 +706,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** I will go back and put together a personal portfolio site once I have a recent sampling of work. For now I decided to have fun with the project. I can also add more pages if I want to play with it since its on Netlify.
 
-![SPYCats webpage on Netlify](/assets/images/netlify-spycats-wide1.png)
+[![SPYCats webpage on Netlify](/assets/images/netlify-spycats-wide1.png)](/assets/images/netlify-spycats-wide1.png)
 
 ---
 
@@ -802,7 +802,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** I like the format of Code School's content. It's focused and clear.
 
-![VSCode Editor](/assets/images/vscode-css-colors.png)
+[![VSCode Editor](/assets/images/vscode-css-colors.png)](/assets/images/vscode-css-colors.png)
 
 ---
 
@@ -822,7 +822,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 Where I had trouble was in trying to change Bootstraps 3's structural format by eliminating unnecessary elements. I wanted to reduce Bootstrap's element clutter by removing unnecessary div elements and making the HTML more semantic by attaching class names to HTML5 elements. Things like changing divs to header, section, and article elements.
 
-This didn't work so well so I chaged back to the div heavy structure.
+This didn't work so well so I changed back to the div heavy structure.
 
 [![Pen using Bootstrap 3](/assets/images/codepen-bootstrap3.png)](https://codepen.io/james-priest/pen/prpjEK)
 
@@ -1071,6 +1071,7 @@ I also got syntactic help from [https://stackoverflow.com/questions/25889950/set
 I had read a great post from [@Kirupa](https://twitter.com/kirupa) that discussed IIFEs & scope. [Kirupa: Immediately Invoked Function Expressions a.k.a IIFEs](https://www.kirupa.com/html5/immediately_invoked_function_expressions_iife.htm)
 
 Example 1: setTimeout in IIFE
+
 ```javascript
 var reps = 3;
 
@@ -1085,13 +1086,14 @@ var reps = 3;
 ```
 
 Example 2: setTimeout in object literal
+
 ```javascript
 var obj2 = {
     count: 3,
     repeat: function () {
         // bring vars down here so inner function can contain the variable count in it's closure scope
         var enclosedCount = this.count;
-        
+
         function doSomething() {
             if (enclosedCount == 0) {
                 return;
@@ -1111,9 +1113,10 @@ inst.repeat();
 ```
 
 Example 3: setTimeout in function expression
+
 ```javascript
 var myFunc = function () {
-    
+
     var outer = 3;
 
     function doStuff() {
@@ -1128,7 +1131,7 @@ var myFunc = function () {
             outer--;
             setTimeout(doStuff, 1000);
         }
-        
+
     }
 
     doStuff();
@@ -1349,7 +1352,7 @@ Here are the key take-aways about IIFEs from @kirupa:
   - !function(e){ console.log(e) }('hi')
   - typeof function(e){ console.log(e) }('hi')
 
-![Singleton with IIFEs](/assets/images/vscode-singleton-iife.png)
+[![Singleton with IIFEs](/assets/images/vscode-singleton-iife.png)](/assets/images/vscode-singleton-iife.png)
 
 ---
 
@@ -1367,7 +1370,7 @@ Here are the key take-aways about IIFEs from @kirupa:
 
 **Thoughts:** Object literals are a beautiful way to organize your code. It uses key/value pairs and nests well for deeper hierarchies. It also reads well and is easy to understand if structured properly.
 
-![Object Literal Notation](/assets/images/vscode_object_literals.png)
+[![Object Literal Notation](/assets/images/vscode_object_literals.png)](/assets/images/vscode_object_literals.png)
 
 ---
 
@@ -1795,7 +1798,7 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 **Thoughts:** This took a little while to get started on.  I'm reading Personal Kanban by Jim Benson. Here's a link to the companion site: [Personal Kanban](http://www.personalkanban.com/pk/ "Short Overview and YouTube video of Personal Kanban").
 
-![My Kanban Board](/assets/images/KanbanBoard.jpg "My Kanban board")
+[![My Kanban Board](/assets/images/KanbanBoard.jpg "My Kanban board")](/assets/images/KanbanBoard.jpg)
 
 ---
 
