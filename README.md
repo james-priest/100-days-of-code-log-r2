@@ -67,10 +67,6 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Progress:** Completed four GitHub PRs as part of [GitHub & Digital Ocean's Hacktoberfest 2017](https://hacktoberfest.digitalocean.com) event. I was able to do this in one day.
 
-**Link Resources:**
-- Quincy Larson's Medium article, "[I just got my free Hacktoberfest shirt. Here's a quick way you can get yours.](https://medium.freecodecamp.org/i-just-got-my-free-hacktoberfest-shirt-heres-a-quick-way-you-can-get-yours-fa78d6e24307)"
-- The [README.md for freeCodeCamp Guides](https://github.com/freeCodeCamp/guides) on GitHub
-
 [![Hacktoberfest image ](assets/images/hacktoberfest-complete.png)](assets/images/hacktoberfest-complete.png)
 
 **Thoughts:** This was a great exercise in learning the process of how to maneuver GitHub Pull Requests.
@@ -80,6 +76,10 @@ What made it an even easier learning curve was the option to contribute to the f
 I did the first two PRs in this way and then read the [README.md for the freeCodeCamp Guides](https://github.com/freeCodeCamp/guides) on GitHub for step by step instructions on how to clone the repo, set my upstream connection, create a dev branch, make my changes, commit those changes, push the branch to GitHub, and then initiate the PR.
 
 It sounds like a lot but it was straight forward and worked beautifully. I was even able to add new commits to a PR I had already submitted without any issues. I now feel comfortable contributing to any GitHub project without fear of anything breaking!
+
+**Link Resources:**
+- Quincy Larson's Medium article, "[I just got my free Hacktoberfest shirt. Here's a quick way you can get yours.](https://medium.freecodecamp.org/i-just-got-my-free-hacktoberfest-shirt-heres-a-quick-way-you-can-get-yours-fa78d6e24307)"
+- The [README.md for freeCodeCamp Guides](https://github.com/freeCodeCamp/guides) on GitHub
 
 ---
 
