@@ -54,11 +54,32 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Project:**
 **Progress:**
-**Link to Work:**
 **Thoughts:**
+**Link to Work:**
 
 ---
 -->
+
+## 65. Published My First NPM Package
+### Day 65: October 31, 2017 - Tuesday
+
+**Project:** **logcl** - Created a simple set of wrapper methods to `console.log()`. These methods output formatted text to the command line with headers and indentation for legibility.
+
+**Progress:** Took a day to put everything together for the package. This included cleaning up the code, properly commenting the methods, creating the README.md, creating the package.json and setting up the GitHub repo.
+
+**Link to Work:** [logcl package](https://www.npmjs.com/package/logcl) on npm
+
+[![npm package](assets/images/npm-package-logcl.png)](assets/images/npm-package-logcl.png)
+
+**Thoughts:** I had been using a set of wrapper functions to `console.log()` for debugging purposes in many of my projects. Initially, I would copy the functions to my code file and reference them directly.
+
+I then separated the code out to its own module from which I exposed its methods. I was then free to use these methods in my application code by using the `require` keyword.
+
+In order to truly be DRY (Don't Repeat Yourself), I needed to put this code into a package that I could install and include in any of my projects.
+
+This was the motivation for looking up how to do this. I'm glad I now know the process for structuring a package and how to utilize, access, and maintain it.
+
+---
 
 ## 64. Hacktoberfest & GitHub Pull Requests
 ### Day 59: September 30, 2017 - Saturday
