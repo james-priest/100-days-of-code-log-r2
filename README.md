@@ -152,6 +152,10 @@ function subtractNumbers$post( e ) {
 }
 ```
 
+Along with the various Ajax methods, I also learned what dataType's you can work with and expect to receive from the server. These are _json_, _xml_, _html_, _script_, _jsonp_, or _text_.
+
+There's an amazing amount of flexibility revolving around Ajax and using it to consume services. I used to be intimidated by the syntax until I spent the time to understand each variation and how they work.
+
 **Link to Work:**
 
 - [Math Service project on GitHub](https://github.com/james-priest/node_samples/tree/master/math_service)
