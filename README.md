@@ -60,12 +60,112 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 66. Ajax, XMLHttpRequest, & jQuery
+### Day 66: November 3, 2017 - Friday
+
+**Project:** _Chapter 8: Working with Web Services_ from [Programming in HTML5 with JavaScript and CSS3 Training Guide](http://www.daoudisamir.com/references/vs_ebooks/html5_css3.pdf) by Glenn Johnson.
+
+**Progress:** Created a Node.js web service that performs a basic arithmetic calculation - add, subtract, multiply, or divide. It takes two operands, `x` and `y` and returns a `result`.
+
+The web service is accessed through Ajax. I had practice using the `XMLHttpRequest` object as well as jQuery's `$.ajax()`, `$.get()`, `$.getJSON()`, and `$.post()` methods.
+
+**Thoughts:** This was great practice using a varied mix of Asynchronous JavaScript (Ajax) calls to get data from a web service or web api. Below are a few examples of the different Ajax function calls I used.
+
+#### Asynchronous XMLHttpRequest() method
+
+```javascript
+function addNumbersXhrAsync( e ) {
+    e.preventDefault();
+    var x = document.getElementById( 'x' ).value;
+    var y = document.getElementById( 'y' ).value;
+    var result = document.getElementById( 'result' );
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if ( xmlhttp.readyState === 4 && xmlhttp.status === 200 ) {
+            var jsonObject = JSON.parse( xmlhttp.response );
+            result.innerHTML = jsonObject.result;
+        }
+    };
+
+    xmlhttp.open( 'GET', '/addition?x=' + x + '&y=' + y, true );
+    xmlhttp.send();
+}
+```
+
+#### Asynchronous jQuery $.ajax() method with HTTP GET
+
+```javascript
+function addNumbers$ajax_typeGET(e) {
+    e.preventDefault();
+    console.log( ' ', '$.ajax() call' );
+
+    $.ajax( {
+        url: '/addition',
+        data: ajaxData(),   // { 'x': x, 'y': y }
+        type: 'GET',
+        cache: false,
+        dataType: 'json',
+        success: function( data ) {
+            $( '#result' ).html( data.result );
+        }
+    } );
+}
+```
+
+#### Asynchronous jQuery $.get() method with HTTP GET
+
+```javascript
+function addNumbers$get( e ) {
+    e.preventDefault();
+    var ajaxData = formatAjaxData();   // { 'x': x, 'y': y }
+
+    $.get( '/addition', ajaxData, function( data ) {
+        $( '#result' ).html( data.result );
+    }, 'json' );
+}
+```
+
+#### Asynchronous jQuery $.getJSON() method with HTTP GET
+
+```javascript
+function addNumbers$getJSON( e ) {
+    e.preventDefault();
+    var ajaxData = formatAjaxData();   // { 'x': x, 'y': y }
+
+    $.getJSON( '/addition', ajaxData, function( data ) {
+        $( '#result' ).html( data.result );
+    } );
+}
+```
+
+#### Asynchronous jQuery $.post() method with HTTP POST
+
+```javascript
+function subtractNumbers$post( e ) {
+    e.preventDefault();
+    var ajaxData = formatAjaxData();
+
+    $.post( '/subtraction', ajaxData, function( data ) {
+        $( '#result' ).html( data.result );
+    }, 'json' );
+}
+```
+
+**Link to Work:**
+
+- [Math Service project on GitHub](https://github.com/james-priest/node_samples/tree/master/math_service)
+
+---
+
 ## 65. Published My First NPM Package
 ### Day 65: October 31, 2017 - Tuesday
 
 **Project:** **logcl** - Created a simple set of wrapper methods to `console.log()`. These methods output formatted text to the command line with headers and indentation for legibility.
 
 **Progress:** Took a day to put everything together for the package. This included cleaning up the code, properly commenting the methods, creating the README.md, creating the package.json and setting up the GitHub repo.
+
+The recipe I followed was from _Chapter 8: Websites & Services_ of [Programming in HTML5 with JavaScript and CSS3 Training Guide](http://www.daoudisamir.com/references/vs_ebooks/html5_css3.pdf) by Glenn Johnson.
 
 **Link to Work:** [logcl package](https://www.npmjs.com/package/logcl) on npm
 
