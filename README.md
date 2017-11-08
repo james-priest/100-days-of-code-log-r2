@@ -63,6 +63,49 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 68. Git Real - Advanced Intro to Git
+### Day 68: November 7, 2017 - Tuesday
+
+**Project:** Completed [Code School's Git Real](https://www.codeschool.com/courses/git-real) course. This uses command line Git to solve all your day to day needs.
+
+**Progress:** This took about three days to complete and by the end I had 16 pages of notes that cover all beginning and intermediate git usage scenarios.
+
+**Thoughts:** This was a great class! It has everything you need to go from beginner to git cli master. It also covers GitHub and some Heroku deployment scenarios.
+
+[![code-school-git-real2.png](assets/images/code-school-git-real2.png)](assets/images/code-school-git-real2.png)
+
+The class was divided into the following sections.
+
+- Git Basics
+- Staging and Remotes
+- Cloning and Branching
+- Collaboration Basics
+- Remote Branches and Tags
+- Rebase & Conflict Resolution
+- History and Configuration
+
+[![code-school-git-real1.png](assets/images/code-school-git-real1.png)](assets/images/code-school-git-real1.png)
+
+Here are some of the useful skills and techniques I learned.
+
+- Unstaging files
+- Discarding changes
+- Adding to a commit
+- Undoing a commit
+- Viewing file diffs (by commit, by branch, by date, by user, etc.)
+- Resolving merge conflicts
+- Branching, fast-forward merges, and recursive merging
+- Reading the log
+- Working in the commit editor (vi)
+- Merging and deleting remote branches
+- Understanding pull with merge vs. fetch and rebase
+- Searching through and working with history
+- Configuring aliases for common cli tasks
+
+**Link to Work:**
+[Git Real by Code School](https://www.codeschool.com/courses/git-real)
+
+---
 
 ## 67. jQuery Promises
 ### Day 67: November 5, 2017 - Sunday
