@@ -49,16 +49,72 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-## 59.
-### Day 59: September 30, 2017 - Saturday
+## 68.
+### Day 68: November 7, 2017 - Tuesday
 
 **Project:**
+
 **Progress:**
+
 **Thoughts:**
+
 **Link to Work:**
 
 ---
 -->
+
+
+## 67. jQuery Promises
+### Day 67: November 5, 2017 - Sunday
+
+**Project:** Converted Ajax calls to use jQuery Promises.
+
+ This was from Lesson 2 of _Chapter 8: Working with Web Services_ from [Programming in HTML5 with JavaScript and CSS3 Training Guide](http://www.daoudisamir.com/references/vs_ebooks/html5_css3.pdf) by Glenn Johnson.
+
+**Progress:** It took 30 minutes to write the code and a day of reading and experimenting to understanding it thoroughly.
+
+**Thoughts:** I learned the following about the jQuery Promise object:
+
+- You can use promises to execute another ajax call after the first one is successful
+- When you use jQuery to execute an ajax call, a promise object is returned
+- The promise object enables you to register a callback to execute when the ajax call is successful, has failed, is progressing, and has completed.
+
+The promise object has the following methods that can be used to register called functions:
+
+- .always() - add handlers to be called when ajax has completed regardless of success or not
+- .done() - called when ajax call is successful
+- .fail() - called when ajax call has failed
+- .progress() - called when ajax call generates progress notifications
+
+Here's a portion of the modified code.
+
+```javascript
+// collects data, passes it to serverAddition, & decides how to process the results
+function addNumbers( e ) {
+    var data = getFormData();
+    serverAddition( data ).done( displayResult ).fail( displayError );
+}
+
+// format data for the ajax call - optional args
+function getFormData( x, y ) {
+    x = x || $( '#x' ).val();
+    y = y || $( '#y' ).val();
+    return { 'x': x, 'y': y };
+}
+
+// handles ajax call to the server and returns a promise object
+function serverAddition( data ) {
+    return $.getJSON( '/addition', data );
+}
+
+function displayResult( serverData ) {
+    $( '#result' ).html( serverData.result );
+}
+```
+
+**Link to Work:** [default-promise.js](https://github.com/james-priest/node_samples/blob/master/math_service/public/scripts/default-promise.js) on GitHub
+
+---
 
 ## 66. Ajax, XMLHttpRequest, & jQuery
 ### Day 66: November 3, 2017 - Friday
