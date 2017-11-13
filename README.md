@@ -63,6 +63,42 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 69. Advanced jQuery
+### Day 68: November 12, 2017 - Tuesday
+
+**Project:** [Code School's Advanced jQuery - The Return Flight](https://www.codeschool.com/courses/jquery-the-return-flight) course.
+
+**Progress:** This took me five days to complete and the material went deeper than before.
+
+[![jQuery Screenshot](assets/images/code-school-jquery-return-flight.png)](assets/images/code-school-jquery-return-flight.png)
+
+**Thoughts:** This course covered the following topics:
+
+- Ajax Basics
+- Setting Ajax options
+- Refactoring code to use JavaScript objects
+- Refactoring JS objects to JS constructor functions for reusability
+- Working with Ajax Forms
+- Using Ajax to process, send, & receive JSON data
+- Using jQuery Utility Methods
+- Advanced Event Handling including namespaced events
+- Authoring jQuery Plugins
+- Using Promise objects
+- Chaining asynchronous calls
+- Use of $.when() and .then
+
+The beautiful thing about taking this course after having taken [Code School's Real-time Web with Node.js](https://www.codeschool.com/courses/real-time-web-with-node-js) is that I was able to write all my own node servers to properly return formatted text, HTML, JSON, & script depending on what the Ajax call expected.
+
+The course has you do the exercises in-browser so there's no need to worry about server-side code implementation, but I also like to follow along in my code editor ([Visual Studio Code](https://code.visualstudio.com)) so I can play and expand upon the code examples.
+
+By writing both Front End and Back End code, I was able to get some solid experience in end-to-end development. It allowed my to fine-tune my Ajax calls, optimally format my json & HTML data payloads, and practice processing data on the server with node.js and Express.
+
+**Link to Work:**
+- [My code files on GitHub](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/try-jquery)
+- [Code School exercise files](https://github.com/codeschool/jQueryReturnFlightDemos)
+
+---
+
 ## 68. Git Real - Advanced Intro to Git
 ### Day 68: November 7, 2017 - Tuesday
 
