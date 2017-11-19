@@ -63,6 +63,39 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+---
+
+## 70. CSS Web Animations
+### Day 70: November 18, 2017 - Saturday
+
+**Project:** [Code School's Adventures in Web Animation](https://www.codeschool.com/courses/adventures-in-web-animations) course.
+
+**Progress:** I kind of took my time with this and did it over 5 days.
+
+**Thoughts:** This course was broken down into four sections.
+
+1. transition (color, position, & visibility)
+1. transform (rotate, translate, & scale)
+1. keyframe animations
+1. SVG animations
+
+[![web animations course](assets/images/code-school-web-animations.png)](assets/images/code-school-web-animations.png)
+
+So this course is different than one with the kinds of animations you'd produce with a JavaScript library like [p5.js](https://p5js.org). I haven't gone through too many of [@shiffman's](https://twitter.com/shiffman?lang=en) tutorials but from what I've gathered, those produce scalable vector graphics through the use of the HTML5 `<canvas>` element. Everything is code driven and relies on JavaScript.
+
+This course deals with CSS3 animations on HTML elements & SVGs (although, technically you can also animate PNGs, GIFs, and JPGs as well). All animations are done in the stylesheet by specifying various property settings and applying those to different elements on the page through CSS selectors.
+
+I imagine it's a little more low-level than JavaScript animation with canvas. The CSS style animation method is great for simple user interface, form element, or SVG image animations that you want use to enhance a website with.
+
+The other thing that took some time was tracking down the HTML/CSS used in the course. Once I had that I deleted the code the lesson covered and followed along.
+
+The other thing I like to do is download the PDF slide deck and create an outline/TOC that I can refer to during the tests or use later as part of my notes.
+
+**Link to Work:**
+- [GitHub repo of code exercises](https://github.com/james-priest/code-exercises/tree/master/html_exercises/web-animations) - This has links to starter HTML/CSS for those who like to code along in their editor of choice.
+
+---
+
 ## 69. Advanced jQuery
 ### Day 68: November 12, 2017 - Tuesday
 
