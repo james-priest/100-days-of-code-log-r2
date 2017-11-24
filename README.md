@@ -79,17 +79,17 @@ This was not the case with flexbox. I can say I prefaced this course with Flexbo
 **Link to Work:**
 
 ---
-
+-->
 ## 72. CSS Grid Garden
 ### Day 72: November 14, 2017 - Tuesday
 
-**Project:** CSS Grid Garden - A 28 lesson game form learning CSS Grid
+**Project:** CSS Grid Garden - A 28 lesson game for learning CSS .
 
 **Progress:** This took one day to complete and was a bit more involved than Flexbox Froggy IMO.
 
 [![CSS Grid Garden screenshot](assets/images/css-grid-garden.png)](assets/images/css-grid-garden.png)
 
-**Thoughts:** This was another great introduction to a new CSS3 layout mode. It introduced concepts and properties in a fun and easy to understand way.
+**Thoughts:** This was another great introduction to a new CSS3 layout mode. It introduces concepts and properties in a fun and easy to understand way.
 
 Completing this course after having finished Flexbox Froggy gave me a sense of how each worked and which method was best suited for different layout needs. In fact, you can even combine the two in a way that utilizes each one's strengths.
 
@@ -100,7 +100,7 @@ Grid seems to be best suited for page layout and flexbox shines when used to for
 - [Flexbox and Grids, your layout's best friends](https://aerolab.co/blog/flexbox-grids/)
 
 ---
--->
+
 ## 71. Flexbox Froggy
 ### Day 71: November 13, 2017 - Monday
 
