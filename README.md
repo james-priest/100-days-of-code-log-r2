@@ -61,7 +61,60 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Link to Work:**
 
 ---
+
+
+## 73. Cracking the Case with Flexbox
+### Day 73: November 23, 2017 - Thursday
+
+**Project:** Completed [Code School's Cracking the Case with Flexbox](https://www.codeschool.com/courses/cracking-the-case-with-flexbox)
+
+**Progress:** Spent five days with this course and coded lots of examples to make it sticks!
+
+[![Cracking the Case with Flexbox course](assets/images/code-school-flexbox.png)](assets/images/code-school-flexbox.png)
+
+**Thoughts:** I really enjoyed learning flexbox! It was something I put off because I had this fear that it might prove to be difficult and unintuitive. I didn't want to learn another layout spec that consisted of more tweaks and fixes than actual working code. 
+
+This was not the case with flexbox. I can say I prefaced this course with Flexbox Froggy which provided a GREAT and gentle introduction to the basics of flexbox and the various key properties it uses.
+
+**Link to Work:**
+
+---
+
+## 72. CSS Grid Garden
+### Day 72: November 14, 2017 - Tuesday
+
+**Project:** CSS Grid Garden - A 28 lesson game form learning CSS Grid
+
+**Progress:** This took one day to complete and was a bit more involved than Flexbox Froggy IMO.
+
+[![CSS Grid Garden screenshot](assets/images/css-grid-garden.png)](assets/images/css-grid-garden.png)
+
+**Thoughts:** This was another great introduction to a new CSS3 layout mode. It introduced concepts and properties in a fun and easy to understand way.
+
+Completing this course after having finished Flexbox Froggy gave me a sense of how each worked and which method was best suited for different layout needs. In fact, you can even combine the two in a way that utilizes each one's strengths.
+
+Grid seems to be best suited for page layout and flexbox shines when used to format components or content areas on a page. [Flexbox and Grids, your layout's best friends](https://aerolab.co/blog/flexbox-grids/) helped put into context how the two where designed and which one is best suited for each task.
+
+**Link to Work:**
+- [CSS Grid Garden (http://cssgridgarden.com)](http://cssgridgarden.com/)
+- [Flexbox and Grids, your layout's best friends](https://aerolab.co/blog/flexbox-grids/)
+
+---
 -->
+## 71. Flexbox Froggy
+### Day 71: November 13, 2017 - Monday
+
+**Project:** Flexbox Froggy - A 24 lesson game for learning CSS flexbox.
+
+**Progress:** This took a day to complete... Very straightforward.
+
+[![Flexbox Froggy screenshot](assets/images/flexbox-froggy.png)](assets/images/flexbox-froggy.png)
+
+**Thoughts:** I cannot recommend this game enough as a gentle introduction to the keywords, properties, and concepts of flexbox. Flexbox is a CSS3 layout mode that replaces old school table-based layout and the more recent but frustratingly awkward 'position & float' layout method.
+
+I would definitely recommend going through this game before taking your first flexbox course. It will help with absorbing the material because it will be familiar when learning the concepts in more detail.
+
+**Link to Work:** [Flexbox Froggy (http://flexboxfroggy.com)](http://flexboxfroggy.com/)
 
 ---
 
@@ -70,7 +123,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Project:** [Code School's Adventures in Web Animation](https://www.codeschool.com/courses/adventures-in-web-animations) course.
 
-**Progress:** I kind of took my time with this and did it over 5 days.
+**Progress:** I kind of took my time with this and did it over four days.
 
 **Thoughts:** This course was broken down into four sections.
 
