@@ -61,25 +61,28 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Link to Work:**
 
 ---
-
+-->
 
 ## 73. Cracking the Case with Flexbox
 ### Day 73: November 23, 2017 - Thursday
 
 **Project:** Completed [Code School's Cracking the Case with Flexbox](https://www.codeschool.com/courses/cracking-the-case-with-flexbox)
 
-**Progress:** Spent five days with this course and coded lots of examples to make it sticks!
+**Progress:** Spent five days with this course and coded lots of examples to make it stick!
 
 [![Cracking the Case with Flexbox course](assets/images/code-school-flexbox.png)](assets/images/code-school-flexbox.png)
 
-**Thoughts:** I really enjoyed learning flexbox! It was something I put off because I had this fear that it might prove to be difficult and unintuitive. I didn't want to learn another layout spec that consisted of more tweaks and fixes than actual working code. 
+**Thoughts:** I really enjoyed learning flexbox! It was something I put off because I had this fear it might prove to be confusing and difficult to understand. This was not the case at all. 
 
-This was not the case with flexbox. I can say I prefaced this course with Flexbox Froggy which provided a GREAT and gentle introduction to the basics of flexbox and the various key properties it uses.
+Doing _floats_, _postioning_ and _clears_ always felt like a hack to me. This finally addresses that and provides clear-cut ways to align and format content in a way that makes sense. I didn't want to learn another layout spec that consisted of more tweaks and fixes than actual working code.
 
-**Link to Work:**
+This was not the case with flexbox. I can say I prefaced this course with [Flexbox Froggy](http://flexboxfroggy.com/) which provided a GREAT and gentle introduction to the basics of flexbox and the various css properties it uses.
+
+**Link to Work:** 
+- [Flexbox code on GitHub](https://github.com/james-priest/code-exercises/tree/master/html_exercises/cracking-flexbox) - This is my sample code used to test different flexbox layouts and properties.
 
 ---
--->
+
 ## 72. CSS Grid Garden
 ### Day 72: November 14, 2017 - Tuesday
 
