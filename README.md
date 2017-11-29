@@ -70,11 +70,11 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Progress:** Spent five days with this course and coded lots of examples to make it stick!
 
-[![Cracking the Case with Flexbox course](assets/images/code-school-flexbox.png)](assets/images/code-school-flexbox.png)
+[![Cracking the Case with Flexbox course](assets/images/sm_code-school-flexbox.jpg)](assets/images/full-size/code-school-flexbox.png)
 
 **Thoughts:** I really enjoyed learning flexbox! It was something I put off because I had this fear it might prove to be confusing and difficult to understand. This was not the case at all. 
 
-Doing _floats_, _postioning_ and _clears_ always felt like a hack to me. This finally addresses that and provides clear-cut ways to align and format content in a way that makes sense. I didn't want to learn another layout spec that consisted of more tweaks and fixes than actual working code.
+Doing _floats_, _positioning_ and _clears_ always felt like a hack to me. This finally addresses that and provides clear-cut ways to align and format content in a way that makes sense. I didn't want to learn another layout spec that consisted of more tweaks and fixes than actual working code.
 
 This was not the case with flexbox. I can say I prefaced this course with [Flexbox Froggy](http://flexboxfroggy.com/) which provided a GREAT and gentle introduction to the basics of flexbox and the various css properties it uses.
 
@@ -90,7 +90,7 @@ This was not the case with flexbox. I can say I prefaced this course with [Flexb
 
 **Progress:** This took one day to complete and was a bit more involved than Flexbox Froggy IMO.
 
-[![CSS Grid Garden screenshot](assets/images/css-grid-garden.png)](assets/images/css-grid-garden.png)
+[![CSS Grid Garden screenshot](assets/images/sm_css-grid-garden.jpg)](assets/images/full-size/css-grid-garden.png)
 
 **Thoughts:** This was another great introduction to a new CSS3 layout mode. It introduces concepts and properties in a fun and easy to understand way.
 
@@ -111,7 +111,7 @@ Grid seems to be best suited for page layout and flexbox shines when used to for
 
 **Progress:** This took a day to complete... Very straightforward.
 
-[![Flexbox Froggy screenshot](assets/images/flexbox-froggy.png)](assets/images/flexbox-froggy.png)
+[![Flexbox Froggy screenshot](assets/images/sm_flexbox-froggy.jpg)](assets/images/full-size/flexbox-froggy.png)
 
 **Thoughts:** I cannot recommend this game enough as a gentle introduction to the keywords, properties, and concepts of flexbox. Flexbox is a CSS3 layout mode that replaces old school table-based layout and the more recent but frustratingly awkward 'position & float' layout method.
 
@@ -135,7 +135,7 @@ I would definitely recommend going through this game before taking your first fl
 1. keyframe animations
 1. SVG animations
 
-[![web animations course](assets/images/code-school-web-animations.png)](assets/images/code-school-web-animations.png)
+[![web animations course](assets/images/sm_code-school-web-animations.jpg)](assets/images/full-size/code-school-web-animations.png)
 
 So this course is different than one with the kinds of animations you'd produce with a JavaScript library like [p5.js](https://p5js.org). I haven't gone through too many of [@shiffman's](https://twitter.com/shiffman?lang=en) tutorials but from what I've gathered, those produce scalable vector graphics through the use of the HTML5 `<canvas>` element. Everything is code driven and relies on JavaScript.
 
@@ -159,7 +159,7 @@ The other thing I like to do is download the PDF slide deck and create an outlin
 
 **Progress:** This took me five days to complete and the material went deeper than before.
 
-[![jQuery Screenshot](assets/images/code-school-jquery-return-flight.png)](assets/images/code-school-jquery-return-flight.png)
+[![jQuery Screenshot](assets/images/sm_code-school-jquery-return-flight.jpg)](assets/images/full-size/code-school-jquery-return-flight.png)
 
 **Thoughts:** This course covered the following topics:
 
@@ -197,7 +197,7 @@ By writing both Front End and Back End code, I was able to get some solid experi
 
 **Thoughts:** This was a great class! It has everything you need to go from beginner to git cli master. It also covers GitHub and some Heroku deployment scenarios.
 
-[![code-school-git-real2.png](assets/images/code-school-git-real2.png)](assets/images/code-school-git-real2.png)
+[![code school screenshot](assets/images/sm_code-school-git-real2.jpg)](assets/images/full-size/code-school-git-real2.png)
 
 The class was divided into the following sections.
 
@@ -209,7 +209,7 @@ The class was divided into the following sections.
 - Rebase & Conflict Resolution
 - History and Configuration
 
-[![code-school-git-real1.png](assets/images/code-school-git-real1.png)](assets/images/code-school-git-real1.png)
+[![code school git real1 screenshot](assets/images/sm_code-school-git-real1.jpg)](assets/images/full-size/code-school-git-real1.png)
 
 Here are some of the useful skills and techniques I learned.
 
@@ -397,7 +397,7 @@ The recipe I followed was from _Chapter 8: Websites & Services_ of [Programming 
 
 **Link to Work:** [logcl package](https://www.npmjs.com/package/logcl) on npm
 
-[![npm package](assets/images/npm-package-logcl.png)](assets/images/npm-package-logcl.png)
+[![npm package](assets/images/sm_npm-package-logcl.jpg)](assets/images/full-size/npm-package-logcl.png)
 
 **Thoughts:** I had been using a set of wrapper functions to `console.log()` for debugging purposes in many of my projects. Initially, I would copy the functions to my code file and reference them directly.
 
@@ -416,7 +416,7 @@ This was the motivation for looking up how to do this. I'm glad I now know the p
 
 **Progress:** Completed four GitHub PRs as part of [GitHub & Digital Ocean's Hacktoberfest 2017](https://hacktoberfest.digitalocean.com) event. I was able to do this in one day.
 
-[![Hacktoberfest image ](assets/images/hacktoberfest-complete.png)](assets/images/hacktoberfest-complete.png)
+[![Hacktoberfest image ](assets/images/sm_hacktoberfest-complete.jpg)](assets/images/full-size/hacktoberfest-complete.png)
 
 **Thoughts:** This was a great exercise in learning the process of how to maneuver GitHub Pull Requests.
 
@@ -441,7 +441,7 @@ It sounds like a lot but it was straight forward and worked beautifully. I was e
 
 **Link to Work:** [Real Time Web with Node.js](https://www.codeschool.com/courses/real-time-web-with-node-js)
 
-[![Code School Node.js](assets/images/code-school-nodejs.png)](assets/images/code-school-nodejs.png)
+[![Code School Node.js](assets/images/sm_code-school-nodejs.jpg)](assets/images/full-size/code-school-nodejs.png)
 
 **Thoughts:** This course was a great introduction to Node.js and the many technologies surrounding it. I had to table my need to understand every detail and just watch the videos, listen to the lectures, and take notes. The challenges reinforced what I learned and gave me a sense that I could write the code without fully understanding every detail of what was going on under the hood.
 
@@ -469,7 +469,7 @@ The course was created in 2014 but is very much current and a great introduction
 
 **Link to Work:** [Free Try jQuery course](http://try.jquery.com)
 
-[![Try jQuery](assets/images/code-school-try-jquery2.png)](assets/images/code-school-try-jquery2.png)
+[![Try jQuery](assets/images/sm_code-school-try-jquery2.jpg)](assets/images/full-size/code-school-try-jquery2.png)
 
 **Thoughts:** This was a great introductory course on jQuery. It covered the following:
 - CSS Selectors
@@ -499,7 +499,7 @@ This takes what I learned from Free Code Camp and expands on my understanding of
   - [SVG Home](https://codepen.io/james-priest/pen/qPgXZx)
   - [SVG Absctract #1](https://codepen.io/james-priest/pen/mBvWXZ)
 
-[![SVG images](assets/images/codepen-svg.png)](https://codepen.io/dashboard/)
+[![SVG images](assets/images/sm_codepen-svg.jpg)](https://codepen.io/dashboard/)
 
 **Thoughts:** This was a great class that covered the basics of writing SVG by hand as an exercise toward understanding it  s structure under the hood. SVG stands for Scalable Vector Graphics and is supported in all major browsers.
 
@@ -695,7 +695,7 @@ var mySword = ARMORY.makeWeaponRequest( "Excalibur" );
 - [GitHub repo with my code examples and notes](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-roadtrip3)
 - [Code School - JavaScript Learning Path](https://www.codeschool.com/learn/javascript)
 
-[![VS Code Editor](assets/images/code-school-js-part3.png)](assets/images/code-school-js-part3.png)
+[![VS Code Editor](assets/images/sm_code-school-js-part3.jpg)](assets/images/full-size/code-school-js-part3.png)
 
 **Thoughts:** The subject matter areas covered  ere:
 - Function Expressions - Used to assign a function (usually anonymous function) to a variable or to assign a function to an object property to create a property method.
@@ -721,7 +721,7 @@ This course is not for the faint of heart but is great for those with an interme
 
 **Link to Work:** [Code School JavaScript Path](https://www.codeschool.com/learn/javascript)
 
-[![Code School JavaScript Part 2](assets/images/code-school-js-part2.png)](assets/images/code-school-js-part2.png)
+[![Code School JavaScript Part 2](assets/images/sm_code-school-js-part2.jpg)](assets/images/full-size/code-school-js-part2.png)
 
 **Thoughts:** Part 2 covered Loops, Conditionals, Build-ins, Functions and Arrays. It was pretty straight forward and provided a good refresher to each of these code constructs.
 
@@ -743,7 +743,7 @@ The final bits of fine-tuning came from another [#100DaysOfCode](https://twitter
 - **Thank you Peter ([@PeteCapeCod](https://twitter.com/PeteCapeCod)) for the spark of insight and point in the right direction!**
 - **Thank you Vlad ([@_vladbogdan](https://twitter.com/_vladbogdan)) for code fixes, cross-browser testing, & the GitHub Pull Request!**
 
-[![Screenshot](assets/images/codepen-weather-app-fix.png)](assets/images/codepen-weather-app-fix.png)
+[![Screenshot](assets/images/sm_codepen-weather-app-fix.jpg)](assets/images/full-size/codepen-weather-app-fix.png)
 
 **Links:**
 - [Weather App on Code Pen](https://codepen.io/james-priest/)
@@ -778,7 +778,7 @@ Also, I got to integrate my first outside Pull Request. (Thanks again to Vlad!) 
 
 **Progress:** It took one day to download the vdsk, install the VM, & update the OS. I took another couple days to install Brew, Node, Git, Chrome, VS Code, Xcode Command Line Tools, Git Bash for Mac and some npm packages (http-server, eslint, etc.). Once done, I had a proper test environment to work from.
 
-![macOS VM Instructions](assets/images/macOS-sierra-vm.png)
+[![macOS VM Instructions](assets/images/sm_macOS-sierra-vm.jpg)](assets/images/full-size/sm_macOS-sierra-vm.png)
 
 **Link:** [Complete Tutorial Steps](https://www.pcsteps.com/2157-mac-os-x-virtual-machine-vmware-player/) including link to fully configured macOS Sierra VM Disk
 
@@ -797,13 +797,13 @@ I also applied the latest updates and logged in with my Apple ID to integrate iC
 
 **Link to Work:** [Code School JavaScript Path](https://www.codeschool.com/learn/javascript)
 
-[![JavaScript Part 1 course](assets/images/code-school-js-part1.png)](assets/images/code-school-js-part1.png)
+[![JavaScript Part 1 course](assets/images/sm_code-school-js-part1.jpg)](assets/images/full-size/code-school-js-part1.png)
 
 **Thoughts:** All challenges took place in the browser and covered things like Booleans, Strings, and  Variables. Additionally, we covered some intrinsic js object methods such as String.charAt, String.indexOf, concatenation & arithmetic operations including modulus(%).
 
 Besides coding in the browser environment provided by the course, I also opened up Console in Chrome DevTools for quick proof-of-concept tests.
 
-[![Chrome DevTools Console](assets/images/code-school-js-part1-console.png)](assets/images/code-school-js-part1-console.png)
+[![Chrome DevTools Console](assets/images/sm_code-school-js-part1-console.jpg)](assets/images/full-size/code-school-js-part1-console.png)
 
 For longer tests I usually create a js file in VS Code and then run the file with node. This gives me the added benefit of syntax highlighting, linting, & debugging if necessary. For the purposes of this course the console was enough.
 
@@ -822,7 +822,7 @@ In all, Part 1 of this course covers only the most basic JavaScript concepts and
 - [Weather App on CodePen](https://codepen.io/james-priest/pen/XaQQaO)
 - [Weather on Netlify](https://local-weather-app.netlify.com)
 
-[![Weather App on CodePen screenshot](assets/images/codepen-weather-app.png)](assets/images/codepen-weather-app.png)
+[![Weather App on CodePen screenshot](assets/images/sm_codepen-weather-app.jpg)](assets/images/full-size/codepen-weather-app.png)
 
 **Thoughts:** The changes needed for CodePen involved removing styling from the body tag and instead creating a container that I could wrap my application in and style as needed. 
 
@@ -843,7 +843,7 @@ I also had issues with linking directly to SVGs on GitHub. These were being serv
 - CodePen - Carousel: [https://codepen.io/james-priest/pen/EwPpaw](https://codepen.io/james-priest/pen/EwPpaw)
 - Carousel on Netlify: [https://local-weather-app.netlify.com/carousel.html](https://local-weather-app.netlify.com/carousel.html)
 
-[![screenshot](assets/images/codepen-crossfade.png)](assets/images/codepen-crossfade.png)
+[![screenshot](assets/images/sm_codepen-crossfade.jpg)](assets/images/full-size/codepen-crossfade.png)
 
 **Thoughts:** There were lots online references to jQuery fadeIn, fadeOut, and fadeToggle but these didn't do the trick. One image would fade all the way down and then the next would fade up. This wasn't as clean.  You can see here.
 
@@ -866,7 +866,7 @@ I had to change quite a few things around to adapt the sample to what I had in m
 
 **Link to Work:** [https://local-weather-app.netlify.com/](https://local-weather-app.netlify.com/)
 
-[![Mobile ui](assets/images/fcc-weather5.png)](assets/images/fcc-weather5.png)
+[![Mobile ui](assets/images/sm_fcc-weather5.jpg)](assets/images/full-size/fcc-weather5.png)
 
 **Thoughts:** So, it took me five days to complete this once I got started but it feels like I've been working on this for weeks. Here's a list of features:
 
@@ -898,7 +898,7 @@ In the end it was fun and I got a lot of practical experience with js, jquery, j
 
 **Link to Work:** Links coming in next post.
 
-[![Mobile ui](assets/images/fcc-semantic-ui-6.png)](assets/images/fcc-semantic-ui-6.png)
+[![Mobile ui](assets/images/sm_fcc-semantic-ui-6.jpg)](assets/images/full-size/fcc-semantic-ui-6.png)
 
 **Thoughts:** Sematic-UI definitely gets my vote as far as a clean framework to develop from. It has semantic layout and many variations to choose from. There are quite a few components available and lots of ability for fine-grain control of behavior through js. UI features are broken down into elements, collections, views, and modules but these are all really just UI components.
 
@@ -913,13 +913,13 @@ One thing I can say though is that I struggled with the responsive portion for a
 
 **Progress:** So I've been working on this for 4 days. Most of the work was on writing code to use Geolocation to get JSON data back from a weather service that uses your location as input. The data that came back looked like this:
 
-[![Raw JSON data](assets/images/fcc-weather2.png)](assets/images/fcc-weather2.png)
+[![Raw JSON data](assets/images/sm_fcc-weather2.jpg)](assets/images/full-size/fcc-weather2.png)
 
 I wrote this :
-[![Weather app code](assets/images/fcc-weather4.png)](assets/images/fcc-weather4.png)
+[![Weather app code](assets/images/sm_fcc-weather4.jpg)](assets/images/full-size/fcc-weather4.png)
 
 To get this:
-[![Weather app formatted json](assets/images/fcc-weather3.png)](assets/images/fcc-weather3.png)
+[![Weather app formatted json](assets/images/sm_fcc-weather3.jpg)](assets/images/full-size/fcc-weather3.png)
 
 Here's short list of the things I researched for this project:
 1. Iterating through an object
@@ -958,7 +958,7 @@ This confirmed to me that I need to a framework in order to best layout the info
 - SVG backgrounds
 - Use of Google fonts
 
-[![CodePen Screenshot](/assets/images/codepen-fcc-quote-gen.png)](https://codepen.io/james-priest/pen/RZdGNo/)
+[![CodePen Screenshot](/assets/images/sm_codepen-fcc-quote-gen.jpg)](https://codepen.io/james-priest/pen/RZdGNo/)
 
 ---
 
@@ -975,7 +975,7 @@ This confirmed to me that I need to a framework in order to best layout the info
 
 **Thoughts:** Completing the JSON, API, and Ajax section was very straight forward compared to the hairpulling exercise of a couple of the algorithms challenges.
 
-[![fcc-algorithms](/assets/images/fcc-finish-json-apis-ajax.png)](/assets/images/fcc-finish-json-apis-ajax.png)
+[![fcc-algorithms](/assets/images/sm_fcc-finish-json-apis-ajax.jpg)](/assets/images/full-size/fcc-finish-json-apis-ajax.png)
 
 ---
 
@@ -996,7 +996,7 @@ This did help to spark that diffuse mode of thinking and finally worked out. It 
 
 Marking up my screenshot with derogatory callouts did help me work out my frustration a bit. It helped me vent. :)
 
-[![fcc-algorithms](/assets/images/fcc-finish-basic-algorithms.png)](/assets/images/fcc-finish-basic-algorithms.png)
+[![fcc-algorithms](/assets/images/sm_fcc-finish-basic-algorithms.jpg)](/assets/images/full-size/fcc-finish-basic-algorithms.png)
 
 ---
 
@@ -1015,7 +1015,7 @@ Marking up my screenshot with derogatory callouts did help me work out my frustr
 
 This has been a bit slow at times but I can tell some real learning is taking place; that point were we go from merely understanding and following a solution to creatively constructing and developing our own. It is this critical part that deeply engrains the mental patterns necessary to truly gain efficiency and then mastery of the material.
 
-[![fcc-algorithms](/assets/images/fcc-algorithms1.png)](/assets/images/fcc-algorithms1.png)
+[![fcc-algorithms](/assets/images/sm_fcc-algorithms1.jpg)](/assets/images/full-size/fcc-algorithms1.png)
 
 ---
 
@@ -1032,7 +1032,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** Covered specific Array methods: concat, filter, join, map, reduce, reverse, sort & split. Also covered Object Oriented concepts such as creating objects as variables, constructing objects with functions, object instances with constructor function, passing parameters to constructor function and making object properties private.
 
-[![FCC Screenshot](/assets/images/fcc-finish-oo-and-fp.png)](/assets/images/fcc-finish-oo-and-fp.png)
+[![FCC Screenshot](/assets/images/sm_fcc-finish-oo-and-fp.jpg)](/assets/images/full-size/fcc-finish-oo-and-fp.png)
 
 ---
 
@@ -1047,7 +1047,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** Covered Arrays, Multi-dimensional arrays, loops, objects, Math object, etc.
 
-[![FCC Screenshot](/assets/images/fcc-finish-basic-javascript.png)](/assets/images/fcc-finish-basic-javascript.png)
+[![FCC Screenshot](/assets/images/sm_fcc-finish-basic-javascript.jpg)](/assets/images/full-size/fcc-finish-basic-javascript.png)
 
 ---
 
@@ -1062,7 +1062,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** Left off on counting cards challenge. Will pick it up tomorrow.
 
-[![FCC Counting Cards](/assets/images/fcc-counting-cards.png)](/assets/images/fcc-counting-cards.png)
+[![FCC Counting Cards](/assets/images/sm_fcc-counting-cards.jpg)](/assets/images/full-size/fcc-counting-cards.png)
 
 ---
 
@@ -1077,7 +1077,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** I will go back and put together a personal portfolio site once I have a recent sampling of work. For now I decided to have fun with the project. I can also add more pages if I want to play with it since its on Netlify.
 
-[![SPYCats webpage on Netlify](/assets/images/netlify-spycats-wide1.png)](/assets/images/netlify-spycats-wide1.png)
+[![SPYCats webpage on Netlify](/assets/images/sm_netlify-spycats-wide1.jpg)](/assets/images/full-size/netlify-spycats-wide1.png)
 
 ---
 
@@ -1092,7 +1092,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** CodePen has some great features and I love how flexible it is. It's an awesome platform for sharing code and showcasing projects but difficult to do extensive development in.
 
-[![CodePen Screenshot](/assets/images/codepen-fcc-portfolio.png)](https://codepen.io/james-priest/pen/prpjEK)
+[![CodePen Screenshot](/assets/images/sm_codepen-fcc-portfolio.jpg)](https://codepen.io/james-priest/pen/prpjEK)
 
 ---
 
@@ -1113,7 +1113,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 - components, glyphs, and plugins
 - icons, fonts and behavior
 
-[![Blast Off with Bootstrap webpage](/assets/images/code-school-bootstrap.png)](http://bootstrap-blast-off.netlify.com)
+[![Blast Off with Bootstrap webpage](/assets/images/sm_code-school-bootstrap.jpg)](http://bootstrap-blast-off.netlify.com)
 
 ---
 
@@ -1135,7 +1135,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 - Floats, Clearfixes, & layouts
 - selector best practices
 
-[![VSCode Editor](/assets/images/vscode-css-specificity.png)](https://rawgit.com/james-priest/code-exercises/master/html_exercises/css-cross-country/index.html)
+[![VSCode Editor](/assets/images/sm_vscode-css-specificity.jpg)](https://rawgit.com/james-priest/code-exercises/master/html_exercises/css-cross-country/index.html)
 
 ---
 
@@ -1155,7 +1155,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** This was basic/beginning HTML/CSS but was a good refresher.
 
-[![VSCode Editor](/assets/images/vscode-html5.png)](https://rawgit.com/james-priest/code-exercises/master/html_exercises/front-end-foundations/magic-cake.html)
+[![VSCode Editor](/assets/images/sm_vscode-html5.jpg)](https://rawgit.com/james-priest/code-exercises/master/html_exercises/front-end-foundations/magic-cake.html)
 
 ---
 
@@ -1173,7 +1173,7 @@ This has been a bit slow at times but I can tell some real learning is taking pl
 
 **Thoughts:** I like the format of Code School's content. It's focused and clear.
 
-[![VSCode Editor](/assets/images/vscode-css-colors.png)](/assets/images/vscode-css-colors.png)
+[![VSCode Editor](/assets/images/sm_vscode-css-colors.jpg)](/assets/images/full-size/vscode-css-colors.png)
 
 ---
 
@@ -1195,7 +1195,7 @@ Where I had trouble was in trying to change Bootstraps 3's structural format by 
 
 This didn't work so well so I changed back to the div heavy structure.
 
-[![Pen using Bootstrap 3](/assets/images/codepen-bootstrap3.png)](https://codepen.io/james-priest/pen/prpjEK)
+[![Pen using Bootstrap 3](/assets/images/sm_codepen-bootstrap3.jpg)](https://codepen.io/james-priest/pen/prpjEK)
 
 ---
 
@@ -1232,7 +1232,7 @@ This didn't work so well so I changed back to the div heavy structure.
 
 **Thoughts:** Could have used bootstrap. Instead I hand-coded the css.
 
-[![CodePen](/assets/images/fcc-tribute-page.png)](https://codepen.io/james-priest/pen/MvEdOV?editors=1100)
+[![CodePen](/assets/images/sm_fcc-tribute-page.jpg)](https://codepen.io/james-priest/pen/MvEdOV?editors=1100)
 
 ---
 
@@ -1280,7 +1280,7 @@ Use the link on **Link to work:** to read the article
 
 **Thoughts:** Debugging from within VSCode is absolutely essential to tracking down errors and evaluating code during execution.
 
-[![VSCode Debug](/assets/images/vscode-debug.png)](https://code.visualstudio.com/docs/editor/debugging)
+[![VSCode Debug](/assets/images/sm_vscode-debug.jpg)](https://code.visualstudio.com/docs/editor/debugging)
 
 ---
 
@@ -1296,7 +1296,7 @@ Use the link on **Link to work:** to read the article
 1. Customized the template (sidebar, header & footer)
 1. Wrote my first post!
 
-[![Wordpress Blog](/assets/images/wordpress-blog.png)](https://100daycodeblog.wordpress.com/)
+[![Wordpress Blog](/assets/images/sm_wordpress-blog.jpg)](https://100daycodeblog.wordpress.com/)
 
 **Link to work:**
 - [https://100daycodeblog.wordpress.com/](https://100daycodeblog.wordpress.com/)
@@ -1321,7 +1321,7 @@ I was actually inspired to do a WordPress blog by [@AdrianaHasburn](https://twit
   - Persistence with DevTools Workspaces - Setting up source file mapping allows code changes to persist to source files
   - CSS & JS Preprocessors - Using Source Maps allow direct references to preprocessed source files for saving changes directly from DevTools
 
-[![Chrome DevTools](/assets/images/chrome-devtools.png)](https://developers.google.com/web/tools/setup/)
+[![Chrome DevTools](/assets/images/sm_chrome-devtools.jpg)](https://developers.google.com/web/tools/setup/)
 
 **Link to work:**
 - Link to [DevTools Getting Started Docs](https://developers.google.com/web/tools/setup/)
@@ -1412,7 +1412,7 @@ I also got syntactic help from [https://stackoverflow.com/questions/25889950/set
 - FontAwesome for nav pointer (breadcrumb)
 - Updated CSS to indicate active link
 
-[![CV Site](/assets/images/cv-site.png)](https://james-priest.github.io/)
+[![CV Site](/assets/images/sm_cv-site.jpg)](https://james-priest.github.io/)
 
 **Link to work:**
 - [https://james-priest.github.io](https://james-priest.github.io/ "My online CV")
@@ -1521,7 +1521,7 @@ console.log(doIt);
 **Today's Project(s):**
 - Creating some proof of concept pens and testing out the environment
 
-[![Plunker](/assets/images/codepen-singleton-pattern.png)](https://codepen.io/james-priest/pen/PKmMzP?editors=1111)
+[![Plunker](/assets/images/sm_codepen-singleton-pattern.jpg)](https://codepen.io/james-priest/pen/PKmMzP?editors=1111)
 
 **Progress:**
 - Set up my profile
@@ -1559,7 +1559,7 @@ In the end it turned out fine. By re-coding the exercise I inadvertently ended u
 
 **Thoughts:** Here are my two cents...
 
-[![JSBin](/assets/images/jsbin.png)](http://jsbin.com/howuzec/3/edit?html,js,output)
+[![JSBin](/assets/images/sm_jsbin.jpg)](http://jsbin.com/howuzec/3/edit?html,js,output)
 **JSBin** - This is my goto js playground for testing syntax & short proof-of-concepts
 - Pros
   - quick setup
@@ -1573,7 +1573,7 @@ In the end it turned out fine. By re-coding the exercise I inadvertently ended u
   - less used features are not/is not inherently intuitive.
   - editor is limited to one html, css & js file
 
-[![Plunker](/assets/images/plunker.png)](https://plnkr.co/edit/O73CdaJyTJenpBshvjzR?p=info)
+[![Plunker](/assets/images/sm_plunker.jpg)](https://plnkr.co/edit/O73CdaJyTJenpBshvjzR?p=info)
 **Plunker** - great multi-file environment
 - Pros
   - Editor is spacious
@@ -1584,7 +1584,7 @@ In the end it turned out fine. By re-coding the exercise I inadvertently ended u
 - Cons
   - no integrated Console
 
-[![CodePen](/assets/images/codepen.png)](https://codepen.io/james-priest/pen/jLmxvZ)
+[![CodePen](/assets/images/sm_codepen.jpg)](https://codepen.io/james-priest/pen/jLmxvZ)
 **CodePen** - great UX (fully featured experience)
 - Pros
   - Intuitive and configurable ui
@@ -1723,7 +1723,7 @@ Here are the key take-aways about IIFEs from @kirupa:
   - !function(e){ console.log(e) }('hi')
   - typeof function(e){ console.log(e) }('hi')
 
-[![Singleton with IIFEs](/assets/images/vscode-singleton-iife.png)](/assets/images/vscode-singleton-iife.png)
+[![Singleton with IIFEs](/assets/images/sm_vscode-singleton-iife.jpg)](/assets/images/full-size/vscode-singleton-iife.png)
 
 ---
 
@@ -1741,7 +1741,7 @@ Here are the key take-aways about IIFEs from @kirupa:
 
 **Thoughts:** Object literals are a beautiful way to organize your code. It uses key/value pairs and nests well for deeper hierarchies. It also reads well and is easy to understand if structured properly.
 
-[![Object Literal Notation](/assets/images/vscode_object_literals.png)](/assets/images/vscode_object_literals.png)
+[![Object Literal Notation](/assets/images/sm_vscode_object_literals.jpg)](/assets/images/full-size/vscode_object_literals.png)
 
 ---
 
@@ -2169,7 +2169,7 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 **Thoughts:** This took a little while to get started on.  I'm reading Personal Kanban by Jim Benson. Here's a link to the companion site: [Personal Kanban](http://www.personalkanban.com/pk/ "Short Overview and YouTube video of Personal Kanban").
 
-[![My Kanban Board](/assets/images/KanbanBoard.jpg "My Kanban board")](/assets/images/KanbanBoard.jpg)
+[![My Kanban Board](/assets/images/sm_kanban-board.jpg "My Kanban board")](/assets/images/full-size/kanban-board.jpg)
 
 ---
 
@@ -2193,7 +2193,7 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 My goal is to do 4 Pomodoros for each two-hour Study block (in blue).
 
-[![Time Map Schedule](/assets/images/TimeMap.jpg)](/assets/images/TimeMap.jpg)
+[![Time Map Schedule](/assets/images/sm_time-map.jpg)](/assets/images/full-size/time-map.jpg)
 
 ---
 
@@ -2291,26 +2291,3 @@ It'll go something like this:
 - My GitHub [100-days-of-code-log](https://github.com/james-priest/100-days-of-code-log "this repo")
 
 **Thoughts:** Glad to be starting this.
-
-<!--
-##
-### Day : July 1, 2017 - Thursday
-
-**Today's Project(s):**
-
--
-
-**Progress:**
-
--
-
-**Link to work:**
-
-- [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
-
-**Thoughts:**
-
----
-
-1. [Find the Longest Word in a String](https://www.freecodecamp.com/challenges/find-the-longest-word-in-a-string)
-2. [Title Case a Sentence](https://www.freecodecamp.com/challenges/title-case-a-sentence)-->
