@@ -2169,7 +2169,7 @@ The important thing is that I did get something done and posted. I'm keeping it 
 
 **Thoughts:** This took a little while to get started on.  I'm reading Personal Kanban by Jim Benson. Here's a link to the companion site: [Personal Kanban](http://www.personalkanban.com/pk/ "Short Overview and YouTube video of Personal Kanban").
 
-[![My Kanban Board](/assets/images/sm_kanban-board.jpg "My Kanban board")](/assets/images/full-size/kanban-board.jpg)
+[![My Kanban Board](/assets/images/sm_kanban-board.jpg)](/assets/images/full-size/kanban-board.jpg)
 
 ---
 
