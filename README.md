@@ -63,6 +63,31 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 74. Web Image Optimization
+### Day 74: November 28, 2017 - Tuesday
+
+**Project:** I needed a way to reduce the load time of this code log.  
+
+High quality PNGs were originally used but these proved too expensive with 50+ images on the page and was clocking in at **35.22 seconds** for a complete page load. I needed a way to Batch optimized the images for web.
+
+[![load time screenshot](assets/images/sm_chrome-load-time1.jpg)](assets/images/full-size/chrome-load-time1.png)
+
+**Progress:** This took a few hours to complete.
+
+**Thoughts:** I used Photoshop and this article: "[Use Photoshop’s Batch Command to Quickly Save Images for Web](https://medium.com/stirtingale/use-photoshops-batch-command-to-quickly-save-images-for-web-2e4f2fe2fb8e)" to optimize all images in this code log.
+
+This was done by creating a set of Photoshop actions which are run as part of a batch routine to convert, downsize, and optimize all images in a given folder.
+
+Once this was done I was able to use the smaller sized JPGs and link to higher quality PNGs. This reduced load time to **8.41 seconds**.
+
+[![load time screenshot](assets/images/sm_chrome-load-time2.jpg)](assets/images/full-size/chrome-load-time2.png)
+
+Perhaps the next thing I'll explore is [lazy loading](https://www.sitepoint.com/lazy-loading-images-not-really-annoy-users/) of images so they only get loaded when someone scrolls to that point in the page.
+
+**Link to Work:** "[Use Photoshop’s Batch Command to Quickly Save Images for Web](https://medium.com/stirtingale/use-photoshops-batch-command-to-quickly-save-images-for-web-2e4f2fe2fb8e)"
+
+---
+
 ## 73. Cracking the Case with Flexbox
 ### Day 73: November 23, 2017 - Thursday
 
@@ -2004,7 +2029,7 @@ The Intro to ASP.NET Core class is great. It's hosted by Scott Hanselman and Mar
 
 **Link to work:**
 
-[![https://gyazo.com/0a5f8557493931c87ebf87e9cabcfb85](https://i.gyazo.com/0a5f8557493931c87ebf87e9cabcfb85.png)](http://javascript-array-methods.netlify.com/)
+[![Netlify javascript array methods screenshot](/assets/images/sm_netlify-javascript-array-methods.jpg)](http://javascript-array-methods.netlify.com/)
 
 - [JavaScript Array Methods](https://github.com/james-priest/javascript-array-methods "GitHub repo") on  GitHub - click image to see demo
 - [My FCC Code Portfolio](https://www.freecodecamp.com/james-priest "james-priest's code portfolio on FreeCodeCamp")
