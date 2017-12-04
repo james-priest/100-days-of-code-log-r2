@@ -63,10 +63,36 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 75. Flexbox Zombies
+### Day 75: December 3, 2017 - Sunday
+
+**Project:** Flexbox Zombies ([https://flexboxzombies.com](https://flexboxzombies.com)) game-based learning course.
+
+**Progress:** This course took ten days to complete.
+
+[![Flexbox Zombies](assets/images/sm_flexbox-zombies1.jpg)](assets/images/full-size/flexbox-zombies1.png)
+
+**Thoughts:** This course was so thoughtfully designed and so thoroughly thought out that it completely succeeded in helping me commit the lessons learned to long-term memory.
+
+This was the third flexbox course I've taken and I didn't have a tenth of the recall available to me that this game provided me with. I cannot recommend this method of learning enough.
+
+One of the additional things I did to help commit the lessons to memory was to code along and create my own flexbox displays to mirror what I was learning in the game. This quickly showed me any errors I had made because the zombies did not match the layout presented me in the game.
+
+[![Practice code](assets/images/sm_flexbox-zombies-practice-code3.jpg)](assets/images/full-size/flexbox-zombies-practice-code3.png)
+
+This process of coding along also gave me a good amount of practice solving real-world implementation issues involving multiple flexbox displays.
+
+**Link to Work:**
+- Flexbox Zombies ([https://flexboxzombies.com](https://flexboxzombies.com)) site
+- [My Flexbox Zombies pages](https://james-priest.github.io/flexbox-zombie-code/) - My Flexbox Zombies practice code
+- [Flexbox Zombies practice code on GitHub](https://github.com/james-priest/flexbox-zombie-code) - GitHub repo of code
+
+---
+
 ## 74. Web Image Optimization
 ### Day 74: November 28, 2017 - Tuesday
 
-**Project:** I needed a way to reduce the load time of this code log.  
+**Project:** I needed a way to reduce the load time of this code log.
 
 High quality PNGs were originally used but these proved too expensive with 50+ images on the page and was clocking in at **35.22 seconds** for a complete page load. I needed a way to Batch optimized the images for web.
 
