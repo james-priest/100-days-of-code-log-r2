@@ -63,6 +63,36 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 76. Mobile Web Design
+### Day 76: December 5, 2017 - Tuesday
+
+**Project:** Completed [Code School's Journey Into Mobile](https://www.codeschool.com/courses/journey-into-mobile) Intermediate CSS Course
+
+**Progress:** This took two days to complete.
+
+**Thoughts:** This course covered the following Intermediate CSS design topics.
+
+- Fluid Layouts
+- Adaptive Design
+- Responsive Design
+
+[![Mobile Web Screenshot](assets/images/sm_code-school-mobile-web.jpg)](assets/images/full-size/code-school-mobile-web.png)
+
+Some of the specific areas include.
+
+- Relative font size formulas using _em_'s
+- Calculating and setting relative container sizes using percentages(%)
+- Adaptive markup
+- Media queries & advanced media queries
+- Display breakpoints
+- Mobile first design
+- Combining adaptive and responsive design
+- Successfully targeting multiple contexts, devices, and display sizes with a single codebase
+
+**Link to Work:** [Code School's Journey Into Mobile](https://www.codeschool.com/courses/journey-into-mobile) Intermediate CSS Course
+
+---
+
 ## 75. Flexbox Zombies
 ### Day 75: December 3, 2017 - Sunday
 
