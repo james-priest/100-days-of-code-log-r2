@@ -89,6 +89,12 @@ Some of the specific areas include.
 - Combining adaptive and responsive design
 - Successfully targeting multiple contexts, devices, and display sizes with a single codebase
 
+This course is about three years old but covers techniques that are widely in use today. I'm in the process of transitioning to using Flexbox and CSS Grid, now that all the major browsers support these, but it's still important to understand older style responsive and adaptive layout.
+
+This course also gave me a solid set of steps to follow when using media queries and converting fixed-based layouts to responsive ones.
+
+I would definitely recommend this course to make sure you have a solid understanding of these techniques before jumping into exclusive use CSS Grid and Flexbox.
+
 **Link to Work:** [Code School's Journey Into Mobile](https://www.codeschool.com/courses/journey-into-mobile) Intermediate CSS Course
 
 ---
