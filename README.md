@@ -63,6 +63,33 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 -->
 
+## 77. Regular Expressions
+### Day 77: December 9, 2017 - Saturday
+
+**Project:** Completed [Code School's Breaking the Ice with Regular Expressions](https://www.codeschool.com/courses/breaking-the-ice-with-regular-expressions) course.
+
+**Progress:** This took me 3 days to complete.
+
+**Thoughts:** The class was a great start to learning the basics behind regular expressions. The course used a pirate theme and was pretty fun to puzzle through.
+
+[![RegEx Screenshot](assets/images/sm_code-school-regex.jpg)](assets/images/full-size/code-school-regex.png)
+
+The subjects covered were:
+
+- Literals, operators, character sets, & modifiers
+- Wildcards, escaping characters, groups, and anchors
+- Word boundaries, negating character sets, and accumulators
+- global, multi-line and case-insensitive modifiers
+- Capture groups & non-capturing groups
+
+**Link to Work:**
+These are some great regex testing sites
+
+- [https://regexr.com](https://regexr.com)
+- [https://regex101.com](https://regex101.com)
+
+---
+
 ## 76. Mobile Web Design
 ### Day 76: December 5, 2017 - Tuesday
 
