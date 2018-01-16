@@ -61,9 +61,82 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Link to Work:**
 
 ---
+
 -->
 
-## 78 CSS Grid Critters.
+## 79. Writing My Own Code Editor
+### Day 79: December 11, 2017 - Tuesday
+
+<!-- **Project:** To write a CSS code editor in JavaScript for embedding into a web page or web app. -->
+**Project:** To write a web-based CSS code editor in JavaScript for embedding in a web page.
+**Progress:** How hard could it be, right?😁😉
+
+[![my code editor screenshot](assets/images/sm_my-code-editor2.jpg)](assets/images/full-size/my-code-editor2.png)
+
+**Thoughts:** So, in the interest of full disclosure, I am writting this one month after going MIA on my #100DaysOfCode twitter posts. Its not that I didn't code, it's that I didn't come out of the JavaScript hole for 4 weeks!
+
+Let me step back and start with what started it all...
+
+I loved how cool [Dave Geddes](https://twitter.com/geddski)' web apps [Grid Critters](https://gridcritters.com) and [Flexbox Zombies](https://flexboxzombies.com) were. It allowed me to read some narrative (the lesson), write some code (in browser), and see the results immediately.
+
+This was awesome!!!
+
+I wanted to see if I could write my own poor man's version of the same, mostly as a coding exercise and proof of concept.
+
+I managed to do this in a day with 35 lines of non-optimized code. Pretty cool!
+
+```javascript
+var myCodeEditor = {
+  gridContainer: document.querySelector( '.grid-container' ),
+  codeEditor: document.querySelector( '.ta-code-editor' ),
+  init: function(preFill) {
+    var thisGrid = this;
+    thisGrid.codeEditor.defaultValue = preFill;
+    thisGrid.codeEditor.selectionStart = thisGrid.codeEditor.selectionEnd = 20;
+    thisGrid.codeEditor.oninput = function( evt ) {
+      thisGrid.applyStyle(evt);
+    };
+    thisGrid.codeEditor.onkeypress = function( evt ) {
+      var val = this.value;
+      if ( evt.keyCode === 13 || evt.which === 13 ) {
+        var newLineIndent = '\u000A\u0020\u0020';
+        var start, end;
+        if ( typeof this.selectionStart === 'number' && typeof this.selectionEnd === 'number' ) {
+          start = this.selectionStart;
+          end = this.selectionEnd;
+          this.value = val.slice( 0, start ) + newLineIndent + val.slice( end );
+
+          // move the caret
+          this.selectionStart = this.selectionEnd = start + 3;
+        }
+        return false;
+      }
+    };
+  },
+  applyStyle: function( evt ) {
+    var css = evt.target.value;
+    var pattern = /([\w-]+:\s*[\w-#\s]+;?$)/gm;
+    var cssStatements = css.match( pattern );
+    if ( cssStatements ) {
+      this.gridContainer.setAttribute( 'style', cssStatements.join( ' ' ) );
+    }
+  }
+};
+```
+
+I figured it was clear sailing from here on out - that I would be done replicating the in-browser code editor inside a week.
+
+Well that turned out to not be true. The next dozen posts will detail what I learned.
+
+**Link to Work:**
+- An early version of my simple but working [code editor](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor2.html) on Netlify
+- Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor2.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style2.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta1.js))
+
+[![my code editor screenshot](assets/images/sm_my-code-editor1.jpg)](assets/images/full-size/my-code-editor1.png)
+
+---
+
+## 78. CSS Grid Critters
 ### Day 78: December 10, 2017 - Sunday
 
 **Project:** Grid Critters ([https://gridcritters.com](https://gridcritters.com)) game-based learning course.
