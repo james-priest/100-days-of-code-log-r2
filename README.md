@@ -49,8 +49,8 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-## 68.
-### Day 68: November 7, 2017 - Tuesday
+## 80.
+### Day 80: December 7, 2017 - Tuesday
 
 **Project:**
 
@@ -62,6 +62,32 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 -->
+
+## 78 CSS Grid Critters.
+### Day 78: December 10, 2017 - Sunday
+
+**Project:** Grid Critters ([https://gridcritters.com](https://gridcritters.com)) game-based learning course.
+
+**Progress:** This a a paid course but the first chapter is free. It took me a day to complete.
+
+[![Grid Critters schreenshot](assets/images/sm_grid-critters2.jpg)](assets/images/full-size/grid-critters2.jpg)
+
+**Thoughts:** If you've already taken the Flexbox Zombies course ([https://flexboxzombies.com](https://flexboxzombies.com)) then you know what a great learing method this is. If not then I highly recommend you do.
+
+By employing spaced repetition and game-based learning this course manages to help commit the material to memory in a way that's fun and rewarding. 
+
+Learning comes through a series of naratives and challenges so it almost doesn't feel like you're absorbing material as much as learing how to beat each challenge.
+
+I highly recommend taking the free lesson to get started. The cost of the course is $225 but a request has been made to the author to consider a discounted rate for students. We'll see if he's able to do that.
+
+In the meantime, you can follow him on twitter ([@geddski](https://twitter.com/geddski)) and check his feed to get info and updates on the course.
+
+**Link to Work:**
+
+- Grid Critters ([https://gridcritters.com](https://gridcritters.com)) site
+- @geddski on twitter ([https://twitter.com/geddski](https://twitter.com/geddski))
+
+---
 
 ## 77. Regular Expressions
 ### Day 77: December 9, 2017 - Saturday
