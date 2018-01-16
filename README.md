@@ -77,7 +77,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 Let me step back and start with what started it all...
 
-I loved how cool [Dave Geddes](https://twitter.com/geddski)' web apps [Grid Critters](https://gridcritters.com) and [Flexbox Zombies](https://flexboxzombies.com) were. It allowed me to read some narrative (the lesson), write some code (in browser), and see the results immediately.
+I loved how cool [Dave Geddes](https://twitter.com/geddski)' web apps [Grid Critters](https://gridcritters.com) and [Flexbox Zombies](https://flexboxzombies.com) were. They allowed me to read some narrative (the lesson), write some code (in browser), and see the results immediately.
 
 This was awesome!!!
 
