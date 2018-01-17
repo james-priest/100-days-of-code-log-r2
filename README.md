@@ -62,8 +62,71 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
+
+
+## 84. Syntax Highlighting - JavaScript
+### Day 84: December 19, 2017 - Tuesday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Making progress
+
+**Thoughts:** Now that I had the RegEx going (from my previous posts), it was time to write the JavaScript to output my matched & replaced string to the content editable div. 
+
+**Link to Work:**
+
+---
 -->
 
+## 83. Syntax Highlighting - RegEx Patterns
+### Day 83: December 18, 2017 - Monday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Moving along
+
+**Thoughts:** With the RegEx tools mentioned in my previous post, I was ready to start writing patterns to match each part of a CSS expression or rule. First I had to break these down:
+
+| Isolate | these | elements |
+| --- | --- | --- |
+| Selectors | HTML Elements | Rules |
+| CSS Constants | CSS Keywords | Numbers |
+| Properties | Functions | Quotes |
+
+With that I fired up my RegEx tools and set to work. After days and weeks of going back and fine tuning as necessary I ended up with this set of RegEx sorcery.
+
+```javascript
+var myCodeEditor = {
+  rxSelectors: /^[\w .\-#[\]'"=:()>^~*+,|$]+(?={)/gm,
+  rxHtmlElements: new RegExp('\\/\\*.*|<.*?>|\\b(' + getHtmlElements() + ')\\b(?=.*{)','gm'),
+  rxConstants: new RegExp('^[\\s\\w-]+|.*?{|\\w+\\(.*\\)|\\/\\*.*|<.*>|(\\b(' + getConstants() + ')(?![\\w-\\()]))', 'gm'),
+  rxKeywords: new RegExp('^[\\s\\w-]+:|\\/\\*.*|\\(.*\\)|([\\d.]+)(ch|cm|deg|em|ex|fr|gd|grad|Hz|in|kHz|mm|ms|pc|pt|px|rad|rem|s|turn|vh|vm|vmin|vmax|vw|%)(?=\\W)', 'gm'),
+  rxNumbers: /^[\s\w-]+:|.*?{|[a-z]\d+|\/\*.*|\(.*\)|([^:>("'/_-]\d*\.?\d+|#[0-9A-Fa-f]{3,6})/gm,
+  rxProperties: /^[^{][ \t\w-]+(?=:)/gm,
+  rxFunctions: new RegExp( '\\/\\*.*|((' + getFunctions() + ')\\([\\w\\d `~!@#$%^&*()\\-_=+[\\]{}\\\\|:;' + String.fromCharCode(39) + '",.\\/?]*\\))', 'gm' ),
+  rxQuotes: /^[/*].*\*\/|("[\w\s-]*"(?!>)|'[\w\s-]*'(?!>))/gm,
+  rxRules: /(.+)\s*(?={)|^[\t\s]*(.+;)/gm,
+  rxTextToWrap: /[\w\d\-[\] {}.:;#,>+'"=()/~^$*]+$/gm,
+  rxBlockToWrap: /[\w\d\-[\] {}.:;#,>+'"=()/~^$*%\t]+$/gm,
+  rxFindComment: /\/\*|\*\//,
+  rxReplaceComment: /\/\*|\*\//gm,
+  rxComments: /\/\*.*\*\//gm,
+
+  init: function()  {..}
+  ..
+}
+```
+
+I love that it looks completely crazy and illegible but is also readable and understandable now that I spent a month in the trenches writing patterns.😃😎
+
+One thing I can say is that I am now a convert and true believer in regular expressions. It has an unprecedented ability to match, group, and replace portions of strings like no other technology.
+
+It is also very properly supported and baked into JavaScript.
+
+**Link to Work:**
+- My Code Editor js file on GitHub - [mce_ta6.js](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta6.js)
+
+---
 
 ## 82. Syntax Highlighting - RegEx Tools
 ### Day 82: December 17, 2017 - Sunday
@@ -94,7 +157,6 @@ These tools allowed me to write and test various RegEx patterns. Here are some o
   - Flags
 
 Additionally, each tool offers an output window that shows you matches, replacements, groupings, and even explainations by simply hovering over the are in question.
-
 
 **Link to Work:**
 - [RegExr.com](https://regexr.com) - My RegEx to [Wrap code with comment blocks](https://regexr.com/3in48)
