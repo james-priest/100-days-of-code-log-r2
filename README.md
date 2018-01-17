@@ -64,6 +64,32 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 -->
 
+## 80. Content Editable Div
+### Day 80: December 7, 2017 - Tuesday
+
+**Project:** Create a simple code editor by upgrading my `<textarea>` input element to a contenteditable `<div>`.
+
+**Progress:** Hit lots of roadblocks which made progress VERY slow.
+
+**Thoughts:** So, one of the benefits of using a contenteditable `<div>` is that you can style the content in the same way a code editor does.
+
+[![contenteditabl div](assets/images/sm_my-code-editor3.jpg)](assets/images/full-size/my-code-editor3.png)
+
+The problem is that the html produced varies across browsers. Manipulating the content is a bear, and dealing with cursor placement and positioning is much more code intensive. This is becaue we are now manipulating around html elements rather than straight text as is used in a textarea control.
+
+So,this was not as easy as using a `<textarea>` element. As it turns out, various browsers handle simple things like the **&lt;Enter&gt;** key differently. Some wrap with a `<div>`, some use `<p>`, and others use `<br>`.
+
+This is just one example of the lack of standard behavior acrosss browsers. Appearently the issue is less fractured now but there still exists many inconsistencies that become difficult to work with.
+
+**Link to Work:**
+- _[Making Content Editable](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content)_ article on MDN
+- [Proof-of-concept page](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor3.html) using content editable div as editor
+- Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor3.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style3.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_div3.js))
+
+[![contenteditabl div](assets/images/sm_my-code-editor4.jpg)](assets/images/full-size/my-code-editor4.png)
+
+---
+
 ## 79. Writing My Own Code Editor
 ### Day 79: December 11, 2017 - Tuesday
 
@@ -129,7 +155,7 @@ I figured it was clear sailing from here on out - that I would be done replicati
 Well that turned out to not be true. The next dozen posts will detail what I learned.
 
 **Link to Work:**
-- An early version of my simple but working [code editor](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor2.html) on Netlify
+- An early version of my simple but working [code editor](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor2.html)
 - Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor2.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style2.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta1.js))
 
 [![my code editor screenshot](assets/images/sm_my-code-editor1.jpg)](assets/images/full-size/my-code-editor1.png)
