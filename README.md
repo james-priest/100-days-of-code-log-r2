@@ -64,6 +64,44 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 -->
 
+
+## 82. Syntax Highlighting - RegEx Tools
+### Day 82: December 17, 2017 - Sunday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Fun & challenging
+
+**Thoughts:** For the RegEx part of this project I needed to rely on some online Regular Expression editors and testers.  The two I used are [RegExr.com](https://regexr.com) & [RegEx101.com](https://regex101.com).
+
+[![regexr](assets/images/sm_regexr1.jpg)](assets/images/full-size/regexr1.png)
+[RegExr.com](https://regexr.com)
+
+[![regexr](assets/images/sm_regex101a.jpg)](assets/images/full-size/regex101a.png)
+[RegEx101.com](https://regex101.com)
+
+These tools allowed me to write and test various RegEx patterns. Here are some of the features that both tools have.
+- Ability to save, share, and version your regular expressions
+- Visual indication of matches
+- Syntax highlighting of matches and grouping
+- Reference and cheatsheets for
+  - Anchors
+  - Escaped characters
+  - Groups and references
+  - Lookahead/Lookbehind
+  - Quantifiers and Alteration
+  - Substitution
+  - Flags
+
+Additionally, each tool offers an output window that shows you matches, replacements, groupings, and even explainations by simply hovering over the are in question.
+
+
+**Link to Work:**
+- [RegExr.com](https://regexr.com) - My RegEx to [Wrap code with comment blocks](https://regexr.com/3in48)
+- [RegEx101.com](https://regex101.com) - My RegEx to [Group css rules & property/values](https://regex101.com/r/xRhl9X/1/)
+
+---
+
 ## 81. Syntax Highlighting - HTML/CSS
 ### Day 81: December 16, 2017 - Saturday
 
