@@ -62,21 +62,52 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-
+-->
 
 ## 84. Syntax Highlighting - JavaScript
 ### Day 84: December 19, 2017 - Tuesday
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:** Making progress
+**Progress:** Making it.
 
-**Thoughts:** Now that I had the RegEx going (from my previous posts), it was time to write the JavaScript to output my matched & replaced string to the content editable div. 
+**Thoughts:** Now that I had the RegEx going (from my previous posts), it was time to write the JavaScript to output my matched and augmented strings to the content editable div.
+
+At it's simplest this is a one liner for String.replace().
+
+```javascript
+var rxProperties = /^[ \t\w-]+(?=:)/gm;
+
+formatted = formatted.replace( this.rxProperties, 
+  '<span class="mce-property">$&</span>' );
+
+document.querySelector('.myCodeEditor').innerHTML = formatted;
+```
+
+The more involved syntax uses a callback to access matched regex groups.
+
+```javascript
+var rxQuotes = /^[/*].*\*\/|("[\w\s-]*"(?!>)|'[\w\s-]*'(?!>))/gm;
+
+formatted = formatted.replace( this.rxQuotes, function(m, group1) {
+  if (group1 !== undefined) {
+    return '<span class="mce-quotes">' + group1 + '</span>';
+  }
+  return m;
+} );
+
+document.querySelector('.myCodeEditor').innerHTML = formatted;
+```
+
+The result is this.
+
+[![code editor screenshot](assets/images/sm_my-code-editor5.jpg)](assets/images/full-size/my-code-editor5.png)
 
 **Link to Work:**
+- [MCE (My Code Editor) v4](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor4.html)
+- Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor4.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style4.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta4.js))
 
 ---
--->
 
 ## 83. Syntax Highlighting - RegEx Patterns
 ### Day 83: December 18, 2017 - Monday
@@ -156,7 +187,7 @@ These tools allowed me to write and test various RegEx patterns. Here are some o
   - Substitution
   - Flags
 
-Additionally, each tool offers an output window that shows you matches, replacements, groupings, and even explainations by simply hovering over the are in question.
+Additionally, each tool offers an output window that shows you matches, replacements, groupings, and even explainations by simply hovering over the syntax in question.
 
 **Link to Work:**
 - [RegExr.com](https://regexr.com) - My RegEx to [Wrap code with comment blocks](https://regexr.com/3in48)
@@ -177,11 +208,11 @@ I recently completed [Code School's Regular Expressions course](https://www.code
 
 The concept is to match a css keyword such as `flex` or `grid` and then wrap it with `<span>` tags such as `<span class="keyword">grid</span>`. We can then set the css class to specify a color or style for all css keywords. The output looks like this:
 
-[![color screenshot](assets/images/sm_my-code-editor5.jpg)](assets/images/full-size/my-code-editor5.png)
+[![code editor screenshot](assets/images/sm_my-code-editor5.jpg)](assets/images/full-size/my-code-editor5.png)
 
 The classes I set look like this:
 
-[![color screenshot](assets/images/sm_mce-color-classes.jpg)](assets/images/full-size/mce-color-classes.png)
+[![colors screenshot](assets/images/sm_mce-color-classes.jpg)](assets/images/full-size/mce-color-classes.png)
 
 I'll discuss the necessary RegEx in my next post.
 
