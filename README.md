@@ -64,6 +64,33 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 -->
 
+## 81. Syntax Highlighting - HTML/CSS
+### Day 81: December 16, 2017 - Saturday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Slow & steady
+
+**Thoughts:** This was actually a pretty cool and fun part of the project.
+
+I recently completed [Code School's Regular Expressions course](https://www.codeschool.com/courses/breaking-the-ice-with-regular-expressions) and now had a chance to put what I learned into practice. Armed with this new knowledge, I embarked on keyword matching for syntax highlighting.
+
+The concept is to match a css keyword such as `flex` or `grid` and then wrap it with `<span>` tags such as `<span class="keyword">grid</span>`. We can then set the css class to specify a color or style for all css keywords. The output looks like this:
+
+[![color screenshot](assets/images/sm_my-code-editor5.jpg)](assets/images/full-size/my-code-editor5.png)
+
+The classes I set look like this:
+
+[![color screenshot](assets/images/sm_mce-color-classes.jpg)](assets/images/full-size/mce-color-classes.png)
+
+I'll discuss the necessary RegEx in my next post.
+
+**Link to Work:**
+- [MCE (My Code Editor) v4](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor4.html)
+- Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor4.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style4.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta4.js))
+
+---
+
 ## 80. Content Editable Div
 ### Day 80: December 15, 2017 - Friday
 
@@ -99,7 +126,7 @@ This is just one example of the lack of standard behavior acrosss browsers. Appe
 
 [![my code editor screenshot](assets/images/sm_my-code-editor2.jpg)](assets/images/full-size/my-code-editor2.png)
 
-**Thoughts:** So, in the interest of full disclosure, I am writting this one month after going MIA on my #100DaysOfCode twitter posts. Its not that I didn't code, it's that I didn't come out of the JavaScript hole for 4 weeks!
+**Thoughts:** So, in the interest of full disclosure, I am writting this one month after going MIA on my [#100DaysOfCode](https://twitter.com/search?q=%23100DaysOfCode&src=tyah) twitter posts. Its not that I didn't code, it's that I didn't come out of the JavaScript hole for 4 weeks!
 
 Let me step back and start with what started it all...
 
