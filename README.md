@@ -62,14 +62,148 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
+
+
+## 92. DOM Manipulation with Ranges
+### Day 92: December 27, 2017 - Wednesday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
+
+---
+
+## 91. CSS Props & Values - JavaScript Function Expressions
+### Day 91: December 26, 2017 - Tuesday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
+
+---
+
+## 90. CSS Props & Values - String Manipulation
+### Day 90: December 25, 2017 - Monday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
+
+---
+
+## 89. CSS Props & Values - Parsing JSON
+### Day 89: December 24, 2017 - Sunday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
+
+---
+
+## 88. CSS Props & Values - Submit a Pull Request
+### Day 88: December 23, 2017 - Saturday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
+
+---
+
+## 87. CSS Props & Values - Update Node.js Code
+### Day 86: December 22, 2017 - Friday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
+
+---
+
+## 87. CSS Props & Values - Forking on GitHub
+### Day 86: December 21, 2017 - Thursday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:**
+
+**Thoughts:**
+
+
+ quickly got  
+The only problem is that the package hadn't been updated in 2 years which means it relied on the markup used on the site from two years ago.
+
+Luckily, not too much changed. 
+
+**Link to Work:**
 -->
+---
+
+## 85. CSS Props & Values - NPM Package
+### Day 85: December 20, 2017 - Wednesday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Installed & ran the `css-properties-values` node.js package. Hit a few bumps in the road but got an opportunity to code node.js.
+
+**Thoughts:** In writing regex patterns to match css properties and values, I needed a master list from which to match against. I briefly looked online for a **text file**  containing all css props & vals but didn't find one.
+
+What I did find was no shortage of sites that laid out all 230+ properties (along with hundreds of values) as scrollable or searchable HTML. This didn't make it easy to pull into a heirachical text format for my regular expressions to use.
+
+I then found a node.js package written two years ago that screen scrapes from [http://w3schools.com/cssref](http://www.w3schools.com/cssref/) to dynamically build a JSON file containing ALL css properties and their values. Whew! This was just what I needed!😁😇
+
+I quickly set to work by installing the packing into my current project.
+
+```bash
+npm install css-properties-values --save
+npm run build
+```
+
+I ran the build which uses `cheerio` (an npm package which implements a subset of jQuery for use in a node.js server-side environment), to do an AJAX request for the web content. It then parses that into a JSON file. It was quick and managed to get about 80% of data.
+
+But wait!... I needed 100%.
+
+Appearently, the folks at w3schools changed the way they tagged their new properies so things like `flexbox` and `grid` items where missing or incomplete in the JSON file.
+
+"Someone should fix this", I thought...😏😁
+
+More in my next post.😄
+
+**Link to Work:**
+- npm [css-properties-values](https://www.npmjs.com/package/css-properties-values) package.
+- RunKit playground to [test the css-properties-values package](https://npm.runkit.com/css-properties-values) with.
+- npm [cheerio](https://www.npmjs.com/package/cheerio) package.
+
+---
 
 ## 84. Syntax Highlighting - JavaScript
 ### Day 84: December 19, 2017 - Tuesday
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:** Making it.
+**Progress:** Making it
 
 **Thoughts:** Now that I had the RegEx going (from my previous posts), it was time to write the JavaScript to output my matched and augmented strings to the content editable div.
 
