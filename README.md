@@ -65,7 +65,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 -->
 
 ## 80. Content Editable Div
-### Day 80: December 7, 2017 - Tuesday
+### Day 80: December 15, 2017 - Friday
 
 **Project:** Create a simple code editor by upgrading my `<textarea>` input element to a contenteditable `<div>`.
 
@@ -91,7 +91,7 @@ This is just one example of the lack of standard behavior acrosss browsers. Appe
 ---
 
 ## 79. Writing My Own Code Editor
-### Day 79: December 11, 2017 - Tuesday
+### Day 79: December 11, 2017 - Monday
 
 <!-- **Project:** To write a CSS code editor in JavaScript for embedding into a web page or web app. -->
 **Project:** To write a web-based CSS code editor in JavaScript for embedding in a web page.
