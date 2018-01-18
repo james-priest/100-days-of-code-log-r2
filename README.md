@@ -126,7 +126,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
-
+-->
 ---
 
 ## 87. CSS Props & Values - Update Node.js Code
@@ -134,16 +134,103 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:**
+**Progress:** Steady
 
-**Thoughts:** Now that we have our own personal copy of the repo, we can set to work.
+**Thoughts:** Now that I had my own personal copy of the repo, I set off to work.
 
-The code was good and the package worked great. The only problem is that the package hadn't been updated in two years which means it relied on markup the site had used two years ago. Also, node now requires some more robust error handling which the package was short on.
+The code was good but hadn't been updated in two years. This meant that the package relied on markup used on the site two years ago. Also, node now requires some more robust error handling which the package was short on.
 
-Luckily, that was about it - a few class names had been updated on the site and a couple semantic hierarchies had been modified but overall it looked like some manageable fixes.
+Luckily, that was about it - a few css class names had been updated on the website and a couple semantic hierarchies had been modified but overall it looked like capturing 100% of the content was going to be doable. Below is a diff of some of the changes I made.
+
+#### git diff
+```bash
+diff --git a/build.js b/build.js
+index d80f41c..62f8223 100644
+--- a/build.js
++++ b/build.js
+@@ -14,7 +14,7 @@ const getPropValues = (url) => {
+     got(childUrl(url))
+       .then(response => {
+         let $child = cheerio.load(response.body);
+-        let $rows = $child('.w3-table-all tr');
++        let $rows = $child('.w3-table-all.notranslate tr');
+         let results = [];
+
+         $rows.each((i, row) => {
+@@ -31,21 +31,28 @@ const getPropValues = (url) => {
+ };
+
+ const saveResults = () => {
+-  fs.writeFile('css-properties-values.json', JSON.stringify(results));
++  fs.writeFile('css-properties-values.json', JSON.stringify(results), function(err) {
++    if(err) throw err;
++    console.log('Saved!');
++  });
+ }
+
+ got(parentUrl)
+   .then(response => {
+     let $parent = cheerio.load(response.body);
+-    let $rows = $parent('.w3-table-all tr');
++    let $rows = $parent('.w3-table-all.notranslate tr');
+
+     each($rows.toArray(), (row, next) => {
+       let $cols = $parent(row).find('td');
+       let property = $cols.eq(0).text();
+-      let childUrl = $parent(row).find('a').attr('href');
++      let childUrl = $parent(row).find('a').attr('href') || '';
++      if(childUrl.charAt() === '/') {
++        childUrl = childUrl.replace(/\/cssref\//, '');
++      }
++      console.log('childUrl', childUrl);
+
+       // no prop, skip
+-      if (!property.length) {
++      if (!property.length || !childUrl.length) {
+         next();
+       } else {
+         if (childUrl) {
+```
+
+The nice thing about the code relying on the `cheerio` package is that `cheerio` is a subset of jQuery ported over to node.js. So, the syntax was familiar.
+
+Once I looked at how w3school's markup was laid out I could then see where the code was not capturing  certain HTML nodes properly. I made the changes and was good to go.
+
+The output produced looked like this.
+
+#### output
+```json
+[
+  {
+    "property":"align-content",
+    "values":["stretch","center","flex-start","flex-end","space-between"]
+  },
+  {
+    "property":"border",
+    "values":["border-width","border-style","border-color","initial","inherit"]
+  },
+  {
+    "property":"color",
+    "values":["color","initial","inherit"]
+  }
+]
+```
+
+I still wasn't done. What I had was good but what I needed for matching purposes had to be de-duped, filtered, ordered, and had to end up looking like this:
+
+#### needed
+```javascript
+var cssProperties = "align-content|border|color|...";
+var cssValues = "border-color|border-width|border-style|center|flex-end|...";
+```
+
+That was what I tackled next and will detail in my next post.
 
 **Link to Work:**
--->
+- My fork of [css-properties-values repo](https://github.com/james-priest/css-properties-values) on GitHub
+- [build.js](https://github.com/james-priest/css-properties-values/blob/master/build.js) code on GitHub which scrapes and parses the html
+- [css-properties-values.json](https://github.com/james-priest/css-properties-values/blob/master/css-properties-values.json) - the output of build.js
+
 ---
 
 ## 86. CSS Props & Values - Forking on GitHub
@@ -171,7 +258,7 @@ BTW, most folks recommend you create a feature branch to work on and then push t
 Here's a link to and great post that discusses [Using Fork & Branch GitHub Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/).
 
 **Link to Work:**
-- My fork of [css-properties-values](https://github.com/james-priest/css-properties-values) on GitHub
+- My fork of [css-properties-values repo](https://github.com/james-priest/css-properties-values) on GitHub
 - [Forking Projects](https://guides.github.com/activities/forking/) GitHub Guides (4 minute read)
 - [Using Fork & Branch GitHub Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) by Scott Lowe
 
