@@ -136,29 +136,43 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Progress:**
 
-**Thoughts:**
+**Thoughts:** Now that we have our own personal copy of the repo, we can set to work.
+
+The code was good and the package worked great. The only problem is that the package hadn't been updated in two years which means it relied on markup the site had used two years ago. Also, node now requires some more robust error handling which the package was short on.
+
+Luckily, that was about it - a few class names had been updated on the site and a couple semantic hierarchies had been modified but overall it looked like some manageable fixes.
 
 **Link to Work:**
-
+-->
 ---
 
-## 87. CSS Props & Values - Forking on GitHub
+## 86. CSS Props & Values - Forking on GitHub
 ### Day 86: December 21, 2017 - Thursday
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:**
+**Progress:** Completed in a day!
 
-**Thoughts:**
+**Thoughts:** So when we last left our hero, he was scratching his head wondering who was going to fix the node.js `css-properties-values` package. This package is used to screen scrape from the [w3schools CSS Reference page](http://www.w3schools.com/cssref/). It then dynamically build a JSON file containing ALL css properties and associated values.
 
+Well, before I could fix anything I first needed to fork the repository.
 
- quickly got  
-The only problem is that the package hadn't been updated in 2 years which means it relied on the markup used on the site from two years ago.
+From the GitHub Guides page on [Forking Projects](https://guides.github.com/activities/forking/):
+> Creating a “fork” is producing a personal copy of someone else’s project. Forks act as a sort of bridge between the original repository and your personal copy. You can submit Pull Requests to help make other people’s projects better by offering your changes up to the original project.
 
-Luckily, not too much changed. 
+So, I "forked" the repository by going to the source repo and clicking the **Fork** button in the upper right hand corner of the page. Now a copy existed on GitHub under my account but I still needed to **clone** it so I could work on it locally.
+
+Once cloned, I got to work updating the code. More in my next post...
+
+BTW, most folks recommend you create a feature branch to work on and then push that branch to GitHub before making the Pull Request. This keeps everything nice & tidy for the project owner who can then decide which feature branches to merge into their app.
+
+Here's a link to and great post that discusses using the [Fork & Branch GitHub Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/).
 
 **Link to Work:**
--->
+- My fork of [css-properties-values](https://github.com/james-priest/css-properties-values) on GitHub
+- [Forking Projects](https://guides.github.com/activities/forking/) GitHub Guides (4 minute read)
+- [Using Fork & Branch GitHub Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) by Scott Lowe
+
 ---
 
 ## 85. CSS Props & Values - NPM Package
@@ -170,7 +184,7 @@ Luckily, not too much changed.
 
 **Thoughts:** In writing regex patterns to match css properties and values, I needed a master list from which to match against. I briefly looked online for a **text file**  containing all css props & vals but didn't find one.
 
-What I did find was no shortage of sites that laid out all 230+ properties (along with hundreds of values) as scrollable or searchable HTML. This didn't make it easy to pull into a heirachical text format for my regular expressions to use.
+What I did find was no shortage of sites that laid out all 230+ properties (along with hundreds of values) as scrollable or searchable HTML. This didn't make it easy to pull into a hierarchical text format for my regular expressions to use.
 
 I then found a node.js package written two years ago that screen scrapes from [http://w3schools.com/cssref](http://www.w3schools.com/cssref/) to dynamically build a JSON file containing ALL css properties and their values. Whew! This was just what I needed!😁😇
 
@@ -185,7 +199,7 @@ I ran the build which uses `cheerio` (an npm package which implements a subset o
 
 But wait!... I needed 100%.
 
-Appearently, the folks at w3schools changed the way they tagged their new properies so things like `flexbox` and `grid` items where missing or incomplete in the JSON file.
+Apparently, the folks at w3schools changed the way they tagged their new properties so things like `flexbox` and `grid` items where missing or incomplete in the JSON file.
 
 "Someone should fix this", I thought...😏😁
 
@@ -321,7 +335,7 @@ These tools allowed me to write and test various RegEx patterns. Here are some o
   - Substitution
   - Flags
 
-Additionally, each tool offers an output window that shows you matches, replacements, groupings, and even explainations by simply hovering over the syntax in question.
+Additionally, each tool offers an output window that shows you matches, replacements, groupings, and even explanations by simply hovering over the syntax in question.
 
 **Link to Work:**
 - [RegExr.com](https://regexr.com) - My RegEx to [Wrap code with comment blocks](https://regexr.com/3in48)
@@ -365,20 +379,20 @@ I'll discuss the necessary RegEx in my next post.
 
 **Thoughts:** So, one of the benefits of using a contenteditable `<div>` is that you can style the content in the same way a code editor does.
 
-[![contenteditabl div](assets/images/sm_my-code-editor3.jpg)](assets/images/full-size/my-code-editor3.png)
+[![contenteditable div](assets/images/sm_my-code-editor3.jpg)](assets/images/full-size/my-code-editor3.png)
 
-The problem is that the html produced varies across browsers. Manipulating the content is a bear, and dealing with cursor placement and positioning is much more code intensive. This is becaue we are now manipulating around html elements rather than straight text as is used in a textarea control.
+The problem is that the html produced varies across browsers. Manipulating the content is a bear, and dealing with cursor placement and positioning is much more code intensive. This is because we are now manipulating around html elements rather than straight text as is used in a textarea control.
 
 So,this was not as easy as using a `<textarea>` element. As it turns out, various browsers handle simple things like the **&lt;Enter&gt;** key differently. Some wrap with a `<div>`, some use `<p>`, and others use `<br>`.
 
-This is just one example of the lack of standard behavior acrosss browsers. Appearently the issue is less fractured now but there still exists many inconsistencies that become difficult to work with.
+This is just one example of the lack of standard behavior across browsers. Apparently the issue is less fractured now but there still exists many inconsistencies that become difficult to work with.
 
 **Link to Work:**
 - _[Making Content Editable](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content)_ article on MDN
 - [Proof-of-concept page](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor3.html) using content editable div as editor
 - Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor3.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style3.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_div3.js))
 
-[![contenteditabl div](assets/images/sm_my-code-editor4.jpg)](assets/images/full-size/my-code-editor4.png)
+[![contenteditable div](assets/images/sm_my-code-editor4.jpg)](assets/images/full-size/my-code-editor4.png)
 
 ---
 
@@ -391,7 +405,7 @@ This is just one example of the lack of standard behavior acrosss browsers. Appe
 
 [![my code editor screenshot](assets/images/sm_my-code-editor2.jpg)](assets/images/full-size/my-code-editor2.png)
 
-**Thoughts:** So, in the interest of full disclosure, I am writting this one month after going MIA on my [#100DaysOfCode](https://twitter.com/search?q=%23100DaysOfCode&src=tyah) twitter posts. Its not that I didn't code, it's that I didn't come out of the JavaScript hole for 4 weeks!
+**Thoughts:** So, in the interest of full disclosure, I am writing this one month after going MIA on my [#100DaysOfCode](https://twitter.com/search?q=%23100DaysOfCode&src=tyah) twitter posts. Its not that I didn't code, it's that I didn't come out of the JavaScript hole for 4 weeks!
 
 Let me step back and start with what started it all...
 
@@ -461,13 +475,13 @@ Well that turned out to not be true. The next dozen posts will detail what I lea
 
 **Progress:** This a a paid course but the first chapter is free. It took me a day to complete.
 
-[![Grid Critters schreenshot](assets/images/sm_grid-critters2.jpg)](assets/images/full-size/grid-critters2.jpg)
+[![Grid Critters screenshot](assets/images/sm_grid-critters2.jpg)](assets/images/full-size/grid-critters2.jpg)
 
-**Thoughts:** If you've already taken the Flexbox Zombies course ([https://flexboxzombies.com](https://flexboxzombies.com)) then you know what a great learing method this is. If not then I highly recommend you do.
+**Thoughts:** If you've already taken the Flexbox Zombies course ([https://flexboxzombies.com](https://flexboxzombies.com)) then you know what a great learning method this is. If not then I highly recommend you do.
 
 By employing spaced repetition and game-based learning this course manages to help commit the material to memory in a way that's fun and rewarding. 
 
-Learning comes through a series of naratives and challenges so it almost doesn't feel like you're absorbing material as much as learing how to beat each challenge.
+Learning comes through a series of narratives and challenges so it almost doesn't feel like you're absorbing material as much as learning how to beat each challenge.
 
 I highly recommend taking the free lesson to get started. The cost of the course is $225 but a request has been made to the author to consider a discounted rate for students. We'll see if he's able to do that.
 
