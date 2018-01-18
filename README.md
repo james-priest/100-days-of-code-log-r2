@@ -153,9 +153,11 @@ Luckily, that was about it - a few class names had been updated on the site and 
 
 **Progress:** Completed in a day!
 
-**Thoughts:** So when we last left our hero, he was scratching his head wondering who was going to fix the node.js `css-properties-values` package. This package is used to screen scrape from the [w3schools CSS Reference page](http://www.w3schools.com/cssref/). It then dynamically build a JSON file containing ALL css properties and associated values.
+**Thoughts:** When we last left our hero, he was scratching his head wondering who was going to fix the node.js `css-properties-values` package. This package is used to screen scrape the [w3schools CSS Reference page](http://www.w3schools.com/cssref/). It then dynamically builds a JSON file containing ALL css properties and associated values.
 
 Well, before I could fix anything I first needed to fork the repository.
+
+[![npm screenshot](assets/images/sm_github-css-properties-values.jpg)](assets/images/full-size/github-css-properties-values.png)
 
 From the GitHub Guides page on [Forking Projects](https://guides.github.com/activities/forking/):
 > Creating a “fork” is producing a personal copy of someone else’s project. Forks act as a sort of bridge between the original repository and your personal copy. You can submit Pull Requests to help make other people’s projects better by offering your changes up to the original project.
@@ -164,9 +166,9 @@ So, I "forked" the repository by going to the source repo and clicking the **For
 
 Once cloned, I got to work updating the code. More in my next post...
 
-BTW, most folks recommend you create a feature branch to work on and then push that branch to GitHub before making the Pull Request. This keeps everything nice & tidy for the project owner who can then decide which feature branches to merge into their app.
+BTW, most folks recommend you create a feature branch to work on and then push that branch to GitHub before making the Pull Request. This keeps everything nice & tidy for the project owner who can then decide which feature branches to merge into their repo.
 
-Here's a link to and great post that discusses using the [Fork & Branch GitHub Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/).
+Here's a link to and great post that discusses [Using Fork & Branch GitHub Workflow](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/).
 
 **Link to Work:**
 - My fork of [css-properties-values](https://github.com/james-priest/css-properties-values) on GitHub
@@ -186,7 +188,9 @@ Here's a link to and great post that discusses using the [Fork & Branch GitHub W
 
 What I did find was no shortage of sites that laid out all 230+ properties (along with hundreds of values) as scrollable or searchable HTML. This didn't make it easy to pull into a hierarchical text format for my regular expressions to use.
 
-I then found a node.js package written two years ago that screen scrapes from [http://w3schools.com/cssref](http://www.w3schools.com/cssref/) to dynamically build a JSON file containing ALL css properties and their values. Whew! This was just what I needed!😁😇
+[![npm screenshot](assets/images/sm_npm-css-properties-values.jpg)](assets/images/full-size/npm-css-properties-values.png)
+
+I then found a node.js package by Andy Axton published two years ago that screen scrapes from [http://w3schools.com/cssref](http://www.w3schools.com/cssref/) to dynamically build a JSON file containing ALL css properties and their values. Whew! This was just what I needed!😁😇
 
 I quickly set to work by installing the packing into my current project.
 
