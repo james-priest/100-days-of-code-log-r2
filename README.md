@@ -100,7 +100,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
-
+-->
 ---
 
 ## 89. CSS Props & Values - Parsing JSON
@@ -108,12 +108,58 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:**
+**Progress:** Iterative..
 
-**Thoughts:**
+**Thoughts:** I now had the JSON file in a local directory but had to get it from this:
+
+```json
+[
+  {"property":"align-content","values":["stretch","center","flex-start","..."]},
+  {"property":"border","values":["border-width","border-style","..."]},
+  {"property":"color","values":["color","initial","inherit"]}
+]
+```
+
+to this:
+
+```javascript
+var cssProperties = "align-content|border|color|...";
+var cssValues = "border-color|border-width|border-style|center|flex-end|...";
+```
+
+I went old-school `XMLHttpRequest` on this...
+
+```javascript
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myArr = JSON.parse(this.responseText);
+    var propArr = [], valArr = [];
+    myArr.forEach(item => {
+      propArr.push(item.property);
+      item.values.forEach(val => {
+        valArr.push(val);
+      });
+    });
+  }
+};
+xmlhttp.open("GET", "css-properties-values.json", true);
+xmlhttp.send();
+
+document.getElementById("prop").innerHTML = propArr.join('|');
+document.getElementById("vals").innerHTML = valArr2.join('|');
+```
+
+The HTML table format of the output looks like this. 
+
+[![output screenshot](assets/images/sm_css-props-and-values1.jpg)](assets/images/full-size/css-props-and-values1.png)
+
+I also ended up doing quite a bit of filtering, sorting, de-duping, etc. A word of warning... the code is icky since it was a quick and dirty way to get my list of unique CSS values.
 
 **Link to Work:**
--->
+- Master CSS list of unique values - [HTML Table](https://my-code-editor.netlify.com/lib/test2.html) ([ source](https://github.com/james-priest/grid-critters-code/blob/master/lib/test2.html))
+- Master CSS list of unique values - [List format](https://my-code-editor.netlify.com/lib/test5-list.html) ([source](https://github.com/james-priest/grid-critters-code/blob/master/lib/test5-list.html))
+
 ---
 
 ## 88. CSS Props & Values - Submit a Pull Request
