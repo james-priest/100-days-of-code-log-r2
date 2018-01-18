@@ -113,26 +113,48 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
-
+-->
 ---
 
 ## 88. CSS Props & Values - Submit a Pull Request
 ### Day 88: December 23, 2017 - Saturday
 
-**Project:** MCE (My Code Editor) project
+**Project:** MCE (My Code Editor) project / css-properties-values node.js package
 
-**Progress:**
+**Progress:** Complete
 
-**Thoughts:**
+**Thoughts:** I mentioned in my last post that I would cover the parsing of the JSON file that the  `css-properties-values` package produced but I forgot one IMPORTANT step I took once I finished fixing the package.  That was to close the loop and do a Pull Request.
+
+I wanted to contribute the fix to the author and the community.
+
+So, once I updated the node.js code locally I pushed it back up to the server. I probably should have created a new branch for my updates but I kept it on _master_.
+
+Now it was time to do a Pull Request. I went onto GitHub and clicked the Pull Request button. The system was smart enough to know where it should go based on the repo I originally forked from.
+
+[![pr screenshot](assets/images/sm_github-css-properties-values-pull-request.jpg)](assets/images/full-size/github-css-properties-values-pull-request.png)
+
+I then created a message detailing what had been done. It said,
+> Hi,
+> I updated the code to work with the latest version of node. It was throwing errors related to deprecated behavior (unhandledpromiserejectionwarning, calling an asynchronous function without callback).
+>
+>I also updated the table and class selector strings since w3schools updated their page structure a bit. This now brings in properties and values related to css grid.
+>
+>Lastly, I modified the URL constructor to adjust for the use of absolute URLs which some of the new pages now use.
+>
+>The build.js script now works properly to build a current css-properties-values.json file.
+
+That was it. Now if the author decides to use it he can. He can also start a dialogue with me through GitHub to discuss any other issues or changes.  Pretty Cool!  
 
 **Link to Work:**
--->
+- Link to [my Pull Request](https://github.com/a-axton/css-properties-values/pull/2)
+- My fork of [css-properties-values repo](https://github.com/james-priest/css-properties-values) on GitHub
+
 ---
 
 ## 87. CSS Props & Values - Update Node.js Code
 ### Day 86: December 22, 2017 - Friday
 
-**Project:** MCE (My Code Editor) project
+**Project:** MCE (My Code Editor) project / css-properties-values node.js package
 
 **Progress:** Steady
 
@@ -236,7 +258,7 @@ That was what I tackled next and will detail in my next post.
 ## 86. CSS Props & Values - Forking on GitHub
 ### Day 86: December 21, 2017 - Thursday
 
-**Project:** MCE (My Code Editor) project
+**Project:** MCE (My Code Editor) project / `css-properties-values` node.js package
 
 **Progress:** Completed in a day!
 
@@ -267,7 +289,7 @@ Here's a link to and great post that discusses [Using Fork & Branch GitHub Workf
 ## 85. CSS Props & Values - NPM Package
 ### Day 85: December 20, 2017 - Wednesday
 
-**Project:** MCE (My Code Editor) project
+**Project:** MCE (My Code Editor) project / `css-properties-values` node.js package
 
 **Progress:** Installed & ran the `css-properties-values` node.js package. Hit a few bumps in the road but got an opportunity to code node.js.
 
