@@ -68,7 +68,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:**
+**Progress:** Work in progress...
 
 **Thoughts:**
 
@@ -76,25 +76,12 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 -
 
-## 92. DOM Manipulation with Ranges
-### Day 92: December 27, 2017 - Wednesday
+## 93. DOM Manipulation with Ranges
+### Day 93: December 28, 2017 - Wednesday
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:**
-
-**Thoughts:**
-
-**Link to Work:**
-
----
-
-## 91. CSS Props & Values - JavaScript Function Expressions
-### Day 91: December 26, 2017 - Tuesday
-
-**Project:** MCE (My Code Editor) project
-
-**Progress:**
+**Progress:** Work in progress...
 
 **Thoughts:**
 
@@ -102,12 +89,45 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 -->
 ---
 
+## 91. CSS Props & Values - JavaScript Function Expressions
+### Day 91: December 26, 2017 - Tuesday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Work in progress...
+
+**Thoughts:** Now that I had a working master list of all CSS property values I could start using that to match against a string of text entered into the browser as code.
+
+Ideally, the matches would happen dynamically and after each _keypress_. For now I set off to write the code around matching a _static_ string.
+
+The first step was to get my values into a format that could easily be brought into a RegEx object constructor. This would have to be a _string_. I did this with function expressions and this is what that looked like.
+
+[![vscode screenshot](assets/images/sm_vscode-css-constants.jpg)](assets/images/full-size/vscode-css-constants.png)
+
+I used an object literal to define my code editor so as not pollute the global namespace. I did this later for the function expressions as well. The properties of the object literal that uses these function expressions looks like this:
+
+```javascript
+var myTACodeEditor = {
+  rxHtmlElements: new RegExp('\\/\\*.*|<.*?>|\\b(' + getHtmlElements() + ')\\b(?=.*{)','gm'),
+  rxConstants: new RegExp('^[\\s\\w-]+|.*?{|\\w+\\(.*\\)|\\/\\*.*|<.*>|(\\b(' + getConstants() + '|' + getColors() + ')(?![\\w-\\()]))', 'gm'),
+  rxKeywords: new RegExp('^[\\s\\w-]+:|\\/\\*.*|\\(.*\\)|([\\d.]+)(ch|cm|deg|em|ex|fr|gd|grad|Hz|in|kHz|mm|ms|pc|pt|px|rad|rem|s|turn|vh|vm|vmin|vmax|vw|%)(?=\\W)', 'gm'),
+  rxNumbers: /^[\s\w-]+:|.*?{|[a-z]\d+|\/\*.*|\(.*\)|([^:>("'/_-]\d*\.?\d+|#[0-9A-Fa-f]{3,6})/gm,
+  rxProperties: /^[^{][ \t\w-]+(?=:)/gm,
+}
+```
+
+**Link to Work:**
+- [css-constants.js](https://github.com/james-priest/grid-critters-code/blob/master/lib/css-constants.js) - js function expressions for property values
+- [CSS Master list of unique property values](http://localhost:8080/lib/test6-list.html) - HTML output which contains css functions, named-colors, & values
+
+---
+
 ## 90. CSS Props & Values - Array  & String Manipulation
 ### Day 90: December 25, 2017 - Monday
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:** Completed
+**Progress:** Work in progress...
 
 **Thoughts:** I previously wrote some code that took a JSON file containing a master list of every CSS property value and output that to the browser. The only problem is that this list was polluted with duplicates, embedded arrays, and redundant shorthand properties which provided other properties as their value.
 
@@ -135,7 +155,7 @@ I needed a single, cleaned-up list of CSS property values only. Here are some of
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:** Iterative..
+**Progress:** Iterative..many pieces...
 
 **Thoughts:** I now had the JSON file in a local directory but had to get it from this:
 
@@ -192,9 +212,9 @@ I also ended up doing quite a bit of filtering, sorting, de-duping, etc. A word 
 ## 88. CSS Props & Values - Submit a Pull Request
 ### Day 88: December 23, 2017 - Saturday
 
-**Project:** MCE (My Code Editor) project / css-properties-values node.js package
+**Project:** Update **css-properties-values** node.js package
 
-**Progress:** Complete
+**Progress:** Completed!
 
 **Thoughts:** I mentioned in my last post that I would cover the parsing of the JSON file that the  `css-properties-values` package produced but I forgot one IMPORTANT step I took once I finished fixing the package.  That was to close the loop and do a Pull Request.
 
@@ -216,7 +236,7 @@ I then created a message detailing what had been done. It said,
 >
 >The build.js script now works properly to build a current css-properties-values.json file.
 
-That was it. Now if the author decides to use it he can. He can also start a dialogue with me through GitHub to discuss any other issues or changes.  Pretty Cool!  
+That was it. Now if the author decides to use it he can. He can also start a dialogue with me through GitHub to discuss any other issues or changes.  Pretty Cool!
 
 **Link to Work:**
 - Link to [my Pull Request](https://github.com/a-axton/css-properties-values/pull/2)
@@ -227,7 +247,7 @@ That was it. Now if the author decides to use it he can. He can also start a dia
 ## 87. CSS Props & Values - Update Node.js Code
 ### Day 86: December 22, 2017 - Friday
 
-**Project:** MCE (My Code Editor) project / css-properties-values node.js package
+**Project:** Update **css-properties-values** node.js package
 
 **Progress:** Steady
 
@@ -331,9 +351,9 @@ That was what I tackled next and will detail in my next post.
 ## 86. CSS Props & Values - Forking on GitHub
 ### Day 86: December 21, 2017 - Thursday
 
-**Project:** MCE (My Code Editor) project / `css-properties-values` node.js package
+**Project:** Update **css-properties-values** node.js package
 
-**Progress:** Completed in a day!
+**Progress:** Work in progress
 
 **Thoughts:** When we last left our hero, he was scratching his head wondering who was going to fix the node.js `css-properties-values` package. This package is used to screen scrape the [w3schools CSS Reference page](http://www.w3schools.com/cssref/). It then dynamically builds a JSON file containing ALL css properties and associated values.
 
@@ -403,7 +423,7 @@ More in my next post.😄
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:** Making it
+**Progress:** Work in progress
 
 **Thoughts:** Now that I had the RegEx going (from my previous posts), it was time to write the JavaScript to output my matched and augmented strings to the content editable div.
 
@@ -587,6 +607,7 @@ This is just one example of the lack of standard behavior across browsers. Appar
 
 <!-- **Project:** To write a CSS code editor in JavaScript for embedding into a web page or web app. -->
 **Project:** To write a web-based CSS code editor in JavaScript for embedding in a web page.
+
 **Progress:** How hard could it be, right?😁😉
 
 [![my code editor screenshot](assets/images/sm_my-code-editor2.jpg)](assets/images/full-size/my-code-editor2.png)
