@@ -63,6 +63,18 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ---
 
 
+## 93. MCE (My Code Editor) - Toggle Comments
+### Day 93: December 28, 2017 - Wednesday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
+
+-
 
 ## 92. DOM Manipulation with Ranges
 ### Day 92: December 27, 2017 - Wednesday
@@ -87,20 +99,35 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
-
+-->
 ---
 
-## 90. CSS Props & Values - String Manipulation
+## 90. CSS Props & Values - Array  & String Manipulation
 ### Day 90: December 25, 2017 - Monday
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:**
+**Progress:** Completed
 
-**Thoughts:**
+**Thoughts:** I wrote code that took a JSON file of every CSS property value and output that to the browser. The only problem is that this list was polluted with duplicates, embedded arrays, and redundant shorthand properties which provided other properties as their value.
+
+I needed a single, cleaned-up list of CSS property values only. Here are some of the Array and String methods I used to achieve this.
+
+- **forEach** - executes a provided function once for each array element.
+- **filter** - creates a new array with all elements that pass the test implemented by the provided function.
+- **trim** - removes whitespace from both ends of a string.
+- **map** - creates a new array with the results of calling a provided function on every element in the calling array.
+- **split** - creates a new array with the results of calling a provided function on every element in the calling array.
+- **push** - adds one or more elements to the end of an array and returns the new length of the array.
+- **sort** - sorts the elements of an array in place and returns the array.
+- **reverse** - reverses an array in place.
+- **indexOf** - returns the first index at which a given element can be found in the array, or -1 if it is not present.
+- **splice** - changes the contents of an array by removing existing elements and/or adding new elements.
 
 **Link to Work:**
--->
+- [CSS Master list of unique property values](http://localhost:8080/lib/test6-list.html) - contains css functions, named-colors, & values
+- [test6-list.html](https://github.com/james-priest/grid-critters-code/blob/master/lib/test6-list.html) -  A _very messy_ **javascript/html/css** source file. This was a quick n dirty way of creating a text output of values for use as a _constant_ list in other code. So, for this reason I didn't really clean it up.
+
 ---
 
 ## 89. CSS Props & Values - Parsing JSON
