@@ -109,7 +109,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Progress:** Completed
 
-**Thoughts:** I wrote code that took a JSON file of every CSS property value and output that to the browser. The only problem is that this list was polluted with duplicates, embedded arrays, and redundant shorthand properties which provided other properties as their value.
+**Thoughts:** I previously wrote some code that took a JSON file containing a master list of every CSS property value and output that to the browser. The only problem is that this list was polluted with duplicates, embedded arrays, and redundant shorthand properties which provided other properties as their value.
 
 I needed a single, cleaned-up list of CSS property values only. Here are some of the Array and String methods I used to achieve this.
 
