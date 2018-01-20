@@ -76,16 +76,23 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 -->
 ---
 
-## 93. DOM Manipulation with Ranges
+## 93. DOM Manipulation with Range object
 ### Day 93: December 28, 2017 - Thursday
 
 **Project:** MCE (My Code Editor) project
 
 **Progress:** Work in progress...
 
-**Thoughts:**
+**Thoughts:** One of the things I had been working on is writing a simple code editor that would live on a  page and allow you to update page content in real-time.
+
+Besides being really hard, I found out that in order to do this you really need to have the code displayed in a content editable div. This allows for syntax highlighting and formatting.  The problem is that it is a huge pain in the ass to manipulate dynamic content in a content editable div in a way that's consistent across all platforms and browser flavors.
+
+Regardless, I put together something detailing the DOM Range object, what it does, and how to use it.
+
+[![dom page screenshot](assets/images/sm_dom-range-notes.jpg)](assets/images/full-size/dom-range-notes.png)
 
 **Link to Work:**
+- [DOM Range Notes & Tests](https://my-code-editor.netlify.com/public/dom_range_tests/)
 
 ---
 
