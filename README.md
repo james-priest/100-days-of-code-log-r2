@@ -77,7 +77,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 -
 
 ## 93. DOM Manipulation with Ranges
-### Day 93: December 28, 2017 - Wednesday
+### Day 93: December 28, 2017 - Thursday
 
 **Project:** MCE (My Code Editor) project
 
@@ -87,6 +87,66 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Link to Work:**
 -->
+---
+
+## 92. JavaScript Namespace with Module Pattern
+### Day 92: December 27, 2017 - Wednesday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Work in progress...
+
+**Thoughts:** Here's a beautifully elegant pattern to use for your JavaScript code.
+
+```javascript
+var CSSVALUES = (function() {
+    var cssFunctions = 'url|translateZ|translateY|translateX|translate3d|...';
+    var cssHtmlElements = 'a|abbr|address|area|article|aside|audio|b|base|...';
+    var cssConstants = 'absolute|alias|all|all-scroll|allow-end|alternate|...';
+    var cssColors = 'aliceblue|antiquewhite|aqua|aqua|aquamarine|azure|...';
+
+    return {
+        getFunctions: function() { return cssFunctions; },
+        getHtmlElements: function() { return cssHtmlElements; },
+        getConstants: function() { return cssConstants; },
+        getColors: function() { return cssColors; }
+    };
+} )();
+
+console.log(CSSVALUES.getHtmlElements());
+```
+
+It uses the Module Pattern with an Immediately Invoked Function Expression (IIFE).
+
+What's happening in the code is:
+
+- Private properties are created in the local scope of the _function expression_.
+- Public properties are built within the object which is then returned to become the _namespace_.
+- Access to private data is made possible because of closure within the larger _module_.
+
+What enable the `CSSVALUES` variable to immediately contain the object that serves as our module is **the parentheses at the end of the expression which immediately invoke the function!** Otherwise, this would simply be a function expression.
+
+We are then free to define anything in the return object that we want to expose. In turn, that code is free to access anything defined in the local scope of the function expression.
+
+This will provide you the following benefits:
+1. Organization of your code
+1. Avoids polluting the global namespace
+1. Encapsulates & protects your private data
+1. Returns an object that exposes public methods and properties
+1. Allows your namespace variable to be immediately accessible
+
+Lastly, you will have bragging rights to say you've used:
+- An _Immediately Invoked Function Expression_ (IIFE)
+- object encapsulation
+- JavaScript _closure_
+- public methods
+- a private _namespace_
+- & the _Module Pattern_.
+
+**Link to Work:**
+- [mce_ta.js](https://github.com/james-priest/grid-critters-code/blob/master/public/script/mce_ta.js) - An example of this pattern in my code.
+- [Stack Overflow - How to add private variables to an object literal](https://stackoverflow.com/questions/1396294/how-to-add-private-variable-to-this-javascript-object-literal-snippet) - Related info that shows this same pattern incorporated into an object literal.
+
 ---
 
 ## 91. CSS Props & Values - JavaScript Function Expressions
