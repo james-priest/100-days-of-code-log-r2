@@ -73,8 +73,8 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
-
--
+-->
+---
 
 ## 93. DOM Manipulation with Ranges
 ### Day 93: December 28, 2017 - Thursday
@@ -86,7 +86,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
--->
+
 ---
 
 ## 92. JavaScript Namespace with Module Pattern
@@ -124,7 +124,7 @@ What's happening in the code is:
 - Public properties are built within the object which is then returned to become the _namespace_.
 - Access to private data is made possible because of closure within the larger _module_.
 
-What enable the `CSSVALUES` variable to immediately contain the object that serves as our module is **the parentheses at the end of the expression which immediately invoke the function!** Otherwise, this would simply be a function expression.
+What enables the `CSSVALUES` variable to immediately provide access to the object that serves as our module is **the parentheses at the end of the expression which immediately invoke the function!** Without i we would simply have a function expression.
 
 We are then free to define anything in the return object that we want to expose. In turn, that code is free to access anything defined in the local scope of the function expression.
 
