@@ -59,21 +59,27 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
-
+-->
 ---
 
-
-## 93. MCE (My Code Editor) - Toggle Comments
-### Day 93: December 28, 2017 - Wednesday
+## 94. MCE (My Code Editor) - Toggle Comments
+### Day 94: December 29, 2017 - Friday
 
 **Project:** MCE (My Code Editor) project
 
-**Progress:** Work in progress...
+**Progress:** Added the ability to toggle comments in my code editor
 
-**Thoughts:**
+**Thoughts:** One of the things I noticed about the code editor used on Dave Geddes' ([@geddski](https://twitter.com/geddski)) awesome mastery game sites [Grid Critters](https://gridcritters.com) and [Flexbox Zombies](https://flexboxzombies.com) is the ability to comment out code with a shortcut keystroke.
+
+This can be done on a single line by using the **Ctrl/Cmd + /** keyboard combination or on multiple lines by selecting a block of code and then using the **Ctrl/Cmd + /** keyboard combination.
+
+[![mce screenshot](assets/images/sm_my-code-editor6.jpg)](assets/images/full-size/my-code-editor6.png)
+
+I think this is the coolest thing so I set out to replicate this functionality.
 
 **Link to Work:**
--->
+- [MCE v4](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor4.html) - Version 4 of the code editor (work in progress)
+
 ---
 
 ## 93. DOM Manipulation with Range object
@@ -92,7 +98,7 @@ Regardless, I put together something detailing the DOM Range object, what it doe
 [![dom page screenshot](assets/images/sm_dom-range-notes.jpg)](assets/images/full-size/dom-range-notes.png)
 
 **Link to Work:**
-- [DOM Range Notes & Tests](https://my-code-editor.netlify.com/public/dom_range_tests/)
+- [DOM Range Notes & Tests site](https://my-code-editor.netlify.com/public/dom_range_tests/) 
 
 ---
 
@@ -577,6 +583,7 @@ It is also very properly supported and baked into JavaScript.
 
 **Link to Work:**
 - My Code Editor js file on GitHub - [mce_ta6.js](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta6.js)
+- [The Greatest Regex Trick Ever](http://www.rexegg.com/regex-best-trick.html) article on rexegg.com
 
 ---
 
