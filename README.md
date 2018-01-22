@@ -49,8 +49,8 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-## 80.
-### Day 80: December 7, 2017 - Tuesday
+## 95.
+### Day 95: December 30, 2017 - Saturday
 
 **Project:**
 
@@ -59,7 +59,34 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
+
 -->
+---
+
+## 95. MCE (My Code Editor) - Preserve Selection
+### Day 95: December 30, 2017 - Saturday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Added ability to preserve cursor position and/or content selection after toggling comment blocks on or off.
+
+**Thoughts:** One of the challenges about programmatically updating the contents of an `input`, `textarea`,or contenteditable `div` is that the browser no longer tracks things like cursor position or selection range.
+
+These are things that must now be tracked through code and manually updated based on the changes you've made. Therefore, if you insert a character, you must move the cursor position by a character if the insertion point was before the cursor position. If you remove multiple characters you need to keep track of how many and reduce the cursor position by that many.
+
+[![selection screenshot](assets/images/sm_mce-selection1.jpg)](assets/images/full-size/mce-selection1.png)
+
+This is compounded if you actually made a selection. You then need to track the selection start and selection end positions and manually update both in order to preserver the same selection points.
+
+[![selection screenshot](assets/images/sm_mce-selection2.jpg)](assets/images/full-size/mce-selection2.png)
+
+Lastly, you also need to account for the selection direction. If the selection is made from left to right then using the arrow key to advance the cursor must occur at the end of the string. If the selection is from right to left then it must occur at the beginning.
+
+All these things add up to an interesting set of coding challenges which exercise the brain and test your patience.
+
+**Link to Work:**
+- [MCE v4](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor4.html) - Version 4 of the code editor (work in progress)
+
 ---
 
 ## 94. MCE (My Code Editor) - Toggle Comments
