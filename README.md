@@ -52,7 +52,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 ## 95.
 ### Day 95: December 30, 2017 - Saturday
 
-**Project:**
+**Project:** MCE (My Code Editor) project
 
 **Progress:**
 
@@ -61,6 +61,46 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Link to Work:**
 
 -->
+---
+
+## 96. MCE (My Code Editor) - Undo & Redo History
+### Day 96: December 31, 2017 - Sunday
+
+**Project:** MCE (My Code Editor) project
+
+**Progress:** Modified code to work with browser's Undo History
+
+**Thoughts:** I found out that whenever we programmatically manipulate the contents of an editable region on a web page, we circumvent the browser's built-in "undo" history. This is because we are typically trapping a _keypress_ or similar event and issuing a _preventDefault()_ or _return false_ after we've carried out our specific logic.
+
+Then when we undo with **Ctrl/Cmd + Z** our content get's scrambled because the browser is applying undo commands to content it did not alter or track. Redo, **Ctrl/Cmd + Y** does not work to get the original content back either. The solution is to use `document.execCommand()`.
+
+So, instead of this:
+
+```javascript
+if (event.key === "Enter" ) {
+  event.preventDefault()
+  const cursor = textarea.selectionStart
+  textarea.value = textarea.value.slice(0, cursor) + 
+      '\n' + textarea.value.slice(textarea.selectionEnd)
+  textarea.selectionStart = textarea.selectionEnd = cursor + 1
+}
+```
+
+We replace with this:
+
+```javascript
+if (event.key === "Enter" ) {
+  event.preventDefault();
+  document.execCommand("insertText", false, '\n');
+}
+```
+
+So, `document.execCommand()` not only invokes the browser's built-in facility to update content but the code is simpler and easier to maintain.
+
+**Link to Work:**
+- [Document.execCommand() on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)
+- [StackOverflow - How to make undo work in an HTML textarea after setting the value](https://stackoverflow.com/questions/44471699/how-to-make-undo-work-in-an-html-textarea-after-setting-the-value)
+
 ---
 
 ## 95. MCE (My Code Editor) - Preserve Selection
