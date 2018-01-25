@@ -49,10 +49,25 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-## 95.
-### Day 95: December 30, 2017 - Saturday
+## 99.
+### Day 99: January,10 2017 - Saturday
 
-**Project:** MCE (My Code Editor) project
+**Project:** CSS Grid SPA
+
+**Progress:** 
+
+**Thoughts:**
+
+**Link to Work:**
+
+
+---
+---
+
+## 100. Grid Practice Environment on CodePen
+### Day 100: January,25 2017 - Saturday
+
+**Project:** CSS Grid SPA
 
 **Progress:**
 
@@ -60,6 +75,49 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Link to Work:**
 
+---
+
+## 99. CSS Grid SPA
+### Day 99: January,15 2017 - Saturday
+
+**Project:** CSS Grid SPA
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
+
+---
+
+## 98. JSON, Media Queries, & Transitions - CSS Grid SPA
+### Day 98: January,10 2017 - Monday
+
+**Project:** CSS Grid SPA
+
+**Progress:** Created a JSON data file to contain each page of  SPA
+
+**Thoughts:** I had previously built 
+Using a JSON Data File - CSS Grid App
+
+**Link to Work:**
+
+---
+
+## 97. Grid Critters Practice Environment - CSS Grid SPA
+### Day 97: January,5 2017 - Monday
+
+**Project:** Grid Critter Practice Environment
+
+**Progress:** I attempted to create a stripped down version of the learning environment from Grid Critters.
+
+**Thoughts:** In going through Dave Geddes' [Grid Critters](http://gridcritters.com) learning app, I was inspired to try my hand at replicating the functionality. I didn't just want to code along with the exercises but I wanted to see if I could build an environment that replicated the lessons of the game. In doing this I would have the opportunity to "flex" my coding skills (Oooh, bad pun :P), and problem solve by building something from scratch. Heck, this would not only ingrain the material, but it might even serve as sample of work when finished.
+
+And how long would it take? I figured maybe a week or two. That was my first naive step down this road armed only with the notion of, "Well... how hard could it be?"😉😁
+
+I found out exactly how hard was after spending six weeks coding not just the stuff that worked but all the stuff that didn't!
+
+**Link to Work:**
 -->
 ---
 
@@ -125,7 +183,7 @@ Lastly, you also need to account for the selection direction. If the selection i
 All these things add up to an interesting set of coding challenges which exercise the brain and test your patience.
 
 **Link to Work:**
-- [MCE v4](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor4.html) - Version 4 of the code editor (work in progress)
+- [MCE v4](https://james-priest.github.io/my-code-editor/public/code_editor_dev/code-editor4.html) - Version 4 of the code editor (work in progress)
 
 ---
 
@@ -145,7 +203,7 @@ This can be done on a single line by using the **Ctrl/Cmd + /** keyboard combina
 I think this is the coolest thing so I set out to replicate this functionality.
 
 **Link to Work:**
-- [MCE v4](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor4.html) - Version 4 of the code editor (work in progress)
+- [MCE v4](https://james-priest.github.io/my-code-editor/public/code_editor_dev/code-editor4.html) - Version 4 of the code editor (work in progress)
 
 ---
 
@@ -165,7 +223,7 @@ Regardless, I put together something detailing the DOM Range object, what it doe
 [![dom page screenshot](assets/images/sm_dom-range-notes.jpg)](assets/images/full-size/dom-range-notes.png)
 
 **Link to Work:**
-- [DOM Range Notes & Tests site](https://my-code-editor.netlify.com/public/dom_range_tests/) 
+- [DOM Range Notes & Tests site](https://james-priest.github.io/my-code-editor/public/dom_range_tests/) 
 
 ---
 
@@ -224,7 +282,7 @@ Lastly, you will have bragging rights to say you've used:
 - & the _Module Pattern_.
 
 **Link to Work:**
-- [mce_ta.js](https://github.com/james-priest/grid-critters-code/blob/master/public/script/mce_ta.js) - An example of this pattern in my code.
+- [mce_ta.js](https://github.com/james-priest/my-code-editor/blob/master/public/script/mce_ta.js) - An example of this pattern in my code.
 - [Stack Overflow - How to add private variables to an object literal](https://stackoverflow.com/questions/1396294/how-to-add-private-variable-to-this-javascript-object-literal-snippet) - Related info that shows this same pattern incorporated into an object literal.
 
 ---
@@ -257,8 +315,8 @@ var myTACodeEditor = {
 ```
 
 **Link to Work:**
-- [css-constants.js](https://github.com/james-priest/grid-critters-code/blob/master/lib/css-constants.js) - js function expressions for property values
-- [CSS Master list of unique property values](http://localhost:8080/lib/test6-list.html) - HTML output which contains css functions, named-colors, & values
+- [css-constants.js](https://github.com/james-priest/my-code-editor/blob/master/lib/css-constants.js) - js function expressions for property values
+- [CSS Master list of unique property values](https://james-priest.github.io/my-code-editor/lib/test6-list.html) - HTML output which contains css functions, named-colors, & values
 
 ---
 
@@ -285,8 +343,8 @@ I needed a single, cleaned-up list of CSS property values only. Here are some of
 - **splice** - changes the contents of an array by removing existing elements and/or adding new elements.
 
 **Link to Work:**
-- [CSS Master list of unique property values](http://localhost:8080/lib/test6-list.html) - contains css functions, named-colors, & values
-- [test6-list.html](https://github.com/james-priest/grid-critters-code/blob/master/lib/test6-list.html) -  A _very messy_ **javascript/html/css** source file. This was a quick n dirty way of creating a text output of values for use as a _constant_ list in other code. So, for this reason I didn't really clean it up.
+- [CSS Master list of unique property values](https://james-priest.github.io/my-code-editor/lib/test6-list.html) - contains css functions, named-colors, & values
+- [test6-list.html](https://github.com/james-priest/my-code-editor/blob/master/lib/test6-list.html) -  A _very messy_ **javascript/html/css** source file. This was a quick n dirty way of creating a text output of values for use as a _constant_ list in other code. So, for this reason I didn't really clean it up.
 
 ---
 
@@ -344,8 +402,8 @@ The HTML table format of the output looks like this.
 I also ended up doing quite a bit of filtering, sorting, de-duping, etc. A word of warning... the code is icky since it was a quick and dirty way to get my list of unique CSS values.
 
 **Link to Work:**
-- Master CSS list of unique values - [HTML Table](https://my-code-editor.netlify.com/lib/test2.html) ([ source](https://github.com/james-priest/grid-critters-code/blob/master/lib/test2.html))
-- Master CSS list of unique values - [List format](https://my-code-editor.netlify.com/lib/test5-list.html) ([source](https://github.com/james-priest/grid-critters-code/blob/master/lib/test5-list.html))
+- Master CSS list of unique values - [HTML Table](https://james-priest.github.io/my-code-editor/lib/test2.html) ([ source](https://github.com/james-priest/my-code-editor/blob/master/lib/test2.html))
+- Master CSS list of unique values - [List format](https://james-priest.github.io/my-code-editor/lib/test6-list.html) ([source](https://github.com/james-priest/my-code-editor/blob/master/lib/test6-list.html))
 
 ---
 
@@ -598,8 +656,8 @@ The result is this.
 [![code editor screenshot](assets/images/sm_my-code-editor5.jpg)](assets/images/full-size/my-code-editor5.png)
 
 **Link to Work:**
-- [MCE (My Code Editor) v4](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor4.html)
-- Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor4.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style4.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta4.js))
+- [MCE (My Code Editor) v4](https://james-priest.github.io/my-code-editor/public/code_editor_dev/code-editor4.html)
+- Source on GitHub ([html](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/code-editor4.html), [css](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/css/style4.css), [javascript](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/script/mce_ta4.js))
 
 ---
 
@@ -649,7 +707,7 @@ One thing I can say is that I am now a convert and true believer in regular expr
 It is also very properly supported and baked into JavaScript.
 
 **Link to Work:**
-- My Code Editor js file on GitHub - [mce_ta6.js](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta6.js)
+- My Code Editor js file on GitHub - [mce_ta6.js](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/script/mce_ta6.js)
 - [The Greatest Regex Trick Ever](http://www.rexegg.com/regex-best-trick.html) article on rexegg.com
 
 ---
@@ -712,8 +770,8 @@ The classes I set look like this:
 I'll discuss the necessary RegEx in my next post.
 
 **Link to Work:**
-- [MCE (My Code Editor) v4](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor4.html)
-- Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor4.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style4.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta4.js))
+- [MCE (My Code Editor) v4](https://james-priest.github.io/my-code-editor/public/code_editor_dev/code-editor4.html)
+- Source on GitHub ([html](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/code-editor4.html), [css](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/css/style4.css), [javascript](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/script/mce_ta4.js))
 
 ---
 
@@ -736,8 +794,8 @@ This is just one example of the lack of standard behavior across browsers. Appar
 
 **Link to Work:**
 - _[Making Content Editable](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content)_ article on MDN
-- [Proof-of-concept page](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor3.html) using content editable div as editor
-- Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor3.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style3.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_div3.js))
+- [Proof-of-concept page](https://james-priest.github.io/my-code-editor/public/code_editor_dev/code-editor3.html) using content editable div as editor
+- Source on GitHub ([html](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/code-editor3.html), [css](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/css/style3.css), [javascript](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/script/mce_div3.js))
 
 [![contenteditable div](assets/images/sm_my-code-editor4.jpg)](assets/images/full-size/my-code-editor4.png)
 
@@ -809,8 +867,8 @@ I figured it was clear sailing from here on out - that I would be done replicati
 Well that turned out to not be true. The next dozen posts will detail what I learned.
 
 **Link to Work:**
-- An early version of my simple but working [code editor](https://my-code-editor.netlify.com/public/code_editor_dev/code-editor2.html)
-- Source on GitHub ([html](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/code-editor2.html), [css](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/css/style2.css), [javascript](https://github.com/james-priest/grid-critters-code/blob/master/public/code_editor_dev/script/mce_ta1.js))
+- An early version of my simple but working [code editor](https://james-priest.github.io/my-code-editor/public/code_editor_dev/code-editor2.html)
+- Source on GitHub ([html](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/code-editor2.html), [css](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/css/style2.css), [javascript](https://github.com/james-priest/my-code-editor/blob/master/public/code_editor_dev/script/mce_ta1.js))
 
 [![my code editor screenshot](assets/images/sm_my-code-editor1.jpg)](assets/images/full-size/my-code-editor1.png)
 
