@@ -34,34 +34,19 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
   - Maybe [Udacity's Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001?utm_medium=referral&utm_campaign=api) program
   - Maybe [Coding Dojo's Full Stack Developer Bootcamp](http://www.codingdojo.com/web-development-accelerators)
 
-
 # Log
-
 <!--
-
-## XX.
-### Day XX: August 16, 2017 - Wednesday
+## 1.
+### Day 1: January,10 2017 - Saturday
 
 **Project:**
+
 **Progress:**
-**Link to Work:**
-**Thoughts:**
-
----
-
-## 99.
-### Day 99: January,10 2017 - Saturday
-
-**Project:** CSS Grid SPA
-
-**Progress:** 
 
 **Thoughts:**
 
 **Link to Work:**
 
-
----
 ---
 
 ## 100. Grid Practice Environment on CodePen
@@ -77,7 +62,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 ---
 
-## 99. CSS Grid SPA
+## 99. Code Hints, Side Nav, & Splash Page - CSS Grid SPA
 ### Day 99: January,15 2017 - Saturday
 
 **Project:** CSS Grid SPA
@@ -101,24 +86,32 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 Using a JSON Data File - CSS Grid App
 
 **Link to Work:**
-
+-->
 ---
 
-## 97. Grid Critters Practice Environment - CSS Grid SPA
+## 97. My Grid Critters Practice Environment
 ### Day 97: January,5 2017 - Monday
 
 **Project:** Grid Critter Practice Environment
 
-**Progress:** I attempted to create a stripped down version of the learning environment from Grid Critters.
+**Progress:** Created a stripped down version of the learning environment from Grid Critters.
 
-**Thoughts:** In going through Dave Geddes' [Grid Critters](http://gridcritters.com) learning app, I was inspired to try my hand at replicating the functionality. I didn't just want to code along with the exercises but I wanted to see if I could build an environment that replicated the lessons of the game. In doing this I would have the opportunity to "flex" my coding skills (Oooh, bad pun :P), and problem solve by building something from scratch. Heck, this would not only ingrain the material, but it might even serve as sample of work when finished.
+[![Screenshot](assets/images/sm_css-grid-app3.jpg)](assets/images/full-size/css-grid-app3.png)
+
+**Thoughts:** In going through Dave Geddes' [Grid Critters](http://gridcritters.com) learning app, I was inspired to try my hand at replicating the functionality. I didn't just want to code along with the exercises but I wanted to see if I could build an environment that replicated the lessons of the game.
+
+I figured that in doing this I'd have the opportunity to not only "flex" my coding skills (Ouch, bad pun :P) but also have _#100DaysOfCode_ project to work on. It would also work my problem solving skills to build something from scratch. Heck, this would not only ingrain the material, but it might even serve as sample of work when finished.
 
 And how long would it take? I figured maybe a week or two. That was my first naive step down this road armed only with the notion of, "Well... how hard could it be?"😉😁
 
 I found out exactly how hard was after spending six weeks coding not just the stuff that worked but all the stuff that didn't!
 
+It was a GREAT exercise and I learned alot in the process.
+
 **Link to Work:**
--->
+- [My Practice Environment](https://james-priest.github.io/grid-critters-code/) on GitHub Pages
+- [GitHub Repo](https://github.com/james-priest/grid-critters-code) for this project
+
 ---
 
 ## 96. MCE (My Code Editor) - Undo & Redo History
