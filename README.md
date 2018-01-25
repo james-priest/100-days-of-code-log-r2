@@ -72,7 +72,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
-
+-->
 ---
 
 ## 98. JSON, Media Queries, & Transitions - CSS Grid SPA
@@ -80,13 +80,22 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 **Project:** CSS Grid SPA
 
-**Progress:** Created a JSON data file to contain each page of  SPA
+**Progress:** Created a JSON file to contain the data for each page of the SPA.
 
-**Thoughts:** I had previously built 
-Using a JSON Data File - CSS Grid App
+**Thoughts:** I had originally built this site with static pages but it was a pain to maintain. It was definitely **NOT** DRY (Don't Repeat Yourself). So I isolated the pieces of information that changed from page to page and put those in a JSON file. I then gutted the HTML so that only the semantic structure remained.
+
+[![screenshot 1](assets/images/sm_css-grid-app4.jpg)](assets/images/full-size/css-grid-app4.png)
+
+Once I hooked up the Back and Next buttons to load the appropriate page data, I then needed the app to animate nicely when moving from one page to another. This was done with CSS transitions.
+
+Lastly, I added some fine-tuning to the layout and font-size through media queries to make site responsive.
+
+[![screenshot 2](assets/images/sm_css-grid-app5.jpg)](assets/images/full-size/css-grid-app5.png)
 
 **Link to Work:**
--->
+- [My Practice Environment](https://james-priest.github.io/grid-critters-code/) on GitHub Pages
+- [GitHub Repo](https://github.com/james-priest/grid-critters-code) for this project
+
 ---
 
 ## 97. My CSS Grid Practice Environment
