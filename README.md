@@ -89,18 +89,18 @@ Using a JSON Data File - CSS Grid App
 -->
 ---
 
-## 97. My Grid Critters Practice Environment
+## 97. My CSS Grid Practice Environment
 ### Day 97: January,5 2017 - Monday
 
-**Project:** Grid Critter Practice Environment
+**Project:** CSS Grid Practice Environment
 
-**Progress:** Created a stripped down version of the learning environment from Grid Critters.
+**Progress:** Created a stripped down version of the learning environment from [Grid Critters](http://gridcritters.com).
 
 [![Screenshot](assets/images/sm_css-grid-app3.jpg)](assets/images/full-size/css-grid-app3.png)
 
 **Thoughts:** In going through Dave Geddes' [Grid Critters](http://gridcritters.com) learning app, I was inspired to try my hand at replicating the functionality. I didn't just want to code along with the exercises but I wanted to see if I could build an environment that replicated the lessons of the game.
 
-I figured that in doing this I'd have the opportunity to not only "flex" my coding skills (Ouch, bad pun :P) but also have _#100DaysOfCode_ project to work on. It would also work my problem solving skills to build something from scratch. Heck, this would not only ingrain the material, but it might even serve as sample of work when finished.
+I figured in doing this I'd have the opportunity to not only "flex" my coding skills (Ouch, bad pun :P) but also have a [#100DaysOfCode](https://twitter.com/search?q=%23100DaysOfCode&src=tyah) project to work on. It would also stretch my coding skills to build something from scratch. Heck, this would not only ingrain the material, but it might even serve as sample of work when finished.
 
 And how long would it take? I figured maybe a week or two. That was my first naive step down this road armed only with the notion of, "Well... how hard could it be?"😉😁
 
