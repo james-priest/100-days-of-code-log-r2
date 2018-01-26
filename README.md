@@ -49,11 +49,16 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Thoughts:**
 
 **Link to Work:**
+-->
+
+---
 
 ## Final Thoughts for Round 1
 ### January 26, 2018
 
 **A.K.A: _A Loveletter to my Twitter Fam_.**
+
+Dear Fam,
 
 This was a completely successful and highly effective challenge. It gave me a format to help me keep myself accountable. It brought out my best and helped me struggle through my worst - the self-doubt, frustration, and uncertainty that comes along with learning the skills to be a cutting edge developer today.
 
@@ -69,7 +74,7 @@ That completely sums up my experience with this challenge. It was an exercise in
 If you can master that while leaning on the support of the community then you've got it made.
 
 Thank you once again to Alexander Kallaway for providing access to this community and thank you to all the friends I've made during the seven months of coding it took me to get 100 Days of Log entries knocked out. :P :)
--->
+
 ---
 
 ## 100. CSS Grid Practice App on CodePen
