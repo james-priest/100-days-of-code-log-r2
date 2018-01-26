@@ -59,20 +59,32 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 **Thoughts:**
 
 **Link to Work:**
-
+-->
 ---
 
-## 99. Code Hints, Side Nav, & Splash Page - CSS Grid SPA
+## 99. Navigation, Splash Page, Code Hints - CSS Grid SPA
 ### Day 99: January,15 2017 - Saturday
 
 **Project:** CSS Grid SPA
 
-**Progress:**
+**Progress:** Completed the addition of navigation, splash page, & code hints.
 
-**Thoughts:**
+[![UI demo](assets/images/full-size/css-grid4.gif)](assets/images/full-size/css-grid4.gif)
+
+**Thoughts:** I needed a simple way to provide site navigation to any page without requiring too many clicks from the user. I added  a slide-out left nav following the same structure as Dave Geddes' [Grid Critters](https://gridcritters.com) learning app.
+
+The next thing I tackled was creating a splash page in order to give some background on this project and to properly acknowledge Dave's work with creating [Grid Critters](https://gridcritters.com) and [Flexbox Zombies](https://flexboxzombies.com). This is also where I discuss what technologies where used in building this app. 
+
+Both the slide-out nav and the splash page were created with absolute positioned divs set to `display: none` and `opacity: 0`. I then created a class with the 'show' state and set that class on the div element with an 'onclick' event. The animation was done by setting a transition on both of the div elements.
+
+Lastly, I created a 'code hints' section which allow you to 'show' the answer to the proposed question and also paste this answer in place.
 
 **Link to Work:**
--->
+- [My Practice Environment](https://james-priest.github.io/grid-critters-code/) on GitHub Pages
+- [GitHub Repo](https://github.com/james-priest/grid-critters-code) for this project
+- [Grid Critters](https://gridcritters.com) - CSS Grid learning app
+- [Flexbox Zombies](https://flexboxzombies.com) - Flexbox learning app
+
 ---
 
 ## 98. JSON, Media Queries, & Transitions - CSS Grid SPA
@@ -88,7 +100,7 @@ This is part of Alexander Kallaway's [#100DaysOfCode](https://github.com/Kallawa
 
 Once I hooked up the Back and Next buttons to load the appropriate page data, I then needed the app to animate nicely when moving from one page to another. This was done with CSS transitions.
 
-Lastly, I added some fine-tuning to the layout and font-size through media queries to make site responsive.
+Lastly, I added some fine-tuning to the layout and font-size through media queries to make the site responsive.
 
 [![screenshot 2](assets/images/sm_css-grid-app5.jpg)](assets/images/full-size/css-grid-app5.png)
 
