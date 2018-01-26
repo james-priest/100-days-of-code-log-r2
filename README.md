@@ -56,7 +56,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ## Final Thoughts for Round 1
 ### January 26, 2018
 
-**A.K.A: _A Loveletter to my Twitter Fam_.**
+**A.K.A: _A Love Letter to my Twitter Fam_.**
 
 Dear Fam,
 
