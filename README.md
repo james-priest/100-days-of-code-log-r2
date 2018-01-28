@@ -19,6 +19,9 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 # Log
 <!--
+
+---
+
 ## 1.
 ### Day 1: January,10 2017 - Saturday
 
@@ -29,12 +32,62 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Thoughts:**
 
 **Link to Work:**
+
+
+
+---
+
+## 2. The Benefits of Offline First
+### Day 2: January,28 2017 - Saturday
+
+**Project:** Mobile Web track
+
+**Progress:** - Lesson 2: The Benefits of Offline First - Jake Archibald
+
+**Thoughts:** The _Benefits of Offline First_ course was broken down into 13 segments. It discussed the use of **HTTP Cache** and laid out a new paradigm which loads content from cache first rather than relying on network connectivity to determine if content gets displayed.
+
+This solves for all three of the following use case scenarios:
+1. Great connectivity
+1. Poor connectivity
+1. Offline
+
+_Offline First_ delivers the page (header and/or content) from cache FIRST, and THEN attempts to fetch content from the network.
+
+Lastly, it introduces the **Service Worker**.
+
+[![service worker](assets/images/sm_lesson2-service-worker.jpg)](assets/images/full-size/lesson2-service-worker.png)
+
+It's billed as a new browser feature and a total game changer- the greatest paradigm shift since asynchronous operations and one that allows **you to control the network rather than the network control you**.
 -->
+---
+
+## 1. Grow With Google - Mobile Web - Getting Started
+### Day 1: January,27 2017 - Saturday
+
+**Project:** Mobile Web track
+
+**Progress:** - Lesson 1: Welcome video.
+
+**Thoughts:** Welcome video got us set up on the discussion forums, Slack, and basically gave a Scholarship Overview.
+
+Looks like the program is broken up into 10 courses.  These are:
+1. Welcome! Important Details on your Scholarship
+1. The Benefits of Offline First
+1. Introducing the Service Worker
+1. IndexedDB and Caching
+1. Next Up
+1. JavaScript Syntax Updates
+1. JavaScript ES6 Functions
+1. JavaScript Built-ins
+1. Professional Developer-fu - polyfills & transpiling ES6
+1. Challenge Course Wrap Up
+
+Looks like some nice coverage of things I want to dive into deeper!
 
 ---
 
 ## Round 2 Preflight Checklist
-### Day 0: January 28, 2018 - Sunday
+### Day 0: January 26, 2018 - Friday
 
 **Project:**
 - Create 100 Days of Code Round 2 Log
