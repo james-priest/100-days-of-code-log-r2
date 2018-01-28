@@ -34,7 +34,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Link to Work:**
 
 
-
+-->
 ---
 
 ## 2. The Benefits of Offline First
@@ -58,7 +58,7 @@ Lastly, it introduces the **Service Worker**.
 [![service worker](assets/images/sm_lesson2-service-worker.jpg)](assets/images/full-size/lesson2-service-worker.png)
 
 It's billed as a new browser feature and a total game changer- the greatest paradigm shift since asynchronous operations and one that allows **you to control the network rather than the network control you**.
--->
+
 ---
 
 ## 1. Grow With Google - Mobile Web - Getting Started
