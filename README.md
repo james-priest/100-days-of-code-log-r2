@@ -20,10 +20,8 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 # Log
 <!--
 
----
-
 ## 1.
-### Day 1: January,10 2017 - Saturday
+### Day 1: January,10 2018 - Saturday
 
 **Project:**
 
@@ -33,11 +31,26 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Link to Work:**
 
+---
+
+
+---
+
+## 3.
+### Day 3: January,29 2018 - Saturday
+
+**Project:**
+
+**Progress:**
+
+**Thoughts:**
+
+**Link to Work:**
 -->
 ---
 
 ## 2. The Benefits of Offline First
-### Day 2: January,28 2017 - Saturday
+### Day 2: January,28 2018 - Saturday
 
 **Project:** Mobile Web track
 
@@ -61,7 +74,7 @@ It's billed as a new browser feature and a total game changer- the greatest para
 ---
 
 ## 1. Grow With Google - Mobile Web - Getting Started
-### Day 1: January,27 2017 - Saturday
+### Day 1: January,27 2018 - Saturday
 
 **Project:** Mobile Web track
 
