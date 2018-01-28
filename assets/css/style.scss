@@ -50,9 +50,17 @@
 // }
 // End fixed
 
+body { background: #e4ead1;background: #eeeeee;}
+header {
+    background: #1D8C39;
+    background: #1A7F33;
+}
+a { color:#1A7F33;}
+a:hover { color:#999999;}
+
 // Beign v3
 nav {
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-right: 20px;
     margin-left: -574px;
     top: 190px;
