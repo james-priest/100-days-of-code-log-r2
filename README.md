@@ -1,3 +1,7 @@
+---
+title: 100 Days Of Code Log R2
+description: by James Priest
+---
 <!-- markdownlint-disable MD022 MD032 -->
 # James Priest
 
@@ -23,7 +27,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ## 1.
 ### Day 1: January,10 2018 - Saturday
 
-**Project:**
+**Project:** Mobile Web trackS
 
 **Progress:**
 
@@ -32,27 +36,36 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Link to Work:**
 
 ---
-
-
----
-
-## 3.
-### Day 3: January,29 2018 - Saturday
-
-**Project:**
-
-**Progress:**
-
-**Thoughts:**
-
-**Link to Work:**
 -->
+
+---
+
+## 3. An Overview of the Service Worker
+### Day 3: January,29 2018 - Monday
+
+**Project:** Grow with Google Scholarship Challenge: Mobile Web
+
+**Progress:** from Lesson 3: Introducing the Service Worker
+
+**Thoughts:** Learned what the **Service Worker** is:
+- a JavaScript file that sits between you and network requests.
+- a type of **Web Worker** meaning it runs separately from your page.
+- a process that is invisible to the user and that can't access the DOM.
+
+But, it does control pages by intercepting requests as the browser makes them.
+
+[![service worker](assets/images/sm_lesson3-service-worker1.jpg)](assets/images/full-size/lesson3-service-worker1.png)
+
+To see full notes along with screen captures click the link below.
+
+**Link to Work:** Notes on [Lesson 3: Introducing the Service Worker](Lesson3-Introducing-the-Service-Worker.html)
+
 ---
 
 ## 2. The Benefits of Offline First
-### Day 2: January,28 2018 - Saturday
+### Day 2: January,28 2018 - Sunday
 
-**Project:** Mobile Web track
+**Project:** Grow with Google Scholarship Challenge: Mobile Web
 
 **Progress:** - Lesson 2: The Benefits of Offline First - Jake Archibald
 
@@ -76,7 +89,7 @@ It's billed as a new browser feature and a total game changer- the greatest para
 ## 1. Grow With Google - Mobile Web - Getting Started
 ### Day 1: January,27 2018 - Saturday
 
-**Project:** Mobile Web track
+**Project:** Grow with Google Scholarship Challenge: Mobile Web
 
 **Progress:** - Lesson 1: Welcome video.
 
@@ -103,7 +116,7 @@ Looks like some nice coverage of things I want to dive into deeper!
 
 **Project:**
 - Create 100 Days of Code Round 2 Log
-- Google/Udacity Mobile Web Curriculum
+- Grow with Google Scholarship Challenge: Mobile Web Curriculum
 
 **Thoughts:** Today was about getting ready to start Round 2!  I have created a new R2 repo and log on GitHub and have gone through the Welcome video for my Grow with [Google Scholarship: Mobile Web](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) course.
 
