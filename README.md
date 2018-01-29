@@ -39,6 +39,8 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ## 3. An Overview of the Service Worker
 ### Day 3: January,29 2018 - Monday
 
+[![service worker](assets/images/sm_lesson3-service-worker1.jpg)](assets/images/full-size/lesson3-service-worker1.png)
+
 **Project:** Grow with Google Scholarship Challenge: Mobile Web
 
 **Progress:** from Lesson 3: Introducing the Service Worker
@@ -50,11 +52,9 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 But, it does control pages by intercepting requests as the browser makes them.
 
-[![service worker](assets/images/sm_lesson3-service-worker1.jpg)](assets/images/full-size/lesson3-service-worker1.png)
-
 To see full notes along with screen captures click the link below.
 
-**Link to Work:** Notes on [Lesson 3: Introducing the Service Worker](Lesson3-Introducing-the-Service-Worker.html)
+**Link to Work:** [My notes on Lesson 3: Introducing the Service Worker](Lesson3-Introducing-the-Service-Worker.html)
 
 ---
 
