@@ -1,7 +1,3 @@
----
-title: 100 Days Of Code Log R2
-description: by James Priest
----
 <!-- markdownlint-disable MD022 MD032 -->
 # James Priest
 
