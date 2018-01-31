@@ -190,6 +190,8 @@ The current version of Chrome Stable already has the necessary Dev Tools if you 
 ## 7. Quiz: Service Worker Dev Tools
 Verify new Service Worker installs and goes into a "waiting  to active" state.
 
+[![dev tools](assets/images/sm_chrome-dev-tools1.jpg)](assets/images/full-size/chrome-dev-tools1.png)
+
 1. Navigate to Application tab in DevTools.
 1. Make a change to sw.js.
 1. Verify that the new Service Worker has installed and is "waiting to activate".

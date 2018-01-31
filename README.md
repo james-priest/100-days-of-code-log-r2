@@ -42,9 +42,9 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 [![dev tools](assets/images/sm_hijacking-requests1.jpg)](assets/images/full-size/hijacking-requests1.png)
 
 **Progress:** Learned about the following.
-1. how to listen for and capture `fetch` events
-1. how to use the `fetchEvent.respondWith()` method
-1. using `Fetch API` as a modern alternative to XMLHttpRequest.
+1. How to listen for and capture `fetch` events
+1. How to use the `fetchEvent.respondWith()` method
+1. Using `Fetch API` as a better and modern alternative to XMLHttpRequest.
 
 Here's an example of this kind of event handling.
 
