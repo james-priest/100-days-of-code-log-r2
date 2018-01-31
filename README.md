@@ -13,9 +13,9 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 ## Goals
 
-- [ ] &nbsp;Code daily
-- [ ] &nbsp;Complete the Intermediate Mobile Web track of the [#GoogleUdacityScholars](https://twitter.com/search?q=%23GoogleUdacityScholars&src=tyah) program.
-- [ ] &nbsp;Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
+- [ ] Code daily
+- [ ] Complete the Intermediate Mobile Web track of the [#GoogleUdacityScholars](https://twitter.com/search?q=%23GoogleUdacityScholars&src=tyah) program.
+- [ ] Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
 
 # Log
 <!--
@@ -33,6 +33,27 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 ---
 -->
+
+## 4. The Service Worker Lifecycle
+### Day 4: January,30 2018 - Tuesday
+
+[![service worker](assets/images/sm_lesson3-service-worker5.jpg)](assets/images/full-size/lesson3-service-worker5.png)
+
+**Project:** Grow with Google Scholarship Challenge: Mobile Web
+
+**Progress:** from Lesson 3: Introducing the Service Worker
+
+**Thoughts:** Learned about the Service Worker Lifecycle. 
+
+This is part of a larger, 3-part Udacity series called [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899). It contains the following lessons and is **FREE**!
+
+1. The Benefits of Offline First
+1. Introducing the Service Worker
+1. IndexedDB and Caching
+
+**Link to Work:**
+- [Introducing the Service Worker - Notes](Introducing-the-Service-Worker.html)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
 
 ---
 
@@ -54,7 +75,7 @@ But, it does control pages by intercepting requests as the browser makes them.
 
 To see full notes along with screen captures click the link below.
 
-**Link to Work:** [My notes on Lesson 3: Introducing the Service Worker](Lesson3-Introducing-the-Service-Worker.html)
+**Link to Work:** [My notes on: Introducing the Service Worker](Introducing-the-Service-Worker.html)
 
 ---
 

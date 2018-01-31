@@ -57,7 +57,9 @@ header {
 }
 a { color:#1A7F33;}
 a:hover { color:#999999;}
-
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 6px;
+}
 // Beign v3
 nav {
     overflow-y: auto;
