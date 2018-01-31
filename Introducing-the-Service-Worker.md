@@ -2,9 +2,9 @@
 title: Introducing the Service Worker
 description: Grow with Google Scholarship Challenge - Mobile Web Track
 ---
-<!-- markdownlint-disable MD022 MD032 -->
+<!-- markdownlint-disable MD022 MD024 MD032 -->
 # Introducing the Service Worker
-Notes from the Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899)
+Notes from _Introducing the Service Worker_ by Jake Archibald. This class is part of the Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899)
 
 This is an Intermediate skill level course which takes approximately 3 weeks to complete and is offered for **FREE**!
 
@@ -213,7 +213,6 @@ This way of bypassing the Service Worker and then refreshing is easier than navi
 
 In the Application tab of Chrome developer tools, there is an option called **Update on reload**. This changes the Service Worker lifecycle to be developer friendly. In this mode, when you hit refresh, rather than refreshing the page it fetches a Service Worker and treats it as a new version whether it has changed or not and lets it become active immediately. With this option active, you do not have to hold SHIFT and refresh or navigate away from the page.
 
-<!--
 ## 10. Hijacking Requests
 So far, we have:
 
@@ -342,15 +341,101 @@ We've just served up different content using the network!
 The Fetch API performs a normal browser fetch, so the results may come from the cache. That is a benefit in this case as we want the .gif to cache as usual.
 
 ## 13. Quiz: Hijacking Requests 2 Quiz
-Take a look at the code located in public/js/sw/index.js. As you can see, your task is to only respond with a .gif if the request URL ends with .jpg. How you determine that is up to you, but remember that event.request gives you information about the request.
+Take a look at the code below. As you can see, your task is to only respond with a .gif if the request URL ends with .jpg. How you determine that is up to you, but remember that event.request gives you information about the request.
 
 ```javascript
 self.addEventListener('fetch', function(event) {
-    if (event.request.url.endsWith('.jpg')) {
-        event.respondWith(
-            fetch('/imgs/dr-evil.gif')
-        );
-    }
+  // TODO: only respond to requests with a url ending in ".jpg"
+  
 });
 ```
--->
+
+### Solution
+
+```javascript
+self.addEventListener('fetch', function(event) {
+  // TODO: only respond to requests with a url ending in ".jpg"
+  if ( event.request.url.endsWith( '.jpg' ) ) {
+    event.respondWith(
+      fetch( '/imgs/dr-evil.gif' )
+    );
+  }
+});
+```
+
+We've already seen `event.request`. But what other properties does it have? One way to find out is to go to Google and search for MDN request.
+
+MDN is a great place for documentation and in there there's a result about the _Fetch API_. In there it tells me that `request.url` is the URL of the request. Kind of obvious now we see it.
+
+Alternatively, I could have added a `console.log()` and logged out event.request, as we were before, and then refresh the page. But because the console is cleared when the page navigates, we're losing the log for the page request. If I click 'preserve the log' in Dev Tools and refresh again, there it is. And inside the request object there are loads of details in there,one of which is the URL, and it's a string.
+
+So with this knowledge back in the code I can use an if statement. So `respondWith()` is only called if the URL ends with .jpg. `endsWith()` is a relatively new string method, but it's really useful. Since service worker is only run in modern browsers, we can make use of some of the more modern JavaScript features. Back in the browser with force update enabled, I hit refresh and the page loads as normal, but all the images have been intercepted. So now we're handling requests dynamically depending on URL.
+
+## 14. Hijacking Request 3
+We've started handling requests dynamically depending on the URL, but there's a lot more we can do here. In the real world, we need to be a bit more dynamic than this.
+
+The page can send a request, which we intercept and then send to the network. But rather than just sending a `Response` back, we can look at it and then do something else. For example, let's respond with a network `fetch()` for the request just as the browser would do. The fetch method will take a full request object as well as a URL. `fetch()` returns a `Promise`; with Promises you can attach a `.then` callback to get the results if the operation was successful. Whatever we return in this callback becomes the eventual value for the `Promise`.
+
+```js
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    fetch( event.request ).then( function( response ) {
+      if ( response.status === 404 ) {
+        return new Response( 'Whoops, not found' );
+      }
+      return response;
+    }).catch( function( error ) {
+      return new Response( 'Uh oh, that totally failed:', error );
+    })
+  );
+});
+```
+
+So we can look at the `Response` ourselves and if the `response.status` is 404 (not found) then we can respond with our own message. Otherwise, we return the Response we received.
+
+`.catch` is similar to `.then`, but `.then` is for success and `.catch` is for failure. `fetch` will fail if can't make a connection to the server at all, which includes offline. When that happens, we can respond with our own message.
+
+Now if we go to a page that doesn't exist we get the custom message for 404 errors. And if you take the server down and go offline, you get a custom message for that too!
+
+We can create complex rules for requests, trying to get responses from multiple sources and reacting to the results. You can do this on a request by request basis using JavaScript. You can even go to the network and if that fails, get something else from the network.
+
+## 15 Quiz: Hijacking Requests 3 Quiz
+
+What if you wanted to serve a gif instead of a message for a 404?
+
+```js
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    fetch(event.request).then(function(response) {
+      if (response.status === 404) {
+        // TODO: instead, respond with the gif at
+        // /imgs/dr-evil.gif
+        // using a network request
+        return new Response("Whoops, not found");
+      }
+      return response;
+    }).catch(function() {
+      return new Response("Uh oh, that totally failed!");
+    })
+  );
+});
+```
+
+### Solution
+Over in the code, now if you return a promise within a promise, it passes the eventual value to the outer promise. So, rather than return a response I'm going to return a fetch for the gif's URL and that's it.
+
+```js
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    fetch(event.request).then(function(response) {
+      if (response.status === 404) {
+        // TODO: respond with /imgs/dr-evil.gif using a network request
+        return fetch( '/imgs/dr-evil.gif' );
+      }
+      return response;
+    }).catch(function() {
+      return new Response("Uh oh, that totally failed!");
+    })
+  );
+});
+```

@@ -34,16 +34,47 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ---
 -->
 
+## 6. Hijacking Requests
+### Day 5: February 1, 2018 - Thursday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![dev tools](assets/images/sm_hijacking-requests1.jpg)](assets/images/full-size/hijacking-requests1.png)
+
+**Progress:** Learned about the following.
+1. how to listen for and capture `fetch` events
+1. how to use the `fetchEvent.respondWith()` method
+1. using `Fetch API` as a modern alternative to XMLHttpRequest.
+
+Here's an example of this kind of event handling.
+
+```js
+self.addEventListener('fetch', function(event) {
+  // TODO: only respond to requests with a url ending in ".jpg"
+  if ( event.request.url.endsWith( '.jpg' ) ) {
+    event.respondWith(
+      fetch( '/imgs/dr-evil.gif' )
+    );
+  }
+});
+```
+
+Full examples can be found in [my notes](Introducing-the-Service-Worker.html).
+
+**Link to Work:**
+- [Introducing the Service Worker - Notes](Introducing-the-Service-Worker.html)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 5. Service Worker Dev Tools
 ### Day 5: January,31 2018 - Wednesday
 
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
 [![dev tools](assets/images/sm_chrome-dev-tools1.jpg)](assets/images/full-size/chrome-dev-tools1.png)
 
-**Project:** Grow with Google Scholarship Challenge: Mobile Web
-
-**Progress:** from Lesson 3: Introducing the Service Worker
-
-**Thoughts:** Learned about [Chrome Canary](https://www.google.com/chrome/browser/canary.html) the nightly build of Chrome with bleeding edge features. It can be run along side **Chrome Stable** but can often break and receives a new feature push almost daily.
+**Progress:** Learned about [Chrome Canary](https://www.google.com/chrome/browser/canary.html), the nightly build of Chrome with bleeding edge features. It can be run along side **Chrome Stable** but can often break as well. It receives a new feature push almost daily.
 
 Chrome Stable has the Service Worker features already baked in and might be a better choice to test with since it is less likely to crash. That is what I have pictured above.
 
@@ -57,13 +88,11 @@ Chrome Stable has the Service Worker features already baked in and might be a be
 ## 4. The Service Worker Lifecycle
 ### Day 4: January,30 2018 - Tuesday
 
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
 [![service worker](assets/images/sm_lesson3-service-worker5.jpg)](assets/images/full-size/lesson3-service-worker5.png)
 
-**Project:** Grow with Google Scholarship Challenge: Mobile Web
-
-**Progress:** from Lesson 3: Introducing the Service Worker
-
-**Thoughts:** Learned about the Service Worker Lifecycle. 
+**Progress:** Learned about the Service Worker Lifecycle. 
 
 This is part of a larger, 3-part Udacity series called [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899). It contains the following lessons and is **FREE**!
 
@@ -80,13 +109,11 @@ This is part of a larger, 3-part Udacity series called [Offline Web Applications
 ## 3. An Overview of the Service Worker
 ### Day 3: January,29 2018 - Monday
 
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
 [![service worker](assets/images/sm_lesson3-service-worker1.jpg)](assets/images/full-size/lesson3-service-worker1.png)
 
-**Project:** Grow with Google Scholarship Challenge: Mobile Web
-
-**Progress:** from Lesson 3: Introducing the Service Worker
-
-**Thoughts:** Learned what the **Service Worker** is:
+**Progress:** Learned what the **Service Worker** is:
 - a JavaScript file that sits between you and network requests.
 - a type of **Web Worker** meaning it runs separately from your page.
 - a process that is invisible to the user and that can't access the DOM.
@@ -102,11 +129,11 @@ To see full notes along with screen captures click the link below.
 ## 2. The Benefits of Offline First
 ### Day 2: January,28 2018 - Sunday
 
-**Project:** Grow with Google Scholarship Challenge: Mobile Web
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
-**Progress:** - Lesson 2: The Benefits of Offline First - Jake Archibald
+**Progress:** Lesson 2: The Benefits of Offline First - Jake Archibald
 
-**Thoughts:** The _Benefits of Offline First_ course was broken down into 13 segments. It discussed the use of **HTTP Cache** and laid out a new paradigm which loads content from cache first rather than relying on network connectivity to determine if content gets displayed.
+The _Benefits of Offline First_ course was broken down into 13 segments. It discussed the use of **HTTP Cache** and laid out a new paradigm which loads content from cache first rather than relying on network connectivity to determine if content gets displayed.
 
 This solves for all three of the following use case scenarios:
 1. Great connectivity
@@ -126,11 +153,11 @@ It's billed as a new browser feature and a total game changer- the greatest para
 ## 1. Grow With Google - Mobile Web - Getting Started
 ### Day 1: January,27 2018 - Saturday
 
-**Project:** Grow with Google Scholarship Challenge: Mobile Web
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
-**Progress:** - Lesson 1: Welcome video.
+**Progress:** Lesson 1: Welcome video.
 
-**Thoughts:** Welcome video got us set up on the discussion forums, Slack, and basically gave a Scholarship Overview.
+Welcome video got us set up on the discussion forums, Slack, and basically gave a Scholarship Overview.
 
 Looks like the program is broken up into 10 courses.  These are:
 1. Welcome! Important Details on your Scholarship
@@ -153,9 +180,9 @@ Looks like some nice coverage of things I want to dive into deeper!
 
 **Project:**
 - Create 100 Days of Code Round 2 Log
-- Grow with Google Scholarship Challenge: Mobile Web Curriculum
+- [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
-**Thoughts:** Today was about getting ready to start Round 2!  I have created a new R2 repo and log on GitHub and have gone through the Welcome video for my Grow with [Google Scholarship: Mobile Web](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) course.
+**Progress:** Today was about getting ready to start Round 2!  I have created a new R2 repo and log on GitHub and have gone through the Welcome video for my Grow with [Google Scholarship: Mobile Web](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) course.
 
 I am excited and ready to jump in with both feet!
 
