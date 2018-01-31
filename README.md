@@ -34,6 +34,26 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ---
 -->
 
+## 5. Service Worker Dev Tools
+### Day 5: January,31 2018 - Wednesday
+
+[![dev tools](assets/images/sm_chrome-dev-tools1.jpg)](assets/images/full-size/chrome-dev-tools1.png)
+
+**Project:** Grow with Google Scholarship Challenge: Mobile Web
+
+**Progress:** from Lesson 3: Introducing the Service Worker
+
+**Thoughts:** Learned about [Chrome Canary](https://www.google.com/chrome/browser/canary.html) the nightly build of Chrome with bleeding edge features. It can be run along side **Chrome Stable** but can often break and receives a new feature push almost daily.
+
+Chrome Stable has the Service Worker features already baked in and might be a better choice to test with since it is less likely to crash. That is what I have pictured above.
+
+**Link to Work:**
+- [Introducing the Service Worker - Notes](Introducing-the-Service-Worker.html)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+- [Chrome Canary](https://www.google.com/chrome/browser/canary.html) - Nighly build of lastest Chrome bits
+
+---
+
 ## 4. The Service Worker Lifecycle
 ### Day 4: January,30 2018 - Tuesday
 

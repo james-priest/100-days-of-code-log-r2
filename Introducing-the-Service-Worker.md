@@ -180,7 +180,6 @@ As a safety precaution, if you set the Service Worker script to cache for more t
 
 That doesn't mean your Service Worker will stop working after 24 hours, it just means that update checks will bypass the browser cache if the Service Worker it has is over a day old.
 
-<!--
 ## 6. Quiz: Enable Service Worker Dev Tools
 Do this by  downloading and running [Chrome Canary](https://www.google.com/chrome/browser/canary.html).
 
@@ -214,6 +213,7 @@ This way of bypassing the Service Worker and then refreshing is easier than navi
 
 In the Application tab of Chrome developer tools, there is an option called **Update on reload**. This changes the Service Worker lifecycle to be developer friendly. In this mode, when you hit refresh, rather than refreshing the page it fetches a Service Worker and treats it as a new version whether it has changed or not and lets it become active immediately. With this option active, you do not have to hold SHIFT and refresh or navigate away from the page.
 
+<!--
 ## 10. Hijacking Requests
 So far, we have:
 
