@@ -50,7 +50,7 @@ Chrome Stable has the Service Worker features already baked in and might be a be
 **Link to Work:**
 - [Introducing the Service Worker - Notes](Introducing-the-Service-Worker.html)
 - 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
-- [Chrome Canary](https://www.google.com/chrome/browser/canary.html) - Nighly build of lastest Chrome bits
+- [Chrome Canary](https://www.google.com/chrome/browser/canary.html) - Nightly build of latest Chrome bits.
 
 ---
 
