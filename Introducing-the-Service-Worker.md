@@ -443,7 +443,6 @@ self.addEventListener('fetch', function(event) {
 });
 ```
 
-<!-- 
 ## 16. Caching and Serving Assets
 So far we've seen how to hijack requests and respond to them differently. We've even created responses ourselves, meaning we can respond without using the network at all. However, if we want to be able to load Wittr without using the network, we need somewhere to store the HTML, CSS, JavaScript, images, web fonts, etc. Thankfully, there is such a place: the `Cache API`.
 
@@ -459,6 +458,8 @@ caches.open('my-stuff').then(function(cache) {
 This returns a `Promise` for a cache of that name. If you haven't opened a cache with that name before, it creates the cache with that name and returns it.
 
 A cache box can contain request/response pairs from any secure origin. It can be used to store fonts, scripts, images, and anything else really from both our own origin as well as elsewhere on the web.
+
+[![caches box](assets/images/sm_lesson3-caches-box.jpg)](assets/images/full-size/lesson3-caches-box.png)
 
 ### caches.put()
 To add cache items, you can use the `cache.put()` method and pass a request, or a URL, and a `Response`. For example:
@@ -512,4 +513,66 @@ self.addEventListener('install', function(event){
 ```
 
 [event.waitUntil()](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/waitUntil) lets us signal the progress of the install. We pass it a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and then if or when the Promise resolves the browser knows the install in complete. If the Promise rejects, it knows the install failed and this Service Worker should be discarded.
- -->
+
+## 17. Quiz: Install and Cache Quiz
+Take a look at the code located in public/js/sw/index.js. There is an array of URLs to cache there. Your task is to cache those URLs in a cache named `wittr-static-v1`.
+
+```js
+self.addEventListener('install', function(event) {
+  var urlsToCache = [
+    '/',
+    'js/main.js',
+    'css/main.css',
+    'imgs/icon.png',
+    'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff'
+  ];
+
+  event.waitUntil(
+    // TODO: open a cache named 'wittr-static-v1'
+    // Add cache the urls from urlsToCache
+  );
+});
+```
+
+Remember to have the Chrome developer tools open and use the 'Update on reload' option so you only need to refresh once to see changes.
+
+To verify the state of the cache in the Chrome developer tools, click on the **Application** tab and then **Cache Storage**. Hopefully, you will see your cache in there.
+
+### Solution
+I could have just referenced the array, but I moved it instead.
+
+[event.waitUntil()](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/waitUntil) takes a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and [caches.open()](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/open) returns one.
+
+
+[Cache.AddAll()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/addAll) also returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), so I return it. 
+
+So [event.waitUntil()](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/waitUntil) receives a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) for both actions combined.
+
+```js
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    // TODO: open a cache named 'wittr-static-v1'
+    // Add cache the urls from urlsToCache
+    caches.open( 'wittr-static-v1' ).then( function( cache ) {
+      return cache.addAll([
+        '/',
+        'js/main.js',
+        'css/main.css',
+        'imgs/icon.png',
+        'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff'
+      ]);
+    })
+  );
+});
+```
+
+Now if I refresh the page, that new service worker will run andI can go to the resources panel in DevTools and there in cache storage,is the new cache recreated and the resources we added to it.
+
+Success, but it's no good having cached items if we're not going to use them. So let's use them in responses.
+
+## 18. Quiz: Cache Response Quiz
+We haven't shown you code for responding with a cache entry, but you've seen [caches.match()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/match) for getting things out of the cache, and you've seen [event.respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith) for providing a response (more specifically a promise for a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)). Time to put them together.
+
+Your task is to respond to the request with an entry from the cache if there is one. Otherwise, fetch it from the network, here's a hint: **You need to call event.respond with, synchronously. You can't call it within a promise handler, that's too late.**
+
+Once you've coded it up, reload the page. Remember to have DevTools open and use 'Update on reload', so you only need to refresh once to see changes. You'll know it's working because you'll be able to put the site into Offline mode and still get a response.
