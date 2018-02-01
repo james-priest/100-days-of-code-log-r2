@@ -573,6 +573,6 @@ Success, but it's no good having cached items if we're not going to use them. So
 ## 18. Quiz: Cache Response Quiz
 We haven't shown you code for responding with a cache entry, but you've seen [caches.match()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/match) for getting things out of the cache, and you've seen [event.respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith) for providing a response (more specifically a promise for a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)). Time to put them together.
 
-Your task is to respond to the request with an entry from the cache if there is one. Otherwise, fetch it from the network, here's a hint: **You need to call event.respond with, synchronously. You can't call it within a promise handler, that's too late.**
+Your task is to respond to the request with an entry from the cache if there is one. Otherwise, fetch it from the network, here's a hint: **You need to call [event.respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith), synchronously. You can't call it within a promise handler, that's too late.**
 
 Once you've coded it up, reload the page. Remember to have DevTools open and use 'Update on reload', so you only need to refresh once to see changes. You'll know it's working because you'll be able to put the site into Offline mode and still get a response.
