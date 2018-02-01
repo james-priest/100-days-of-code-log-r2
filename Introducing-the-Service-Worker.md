@@ -113,12 +113,13 @@ Let's add a `fetch` listener for one of these.
 sw.js
 
 ```javascript
-self.addEventListener( 'fetch', function() {
+self.addEventListener( 'fetch', function(event) {
     console.log(event.request);
 } );
 ```
+This code inspects the request. 
 
-This code inspects the request event.
+Specifically it uses the [FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)'s [request](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/request) property to return a [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) object which represents the request the browser intends to make.
 
 When the user navigates to a page within your service worker's scope, the service worker controls it. The network request for its html goes to the service worker and triggers a fetch event.
 
@@ -229,12 +230,12 @@ But we haven't really used the Service Worker to do anything useful yet. We have
 Now, we're going to catch the request as it hits the Service Worker and respond ourselves so nothing goes to the network. **This is an important step in going offline first**.
 
 ```javascript
-self.addEventListener('fetch', function(evetn) {
+self.addEventListener('fetch', function(event) {
     event.respondWith(..);
 });
 ```
 
-The `respondWith` method takes a Response object or a Promise that resolves with a Response. One way to create a Response is to create a new Response instance:
+The [respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith) method takes a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) object or a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves with a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response). One way to create a Response is to create a new [Response()](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response) instance:
 
 ```javascript
 self.addEventListener('fetch', function(event) {
@@ -248,7 +249,7 @@ No matter what URL is entered into the URL bar, I get the same response because 
 
 [![screenshot 10](assets/images/sm_lesson3-service-worker10.jpg)](assets/images/full-size/lesson3-service-worker10.png)
 
-Looks the html is being output ast text. That's because the default content-type is `text/plain`. Fortunately, we can set headers as part of the response.
+Looks the html is being output ast text. That's because the default content-type is `text/plain`. Fortunately, we can set headers as part of the [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response).
 
 ```javascript
 self.addEventListener('fetch', function(event) {
@@ -260,7 +261,7 @@ self.addEventListener('fetch', function(event) {
 });
 ```
 
-Refresh the page and look at the _Network_ tab in Chrome developer tools, take a look at the _Response Headers_ and you will see that `foo: bar` and `Content-Type: text/html` was returned as part of the _Response Headers_.
+Refresh the page and look at the **Network** tab in Chrome developer tools, take a look at the **Response Headers** section and you will see that `foo: bar` and `Content-Type: text/html` was returned as part of the [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response/Response) headers.
 
 [![screenshot 11](assets/images/sm_lesson3-service-worker11.jpg)](assets/images/full-size/lesson3-service-worker11.png)
 
@@ -286,7 +287,7 @@ self.addEventListener('fetch', function(event) {
 ## 12. Hijacking Requests 2
 Now that we know how to hijack a request and respond with basic HTML, let's do something cooler...
 
-Let's go to the network for the Response, but not for the thing that was requested. There is an API to achieve this: fetch.
+Let's go to the network for the [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response), but not for the thing that was requested. There is an API to achieve this: [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 You might be thinking: "Isn't this what XMLHttpRequest is for?" No, just... no! Much of the XHR API is 15 years old! Even from the outset, it wasn't particularly well thought out.
 
@@ -324,11 +325,11 @@ fetch('/foo').then(function(response) {
 });
 ```
 
-fetch returns a Promise that resolves to the Response. Then we can read the Response as JSON, and then do something with the results. We can catch errors from either the request, or reading the Response. DONE!
+[fetch()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to the [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response). Then we can read the [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) as JSON, and then do something with the results. We can catch errors from either the [FetchEvent.request](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/request), or reading the [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response). DONE!
 
-As it turns out, back in our Service Worker, `event.respondWith()` takes either a Response or a Promise that resolves to a Response. Since fetch returns a Promise that resolves to a Response, they compose together really well.
+As it turns out, back in our Service Worker, `event.respondWith()` takes either a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response) or a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response). Since [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) that resolves to a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response), they compose together really well.
 
-Let's respond with a fetch for a .gif file:
+Let's respond with a [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) for a .gif file:
 
 ```javascript
 self.addEventListener('fetch', function(event) {
@@ -340,7 +341,7 @@ self.addEventListener('fetch', function(event) {
 
 We've just served up different content using the network!
 
-The Fetch API performs a normal browser fetch, so the results may come from the cache. That is a benefit in this case as we want the .gif to cache as usual.
+The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) performs a normal browser fetch, so the results may come from the cache. That is a benefit in this case as we want the .gif to cache as usual.
 
 ## 13. Quiz: Hijacking Requests 2 Quiz
 Take a look at the code below. As you can see, your task is to only respond with a .gif if the request URL ends with .jpg. How you determine that is up to you, but remember that event.request gives you information about the request.
@@ -367,7 +368,7 @@ self.addEventListener('fetch', function(event) {
 
 We've already seen `event.request`. But what other properties does it have? One way to find out is to go to Google and search for MDN request.
 
-MDN is a great place for documentation and in there there's a result about the _Fetch API_. In there it tells me that `request.url` is the URL of the request. Kind of obvious now we see it.
+MDN is a great place for documentation and in there there's a result about the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). In there it tells me about the [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) Fetch Interface and that contains `request.url` which is the URL of the request.
 
 Alternatively, I could have added a `console.log()` and logged out event.request, as we were before, and then refresh the page. But because the console is cleared when the page navigates, we're losing the log for the page request. If I click 'preserve the log' in Dev Tools and refresh again, there it is. And inside the request object there are loads of details in there,one of which is the URL, and it's a string.
 
@@ -441,3 +442,74 @@ self.addEventListener('fetch', function(event) {
   );
 });
 ```
+
+<!-- 
+## 16. Caching and Serving Assets
+So far we've seen how to hijack requests and respond to them differently. We've even created responses ourselves, meaning we can respond without using the network at all. However, if we want to be able to load Wittr without using the network, we need somewhere to store the HTML, CSS, JavaScript, images, web fonts, etc. Thankfully, there is such a place: the `Cache API`.
+
+### caches.open()
+The `Cache API` gives us the `caches` object on the global. If you want to create or open a cache, you call the `caches.open()` method with the name of the cache.
+
+```js
+caches.open('my-stuff').then(function(cache) {
+    //...
+});
+```
+
+This returns a `Promise` for a cache of that name. If you haven't opened a cache with that name before, it creates the cache with that name and returns it.
+
+A cache box can contain request/response pairs from any secure origin. It can be used to store fonts, scripts, images, and anything else really from both our own origin as well as elsewhere on the web.
+
+### caches.put()
+To add cache items, you can use the `cache.put()` method and pass a request, or a URL, and a `Response`. For example:
+
+```js
+cache.put(request, response);
+```
+
+### caches.addAll()
+Or you can use `cache.addAll()` which takes an array of requests, or URLs, fetches them and puts the `Response` pairs into the cache. **However, if any of the items in the array fail to cache then none of them are added.**
+
+```js
+cache.addAll([
+    '/foo',
+    '/bar'
+])
+```
+
+`cache.addAll()` uses `fetch` under the hood, so bare in mind that requests will go via the browser cache.
+
+### cache.match()
+Later, when you want to get something out of the cache you can call `cache.match()` and pass in a request, or URL. This will return a `Promise` for a matching `Response` if one is found, or `undefined` otherwise.
+
+```js
+cache.match(request);
+```
+
+### caches.match()
+`caches.match()` does the same as `cache match()` except that it tries to find a match in any cache starting with the oldest.
+
+```js
+caches.match(request);
+```
+
+So we have a way to store items in the cache, but the question is - when should we store it? Thankfully, there is another [Service Worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) event that helps here.
+
+[![screenshot 12](assets/images/sm_lesson3-service-worker12.jpg)](assets/images/full-size/lesson3-service-worker12.png)
+
+When a browser runs a Service Worker for the first time, the [InstallEvent](https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent) is fired. The browser will not allow the Service Worker to take control of the pages until its install phase has completed and we are in control of what that involves.
+
+[![screenshot 13](assets/images/sm_lesson3-service-worker13.jpg)](assets/images/full-size/lesson3-service-worker13.png)
+
+We use the `install` event as an opportunity to get everything we need from the network and create a cache for those resources.
+
+```js
+self.addEventListener('install', function(event){
+  event.waitUntil(
+    // ..
+  );
+});
+```
+
+[event.waitUntil()](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/waitUntil) lets us signal the progress of the install. We pass it a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and then if or when the Promise resolves the browser knows the install in complete. If the Promise rejects, it knows the install failed and this Service Worker should be discarded.
+ -->

@@ -56,7 +56,7 @@ header {
     background: #1A7F33;
 }
 a { color:#1A7F33;}
-a:hover { color:#999999;}
+a:hover { color:#999999; text-decoration: underline; }
 input[type="checkbox"], input[type="radio"] {
     margin-right: 6px;
 }

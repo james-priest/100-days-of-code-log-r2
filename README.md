@@ -32,10 +32,27 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Link to Work:**
 
 ---
+
+
+## 7. Cache API
+### Day 7: February 2, 2018 - Friday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![dev tools](assets/images/sm_hijacking-requests1.jpg)](assets/images/full-size/hijacking-requests1.png)
+
+**Progress:** Learned the basics of the `Cache` interface.
+
+Full examples can be found in [my notes](Introducing-the-Service-Worker.html).
+
+**Link to Work:**
+- [Introducing the Service Worker - Notes](Introducing-the-Service-Worker.html)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
 -->
+---
 
 ## 6. Hijacking Requests
-### Day 5: February 1, 2018 - Thursday
+### Day 6: February 1, 2018 - Thursday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
