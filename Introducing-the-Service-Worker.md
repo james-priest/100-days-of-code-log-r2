@@ -446,7 +446,7 @@ self.addEventListener('fetch', function(event) {
 ## 16. Caching and Serving Assets
 So far we've seen how to hijack requests and respond to them differently. We've even created responses ourselves, meaning we can respond without using the network at all. However, if we want to be able to load Wittr without using the network, we need somewhere to store the HTML, CSS, JavaScript, images, web fonts, etc. Thankfully, there is such a place: the `Cache API`.
 
-### caches.open()
+### caches.open(cacheName) [on MDN](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/open)
 The `Cache API` gives us the `caches` object on the global. If you want to create or open a cache, you call the `caches.open()` method with the name of the cache.
 
 ```js
@@ -461,15 +461,15 @@ A cache box can contain request/response pairs from any secure origin. It can be
 
 [![caches box](assets/images/sm_lesson3-caches-box.jpg)](assets/images/full-size/lesson3-caches-box.png)
 
-### caches.put()
+### cache.put(request, response) [on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Cache/put)
 To add cache items, you can use the `cache.put()` method and pass a request, or a URL, and a `Response`. For example:
 
 ```js
 cache.put(request, response);
 ```
 
-### caches.addAll()
-Or you can use `cache.addAll()` which takes an array of requests, or URLs, fetches them and puts the `Response` pairs into the cache. **However, if any of the items in the array fail to cache then none of them are added.**
+### cache.addAll(requests[]) [on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Cache/addAll)
+Alternatively, you can use `cache.addAll()` which takes an array of requests, or URLs, fetches them and puts the `Response` pairs into the cache. **However, if any of the items in the array fail to cache then none of them are added.**
 
 ```js
 cache.addAll([
@@ -480,14 +480,14 @@ cache.addAll([
 
 `cache.addAll()` uses `fetch` under the hood, so bare in mind that requests will go via the browser cache.
 
-### cache.match()
+### cache.match(request, {options}) [on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Cache/match)
 Later, when you want to get something out of the cache you can call `cache.match()` and pass in a request, or URL. This will return a `Promise` for a matching `Response` if one is found, or `undefined` otherwise.
 
 ```js
 cache.match(request);
 ```
 
-### caches.match()
+### caches.match(request, {options}) [on MDN](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match) 
 `caches.match()` does the same as `cache match()` except that it tries to find a match in any cache starting with the oldest.
 
 ```js
@@ -502,7 +502,7 @@ When a browser runs a Service Worker for the first time, the [InstallEvent](http
 
 [![screenshot 13](assets/images/sm_lesson3-service-worker13.jpg)](assets/images/full-size/lesson3-service-worker13.png)
 
-We use the `install` event as an opportunity to get everything we need from the network and create a cache for those resources.
+We use the [InstallEvent](https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent) as an opportunity to get everything we need from the network and create a cache for those resources.
 
 ```js
 self.addEventListener('install', function(event){
@@ -571,8 +571,112 @@ Now if I refresh the page, that new service worker will run andI can go to the r
 Success, but it's no good having cached items if we're not going to use them. So let's use them in responses.
 
 ## 18. Quiz: Cache Response Quiz
-We haven't shown you code for responding with a cache entry, but you've seen [caches.match()](https://developer.mozilla.org/en-US/docs/Web/API/Cache/match) for getting things out of the cache, and you've seen [event.respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith) for providing a response (more specifically a promise for a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)). Time to put them together.
+We haven't shown you code for responding with a cache entry, but you've seen [caches.match()](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match) for getting things out of the cache, and you've seen [event.respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith) for providing a response (more specifically a promise for a [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)). Time to put them together.
 
 Your task is to respond to the request with an entry from the cache if there is one. Otherwise, fetch it from the network, here's a hint: **You need to call [event.respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith), synchronously. You can't call it within a promise handler, that's too late.**
 
 Once you've coded it up, reload the page. Remember to have DevTools open and use 'Update on reload', so you only need to refresh once to see changes. You'll know it's working because you'll be able to put the site into Offline mode and still get a response.
+
+### Solution
+To begin, I'm going to [respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/respondWith) a match in the cache for this request.
+
+I can just pass [event.request](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/request) straight into [caches.match()](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match).
+
+```js
+event.respondWith(
+  caches.match( event.request )
+    .then( function( response ) {
+      return response || fetch(event.request);
+    } )
+    .catch( function( error ) {
+      console.log( error, 'no cache entry for:', event.request.url );
+    })
+);
+```
+
+Of course there may not be a match in the cache for this particular request. In that case the promise will resolve with `undefined`.
+
+So if the request is truthy, meaning I got a match in the cache I'll return it. Otherwise, I'll return a [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) to the network for the original request. This is made cleaner by simply coding it as returning response or fetch().
+
+We also throw in a .catch block in case we don't have the resource in cache and the network is unavailable.
+
+[![screenshot 14](assets/images/sm_lesson3-service-worker14.jpg)](assets/images/full-size/lesson3-service-worker14.png)
+
+With 'Update on reload' enabled I can refresh the page. And while it doesn't really look like much has changed if we go offline and refresh, we get a whole lot of content still. We shouldn't underestimate what we've done here, it's pretty huge.
+
+Here's what we've achieved.
+
+- Things haven't really changed on a perfect connection but perfect doesn't exist.
+- On a slow connection, we're getting stuff on screen a whole lot faster.
+- On Lie-Fi, we're delivering stuff rather than a blank screen which is great.
+- And offline gets content, rather than a complete failure.
+
+There are things we need to fix though. The photos and avatar aren't working offline, but also if we disable 'Update on reload' and go online, we can see new posts. But if we now go offline and refresh the new posts go away. We're not updating the posts in the cache. This is because we cached the HTML once and install time. So we're stuck with that set of messages in the cache.
+
+Here's a to do list that gets us from where we are now to full offline first success. We need to:
+
+- [ ] **Provide unobtrusive app updates**
+- [ ] **Get the user onto the latest version as quickly as possible**.
+- [ ] **Continually update the cache of posts**
+- [ ] **Cache the photos**.
+- [ ] **Cache the avatars**.
+
+The rest of the course is about doing this. Starting with unobtrusive app updates.
+
+## 19. Updating the Static Cache
+It's time to disable 'Update on reload'. Now that this is done, the service worker lifecycle is back to normal, which is how real users will experience it.
+
+[![dev tools2](assets/images/sm_chrome-dev-tools2.jpg)](assets/images/full-size/chrome-dev-tools2.png)
+
+'Update on reload' is great during development. Say we wanted to change the theme of the app. If I change the primary color to red then go back to the browser with 'Update on reload' enabled and then refresh - boom!, red toolbar!
+
+**This is because 'Update on reload' reloads the service worker from the network on every refresh and causes it to install even if the service worker hasn't changed.**
+
+Let's say I change the whole theme by uncommenting a new set of style variables. This should make the theme green except this time I disable 'Update on reload' and refresh the page. In this case the page remains red.
+
+No matter how many times I refresh, still red. If I **Shift+refresh** and bypass the service worker, I see the changes, but normal refreshing gets me nowhere, because our cache still contains the old CSS. 
+
+**This is because our cached CSS is updated as part of the `install` step. But that isn't happening because there's no new service worker to install.**
+
+[![dev tools2](assets/images/sm_chrome-dev-tools2.jpg)](assets/images/full-size/chrome-dev-tools2.png)
+
+We can see from Dev Tools there's no new service worker waiting. With 'Update on reload' disabled, the browser checks for an update to the service worker once per page load which happens on `install`. But we didn't change the service worker. We only changed the CSS, so there's nothing new to install.
+
+We need to actually work with the service worker to get it to pick up changes. Since we change code all the time we need users to get those changes as soon as possible with minimum disruption.
+
+Here's how we work with the service worker lifecycle.
+
+1. To get the CSS to update, we need to make a change to the service worker.
+1. The browser will then treat this updated worker as a new version.
+1. Because it's new, it'll get its own `install` event where it'll fetch the JavaScript, HTML, and our updated CSS. It'll put these in a new cache.
+1. This won't be done automatically, we have to manually change the name of our cache to make this happen.
+
+[![screenshot 15](assets/images/sm_lesson3-service-worker15.jpg)](assets/images/full-size/lesson3-service-worker15.png)
+
+Also, we create a new cache because we don't want to disrupt the cache that's already being used by the old service worker and the pages it controls. Once the old service worker is released and we're ready to take over, we delete the old cache so the next page load gets resources from the new cache, meaning it gets the latest CSS.
+
+[![screenshot 16](assets/images/sm_lesson3-service-worker16.jpg)](assets/images/full-size/lesson3-service-worker16.png)
+
+We've already covered most of the parts needed to make this happen. We know that a change to the service worker will cause it to spin up a new instance and that change can simply be renaming the cache from v1 to v2. The bit we haven't covered is how to get rid of that old cache.
+
+The first piece of the puzzle is the `activate` event. We've already seen the `install` event which fires when the browser sets up a new service worker for the first time, whereas the `activate` event fires when the service worker becomes active, when it's ready to control pages and the previous service worker is gone. This makes it the perfect time to get rid of old caches.
+
+```js
+self.addEventListener('activate', function(event) {
+  // ...
+});
+```
+
+Like the install event, you can use `event.waitUntil()` to signal the length of the process. While you're activating, the browser will queue other service worker events such as fetch. So by the time your service worker receives its first fetch, you know you have the caches how you want them. You can delete caches using `caches.delete()`, passing in the name of the cache. 
+
+```js
+cahces.delete(cacheName);
+```
+
+You can also get the names of all your caches using `caches.keys()`.
+
+```js
+caches.keys();
+```
+
+Both of these methods return promises.
