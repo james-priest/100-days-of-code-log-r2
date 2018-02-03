@@ -584,15 +584,17 @@ To begin, I'm going to [respondWith()](https://developer.mozilla.org/en-US/docs/
 I can just pass [event.request](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/request) straight into [caches.match()](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/match).
 
 ```js
-event.respondWith(
-  caches.match( event.request )
-    .then( function( response ) {
-      return response || fetch(event.request);
-    } )
-    .catch( function( error ) {
-      console.log( error, 'no cache entry for:', event.request.url );
-    })
-);
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match( event.request )
+      .then( function( response ) {
+        return response || fetch(event.request);
+      } )
+      .catch( function( error ) {
+        console.log( error, 'no cache entry for:', event.request.url );
+      })
+  );
+});
 ```
 
 Of course there may not be a match in the cache for this particular request. In that case the promise will resolve with `undefined`.
@@ -786,3 +788,5 @@ We then `filter` the Array of cache names; remember, we only care about caches t
 Finally, we `map` over the filtered Array and delete each of those caches with `caches.delete()`.
 
 Okay, I think we can say we've successfully delivered unobtrusive updates. Next we'll look at making sure the user gets these updates quickly and painlessly.
+
+## 22. Adding UX to the Update Process
