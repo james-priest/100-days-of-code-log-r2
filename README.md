@@ -30,25 +30,40 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Thoughts:**
 
 **Link to Work:**
+-->
 
 ---
-
 
 ## 7. Cache API
 ### Day 7: February 2, 2018 - Friday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
-[![dev tools](assets/images/sm_hijacking-requests1.jpg)](assets/images/full-size/hijacking-requests1.png)
+[![service worker](assets/images/sm_lesson3-service-worker13.jpg)](assets/images/full-size/lesson3-service-worker13.png)
 
-**Progress:** Learned the basics of the `Cache` interface.
+**Progress:** Learned the basics of the [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache) for storing offline versions of a site. This includes the use of:
 
-Full examples can be found in [my notes](Introducing-the-Service-Worker.html).
+- [CacheStorage.open()](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage/open)<br>
+  Returns a Promise that resolves to the Cache object matching the cacheName (a new cache is created if it doesn't already exist.)
+- [Cache.put(request, response)](https://developer.mozilla.org/en-US/docs/Web/API/Cache/put)<br>
+  Takes both a request and its response and adds it to the given cache.
+- [Cache.add(request)](https://developer.mozilla.org/en-US/docs/Web/API/Cache/add)<br>
+  Takes a URL, retrieves it and adds the resulting response object to the given cache. This is functionally equivalent to calling fetch(), then using Cache.put() to add the results to the cache.
+- [Cache.match(request, options)](https://developer.mozilla.org/en-US/docs/Web/API/Cache/match)<br>
+  Returns a Promise that resolves to the response associated with the first matching request in the Cache object.
+- [Cache.addAll(requests)](https://developer.mozilla.org/en-US/docs/Web/API/Cache/addAll)<br>
+  Takes an array of URLs, retrieves them, and adds the resulting response objects to the given cache.
+- [Cache.matchAll(request, options)](https://developer.mozilla.org/en-US/docs/Web/API/Cache/matchAll)<br>
+  Returns a Promise that resolves to an array of all matching requests in the Cache object.
+
+Also learned about the [install](https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent) and [activate](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/waitUntil) events of a Service Worker.
+
+Full examples can be found in [my notes under - Caching and Serving Assets](http://localhost:4000/Introducing-the-Service-Worker.html#16-caching-and-serving-assets).
 
 **Link to Work:**
 - [Introducing the Service Worker - Notes](Introducing-the-Service-Worker.html)
 - 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
--->
+
 ---
 
 ## 6. Hijacking Requests

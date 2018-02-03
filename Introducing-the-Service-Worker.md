@@ -30,9 +30,9 @@ It returns a **Promise** so you get callbacks for success and failure.
 
 ```javascript
 navigator.serviceWorker.register('/sw.js').then(function(reg) {
-    console.log('Yay!');
+  console.log('Yay!');
 }).catch(function(err) {
-    console.log('Boo!');
+  console.log('Boo!');
 });
 ```
 
@@ -40,7 +40,7 @@ If we provide a scope, the service worker will control a page at that level and 
 
 ```javascript
 navigator.serviceWorker.register('/sw.js', {
-    scope: '/my-app/'
+  scope: '/my-app/'
 });
 /*
 /my-app/                yes
@@ -70,15 +70,15 @@ What happens in the service worker? Well, we listen for particular events.
 
 ```javascript
 self.addEventListener('install', function(event) {
-    // ...
+  // ...
 });
 
 self.addEventListener('activate', function(event) {
-    // ...
+  // ...
 });
 
 self.addEventListener('fetch', function(event) {
-    // ...
+  // ...
 });
 
 ```
@@ -87,7 +87,7 @@ In order to make sure the browser supports serviceWorker just wrap the registrat
 
 ```javascript
 if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/sw.js');
+  navigator.serviceWorker.register('/sw.js');
 }
 ```
 
@@ -114,10 +114,11 @@ sw.js
 
 ```javascript
 self.addEventListener( 'fetch', function(event) {
-    console.log(event.request);
-} );
+  console.log(event.request);
+});
 ```
-This code inspects the request. 
+
+This code inspects the request.
 
 Specifically it uses the [FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)'s [request](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/request) property to return a [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request) object which represents the request the browser intends to make.
 
@@ -133,13 +134,13 @@ But not only that, you also get a `fetch` event for every request triggered by t
 
 ```javascript
 IndexController.prototype._registerServiceWorker = function() {
-    if ( !navigator.serviceWorker ) return;
+  if ( !navigator.serviceWorker ) return;
 
-    navigator.serviceWorker.register( '/sw.js' ).then( function() {
-        console.log( 'Registration worked!' );
-    } ).catch( function() {
-        console.log( 'Registration failed!' );
-    } );
+  navigator.serviceWorker.register( '/sw.js' ).then( function() {
+    console.log( 'Registration worked!' );
+  }).catch( function() {
+    console.log( 'Registration failed!' );
+  });
 };
 ```
 
@@ -175,7 +176,7 @@ Unfortunately, a refresh doesn't let the new version of the Service Worker take 
 The update process for Service Workers may sound complicated, but if you think about it this is actually the same process that normal software uses. Take Chrome for example: When there is an update to the browser, it will be downloaded in the background, but will not take affect until the browser is closed and reopened again.
 
 ### Cache Time
-When the browser refetches the Service Worker, looking for updates, it will go through the browser cache - as pretty much all requests do. Because of this, it is recommended keeping the cache time on your Service Worker short. In fact, a cache time of 0 is recommended.
+When the browser re-fetches the Service Worker, looking for updates, it will go through the browser cache - as pretty much all requests do. Because of this, it is recommended keeping the cache time on your Service Worker short. In fact, a cache time of 0 is recommended.
 
 As a safety precaution, if you set the Service Worker script to cache for more than one day the browser will ignore that and set the cache to 24 hours.
 
@@ -231,7 +232,7 @@ Now, we're going to catch the request as it hits the Service Worker and respond 
 
 ```javascript
 self.addEventListener('fetch', function(event) {
-    event.respondWith(..);
+  event.respondWith(..);
 });
 ```
 
@@ -239,9 +240,9 @@ The [respondWith()](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent/
 
 ```javascript
 self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        new Response('Hello <b>World</b>!')
-    )
+  event.respondWith(
+    new Response('Hello <b>World</b>!')
+  )
 });
 ```
 
@@ -253,11 +254,11 @@ Looks the html is being output ast text. That's because the default content-type
 
 ```javascript
 self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        new Response('Hello <b>World</b>!', {
-            headers: { 'foo': 'bar', 'Content-Type': 'text/html' }
-        })
-    )
+  event.respondWith(
+    new Response('Hello <b>World</b>!', {
+      headers: { 'foo': 'bar', 'Content-Type': 'text/html' }
+    })
+  )
 });
 ```
 
@@ -274,13 +275,13 @@ Set `'Content-Type': 'text/html'` in the headers object.
 
 ```javascript
 self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        new Response('Hello <b class="a-winner-is-me">Winner!</b>', {
-            headers: {
-                'Content-Type': 'text/html'
-            }
-        })
-    );
+  event.respondWith(
+    new Response('Hello <b class="a-winner-is-me">Winner!</b>', {
+      headers: {
+        'Content-Type': 'text/html'
+      }
+    })
+  );
 });
 ```
 
@@ -298,11 +299,11 @@ As an example, here's the code to fetch some JSON from the URL /foo:
 var client = new XMLHttpRequest();
 
 client.addEventListener('load', function() {
-    console.log(client.response);
+  console.log(client.response);
 });
 
 client.addEventListener('error', function() {
-    console.log('It failed');
+  console.log('It failed');
 });
 
 client.responseType = 'json';
@@ -317,11 +318,11 @@ Here's the fetch code for the same operation:
 ```javascript
 // Yup.
 fetch('/foo').then(function(response) {
-    return response.json();
+  return response.json();
 }).then(function(data) {
-    console.log(data);
+  console.log(data);
 }).catch(function() {
-    console.log('It failed');
+  console.log('It failed');
 });
 ```
 
@@ -333,9 +334,9 @@ Let's respond with a [fetch()](https://developer.mozilla.org/en-US/docs/Web/API/
 
 ```javascript
 self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        fetch('/imgs/dr-evil.gif')
-    )
+  event.respondWith(
+    fetch('/imgs/dr-evil.gif')
+  )
 });
 ```
 
@@ -451,7 +452,7 @@ The `Cache API` gives us the `caches` object on the global. If you want to creat
 
 ```js
 caches.open('my-stuff').then(function(cache) {
-    //...
+  //...
 });
 ```
 
@@ -473,8 +474,8 @@ Alternatively, you can use `cache.addAll()` which takes an array of requests, or
 
 ```js
 cache.addAll([
-    '/foo',
-    '/bar'
+  '/foo',
+  '/bar'
 ])
 ```
 
@@ -670,7 +671,7 @@ self.addEventListener('activate', function(event) {
 Like the install event, you can use `event.waitUntil()` to signal the length of the process. While you're activating, the browser will queue other service worker events such as fetch. So by the time your service worker receives its first fetch, you know you have the caches how you want them. You can delete caches using `caches.delete()`, passing in the name of the cache. 
 
 ```js
-cahces.delete(cacheName);
+caches.delete(cacheName);
 ```
 
 You can also get the names of all your caches using `caches.keys()`.
@@ -680,3 +681,108 @@ caches.keys();
 ```
 
 Both of these methods return promises.
+
+## 20. Quiz: Update Your CSS Quiz
+This time, make sure the `Update on reload` option is disabled in Chrome developer tools.
+
+Your task is to change the CSS theme of the site. Then, in the Service Worker, update the cache name and use the `activate` event to remove the old cache. Once you've done that, reload the page to see it working.
+
+In the **Application** tab of Dev Tools you should see a Service Worker in the `waiting to activate` state.
+
+## 21. Quiz: Update Your CSS 2
+Now you're ready to activate the new Service Worker. As we saw earlier, the Service Worker won't activate until pages using the current version go away.
+
+Either close this tab, navigate it to a page out of the Service Workers scope, or hold SHIFT and reload the page.
+
+Once you've done this, when you navigate back to the Wittr application it should be showing the new theme.
+
+### Solution for Quiz 20 & 21
+There a few different ways to complete this one. The easy way and the scalable way.
+
+#### Easy Way
+```js
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('wittr-static-v2').then(function(cache) {
+      return cache.addAll([
+        '/',
+        'js/main.js',
+        'css/main.css',
+        'imgs/icon.png',
+        'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff'
+      ]);
+    })
+  );
+});
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.delete('wittr-static-v1')
+  );
+});
+```
+
+The easy way is to first make a change to the CSS theme. Then bump up the version number of the static cache in the Service Worker to 'wittr-static-v2'. The next step is to use the `activate` event to remove the old 'wittr-static-v1' cache.
+
+[![dev tools1](assets/images/sm_chrome-dev-tools1.jpg)](assets/images/full-size/chrome-dev-tools1.png)
+
+Now we refresh the page and we can see in Dev Tools the new version was installed and 'waiting to active'. If we look at Cache Storage in Dev Tools we can see v1 and v2. If we navigate away and back, or click skipWaiting link in Dev Tools the new Service Worker activates and the CSS theme changes.
+
+#### Scalable Way
+But what about when we get to version twenty? We can't just remove version 19 in the `activate` event because the user might be updating from an older version, maybe 18, maybe 17. Calling delete on every old cache name is going to be a bit messy and that code's only going to get bigger over time. Instead, we maintain a safe list of cache names we want to keep and remove the others.
+
+To do that we store the name of the static cache in a `staticCacheName` variable. Then in the `activate` event, we get all of the cache names that exist using `caches.keys()`. We then `filter`that list of cache names and are only interested in the cache name begins with 'wittr-' but isn't the name of the static cache.
+
+That gives us a list of wittr caches that we don't need anymore so, we `map` those to promises returned by `caches.delete()`. Then we wrap all of that in `promise.all()`. So we wait on the completion of all of those promises.
+
+Checking the cache starts that with `wittr-` means we don't delete caches from other apps that might be running on the same origin, for example some other static v1.
+
+It isn't really necessary here as we only have one service worker on the origin but on sites like GitHub pages you might have many service workers sharing the same origin.
+
+When updating the cache remember that the requests are going via the standard browser cache. So if one of these resources had a cache time of say a year, the update would just be fetched from the HTTP cache. So you wouldn't get any changes you made. In the development server, all the resources are set to have a cache age of zero meaning they don't cache.
+
+[![screenshot 17](assets/images/sm_lesson3-service-worker17.jpg)](assets/images/full-size/lesson3-service-worker17.png)
+
+In production, I strongly recommend having versioning as part of your resource names (shown above) where the version number is generated from the content of the file. Then you can give these resources a cache time of a year or more. So if you update your CSS, a build script could automatically update your service worker, changing the URL to this the CSS.
+
+Your cache version number could also be generated based on the things it caches. Versioning resources like this and giving them a long cache time isn't advice specific to service workers, it's just general good caching practice. You can work around not to call caching with service worker. You pack pretty much anything. But things are so much easier if you work along side good caching. For example, in this model if I update my CSS the CSS URL changes, therefore cache name changes. Now when the browser fetches all these, it can get everything but the CSS from the browser cache because they haven't changed. The only thing that special from the network is the new CSS.
+
+```js
+var staticCacheName = 'wittr-static-v2';
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(staticCacheName).then(function(cache) {
+      return cache.addAll([
+        '/',
+        'js/main.js',
+        'css/main.css',
+        'imgs/icon.png',
+        'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff'
+      ]);
+    })
+  );
+});
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cachName.startsWith('witter-') && cacheName !== staticCacheName;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+})
+```
+
+First we get all the keys of any existing caches using `caches.keys()`. This returns a Promise with that resolves to an Array of cache names. We return `Promise.all()` which takes an Array of Promises and waits for all of those Promises to resolve.
+
+We then `filter` the Array of cache names; remember, we only care about caches that start with 'wittr-' and do not equal the `staticCacheName` (the name of our current cache).
+
+Finally, we `map` over the filtered Array and delete each of those caches with `caches.delete()`.
+
+Okay, I think we can say we've successfully delivered unobtrusive updates. Next we'll look at making sure the user gets these updates quickly and painlessly.
