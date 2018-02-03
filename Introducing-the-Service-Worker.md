@@ -586,13 +586,11 @@ I can just pass [event.request](https://developer.mozilla.org/en-US/docs/Web/API
 ```js
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match( event.request )
-      .then( function( response ) {
-        return response || fetch(event.request);
-      } )
-      .catch( function( error ) {
-        console.log( error, 'no cache entry for:', event.request.url );
-      })
+    caches.match( event.request ).then( function( response ) {
+      return response || fetch(event.request);
+    }).catch( function( error ) {
+      console.log( error, 'no cache entry for:', event.request.url );
+    })
   );
 });
 ```
