@@ -58,7 +58,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 Also learned about the [install](https://developer.mozilla.org/en-US/docs/Web/API/InstallEvent) and [activate](https://developer.mozilla.org/en-US/docs/Web/API/ExtendableEvent/waitUntil) events of a Service Worker.
 
-Full examples can be found in [my notes under - Caching and Serving Assets](http://localhost:4000/Introducing-the-Service-Worker.html#16-caching-and-serving-assets).
+Full examples can be found in [my notes under - Caching and Serving Assets](Introducing-the-Service-Worker.html#16-caching-and-serving-assets).
 
 **Link to Work:**
 - [Introducing the Service Worker - Notes](Introducing-the-Service-Worker.html)
