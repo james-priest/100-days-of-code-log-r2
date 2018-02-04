@@ -786,8 +786,7 @@ We then `filter` the Array of cache names; remember, we only care about caches t
 Finally, we `map` over the filtered Array and delete each of those caches with `caches.delete()`.
 
 So now we have a safe way to update our static assets. Next we'll look at making sure the user gets these updates quickly and painlessly.
-
-<!-- 
+ 
 ## 22. Adding UX to the Update Process
 We can now say we've successfully delivered unobtrusive updates. But as we saw in the previous chapter, the changes would be in the **waiting** worker.
 
@@ -918,4 +917,3 @@ reg.addEventListener('updatefound', function() {
 ```
 
 That's how we can tell users about updates, whether they're already there, in progress, or start some time later.
--->
