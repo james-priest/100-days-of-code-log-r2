@@ -83,7 +83,7 @@ self.addEventListener('fetch', function(event) {
 
 ```
 
-In order to make sure the browser supports serviceWorker just wrap the registration in a simple feature detect.
+In order to make sure the browser supports Service Workers just wrap the registration in a simple feature detect.
 
 ```javascript
 if (navigator.serviceWorker) {
@@ -785,6 +785,137 @@ We then `filter` the Array of cache names; remember, we only care about caches t
 
 Finally, we `map` over the filtered Array and delete each of those caches with `caches.delete()`.
 
-Okay, I think we can say we've successfully delivered unobtrusive updates. Next we'll look at making sure the user gets these updates quickly and painlessly.
+So now we have a safe way to update our static assets. Next we'll look at making sure the user gets these updates quickly and painlessly.
 
+<!-- 
 ## 22. Adding UX to the Update Process
+We can now say we've successfully delivered unobtrusive updates. But as we saw in the previous chapter, the changes would be in the **waiting** worker.
+
+- [x] Unobtrusive App Updates
+- [ ] Get the user onto the latest version asap
+- [ ] Continually update cache of posts
+- [ ] Cache photos
+- [ ] Cache avatars
+
+Ideally, we want the user to be on the latest version as soon as possible. We want them to get the latest features, designs, and of course bug fixes. But as we saw when a new worker is discovered, it waits until all pages using the current version go away, before it can take over. And, that could be a long time. Let's do something better.
+
+[![screenshot 18](assets/images/sm_lesson3-service-worker18.jpg)](assets/images/full-size/lesson3-service-worker18.png)
+
+Our goal here is to tell the user once an update has been found, and give them a button to ignore it or refresh the page to get the new version. But how can we achieve this? Well, first off, let's cover the update notification. Thankfully there are APIs that give us insight into the Service Worker lifecycle.
+
+### Nuts & Bolts
+When you register for a Service Worker it returns a Promise. That Promise fulfills with a [ServiceWorkerRegistration](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration) object. This object has properties and methods relating to the Service Worker registration.
+
+```js
+navigator.serviceWorker.register('/sw.js').then(function(reg) {
+  // reg.method();
+  // reg.property;
+});
+```
+
+We get methods to do things like `unregister` the Service Worker or programmatically trigger an `update`. We also get these three properties:
+
+- `installing`
+- `waiting`
+- `active`
+
+These will point to a Service Worker object or be `null`. They give you an insight into the Service Worker lifecycle.
+
+```js
+navigator.serviceWorker.register('/sw.js').then(function(reg) {
+  // reg.unregister();
+  // reg.update();
+  // reg.installing;
+  // reg.waiting;
+  // reg.active;
+});
+```
+
+They also map directly to the Dev Tools view we've been working with so far. Dev Tools view is actually just looking at these registration objects.
+
+For example, if there's a Service Worker instance in `.installing`, it tells us there's an update on its way- although it might be thrown away if the install fails.
+
+If there's a Service Worker in `.waiting`, we know an updated Service Worker is _ready and waiting_ to take over.
+
+The registration object will emit an event when a new update is found called `updatefound`. When this fires, `.installing` has become a new worker.
+
+```js
+navigator.serviceWorker.register('/sw.js').then(function(reg) {
+  reg.addEventListener('updatefound', function() {
+    // reg.installing is a new service worker that has changes
+  });
+});
+```
+
+On the Service Worker objects themselves, you can look at their state.
+
+```js
+var sw = reg.installing;
+console.log(sw.state);  // ...logs "installing"
+```
+
+The state can be:
+
+- `.installing` - The install event that has fired, but hasn't yet completed.
+- `.installed` - Installation completed successfully but hasn't yet activated.
+- `.activating` - The activate event has fired but not yet complete.
+- `.activated` - The Service Worker is ready to receive fetch events.
+- `.redundant` - The Service Worker has been thrown away. This happens when the Service Worker has been superseded by a newer worker or if the Service Worker fails to install.
+
+The Service Worker fires an event `statechange` whenever the value of the state property changes.
+
+```js
+sw.addEventListener('statechange', function() {
+  // sw.state has changes
+});
+```
+
+Also, `navigator.serviceWorker.controller` refers to the Service Worker that controls this page. We want to tell the user when there's an update ready but because the Service Worker update happens in the background, the update could be: _ready and waiting_, it could be _in progress_, or it might have _not started yet_. 
+
+This means we need to look at the state of things when the page loads but we may also need to listen for future changes.
+
+For instance, if there's no controller, that means this page didn't load using a Service Worker - it loaded the content from the network.
+
+```js
+if (!navigator.serviceWorker.controller) {
+  // page didn't load using a service worker
+}
+```
+
+Otherwise we need to look at the registration.
+
+If there's a waiting worker there's an update ready and waiting. We tell the user about it.
+
+```js
+if (reg.waiting) {
+  // there's an update ready!
+}
+```
+
+Otherwise if there's an `installing` worker there's an update in progress. Of course the update may fail. So, we listen to the state changes to track it and if it reaches the `installed` state, we tell the user.
+
+```js
+if (reg.installing) {
+  // there's an update in progress
+  reg.installing.addEventListener('statechange', function() {
+    if (this.state === 'installed') {
+      // there's an update ready!
+    }
+  })
+}
+```
+
+Otherwise, we listen for the `updatefound` event. When that fires we track the state of the installing worker and if it reaches the installed state we tell the user.
+
+```js
+reg.addEventListener('updatefound', function() {
+  reg.installing.addEventListener('statechange', function() {
+    if (this.state === 'installed') {
+      // there's and update ready!
+    }
+  });
+})
+```
+
+That's how we can tell users about updates, whether they're already there, in progress, or start some time later.
+-->

@@ -30,7 +30,48 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Thoughts:**
 
 **Link to Work:**
+
+---
+
+## 9. Update Notification with Service Workers
+### Day 9: February 4, 2018 - Sunday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![service worker 18](assets/images/sm_lesson3-service-worker18.jpg)](assets/images/full-size/lesson3-service-worker18.png)
+
+**Progress:** Learned how to provide the user with an update notification when new content is available through a new Service Worker instance.
+
+When a new SW instance is installed it remains in a 'waiting' state until the current SW is done servicing all pages in its scope and is released. This usually requires navigating off site and back again.
+
+You can read more here: [My notes - Adding UX to the Update Proccess](Introducing-the-Service-Worker.html#22-adding-ux-to-the-update-process).
+
+**Link to Work:**
+- [Full Course Notes - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
 -->
+---
+
+## 8. Updating Static Cache
+### Day 8: February 3, 2018 - Saturday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![service worker 15](assets/images/sm_lesson3-service-worker15.jpg)](assets/images/full-size/lesson3-service-worker15.png)
+
+**Progress:** Learned how to update static cache for a site by creating versioned cache stores.
+
+By changing the name of a cache store from say 'my-app-v1' to 'my-app-v2' we are causing the service worker to spin up a new instance. The new service worker instance gets installed but not activated until the old service worker is released.
+
+We create a separate cache store because we don't want to disrupt the cache that's already being used by the old service worker and the pages it controls.
+
+Once the old service worker is released, we delete the old cache store so the next page load gets the latest resources from the new cache.
+
+You can read more here: [My notes - Updating the Static Cache](Introducing-the-Service-Worker.html#19-updating-the-static-cache).
+
+**Link to Work:**
+- [Full Course Notes - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
 
 ---
 
