@@ -972,6 +972,7 @@ IndexController.prototype._registerServiceWorker = function() {
     // indexController._updateReady()
     if ( reg.waiting ) {
       indexController._updateReady();
+      return;
     }
 
     // TODO: if there's an updated worker installing, track its
@@ -983,7 +984,8 @@ IndexController.prototype._registerServiceWorker = function() {
       //     indexController._updateReady();
       //   }
       // });
-      indexController._trackInstalled( reg.installing );      
+      indexController._trackInstalling( reg.installing );
+      return;
     }
 
     // TODO: otherwise, listen for new installing workers arriving.
@@ -996,16 +998,17 @@ IndexController.prototype._registerServiceWorker = function() {
       //     indexController._updateReady();
       //   }
       // });
-      indexController._trackInstalled( reg.installing );
+      indexController._trackInstalling( reg.installing );
+      return;
     });
   });
 };
 
-IndexController.prototype._trackInstalled = function(sw) {
+IndexController.prototype._trackInstalling = function(worker) {
   var indexController = this;
 
-  sw.addEventListener( 'statechange', function() {
-    if ( sw.state === 'installed' ) {
+  worker.addEventListener( 'statechange', function() {
+    if ( worker.state === 'installed' ) {
       indexController._updateReady();
     }
   });
