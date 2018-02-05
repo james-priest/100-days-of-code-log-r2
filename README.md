@@ -33,6 +33,27 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 10. Triggering a Service Worker Update
+### Day 10: February 5, 2018 - Monday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![service worker 19](assets/images/sm_lesson3-service-worker19.jpg)](assets/images/full-size/lesson3-service-worker19.png)
+
+**Progress:** Learned how to trigger a cache and Service Worker update for versioned web content. This provides the user with a notification and creates a new cache store instance separate from the existing cache store.
+
+The versioning of caches stores ensures that the current Service Worker does not experience any interruptions servicing it's pages when new content arrives.
+
+The user is given the option of updating immediately or dismissing the notification and updating with the normal Service Worker lifecycle. This occurs when the old Service Worker is released.
+
+You can read more here: [My notes - Triggering an Update](Introducing-the-Service-Worker.html#24-triggering-an-update).
+
+**Link to Work:**
+- [Full Course Notes - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 9. Update Notification with Service Workers
 ### Day 9: February 4, 2018 - Sunday
 

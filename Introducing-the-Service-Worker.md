@@ -1026,7 +1026,12 @@ If there isn't an installing worker, we listen for updates. Once there's an upda
 Now we should have a notification. If we were to deploy this change, we'd bump the version number of our static cache, so the old and new version wouldn't step on each other's toes but this isn't really worth deploying yet since the notification is kind of useless. But this is an important step. In the next lesson, we'll let the user opt into the update.
 
 ## 24. Triggering an Update
+
+[![service worker 19](assets/images/sm_lesson3-service-worker19.jpg)](assets/images/full-size/lesson3-service-worker19.png)
+
 We now have a notification appearing, but our goal is to give the user a button they can press to get the latest version. Clicking this button needs to tell the waiting Service Worker that it should take over and bypass the the usual Service Worker lifecycle.
+
+[![service worker 20](assets/images/sm_lesson3-service-worker20.jpg)](assets/images/full-size/lesson3-service-worker20.png)
 
 Then we want to refresh the page, so it reloads with the latest assets from the newest cache. There are three new components that help us achieve this:
 
@@ -1125,3 +1130,88 @@ Back in public/js/main/IndexController.js, there is a TODO in the `_registerServ
 Once you've finished, you need to get those changes picked up by the browser by deleting the existing Service Worker and refresh the page. Next, make a change to your Service Worker and then refresh the page.
 
 Once you've got it working, head over to the settings page and put in the Task ID and press enter. You have 8-seconds to hit the refresh button in the notification. This will confirm it's all working.
+
+### Solution
+
+Inside public/js/main/IndexControler.js, the `_updateReady` method should look like:
+
+```js
+IndexController.prototype._updateReady = function(worker) {
+  var toast = this._toastsView.show("New version available", {
+    buttons: ['refresh', 'dismiss']
+  });
+
+  toast.answer.then(function(answer) {
+    if (answer !== 'refresh') return;
+    // TODO: tell the service worker to skipWaiting
+    worker.postMessage({ action: 'skipWaiting' });
+  });
+};
+```
+
+Inside the public/js/sw/index.js file we add the `message` event listener:
+
+```js
+// TODO: listen for the "message" event, and call
+// skipWaiting if you get the appropriate message
+self.addEventListener( 'message', function( event ) {
+  if ( event.data.action === 'skipWaiting' ) {
+    self.skipWaiting();
+  }
+});
+```
+
+Back inside the IndexController.js file, at the end of the _registerServiceWorker method:
+
+```js
+IndexController.prototype._registerServiceWorker = function() {
+  // other code...
+
+  // TODO: listen for the controlling service worker changing
+  // and reload the page
+  navigator.serviceWorker.addEventListener( 'controllerchange', function() {
+    window.location.reload();
+  });
+};
+```
+
+## 26. Quiz: Caching the Page Skeleton
+We need to edit the Service Worker in public/js/sw/index.js to complete this task.
+
+The root page (/) is currently being cached and served in the `fetch` event. We need to cache the page /skeleton instead and serve that if the root page is requested.
+
+Once we change the code, we refresh the page. The browser will see the new Service Worker and notify the user. Click the refresh button to update to the latest version.
+
+We can confirm our changes are working by viewing the source on the root page. The source should be minimal.
+
+### Solution
+Start by updating `staticCacheName` to 'wittr-static-v4'.
+
+Next, inside the install event, instead of caching '/' inside of `cache.addAll`, cache '/skeleton':
+
+Finally, the fetch event looks like:
+
+```js
+self.addEventListener('fetch', function(event) {
+  // TODO: respond to requests for the root page with
+  // the page skeleton from the cache
+  var requestURL = new URL( event.request.url );
+
+  if ( requestURL.origin === location.origin ) {
+    if ( requestURL.pathname === '/' ) {
+      event.respondWith( caches.match( '/skeleton' ) );
+      return;
+    }
+  }
+
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
+});
+```
+
+We want to check that the request comes from the same origin since Service Workers can handle requests from other origins as well. In this case, we only want to intercept root requests for the same origin.
+
+Next we check the path name. If it's the root(/) we respond with the skeleton (/skeleton) straight from cache. We don't need to go to network as a fall-back because we know that /skeleton is cached right from the `install` step.
