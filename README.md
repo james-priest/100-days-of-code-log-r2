@@ -30,7 +30,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Thoughts:**
 
 **Link to Work:**
-
+-->
 ---
 
 ## 9. Update Notification with Service Workers
@@ -42,14 +42,16 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Progress:** Learned how to provide the user with an update notification when new content is available through a new Service Worker instance.
 
-When a new SW instance is installed it remains in a 'waiting' state until the current SW is done servicing all pages in its scope and is released. This usually requires navigating off site and back again.
+When a new Service Worker instance is installed it remains in a 'waiting' state until the current Service Worker is done servicing all pages in its scope and is released. This usually requires navigating off site and back again.
 
-You can read more here: [My notes - Adding UX to the Update Proccess](Introducing-the-Service-Worker.html#22-adding-ux-to-the-update-process).
+These changes alert the user to new content so they may update with a button click. 
+
+You can read more here: [My notes - Adding UX to the Update Process](Introducing-the-Service-Worker.html#22-adding-ux-to-the-update-process).
 
 **Link to Work:**
 - [Full Course Notes - Introducing the Service Worker](Introducing-the-Service-Worker.html)
 - 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
--->
+
 ---
 
 ## 8. Updating Static Cache
