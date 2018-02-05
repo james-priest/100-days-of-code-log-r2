@@ -917,3 +917,107 @@ reg.addEventListener('updatefound', function() {
 ```
 
 That's how we can tell users about updates, whether they're already there, in progress, or start some time later.
+
+## 23. Quiz: Adding UX Quiz
+We're going to edit a different file this time: in public/js/main/IndexController.js. You might remember this file from earlier in the course when you registered a Service Worker.
+
+There's a new method here: `_updateReady`. Calling this will show a notification to the user. Your job is to call it at the correct time(s).
+
+There is a series of comments to guide you along the way. Once you've coded it up, you'll need to get those changes picked up by the browser. The easiest way to accomplish this is to delete the Service Worker, then refresh the page. This will refetch and cache your JavaScript.
+
+```js
+IndexController.prototype._registerServiceWorker = function() {
+  if (!navigator.serviceWorker) return;
+
+  var indexController = this;
+
+  navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    // TODO: if there's no controller, this page wasn't loaded
+    // via a service worker, so they're looking at the latest version.
+    // In that case, exit early
+
+    // TODO: if there's an updated worker already waiting, call
+    // indexController._updateReady()
+
+    // TODO: if there's an updated worker installing, track its
+    // progress. If it becomes "installed", call
+    // indexController._updateReady()
+
+    // TODO: otherwise, listen for new installing workers arriving.
+    // If one arrives, track its progress.
+    // If it becomes "installed", call
+    // indexController._updateReady()
+
+  });
+};
+```
+
+Now, make a change to your Service Worker. Adding a simple comment will suffice. Then refresh the page once more.
+
+### Solution
+
+```js
+IndexController.prototype._registerServiceWorker = function() {
+  if (!navigator.serviceWorker) return;
+
+  var indexController = this;
+
+  navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    // TODO: if there's no controller, this page wasn't loaded
+    // via a service worker, so they're looking at the latest version.
+    // In that case, exit early
+    if (!navigator.serviceWorker.controller) { return; }
+
+    // TODO: if there's an updated worker already waiting, call
+    // indexController._updateReady()
+    if ( reg.waiting ) {
+      indexController._updateReady();
+    }
+
+    // TODO: if there's an updated worker installing, track its
+    // progress. If it becomes "installed", call
+    // indexController._updateReady()
+    if ( reg.installing ) {
+      // reg.installing.addEventListener( 'statechange', function() {
+      //   if ( this.state === 'installed' ) {
+      //     indexController._updateReady();
+      //   }
+      // });
+      indexController._trackInstalled( reg.installing );      
+    }
+
+    // TODO: otherwise, listen for new installing workers arriving.
+    // If one arrives, track its progress.
+    // If it becomes "installed", call
+    // indexController._updateReady()
+    reg.addEventListener( 'updatefound', function() {
+      // reg.installing.addEventListener( 'statechange', function() {
+      //   if ( this.state === 'installed' ) {
+      //     indexController._updateReady();
+      //   }
+      // });
+      indexController._trackInstalled( reg.installing );
+    });
+  });
+};
+
+IndexController.prototype._trackInstalled = function(sw) {
+  var indexController = this;
+
+  sw.addEventListener( 'statechange', function() {
+    if ( sw.state === 'installed' ) {
+      indexController._updateReady();
+    }
+  });
+};
+```
+
+Here's what we did. First off, if the controller is falsely, we bail. The user already has the latest version if it wasn't loaded via a service worker.
+
+If there's a worker waiting, we trigger the notification and return.
+
+If there's a worker installing, we want to listen to its state changes. We call another method to do that, `_trackInstalling`. In `_trackInstalling`, we take the worker and listen to it's state change event. When that fires, We look at the state and if it's installed, We notify the user.
+
+If there isn't an installing worker, we listen for updates. Once there's an update, we call `_trackInstalling` again. You can see now why I factored that code out. Now we make a random change to the service worker and then refresh the page.
+
+Now we should have a notification. If we were to deploy this change, we'd bump the version number of our static cache, so the old and new version wouldn't step on each other's toes but this isn't really worth deploying yet since the notification is kind of useless. But this is an important step. In the next lesson, we'll let the user opt into the update.
