@@ -1024,3 +1024,104 @@ If there's a worker installing, we want to listen to its state changes. We call 
 If there isn't an installing worker, we listen for updates. Once there's an update, we call `_trackInstalling` again. You can see now why I factored that code out. Now we make a random change to the service worker and then refresh the page.
 
 Now we should have a notification. If we were to deploy this change, we'd bump the version number of our static cache, so the old and new version wouldn't step on each other's toes but this isn't really worth deploying yet since the notification is kind of useless. But this is an important step. In the next lesson, we'll let the user opt into the update.
+
+## 24. Triggering an Update
+We now have a notification appearing, but our goal is to give the user a button they can press to get the latest version. Clicking this button needs to tell the waiting Service Worker that it should take over and bypass the the usual Service Worker lifecycle.
+
+Then we want to refresh the page, so it reloads with the latest assets from the newest cache. There are three new components that help us achieve this:
+
+A Service Worker can call the `self.skipWaiting` method while it is `waiting` or `installing`. This signals that it shouldn't queue behind another Service Worker, it should take over right away. We want to call this when the user hits the refresh button in our update notification. But how do we send this signal from the page to the waiting Service Worker?
+
+Your page can send messages to any Service Worker using the `postMessage` method:
+
+```js
+// from page:
+reg.installing.postMessage({ foo: 'bar' });
+```
+
+And you can listen for these messages in the Service Worker using the `message` event:
+
+```js
+// in the service worker:
+self.addEventListener('message', function(event) {
+  event.data; // { foo: 'bar' }
+});
+```
+
+So, when the user clicks the refresh button we will send a message to our Service Worker telling it to call `skipWaiting`.
+
+Now for the final part; we've already seen `navigator.serviceWorker.controller`, but the page gets an event when its value changes. Meaning a new Service Worker has taken over. We're going to use this as a signal that we should reload the page:
+
+```js
+navigator.serviceWorker.addEventListener('controllerchange', function() {
+  // navigator.serviceWorker.controller has changed!
+});
+```
+
+## 25: Quiz: Triggering an Update Quiz
+First take a look in public/js/main/IndexController.js. The `_updateReady` method of the `IndexController` is being called whenever there is an update ready to show. We implemented that in the last task, but we're now passing the Service Worker into the method.
+
+IndexController.js
+
+```js
+IndexController.prototype._updateReady = function(worker) {
+  var toast = this._toastsView.show("New version available", {
+    buttons: ['refresh', 'dismiss']
+  });
+
+  toast.answer.then(function(answer) {
+    if (answer !== 'refresh') return;
+    // TODO: tell the service worker to skipWaiting
+  });
+};
+```
+
+In `_updateReady`, the new version message is shown and then if the user clicks the 'refresh' button, you will need to tell the new Service Worker to tell it to take over control of pages immediately. You'll need to handle this message in the Service Worker.
+
+index.js
+
+```js
+// TODO: listen for the "message" event, and call
+// skipWaiting if you get the appropriate message
+```
+
+Over in public/js/sw/index.js, at the bottom there is a TODO. Here is where you can listen for the `message` to take over page control.
+
+IndexController.js
+
+```js
+IndexController.prototype._registerServiceWorker = function() {
+  if (!navigator.serviceWorker) return;
+
+  var indexController = this;
+
+  navigator.serviceWorker.register('/sw.js').then(function(reg) {
+    if (!navigator.serviceWorker.controller) {
+      return;
+    }
+
+    if (reg.waiting) {
+      indexController._updateReady(reg.waiting);
+      return;
+    }
+
+    if (reg.installing) {
+      indexController._trackInstalling(reg.installing);
+      return;
+    }
+
+    reg.addEventListener('updatefound', function() {
+      indexController._trackInstalling(reg.installing);
+    });
+  });
+
+  // TODO: listen for the controlling service worker changing
+  // and reload the page
+};
+```
+
+Back in public/js/main/IndexController.js, there is a TODO in the `_registerServiceWorker` method of the `IndexController`. We need to listen for the pages controlling Service Worker `controlerchange` event and use that as a signal to reload the page.
+
+Once you've finished, you need to get those changes picked up by the browser by deleting the existing Service Worker and refresh the page. Next, make a change to your Service Worker and then refresh the page.
+
+Once you've got it working, head over to the settings page and put in the Task ID and press enter. You have 8-seconds to hit the refresh button in the notification. This will confirm it's all working.
