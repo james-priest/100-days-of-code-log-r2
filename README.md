@@ -33,6 +33,28 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 11. IndexedDB Promised Library
+### Day 11: February 6, 2018 - Tuesday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![IDB 7](assets/images/sm_lesson4-idb7.jpg)](assets/images/full-size/lesson4-idb7.png)
+
+**Progress:** Learned about IndexedDB and how it can be used by all the major browsers to provide database capabilities. This is a NoSQL rather than relational database and is perfectly suited to persist data related to a site.
+
+This lesson also covers some of the deficiencies inherent in the asynchronous implementations of IndexedDB. It was created before Promises and therefore uses a messy callback architecture.
+
+We look at using a tiny wrapper library written by Jake Archibald which allows us to use Promises rather than events.
+
+You can read more here: [My notes - IndexedDB and Caching](IndexedDB-and-Caching.html).
+
+**Link to Work:**
+- [Full Course Notes - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Jake's IDB Promised Library [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 10. Triggering a Service Worker Update
 ### Day 10: February 5, 2018 - Monday
 
