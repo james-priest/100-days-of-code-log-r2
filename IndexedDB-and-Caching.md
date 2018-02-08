@@ -8,6 +8,8 @@ Notes from _IndexedDB and Caching_ by Jake Archibald. This class is part of the 
 
 This is an Intermediate skill level course which takes approximately 3 weeks to complete and is offered for **FREE**!
 
+These notes continue from where the previous set of class notes ([Introducing the Service Worker](Introducing-the-Service-Worker.html)) left off.
+
 ## 1. Introducing the IDB Promised Library
 When the user opens Wittr, we want to start by showing the last post the device received - before going to the network. Then, we make the Web Socket connection and start receiving new posts one by one.
 
@@ -74,3 +76,139 @@ To avoid this clumsy API, we're going to use a really small library that mirrors
 Take a look at this libraries repository and examples here: [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
 
 Next, we'll take a look at how you create a real-life database in the browser.
+
+## 2. Getting Started with IDB
+Hold on tight - you're now going to get a crash course in IndexedDB... Let's get through this as quickly as possible, and hopefully in one piece.
+
+Start off by opening your browser to [http://localhost:8888/idb-test/](http://localhost:8888/idb-test/)
+
+You'll see that it is just a blank page with a script tag. This script is located at the file path: public/js/idb-test/index.js
+
+All the script contains, at the moment, is an `import` statement for the idb library.
+
+If you open the idb libraries examples ([https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)), to open a database you can see that the function signature is:
+
+- **idb.open(name, version, upgradeCallback)**
+
+```js
+import idb from 'idb'
+
+idb.open('test-db', 1, function(upgradeDb) {
+    // in order to maintain referential integrity
+    // this is the only place to create object stores & indexes
+});
+```
+
+The `upgradeCallback` function will be called if the browser hasn't heard about this database before, or if the version it knows about is less than the version specified.
+
+You'll notice that the callback function gets the `upgradeDb` parameter, which is used to define the database. To ensure database integrity, this is the only place you can create and remove object stores and indexes.
+
+The API for `upgradeDb` is in the library, but it's mostly just a mirror of the real **IndexedDB API** on MDN, except for a few minor differences which we will cover.
+
+### Create an Object Store
+The library docs show that createObjectStore is the same for the IndexedDB API on MDN. So, MDN can give us the full detail of the API: [https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/createObjectStore](https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase/createObjectStore)
+
+In short, the syntax for createObjectStore looks something like this:
+
+- **var objectStore = IDBDatabase.createObjectStore(name, options);**
+
+The object store name is required, while the options parameter is optional.
+
+So we'll create an object store with a name of 'keyval'. Because we haven't told it otherwise, this store has a key that is separate from the data - which is exactly what we want for a key/value store:
+
+```js
+import idb from 'idb';
+
+idb.open('test-db', 1, function(upgradeDb) {
+  var keyValStore = upgradeDb.createObjectStore('keyval');
+});
+```
+
+### Write to the database
+Now we need to add some content to the object store. We can accomplish this using the `put` method of the object store (`keyValStore`). Additional methods can be found by [viewing the docs](https://github.com/jakearchibald/idb#objectstore). These methods include: _put, add, delete, clear, get, getAll, getAllKeys, & count_. 
+
+The put method has the following syntax:
+
+- **var request = objectStore.put(item);**
+- **var request = objectStore.put(item, key);**
+
+If we look at `put` on MDN, it shows `put` takes an item and optional key, but returns a request. These request objects are the thing that makes IDB really difficult to deal with. 
+
+So whenever IDB would return a request, the library returns a Promise. And yes, the signature here is [value, key] rather than [key. value] which is a real gotcha, but you'll see why it's like that later on.
+
+**Once again: Whenever the IDB API returns an IDBRequest object, the IDB library will return a Promise that resolves with an IDBRequest object.**
+
+So I'm going to put the value 'world', and set the key to be 'hello'. With that, we've finished setting our database up.:
+
+```js
+import idb from 'idb';
+
+idb.open('test-db', 1, function(upgradeDb) {
+  var keyValStore = upgradeDb.createObjectStore('keyval');
+  keyValStore.put('world', 'hello');
+});
+```
+
+The database is setup, but we need to add one last piece to this to wrap it up. `idb.open` returns a Promise that resolves with an `IDBDatabase` object. So we'll store that Promise for later:
+
+```js
+import idb from 'idb';
+
+var dbPromise = idb.open('test-db', 1, function(upgradeDb) {
+  var keyValStore = upgradeDb.createObjectStore('keyval');
+  keyValStore.put('world', 'hello');
+});
+```
+
+Later, we can use the `IDBDatabase` object to get and set items in the database.
+
+Now, we can head back to the browser and refresh the page to run the new code. Open Dev Tools and click the **Application** tab. Under the Storage section, click on **IndexedDB**, locate the `keyval` store and click on it. Then, click the button to refresh the database. You should see the key of 'hello' and the value of 'world' inside.
+
+[![IDB 8](assets/images/sm_lesson4-idb8.jpg)](assets/images/full-size/lesson4-idb8.png)
+
+### Read from the Database
+So now, if I want to read from the database, I need to create a transaction. The function to do this is `db.transaction()` to which I pass in the object stores I'm going to be using. In this case just `keyval`. Then I call `objectStore()`, passing in the name of the object store I want, `keyval`. This seems a bit repetitive but it's possible to have a transaction that uses multiple objects stores.
+
+I called `get()` on the object store, passing in the key I'm interested in, `hello`. This returns a promise, which resolves to the value I'm looking for. Which I'll log.
+
+```js
+import idb from 'idb';
+
+var dbPromise = idb.open('keyval', 1, function(upgradeDb) {
+  var keyValStore = upgradeDb.createObjectStore('keyval');
+  keyValStore.put('world', 'hello');
+});
+
+// read "hello" in "keyval"
+dbPromise.then(function(db) {
+  var tx = db.transaction('keyval');
+  var keyValStore = tx.objectStore('keyval');
+  return keyValStore.get('hello');
+}).then(function(val) {
+  console.log('The value of "hello" is:', val);
+});
+```
+
+Now, say I wanted to add another value to the object store.
+
+To do that, I create a transaction just as I did before but I specify that I want to read write this time. Now, I can get my objects stores before but this time, call `put` on on it to set a value.
+
+I'm going to set the key `foo` to be value `bar`, `put` returns a Promise but this Promise doesn't necessarily mean the operation worked. As we saw, if the transaction fails. All the operations are part of it are undone.
+
+```js
+// set "foo" to be "bar" in "keyval"
+dbPromise.then(function(db) {
+  var tx = db.transaction('keyval', 'readwrite');
+  var keyValStore = tx.objectStore('keyval');
+  keyValStore.put('bar', 'foo');
+  return tx.complete;
+}).then(function() {
+  console.log('Added foo:bar to keyval');
+});
+```
+
+This means that you can do a lot of work in a transaction and be sure that it won't be left or accessed in some kind of half finished state. Either all happens or none of it happens.
+
+`Transaction.complete()` is a promise that fulfills if and when the transaction completes, and it rejects if it fails. Once the transaction completes, we logout a success message.
+
+[![IDB 9](assets/images/sm_lesson4-idb9.jpg)](assets/images/full-size/lesson4-idb8.png)
