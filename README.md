@@ -33,6 +33,31 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 12. Getting Started with IDB
+### Day 12: February 7, 2018 - Wednesday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![IDB 8](assets/images/sm_lesson4-idb8.jpg)](assets/images/full-size/lesson4-idb8.png)
+
+**Progress:** Here we got into the code behind IndexedDB. We quickly covered each of the following:
+
+- Opening a database
+- Creating an object store
+- Writing data to the object store
+- Reading data
+- Using transactions
+- Inspecting IDB in DevTools 
+
+You can read more here: [My notes - IndexedDB and Caching](IndexedDB-and-Caching.html).
+
+**Link to Work:**
+- [Full Course Notes - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Jake's IDB Promised Library [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 11. IndexedDB Promised Library
 ### Day 11: February 6, 2018 - Tuesday
 
