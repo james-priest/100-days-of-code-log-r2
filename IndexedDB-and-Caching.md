@@ -252,15 +252,15 @@ To fix this, start by bumping the `version` up to 2. Then, create a new object s
 var dbPromise = idb.open('test-db', 2, function(upgradeDb) {
   var keyValStore = upgradeDb.createObjectStore('keyval');
   keyValStore.put('world', 'hello');
-  upgradeDb.createObjectStore('people', {
-    keyPath: 'name'
-  });
+  upgradeDb.createObjectStore('people', { keyPath: 'name' });
 });
 ```
 
 In the real world, you can have more than one person with the same name - but for the sake of this demo we're going to assume names are unique.
 
 By doing this, we've actually created a bug here. You can see it if you try reloading the page and taking a look at the Console.
+
+[![IDB 11](assets/images/sm_lesson4-idb11.jpg)](assets/images/full-size/lesson4-idb11.png)
 
 Because the browser hasn't seen `version` 2 yet, it will attempt to create a new object store with the name 'keyval' first. And when it does so, it will fail because the 'keyval' store already exists.
 
@@ -284,64 +284,62 @@ Usually with `switch` statements, you include a `break` after each case, but we 
 
 If you refresh the browser now, the errors are gone and the store has appeared in the **Application** panel under the **Storage > IndexedDB** section.
 
+[![IDB 12](assets/images/sm_lesson4-idb12.jpg)](assets/images/full-size/lesson4-idb12.png)
+
 Now we can create a `transaction` to put data in the new store:
 
 ```js
 // .. previous code
 
-dbPromise
-  .then(function(db) {
-    var tx = db.transaction('people', 'readwrite');
-    var peopleStore = tx.objectStore('people');
+dbPromise.then(function(db) {
+  var tx = db.transaction('people', 'readwrite');
+  var peopleStore = tx.objectStore('people');
 
-    peopleStore.put({
-      name: 'Sam Munoz',
-      age: 25,
-      favoriteAnimal: 'dog'
-    });
-
-    peopleStore.put({
-      name: 'Susan Keller',
-      age: 34,
-      favoriteAnimal: 'cat'
-    });
-
-    peopleStore.put({
-      name: 'Lillie Wolfe',
-      age: 28,
-      favoriteAnimal: 'dog'
-    });
-
-    peopleStore.put({
-      name: 'Marc Stone',
-      age: 39,
-      favoriteAnimal: 'cat'
-    });
-
-    return tx.complete;
-  })
-  .then(function() {
-    console.log('People added!');
+  peopleStore.put({
+    name: 'Sam Munoz',
+    age: 25,
+    favoriteAnimal: 'dog'
   });
+  peopleStore.put({
+    name: 'Susan Keller',
+    age: 34,
+    favoriteAnimal: 'cat'
+  });
+  peopleStore.put({
+    name: 'Marc Stone',
+    age: 39,
+    favoriteAnimal: 'cat'
+  });
+
+  return tx.complete;
+}).then(function() {
+  console.log('People added!');
+});
 ```
 
-In this model, a person is just a plain JavaScript object. Notice that we're calling `put`, but we aren't providing a key this time. This is because when we initially created the object store for people, we specified the key at that time which told the store to treat the `name` property as the key.
+In this model, a person is just a plain JavaScript object. Notice that we're calling `put`, but we aren't providing a key this time. This is because when we created the object store for 'people', we told it to use the `name` property as the key.
 
-If you refresh the browser, you can see this operation has completed and the people have been added.
+Once we add the people, we wait on the transaction completing, then we log out a success message to the console.
 
-Now, let's read the people in the store. To do that, we create another transaction and use the `getAll` method of the object store which returns a Promise that resolves to an array of all the objects in the store:
+If we refresh the browser, you can see this operation has completed and the people have been added.
+
+[![IDB 13](assets/images/sm_lesson4-idb13.jpg)](assets/images/full-size/lesson4-idb13.png)
+
+Now, let's read the people in the store. To do that, we create another transaction and set it to the people store. We then use the `getAll` method of the object store which returns a Promise. This Promise resolves to an array of all the objects in the store:
 
 ```js
-dbPromise
-  .then(function(db) {
-    var tx = db.transaction('people');
-    var peopleStore = tx.objectStore('people');
-    return peopleStore.getAll();
-  })
-  .then(function(people) {
-    console.log('People:', people);
-  });
+dbPromise.then(function(db) {
+  var tx = db.transaction('people');
+  var peopleStore = tx.objectStore('people');
+  return peopleStore.getAll();
+}).then(function(people) {
+  console.log('People:', people);
+});
 ```
+
+If we run this code in a browser we see that all the people are logged in alphabetical order.
+
+[![IDB 14](assets/images/sm_lesson4-idb14.jpg)](assets/images/full-size/lesson4-idb14.png)
 
 Notice that since the key is `name`, all of the objects will be in alphabetical order based on their name. This presents the next challenge... What if we wanted to group them together based on their favorite animal? This is where indexes come in.
 
@@ -371,26 +369,25 @@ To use this index, we will modify the code where we are listing all the people. 
 An index has a very similar API to the object store. So, instead of calling `getAll` on the object store, we can call it on the index:
 
 ```js
-dbPromise
-  .then(function(db) {
-    var tx = db.transaction('people');
-    var peopleStore = tx.objectStore('people');
-    var animalIndex = peopleStore.index('animal');
+dbPromise.then(function(db) {
+  var tx = db.transaction('people');
+  var peopleStore = tx.objectStore('people');
+  var animalIndex = peopleStore.index('animal');
 
-    return animalIndex.getAll();
-  })
-  .then(function(people) {
-    console.log('People:', people);
-  });
+  return animalIndex.getAll();
+}).then(function(people) {
+  console.log('People:', people);
+});
 ```
 
 If you refresh the browser, this time the people are sorted by favoriteAnimal. In Chrome developer tools, you can see the index as well.
 
+[![IDB 15](assets/images/sm_lesson4-idb15.jpg)](assets/images/full-size/lesson4-idb15.png)
+
 You can even execute queries on the index. For instance, let's say you just want to see the people whose favoriteAnimal is 'cat'. You simply pass the string 'cat' to the `getAll` method:
 
 ```js
-dbPromise
-  .then(function(db) {
+dbPromise.then(function(db) {
     var tx = db.transaction('people');
     var peopleStore = tx.objectStore('people');
     var animalIndex = peopleStore.index('animal');
@@ -401,3 +398,7 @@ dbPromise
     console.log('People:', people);
   });
 ```
+
+Now we have only the people that love cats.
+
+[![IDB 16](assets/images/sm_lesson4-idb16.jpg)](assets/images/full-size/lesson4-idb16.png) 
