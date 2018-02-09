@@ -33,6 +33,32 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 13. Diving Deeper into IDB
+### Day 13: February 8, 2018 - Thursday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![IDB 10](assets/images/sm_lesson4-idb10.jpg)](assets/images/full-size/lesson4-idb10.png)
+
+**Progress:** This section got into deeper into the IDB API. Some of the items covered were:
+
+- Creating, updating, and accessing multiple object stores
+- Database versioning with multiple instances
+- Transactions with multiple operations
+- Creation and use of indexes
+- Filtering data on index
+
+Lots of sample code and screen shots for reference.
+
+You can read more here: [My notes - IndexedDB and Caching - Diving Deeper with IDB](IndexedDB-and-Caching.html#3-diving-deeper-with-idb).
+
+**Link to Work:**
+- [Full Course Notes - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Jake's IDB Promised Library [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 12. Getting Started with IDB
 ### Day 12: February 7, 2018 - Wednesday
 
@@ -47,7 +73,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 - Writing data to the object store
 - Reading data
 - Using transactions
-- Inspecting IDB in DevTools 
+- Inspecting IDB in DevTools
 
 You can read more here: [My notes - IndexedDB and Caching](IndexedDB-and-Caching.html).
 
