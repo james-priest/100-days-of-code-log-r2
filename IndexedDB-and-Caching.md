@@ -10,7 +10,7 @@ This is an Intermediate skill level course which takes approximately 3 weeks to 
 
 These notes continue from where the previous set of class notes ([Introducing the Service Worker](Introducing-the-Service-Worker.html)) left off.
 
-## 1. Introducing the IDB Promised Library
+## 1. The IDB Promised Library
 When the user opens Wittr, we want to start by showing the last post the device received - before going to the network. Then, we make the Web Socket connection and start receiving new posts one by one.
 
 When we receive these posts, we want to display them, of course. But also we want to add them to the set of posts we already have stored. We also want to remove entries that are too old to be worth keeping.
@@ -401,4 +401,137 @@ dbPromise.then(function(db) {
 
 Now we have only the people that love cats.
 
-[![IDB 16](assets/images/sm_lesson4-idb16.jpg)](assets/images/full-size/lesson4-idb16.png) 
+[![IDB 16](assets/images/sm_lesson4-idb16.jpg)](assets/images/full-size/lesson4-idb16.png)
+
+## 4. IDB Cursors and Indexes
+### Quiz
+
+You just learned how to create an index to sort people by favoriteAnimal. Your task is to create an index where people are ordered by age.
+
+```js
+var dbPromise = idb.open('test-db', 4, function(upgradeDb) {
+  switch(upgradeDb.oldVersion) {
+    case 0:
+      var keyValStore = upgradeDb.createObjectStore('keyval');
+      keyValStore.put("world", "hello");
+    case 1:
+      upgradeDb.createObjectStore('people', { keyPath: 'name' });
+    case 2:
+      var peopleStore = upgradeDb.transaction.objectStore('people');
+      peopleStore.createIndex( 'animal', 'favoriteAnimal' );
+  }
+  // TODO: create an index on 'people' named 'age', ordered by 'age'
+});
+
+// TODO: console.log all people ordered by age
+```
+
+### Solution
+
+```js
+var dbPromise = idb.open('test-db', 4, function(upgradeDb) {
+  switch(upgradeDb.oldVersion) {
+    case 0:
+      var keyValStore = upgradeDb.createObjectStore('keyval');
+      keyValStore.put("world", "hello");
+    case 1:
+      upgradeDb.createObjectStore('people', { keyPath: 'name' });
+    case 2:
+      var peopleStore = upgradeDb.transaction.objectStore('people');
+      peopleStore.createIndex( 'animal', 'favoriteAnimal' );
+    // TODO: create an index on 'people' named 'age', ordered by 'age'
+    case 3:
+      peopleStore = upgradeDb.transaction.objectStore('people');
+      peopleStore.createIndex( 'age', 'age' );
+  }
+});
+
+// TODO: console.log all people ordered by age
+dbPromise.then( function( db ) {
+  var tx = db.transaction( 'people' );
+  var peopleStore = tx.objectStore( 'people' );
+  var ageIndex = peopleStore.index( 'age' );
+
+  return ageIndex.getAll();
+}).then( function( people ) {
+  console.log( 'Ordered by Age', people );
+});
+```
+
+Once you've changed the code, refresh the page and check the Chrome developer tools to see if the people are ordered by age.
+
+[![IDB 17](assets/images/sm_lesson4-idb17.jpg)](assets/images/full-size/lesson4-idb17.png)
+
+### Crash Course Wrap-up
+At the moment, we're getting all the items out of the store. But we can actually go through them one at a time using _cursors_. Taking the 'age' code from the solution, rather than calling `getAll` you can call `openCursor`. This returns a Promise for a cursor object representing the first item in the index, or `undefined` if there isn't one.
+
+```js
+dbPromise.then( function( db ) {
+  var tx = db.transaction( 'people' );
+  var peopleStore = tx.objectStore( 'people' );
+  var ageIndex = peopleStore.index( 'age' );
+
+  return ageIndex.openCursor();
+}).then( function( cursor ) {
+  if (!cursor) return;
+  console.log( 'Cursored at:', cursor.value.name );
+});
+```
+
+If it's undefined, we simply return. Otherwise, we console.log it.
+
+The first person in the index is in `cursor.value`. To move on to the next person, we'll call `cursor.continue` which returns a Promise for a cursor representing the next person, or `undefined` if there isn't one.
+
+A neat trick is to name the callback function and then call that function once `cursor.continue` resolves. This sets up a kind of asynchronous loop until cursor is `undefined`. Meaning, we're at the end of the list:
+
+
+```js
+dbPromise.then( function( db ) {
+  var tx = db.transaction( 'people' );
+  var peopleStore = tx.objectStore( 'people' );
+  var ageIndex = peopleStore.index( 'age' );
+
+  return ageIndex.openCursor();
+}).then( function logPerson ( cursor ) {
+  if (!cursor) return;
+  console.log( 'Cursored at:', cursor.value.name );
+  return cursor.continue().then( logPerson )
+}).then(function() {
+  console.log('Done cursoring');
+});
+```
+
+So when we hit this next step in the Promise chain, we'll have gone through the whole object store.
+
+[![IDB 18](assets/images/sm_lesson4-idb18.jpg)](assets/images/full-size/lesson4-idb18.png)
+
+At the moment, this is just a complicated way of calling `getAll`, but cursors become really useful when you want to modify items as you're looping through them.
+
+You can use `cursor.update` to change the value, or `cursor.delete` to remove it. You could also skip some items using `cursor.advance`:
+
+```js
+dbPromise.then( function( db ) {
+  var tx = db.transaction( 'people' );
+  var peopleStore = tx.objectStore( 'people' );
+  var ageIndex = peopleStore.index( 'age' );
+
+  return ageIndex.openCursor();
+}).then( function( cursor ) {
+  if (!cursor) return;
+  return cursor.advance(2);
+}).then( function logPerson ( cursor ) {
+  if (!cursor) return;
+  console.log( 'Cursored at:', cursor.value.name );
+  // cursor.update(newValue);
+  // cursor.delete();
+  return cursor.continue().then( logPerson )
+}).then(function() {
+  console.log('Done cursoring');
+});
+```
+
+Notice that the number 2 is passed to `cursor.advance` here, this causes the first two items to be skipped.
+
+[![IDB 19](assets/images/sm_lesson4-idb19.jpg)](assets/images/full-size/lesson4-idb19.png)
+
+That covers a majority of the IndexedDB API. In the next chapter, we'll put some of that knowledge into practice on Wittr itself.
