@@ -33,6 +33,31 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 14. IDB Cursors and Indexes
+### Day 14: February 9, 2018 - Friday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![IDB 17](assets/images/sm_lesson4-idb17.jpg)](assets/images/full-size/lesson4-idb17.png)
+
+**Progress:** This is the third and final deep dive into IndexedDB fundamentals. Here we cover using cursors and the syntax required to wrap these in Promises rather than nested callback hell.  This includes:
+
+- openCursor()
+- cursor.value
+- cursor.continue()
+- cursor.advance()
+- cursor.update()
+- cursor.delete()
+
+You can read more here: [My notes - IndexedDB and Caching - IDB Cursors and Indexes](IndexedDB-and-Caching.html#4-idb-cursors-and-indexes).
+
+**Link to Work:**
+- [Full Course Notes - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Jake's IDB Promised Library [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 13. Diving Deeper into IDB
 ### Day 13: February 8, 2018 - Thursday
 
