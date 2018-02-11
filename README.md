@@ -33,6 +33,28 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 15. IDB Cache & Display Entries
+### Day 15: February 10, 2018 - Saturday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![IDB 20](assets/images/sm_lesson4-idb20.jpg)](assets/images/full-size/lesson4-idb20.png)
+
+**Progress:** This section of the lesson covered the data that will be save to the IndexedDB Object Store as well as the structure of data.
+
+The process of retrieving existing posts from local storage and then using web sockets to update the feed is also discussed.
+
+Lastly, specifics such as unique index and keys for the data are discussed.
+
+You can read more here: [My notes - IndexedDB and Caching - IDB Cache & Display Entries](IndexedDB-and-Caching.html#5-idb-cache--display-entries).
+
+**Link to Work:**
+- [Full Course Notes - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Jake's IDB Promised Library [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 14. IDB Cursors and Indexes
 ### Day 14: February 9, 2018 - Friday
 
