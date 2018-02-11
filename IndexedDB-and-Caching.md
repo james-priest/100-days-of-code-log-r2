@@ -535,3 +535,72 @@ Notice that the number 2 is passed to `cursor.advance` here, this causes the fir
 [![IDB 19](assets/images/sm_lesson4-idb19.jpg)](assets/images/full-size/lesson4-idb19.png)
 
 That covers a majority of the IndexedDB API. In the next chapter, we'll put some of that knowledge into practice on Wittr itself.
+
+## 5 IDB Cache & Display Entries
+[![IDB 20](assets/images/sm_lesson4-idb20.jpg)](assets/images/full-size/lesson4-idb20.png)
+
+The plan here is to create a database for Wittr that stores the posts.
+
+When Wittr loads, via a Service Worker, it does so without going to the network. It fetches the page skeleton and assets straight from the cache.
+
+[![IDB 21](assets/images/sm_lesson4-idb21.jpg)](assets/images/full-size/lesson4-idb21.png)
+
+At the moment, we have to go to the network for posts. We're going to change that so instead we'll get posts from the database and display them. Meaning we'll show post content before we go to the network.
+
+[![IDB 22](assets/images/sm_lesson4-idb22.jpg)](assets/images/full-size/lesson4-idb22.png)
+
+Next, we'll connect the WebSocket to get updated posts. WebSockets bypass both the Service Worker and the HTTP cache. As new posts arrive, we'll ad them to the database for next time.
+
+[![IDB 23](assets/images/sm_lesson4-idb23.jpg)](assets/images/full-size/lesson4-idb23.png)
+
+### Populate the Database
+The first thing we'll do is populate the database. We'll deal with displaying its contents later. If you take a look at the file path: public/js/main/IndexController.js, you can see that the IndexController._openSocket method is called to open the Web Socket. In that method you can see a listener for the message event, which hands off to the IndexController._onSocketMessage method passing in the data it received.
+
+IndexController._onSocketMessage then parses the JSON data and passes it to IndexController._postsView.addPosts.
+
+```js
+// open a connection to the server for live updates
+IndexController.prototype._openSocket = function() {
+  var ws = new WebSocket(socketUrl.href);
+
+  ws.addEventListener('message', function(event) {
+    requestAnimationFrame(function() {
+      indexController._onSocketMessage(event.data);
+    });
+  });
+};
+
+// called when the web socket sends message data
+IndexController.prototype._onSocketMessage = function(data) {
+  var messages = JSON.parse(data);
+  console.log(mesages);
+  this._postsView.addPosts(messages);
+};
+```
+
+We can output the data with a console.log().
+
+The data is an array of objects; When we go to our browser we can see the data looks like the following:
+
+[![IDB 24](assets/images/sm_lesson4-idb24.jpg)](assets/images/full-size/lesson4-idb24.png)
+
+The goal here is to store these objects straight into IndexedDB. The obvious primary key here is the 'id' property. And we'll want to be able to display the posts in date order, so we'll need to be able to create an index on the 'time' property.
+
+```js
+{
+  avatar: String,
+  body: String,
+  id: String,
+  name: String,
+  time: String
+}
+```
+
+<!--
+## Using IDB Cache
+We're back to editing Wittr, so head over to public/js/main/IndexController.js.
+
+In the constructor, we're creating a Promise for a database by calling the openDatabase function. This function is incomplete.
+
+Your task is to return a Promise for a database called 'wittr' that has an object store called 'wittrs' that uses 'id' as its key and has an index called called 'by-date', which is sorted by the 'time' property.
+-->
