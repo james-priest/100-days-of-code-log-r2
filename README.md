@@ -33,6 +33,28 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 16. Populate the IDB Database
+### Day 16: February 11, 2018 - Sunday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![IDB 25](assets/images/sm_lesson4-idb25.jpg)](assets/images/full-size/lesson4-idb25.png)
+
+**Progress:** This section consisted of creating an IDB database (wittr) and then writing data to the IDB object store (wittrs).
+
+Once the database was created and populated an index was also created to sort by date.
+
+You can click the link below to read about the process and see the code required to produce the IDB results.
+
+You can read more here: [My notes - IndexedDB and Caching - IDB Cache & Display Entries](IndexedDB-and-Caching.html#6-writing-idb-cache-data).
+
+**Link to Work:**
+- [Full Course Notes - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Jake's IDB Promised Library [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 15. IDB Cache & Display Entries
 ### Day 15: February 10, 2018 - Saturday
 
