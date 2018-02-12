@@ -536,7 +536,7 @@ Notice that the number 2 is passed to `cursor.advance` here, this causes the fir
 
 That covers a majority of the IndexedDB API. In the next chapter, we'll put some of that knowledge into practice on Wittr itself.
 
-## 5 IDB Cache & Display Entries
+## 5. IDB Cache & Display Entries
 [![IDB 20](assets/images/sm_lesson4-idb20.jpg)](assets/images/full-size/lesson4-idb20.png)
 
 The plan here is to create a database for Wittr that stores the posts.
@@ -596,11 +596,113 @@ The goal here is to store these objects straight into IndexedDB. The obvious pri
 }
 ```
 
-<!--
-## Using IDB Cache
+## 6. Populate the IDB Database
 We're back to editing Wittr, so head over to public/js/main/IndexController.js.
 
 In the constructor, we're creating a Promise for a database by calling the openDatabase function. This function is incomplete.
 
-Your task is to return a Promise for a database called 'wittr' that has an object store called 'wittrs' that uses 'id' as its key and has an index called called 'by-date', which is sorted by the 'time' property.
--->
+```js
+import idb from 'idb';
+
+export default function IndexController(container) {
+  this._openSocket();
+  this._dbPromise = openDatabase();
+  this._registerServiceWorker();
+}
+
+function openDatabase() {
+  // If the browser doesn't support service worker,
+  // we don't care about having a database
+  if (!navigator.serviceWorker) {
+    return Promise.resolve();
+  }
+
+  // TODO: return a promise for a database called 'wittr'
+  // that contains one objectStore: 'wittrs'
+  // that uses 'id' as its key
+  // and has an index called 'by-date', which is sorted
+  // by the 'time' property
+}
+```
+
+Your task is to return a Promise for a database called 'wittr' that has an object store called 'wittrs' that uses 'id' as its key and has an index called called 'by-date', which is sorted by the 'time' property. The 'idb' polyfill has been imported at the top of the script so it is ready to use.
+
+Once you've done that, you'll need to add messages to the database. Down in the IndexController._onSocketMessage method, the database has been fetched. Your task is to add each of the messages to the Wittr store. Note that we're not using the entries in the database yet - we'll do that in the next chapter.
+
+```js
+// called when the web socket sends message data
+IndexController.prototype._onSocketMessage = function(data) {
+  var messages = JSON.parse(data);
+
+  this._dbPromise.then(function(db) {
+    if (!db) return;
+
+    // TODO: put each message into the 'wittrs'
+    // object store.
+  });
+
+  this._postsView.addPosts(messages);
+};
+```
+
+If the database gets into a bad state, you can remove it and start fresh by clicking the 'Delete Database' button under Dev Tools -> Application -> IndexedDB -> 'wittr'.
+
+### Solution
+
+```js
+function openDatabase() {
+  // If the browser doesn't support service worker,
+  // we don't care about having a database
+  if (!navigator.serviceWorker) {
+    return Promise.resolve();
+  }
+
+  // TODO: return a promise for a database called 'wittr'
+  // that contains one objectStore: 'wittrs'
+  // that uses 'id' as its key
+  // and has an index called 'by-date', which is sorted
+  // by the 'time' property
+  var dbPromise = idb.open('wittr', 1, function(upgradeDb) {
+    var wittrsStore = upgradeDb.createObjectStore('wittrs', { keyPath: 'id' });
+    wittrsStore.createIndex('by-date', 'time');
+  });
+  return dbPromise;
+}
+
+// called when the web socket sends message data
+IndexController.prototype._onSocketMessage = function(data) {
+  var messages = JSON.parse(data);
+
+  this._dbPromise.then(function(db) {
+    if (!db) return;
+
+    // TODO: put each message into the 'wittrs'
+    // object store.
+    var tx = db.transaction('wittrs', 'readwrite');
+    var wittrsStore = tx.objectStore('wittrs');
+
+    messages.forEach(message => {
+      wittrsStore.put(message);
+    });
+
+    return tx.complete;
+  });
+
+  this._postsView.addPosts(messages);
+};
+```
+
+We go to the browser and refresh the database to see if our data has been saved properly.
+
+[![IDB 25](assets/images/sm_lesson4-idb25.jpg)](assets/images/full-size/lesson4-idb25.png)
+
+<!-- 
+## 7. Displaying IDB Data
+Now we want to get posts that are in the database (IDB 'wittrs' object store) and display them (posted them  to the page).
+
+[![IDB 22](assets/images/sm_lesson4-idb22.jpg)](assets/images/full-size/lesson4-idb22.png)
+
+We want to do this before connecting to the websocket that gets us new posts.
+
+[![IDB 23](assets/images/sm_lesson4-idb23.jpg)](assets/images/full-size/lesson4-idb23.png)
+ -->
