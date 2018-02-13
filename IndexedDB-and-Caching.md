@@ -484,7 +484,6 @@ The first person in the index is in `cursor.value`. To move on to the next perso
 
 A neat trick is to name the callback function and then call that function once `cursor.continue` resolves. This sets up a kind of asynchronous loop until cursor is `undefined`. Meaning, we're at the end of the list:
 
-
 ```js
 dbPromise.then( function( db ) {
   var tx = db.transaction( 'people' );
@@ -891,3 +890,213 @@ We get the 'by-date' index, because we want to remove the oldest posts, and we o
 We don't care about the first 30 posts, those are the newest ones,they can stay. We advance past them.
 
 With the posts after that, if the cursor is 'undefined', we're done. Overwise We delete the entry, then 'continue' the cursor calling the same function again to loop through the remaining entries. This keeps the news 30 post, but deletes the rest.
+
+## 9. Cache Photos
+[![IDB 31](assets/images/sm_lesson4-idb31.jpg)](assets/images/full-size/lesson4-idb31.png)
+
+Some of the posts on Wittr have photos with them, we want to cache those images too. At the moment, we're only caching resources at install time, whereas the images appear over the lifetime of the application with the posts. So we want to cache images as they appear.
+
+We could put these images in IDB along with the rest of the post data, but that means we'd need to read the pixel data and convert it into a blob and that kind of complicated and it also loses streaming, which has a performance impact.
+
+When we get an item from a database, we have to take the whole thing out in one lump then convert it into image data and add it to the page. Whereas, if we get the image from a cache it will stream the data so we don't need to wait for the whole thing before we display anything. This is more memory efficient, and leads to faster renders. For that reason, the **Cache API** is a much better fit.
+
+[![IDB 28](assets/images/sm_lesson4-idb28.jpg)](assets/images/full-size/lesson4-idb28.png)
+
+
+Since we're into the advanced stages of the course, this hasn't been made totally straightforward. Here is the code for the responsive image:
+
+```html
+<img src="/photos/65152-800px.jpg"
+  srcset="/photos/65152-1024px.jpg 1024w,
+          /photos/65152-800px.jpg 800w,
+          /photos/65152-640px.jpg 640w,
+          /photos/65152-320px.jpg 320w"
+  sizes="(min-width: 800px) 765px,
+         (min-width: 600px) calc(100vw - 32px),
+         calc(100vw - 16px)">
+```
+
+Because images can appear at a variety of different widths, this responsive image lets the browser decide which image to load based on the width of the window and also the network conditions.
+
+So, when the post arrives through the WebSocket, which version do we cache?
+
+Well, we wait until the browser makes the request. Then we hear about it in the Service Worker. We go to the network for the image and once we get a response, we put it in the cache. At the same time, we send it on to the page.
+
+[![IDB 29](assets/images/sm_lesson4-idb29.jpg)](assets/images/full-size/lesson4-idb29.png)
+
+
+Note that we'll put the image into a separate cache to the rest of the static content. We reset the content of our static cache whenever we update our JavaScript or our CSS, but we want these images to live between versions of our application.
+
+Next time we get a request for an image that we already have cached, we simply return it. But, here's the trick; we'll return the image from the cache even if the browser requests a different size of the same image. Posts on Wittr are short-lived, so if the browser requests a bigger version of the same image returning a smaller one from the cache isn't really a problem. Returning a bigger image than the browser asked for is perfectly fine too - we're not wasting bandwidth by doing that. In fact, getting a smaller version of something we already have cached would be a waste of bandwidth. Also, resizing the browser window back and forth is only really something that web developers do.
+
+At this point, we've covered most of the APIs you'd need to be able to cache images. There's only one thing left to cover. **You can only use the body of a Response once**.
+
+If you read the Response as `json`, you cannot then read it as a `blob`. The following example would fail:
+
+```js
+fetch('/foo').then(function(response) {
+  var jsonData = response.json();
+  var blobData = response.blob(); // fails
+});
+```
+
+This is because the original data has been used already by the time you attempt to read it as a blob. Keeping it around in memory would just be a waste. Also, `respondWith` uses the body of the Response as well, so you cannot later read it again:
+
+```js
+fetch('/foo').then(function(response) {
+  var jsonData = response.json(); // response consumed
+  var blobData = response.blob(); // fails
+  event.respondWith(response); // also fails
+});
+```
+
+In most cases, this is great because if the response was a huge video file (like 3GB) the browser doesn't need to keep the whole 3GB in memory - it only needs to keep the bit that is currently playing, plus a bit extra for buffering. However, this is a problem for our images.
+
+We want to open a cache, fetch from the network, and send a response to both the cache AND back to the browser. But, using the Response body twice like this doesn't work:
+
+```js
+event.respondWith(
+  caches.open('wittr-content-imgs').then(function(cache) {
+    return fetch(request).then(function(response) {
+      cache.put(request, response); // response consumed here
+      return response; // fails :(
+    });
+  })
+);
+```
+
+Luckily, we can fix this issue by cloning the Response we send to the cache with the clone method:
+
+```js
+event.respondWith(
+  caches.open('wittr-content-imgs').then(function(cache) {
+    return fetch(request).then(function(response) {
+      cache.put(request, response.clone());
+      return response;
+    });
+  })
+);
+```
+
+Now our clone goes to the cache and the original get's sent back to the page. The browser keeps enough of the original request around to satisfy all of the clones.
+
+## 10. Cache Photos Code
+So, let's start coding this up.First thing we need is to set up our image cache in the service worker. I'm going to create a variable to hold the name of this new image cache. And I'm going to create an array to hold all the cache names we care about.
+
+```js
+var staticCacheName = 'wittr-static-v6';
+var contentImgsCache = 'wittr-content-imgs';
+var allCaches = [
+  staticCacheName,
+  contentImgsCache
+];
+```
+
+In our activate event that we wrote earlier, we're deleting any cache that isn't the static cache. That isn't good enough anymore as we start losing our image cache. Instead, we want to delete any caches that aren't in our array of caches that we care about.
+
+```js
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('wittr-') &&
+                 // cacheName != staticCacheName;   // old
+                 !allCaches.includes(cacheName);    // new
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+});
+```
+
+Now, to handle those photo requests. Over in our fetch handler, I'm going to handle URLs that have the same origin and have a path that starts with slash photo slash. When I see one of those, I'm going to respond with whatever returns from `servePhoto`. All we need to do now is implement 'servePhoto'.
+
+```js
+self.addEventListener('fetch', function(event) {
+  var requestUrl = new URL(event.request.url);
+
+  if (requestUrl.origin === location.origin) {
+    if (requestUrl.pathname === '/') {
+      event.respondWith(caches.match('/skeleton'));
+      return;
+    }
+    // new code start
+    if (requestUrl.pathname.startsWith('/photos/')) {
+      event.respondWith(servePhoto(event.request));
+      return;
+    }
+    // new code end
+  }
+
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
+});
+```
+
+I'm only wanting to store one copy of each photo, and photo URLs look like this.
+
+`/photos/9-8028-7527734776-e1d2bda28e-800px.jpg`
+
+They have width information at the end. So, I'm going to create a storage URL that doesn't have the size info. I'm going to do that using a regular expression matching on dash, some digits and then px.jpg. And I'm going to replace that with nothing. Now, I have the URL, but missing the size-specific stuff. This is the URL I'm going to use in the cache.
+
+```js
+function servePhoto(request) {
+  // Photo urls look like:
+  // /photos/9-8028-7527734776-e1d2bda28e-800px.jpg
+  // But storageUrl has the -800px.jpg bit missing.
+  // Use this url to store & match the image in the cache.
+  // This means you only store one copy of each photo.
+  var storageUrl = request.url.replace(/-\d+px\.jpg$/, '');
+
+  // TODO: return images from the "wittr-content-imgs" cache
+  // if they're in there. Otherwise, fetch the images from
+  // the network, put them into the cache, and send it back
+  // to the browser.
+  //
+  // HINT: cache.put supports a plain url as the first parameter
+}
+```
+
+### Solution
+
+The aim is to serve photos from the cache if they're there. Otherwise, get them from the network, but put them into the cache for the next time.
+
+Remember to use storageUrl when matching and putting stuff into the image cache so you only end up with one photo in the cache no matter how many different sizes are requested. Once again, developing gets a lot easier if you have Developer Tools open and 'Update on reload' checked so you only need to refresh once to see changes.
+
+```js
+function servePhoto(request) {
+  // Photo urls look like:
+  // /photos/9-8028-7527734776-e1d2bda28e-800px.jpg
+  // But storageUrl has the -800px.jpg bit missing.
+  // Use this url to store & match the image in the cache.
+  // This means you only store one copy of each photo.
+  var storageUrl = request.url.replace(/-\d+px\.jpg$/, '');
+
+  // TODO: return images from the "wittr-content-imgs" cache
+  // if they're in there. Otherwise, fetch the images from
+  // the network, put them into the cache, and send it back
+  // to the browser.
+  //
+  // HINT: cache.put supports a plain url as the first parameter
+  return caches.open(contentImgsCache).then(function(cache) {
+    return cache.match(storageUrl).then(function(response) {
+      return (
+        response || fetch(request).then(function(networkResponse) {
+          cache.put(storageUrl, networkResponse.clone());
+          return networkResponse;
+        })
+      );
+    });
+  });
+}
+```
+
+You know things are working when you see a Wittr content images cache in devtools where the URLs are missing the width and the .jpg extension at the end. You should be able to take the server offline, reload the page, and still get images.
+
+[![IDB 30](assets/images/sm_lesson4-idb30.jpg)](assets/images/full-size/lesson4-idb30.png)
