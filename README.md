@@ -33,6 +33,26 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 18. Cache Photos
+### Day 18: February 13, 2018 - Tuesday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![IDB 31](assets/images/sm_lesson4-idb31.jpg)](assets/images/full-size/lesson4-idb31.png)
+
+**Progress:** This section deals with retrieving requested images from local Cache Storage. If the images do not exists locally then a fetch request is made to the network.
+
+Once the image is retrieved, it is displayed to the screen and and saved to cache for future use.
+
+You can read more here: [My notes - IndexedDB and Caching - Cache Photos](IndexedDB-and-Caching.html#9-cache-photos).
+
+**Link to Work:**
+- [Full Course Notes - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Jake's IDB Promised Library [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 17. Display Data & Clean Database
 ### Day 17: February 12, 2018 - Monday
 
