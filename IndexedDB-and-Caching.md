@@ -696,13 +696,198 @@ We go to the browser and refresh the database to see if our data has been saved 
 
 [![IDB 25](assets/images/sm_lesson4-idb25.jpg)](assets/images/full-size/lesson4-idb25.png)
 
-<!-- 
-## 7. Displaying IDB Data
-Now we want to get posts that are in the database (IDB 'wittrs' object store) and display them (posted them  to the page).
+## 7. Display IDB Data on Page
+Now we want to get posts that are in the database (IDB 'wittrs' object store) and display them (post them  to the page).
 
 [![IDB 22](assets/images/sm_lesson4-idb22.jpg)](assets/images/full-size/lesson4-idb22.png)
 
 We want to do this before connecting to the websocket that gets us new posts.
 
 [![IDB 23](assets/images/sm_lesson4-idb23.jpg)](assets/images/full-size/lesson4-idb23.png)
- -->
+
+First, we verify we've got posts in the database with Dev Tools. 
+
+[![IDB 25](assets/images/sm_lesson4-idb25.jpg)](assets/images/full-size/lesson4-idb25.png)
+
+Once verified we open public/js/main/IndexController.js file.
+
+Previously, we were calling the `IndexController._openSocket` method, but now we're calling the `IndexController._showCachedMessages` method and then opening the socket. However, the '_showCachedMessages' method isn't fully implemented yet.
+
+```js
+export default function IndexController(container) {
+  this._container = container;
+  this._postsView = new PostsView(this._container);
+  this._toastsView = new ToastsView(this._container);
+  this._lostConnectionToast = null;
+  this._dbPromise = openDatabase();
+  this._registerServiceWorker();
+
+  var indexController = this;
+
+  this._showCachedMessages().then(function() {
+    indexController._openSocket();
+  });
+}
+
+IndexController.prototype._showCachedMessages = function() {
+  var indexController = this;
+
+  return this._dbPromise.then(function(db) {
+    // if we're already showing posts, eg shift-refresh
+    // or the very first load, there's no point fetching
+    // posts from IDB
+    if (!db || indexController._postsView.showingPosts()) return;
+
+    // TODO: get all of the wittr message objects from indexeddb,
+    // then pass them to:
+    // indexController._postsView.addPosts(messages)
+    // in order of date, starting with the latest.
+    // Remember to return a promise that does all this,
+    // so the websocket isn't opened until you're done!
+  });
+};
+```
+
+The task is to get all of the Wittr message objects from the database and pass them to the `IndexController._postsView.addPosts` method. Make sure they are in date order, starting with the latest; which may not be the way they come out of the database.
+
+Once we've made changes to the code, we'll need to bump the cache version number in the Service Worker so the changes are picked up.
+
+If the database gets into a bad state, we can remove the database through Dev Tools.
+
+### Solution
+We start by creating a transaction for the 'wittrs' store. Then we get the objectStore. Then we get the 'by-date' index. We use `getAll`, which returns a promise for everything in the index and then pass the results to `addPosts`.
+
+However, the messages here will be in date-ascending order by default. So, we reverse them so the latest post appears at the top.
+
+```js
+IndexController.prototype._showCachedMessages = function() {
+  var indexController = this;
+
+  return this._dbPromise.then(function(db) {
+    // if we're already showing posts, eg shift-refresh
+    // or the very first load, there's no point fetching
+    // posts from IDB
+    if (!db || indexController._postsView.showingPosts()) return;
+
+    // TODO: get all of the wittr message objects from indexeddb,
+    // then pass them to:
+    // indexController._postsView.addPosts(messages)
+    // in order of date, starting with the latest.
+    // Remember to return a promise that does all this,
+    // so the websocket isn't opened until you're done!
+    var tx = db.transaction('wittrs');
+    var store = tx.objectStore('wittrs');
+    var dateIndex = store.index('by-date');
+
+    return dateIndex.getAll().then(function(messages) {
+      indexController._postsView.addPosts(messages.reverse());
+    });
+  });
+};
+```
+
+Alternatively, we can write the code like this:
+
+```js
+IndexController.prototype._showCachedMessages = function() {
+  var indexController = this;
+
+  return this._dbPromise.then(function(db) {
+    if (!db || indexController._postsView.showingPosts()) return;
+
+    var dateIndex = db.transaction('wittrs')
+      .objectStore('wittrs').index('by-date');
+
+    return dateIndex.getAll().then(function(messages) {
+      indexController._postsView.addPosts(messages.reverse());
+    });
+  });
+};
+```
+
+We want to see how this update works the natural way. So we bump the service worker cache version. Then over in the browser, we disable 'Update on reload' and refresh the page. There's our update.
+
+## 8. Cleaning the IDB Database
+
+[![IDB 26](assets/images/sm_lesson4-idb26.jpg)](assets/images/full-size/lesson4-idb26.png)
+
+Things are looking great, but at the moment we're only adding things to the database. At some point, you'll end up with thousands and thousands of items in there. And the browser's going to not allow any more storage. So we need to make sure we're only keeping what we need.
+
+Head over to the public/js/main/IndexController.js file and take a look at the IndexController._onSocketMessage method. We're already adding items into the database, but after that you need to ensure there are no more than 30 items in the object store. The code in public/js/idb-test/index.js should act as a good reference to achieve this task.
+
+```js
+// called when the web socket sends message data
+IndexController.prototype._onSocketMessage = function(data) {
+  var messages = JSON.parse(data);
+
+  this._dbPromise.then(function(db) {
+    if (!db) return;
+
+    var tx = db.transaction('wittrs', 'readwrite');
+    var store = tx.objectStore('wittrs');
+    messages.forEach(function(message) {
+      store.put(message);
+    });
+
+    // TODO: keep the newest 30 entries in 'wittrs',
+    // but delete the rest.
+    //
+    // Hint: you can use .openCursor(null, 'prev') to
+    // open a cursor that goes through an index/store
+    // backwards.
+  });
+
+  this._postsView.addPosts(messages);
+};
+```
+
+Once you've put the code in place, refresh Wittr in the browser to run your code. I recommend SHIFT refreshing to bypass the Service Worker until you've got everything working. Then, bump the version of the Service Worker static cache to pick up your changes.
+
+If everything's working, you should see the 'wittr' database in Chrome developer tools and in there, you should see no more than 30 messages.
+
+[![IDB 27](assets/images/sm_lesson4-idb27.jpg)](assets/images/full-size/lesson4-idb27.png)
+
+### Solution
+The code for dealing with this is a little bit tricky. Over in `_onSocketMessage`, after adding the messages into the database, we continue using the same transaction and the same object store.
+
+
+```js
+// called when the web socket sends message data
+IndexController.prototype._onSocketMessage = function(data) {
+  var messages = JSON.parse(data);
+
+  this._dbPromise.then(function(db) {
+    if (!db) return;
+
+    var tx = db.transaction('wittrs', 'readwrite');
+    var store = tx.objectStore('wittrs');
+    messages.forEach(function(message) {
+      store.put(message);
+    });
+
+    // TODO: keep the newest 30 entries in 'wittrs',
+    // but delete the rest.
+    //
+    // Hint: you can use .openCursor(null, 'prev') to
+    // open a cursor that goes through an index/store
+    // backwards.
+    var index = store.index('by-date');
+
+    return index.openCursor(null, 'prev').then(function(cursor) {
+      return cursor.advance(30);
+    }).then(function deletePost(cursor) {
+      if (!cursor) return;
+      cursor.delete();
+      return cursor.continue().then(deletePost);
+    });
+  });
+
+  this._postsView.addPosts(messages);
+};
+```
+
+We get the 'by-date' index, because we want to remove the oldest posts, and we open a cursor, but pass a 'null' and 'prev', so the cursor goes backwards for the index starting with the newest post.
+
+We don't care about the first 30 posts, those are the newest ones,they can stay. We advance past them.
+
+With the posts after that, if the cursor is 'undefined', we're done. Overwise We delete the entry, then 'continue' the cursor calling the same function again to loop through the remaining entries. This keeps the news 30 post, but deletes the rest.
