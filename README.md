@@ -33,6 +33,26 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 17. Display Data & Clean Database
+### Day 17: February 12, 2018 - Monday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![IDB 27](assets/images/sm_lesson4-idb27.jpg)](assets/images/full-size/lesson4-idb27.png)
+
+**Progress:** In this section of the course we take the data from the IndexedDB Object Store and write code to display it on the page.
+
+At the same time we create an index and cursor through it to remove any old and stale posts from our database. This makes room for new data that we stream in through web sockets.
+
+You can read more here: [My notes - IndexedDB and Caching - Display IDB Data on Page](IndexedDB-and-Caching.html#7-display-idb-data-on-page).
+
+**Link to Work:**
+- [Full Course Notes - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Jake's IDB Promised Library [https://github.com/jakearchibald/idb](https://github.com/jakearchibald/idb)
+- 3-part Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899) (free 3 week course)
+
+---
+
 ## 16. Populate the IDB Database
 ### Day 16: February 11, 2018 - Sunday
 
