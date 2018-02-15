@@ -1063,11 +1063,14 @@ function servePhoto(request) {
 }
 ```
 
-### Solution
-
 The aim is to serve photos from the cache if they're there. Otherwise, get them from the network, but put them into the cache for the next time.
 
 Remember to use storageUrl when matching and putting stuff into the image cache so you only end up with one photo in the cache no matter how many different sizes are requested. Once again, developing gets a lot easier if you have Developer Tools open and 'Update on reload' checked so you only need to refresh once to see changes.
+
+You know things are working when you see a Wittr content images cache in devtools where the URLs are missing the width and the .jpg extension at the end. You should be able to take the server offline, reload the page, and still get images.
+
+### Solution
+
 
 ```js
 function servePhoto(request) {
@@ -1097,6 +1100,273 @@ function servePhoto(request) {
 }
 ```
 
-You know things are working when you see a Wittr content images cache in devtools where the URLs are missing the width and the .jpg extension at the end. You should be able to take the server offline, reload the page, and still get images.
+First we open the cache for our images. Once we've got the cache, we look for a match for storageUrl. If there is one we return it. Otherwise, we fetch the image from the network using the fetch API.
+
+Once we get the response, we add it to the cache using the storageUrl and a clone of the response. Then we return the original response to the browser. Remember, you can only read a response's body once. This is why we have one copy going to the cache and the original going to the browser.
+
+Now we use 'Update on reload' and reload the page. If we check the Application panel in dev tools we can see the new cache and it has images in it. If I resize this panel so we can see the whole URL,you can see the URL ends before the bit with the pixel width,confirming the cache URLs aren't site specific.
 
 [![IDB 30](assets/images/sm_lesson4-idb30.jpg)](assets/images/full-size/lesson4-idb30.png)
+
+Then we test the serving. We bring the server down, go offline, and reload the page. We should see the images are still loading but here's the ultimate test. If I change the width of the browser and reload, yep, the images still load. This means the service worker is returning the image we have cached no matter which width of image the browser requests.
+
+## 11. Cleaning Photo Cache
+Caching the photos is great, but like we saw with the database earlier you can't just keep adding stuff to the cache. We'll need to remove stuff that we don't need anymore.
+
+This involves a couple of cache methods that we haven't seen yet. If we want to remove specific entries from the cache, we can use `cache.delete`, passing in the URL or the request of the thing we want to delete:
+
+```js
+cache.delete(request);
+```
+
+There's also a `cache.keys` method that returns a Promise which gives us all the requests for entries in the cache:
+
+```js
+cache.keys().then(function(requests) {
+  // ...
+});
+```
+
+What hasn't been mentioned so far is that all of this is available from pages, as well as Service Workers. Let's have a look at using these methods to clean the image cache in the next chapter.
+
+## 12. Clean Photo Cache Code
+Let's keep our image cache under control. We're going to do this from the index controller in 'public/js/main/IndexController.js'. We start by creating a new method called `_cleanImageCache`. When the page loads it starts the controller and calls the new _cleanImageCache method but that means the cache can still go out of control if the user keeps the page open for ages. So we'll also call it every five minutes.
+
+```js
+export default function IndexController(container) {
+  this._container = container;
+  this._postsView = new PostsView(this._container);
+  this._toastsView = new ToastsView(this._container);
+  this._lostConnectionToast = null;
+  this._dbPromise = openDatabase();
+  this._registerServiceWorker();
+  this._cleanImageCache();        // new code
+
+  var indexController = this;
+
+  setInterval(function() {        // new code
+    indexController._cleanImageCache();
+  }, 1000 * 60 * 5);
+
+  this._showCachedMessages().then(function() {
+    indexController._openSocket();
+  });
+}
+```
+
+Now what we need to do is implement this new `_cleanImageCache` method. Implementing cleanImageCache is going to bring together IndexedDB and the Cache API. A combination of things we've learned in this course.
+
+Head over to public/js/main/IndexController.js. Your task is to implement the `IndexController._cleanImageCache` method.
+
+It involves getting all the messages from the database, looking at what photos they need, then going through the images cache and getting rid of the ones that aren't needed anymore. Remember that the 'photo' properties value may not exactly match the URL in the cache.
+
+```js
+IndexController.prototype._cleanImageCache = function() {
+  return this._dbPromise.then(function(db) {
+    if (!db) return;
+
+    // TODO: open the 'wittr' object store, get all the messages,
+    // gather all the photo urls.
+    //
+    // Open the 'wittr-content-imgs' cache, and delete any entry
+    // that you no longer need.
+  });
+};
+```
+
+Once you've written the code, head over to the browser and refresh the page using the 'Update on reload' option so you only need to refresh once to see changes. Looking at dev tools you should see the cache only contains images that are on the page. An easy way to test is to open a new tab and navigate to the URL here. We can see in the cache that this image has been stored. Now when I reload witter the cleanup code kicks in and the image is gone from the cache.
+
+When you're finished, turn 'Update on reload' off in the Chrome developer tools, enter the Task ID in the settings page, and refresh the Wittr page within 8 seconds.
+
+### Solution
+This was a bit tough. In order to solve it I had to reference the Service Worker file which contained the Cache API code I had previously written. This was located in '\public\js\sw\index.js'.
+
+I then had to reference the IndexController file which contained the IndexedDB code I had previously written. This was located at '\public\js\main\IndexController.js'.
+
+First we start by creating an array of images that I want to keep, Then we create a transaction to look at the 'wittrs' objects store.
+
+```js
+IndexController.prototype._cleanImageCache = function() {
+  return this._dbPromise.then(function(db) {
+    if (!db) return;
+
+    // TODO: open the 'wittr' object store, get all the messages,
+    // gather all the photo urls.
+    //
+    // Open the 'wittr-content-imgs' cache, and delete any entry
+    // that you no longer need.
+    var imagesNeeded = [];
+
+    var messages = db.transaction('wittrs')
+      .objectStore('wittrs').getAll()
+      .then(function(messages) {
+        messages.forEach(function(message) {
+          if (message.photo) {
+            // console.log('message', message);
+            // console.log('message.photo', message.photo);
+            imagesNeeded.push(message.photo);
+          }
+        });
+
+        return caches.open('wittr-content-imgs');
+      }).then(function(cache) {
+        return cache.keys().then(function(requests) {
+          requests.forEach(function(request) {
+            var url = new URL(request.url);
+
+            if (!imagesNeeded.includes(url.pathname)) {
+              cache.delete(request);
+            }
+          });
+        });
+    });
+  });
+};
+```
+
+Then we get the object store and get all the messages. Now we can take a peek into the database. For each message, we'll look to see if it has a photo property. This contains the photo URL, but without the width bit at the end. So we add those to the array of images that we want to keep. 
+
+Then we open the images cache and get all the requests that are stored in it using cache.keys. Now, the URLs on request objects are absolute so they'll include the local host port 8080 bit, whereas the URLs we're storing in IndexedDB, don't have that.
+
+So for each request I'm going to parse as URL.So now if the path name of the URL isn't in our array of images needed, we'll pass the request to cache.delete.
+
+So with 'Update on reload' enabled, we refresh the page and see we've only got a handful of images cached. We're caching photos now, we're so very nearly there.
+
+[![IDB 32](assets/images/sm_lesson4-idb32.jpg)](assets/images/full-size/lesson4-idb32.png)
+
+The last thing we need to deal with is avatars. One more chapter before we achieve total offline first.
+
+## 13. Caching Avatars
+Compared to what you've done so far, this last part should be a breeze! We just need to cache the avatar images. This is almost the same as caching the photo images, but there's one small difference...
+
+Some people like to change their avatar a lot and we don't want people to be stuck with some old version of their avatar. So, when we fetch a particular avatar from the cache we will also fetch it from the network and update the cache.
+
+Avatars are also responsive images, but they vary by density rather than width. Pretty much the same as photo images, but a slightly different URL pattern:
+
+```html
+<img width="40" height="40"
+  src="/avatars/sam-1x.jpg"
+  srcset="/avatars/sam-2x.jpg 2x,
+          /avatars/sam-3x.jpb 3x">
+```
+
+We're going to cache the avatars in the same cache as photos. Notice that the imagesNeeded array in the updated code branch now includes the avatar image URLs so that it includes them in the images we want to keep. We don't want those getting lost in the cleanup.
+
+Head over to 'public/js/sw/index.js'. There are two things for you to implement:
+
+```js
+self.addEventListener('fetch', function(event) {
+  var requestUrl = new URL(event.request.url);
+
+  if (requestUrl.origin === location.origin) {
+    if (requestUrl.pathname === '/') {
+      event.respondWith(caches.match('/skeleton'));
+      return;
+    }
+    if (requestUrl.pathname.startsWith('/photos/')) {
+      event.respondWith(servePhoto(event.request));
+      return;
+    }
+    // TODO: respond to avatar urls by responding with
+    // the return value of serveAvatar(event.request)
+  }
+
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
+});
+
+function serveAvatar(request) {
+  // Avatar urls look like:
+  // avatars/sam-2x.jpg
+  // But storageUrl has the -2x.jpg bit missing.
+  // Use this url to store & match the image in the cache.
+  // This means you only store one copy of each avatar.
+  var storageUrl = request.url.replace(/-\dx\.jpg$/, '');
+
+  // TODO: return images from the "wittr-content-imgs" cache
+  // if they're in there. But afterwards, go to the network
+  // to update the entry in the cache.
+  //
+  // Note that this is slightly different to servePhoto!
+}
+```
+
+1. You need to call the `serveAvatar` function from the fetch event handler.
+
+1. Then, you'll need to implement the `serveAvatar` function. The function should return avatar images from the cache if they're there. If not, get it from the network and put it in the cache. But here's the difference, even if you return it from the cache you'll need to go to the network to update it for the next fetch. Once again, we're removing the size-specific parts of the URL with the storageUrl variable. So use this URL to put and match in the cache. The solution will be similar to servePhoto, but not exactly the same.
+
+Once you've written the code, head over to the browser and enable Update on reload in Chrome developer tools. You should see avatar images arriving into the cache. If you go 'Offline' and refresh, the avatar images should still load.
+
+### Solution
+
+```js
+self.addEventListener('fetch', function(event) {
+  var requestUrl = new URL(event.request.url);
+  // code...
+
+  // TODO: respond to avatar urls by responding with
+  // the return value of serveAvatar(event.request)
+  if (requestUrl.pathname.startsWith('/avatars/')) {
+    event.respondWith(serveAvatar(event.request));
+    return;
+  }
+
+  // code...
+});
+
+function serveAvatar(request) {
+  // Avatar urls look like:
+  // avatars/sam-2x.jpg
+  // But storageUrl has the -2x.jpg bit missing.
+  // Use this url to store & match the image in the cache.
+  // This means you only store one copy of each avatar.
+  var storageUrl = request.url.replace(/-\dx\.jpg$/, '');
+
+  // TODO: return images from the "wittr-content-imgs" cache
+  // if they're in there. But afterwards, go to the network
+  // to update the entry in the cache.
+  //
+  // Note that this is slightly different to servePhoto!
+  return caches.open(contentImgsCache).then(function(cache) {
+    return cache.match(storageUrl).then(function(response) {
+      var fetchPromise = fetch(request).then(function(networkResponse) {
+        cache.put(storageUrl, networkResponse.clone());
+        return networkResponse;
+      });
+
+      return response || fetchPromise;
+    });
+  });
+}
+```
+
+Here's how the final bits came together. So over in our `fetch` event we react to URLs that start with /avatars/.For those we call `respondWith`, passing in the result of `serveAvatar`.
+
+Over in `serveAvatar`, we start by opening the image cache, then look for a match for the storageUrl. Here's where things start to get a little bit different. We do a network fetch for the avatar and if we get a response, we put a clone in the cache using the storageUrl, then we return the original response.
+
+Now we've got a response from the cache that might be `undefined` if there's no match for this particular request. But we've also got a promise for the network response. So we return the cache response or the network response, and that's it.
+
+[![IDB 34](assets/images/sm_lesson4-idb34.jpg)](assets/images/full-size/lesson4-idb34.png)
+
+Now we can see in the Cache Storage that both photos and avatars are being saved.
+
+## 14. Wrap-up
+And that's it, job done! We've taken an entirely online only site and made it an offline first Progressive Web Application! By making it to the end of this course, you're ready to take on ANY offline first project.
+
+Wittr was specifically designed to cover most of the gnarly edge-cases you'll encounter in the "wild." For example:
+
+- [x] Cache versioning for big updates like theme changes;
+- [x] Interactive updates to get the user onto the latest version;
+- [x] Dealing with server rendering by serving a page skeleton;
+- [x] Responsive images
+- [x] Multiple caches
+- [x] You even had to master IndexedDB, the most feared API on the platform!
+
+You did it all!
+
+If the user was on some kind of non-perfect connection they used to have to wait for the page to appear, and imagery took ages! Now, stuff appears on the screen instantly. Lie-fi users used to be left staring at a white screen forever, but now they get content instantly. Offline users used to get a browser error page, but now they get content and a non-disruptive custom error. This is a huge improvement in the user experience!
+
+If your site works offline first, users are going to notice that it loads reliably and fast whatever the network. They'll have a less frustrating experience with your site than the rest of the web, and that's what matters; the user experience!
