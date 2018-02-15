@@ -47,7 +47,7 @@ The course is broken down into the following lessons:
 1. **Syntax** - let, const, destructuring, for..of loops
 1. **Functions** - arrow functions, `this` keyword, classes & subclasses
 1. **Built-ins** - Sets, Maps, WeakSets, & WeakMaps, Promises, generators
-1. **Polyfills & transpilers** - This lets you convert from ES5 to ES6
+1. **Polyfills & transpilers** - This lets you convert from ES6 to ES5
 
 You can read more here: [My notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html).
 
