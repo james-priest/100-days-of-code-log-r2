@@ -33,6 +33,30 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 20. ES6 JavaScript Improved
+### Day 19: February 15, 2018 - Thursday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![Syntax 1](assets/images/sm_lesson6-syntax1.jpg)](assets/images/full-size/lesson6-sytnax1.png)
+
+**Progress:** Started my new Google Udacity course called [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356).
+
+The course is broken down into the following lessons:
+
+1. **Syntax** - let, const, destructuring, for..of loops
+1. **Functions** - arrow functions, `this` keyword, classes & subclasses
+1. **Built-ins** - Sets, Maps, WeakSets, & WeakMaps, Promises, generators
+1. **Polyfills & transpilers** - This lets you convert from ES5 to ES6
+
+You can read more here: [My notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html).
+
+**Link to Work:**
+- [Full Course Notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html)
+- 4-part Udacity course [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course)
+
+---
+
 ## 19. Cache Avatars
 ### Day 19: February 14, 2018 - Wednesday
 
