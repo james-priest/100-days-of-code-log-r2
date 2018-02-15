@@ -104,18 +104,20 @@ h3 {
 pre{ line-height: 1em; }
 code {
     // font-family: Courier New, Courier, monospace; 
-    // font-family: Consolas, monospace;
-    font-family: Lucida Console,Monaco,Courier,monospace;
+    font-family: Consolas, monospace;
+    // font-family: Lucida Console,Monaco,Courier,monospace;
     font-size: 0.8em;
 }
 p>code {
-    color: #c7254e;
+    // color: #c7254e;
+    color: #ff4675;
     background-color: #f9f2f4;
     border-radius: 4px;
     margin: 0 1px;
     padding: 2px;
     font-weight: 400;
-    font-size: 11.5px;
+    // font-size: 11.5px;
+    text-shadow: none;
 }
 
 footer {
