@@ -8,6 +8,10 @@ Notes from _Lesson 1: Syntax_ of _ES6 JavaScript Improved_ by Richard Kalehoff a
 
 This is an Intermediate skill level course which takes approximately 4 weeks to complete and is offered for **FREE**!
 
+| Lesson 1 | Lesson 2 | Lesson 3 | Lesson 4 |
+| --- | --- | --- | --- |
+| **Syntax** | [Functions](ES6-Functions.html) | [Built-ins](ES6-Built-ins.html) | [Professional Developer-fu](Professional-Developer-fu.html) (Polyfills & Transpiling) |
+
 ## 1. Harmony, ES6, ES2015
 Technically Harmony, ES6 and ES2015 they're all different names for virtually the same thing. The important thing is that these names represent the biggest update to the JavaScript programming language to date.
 
@@ -973,3 +977,243 @@ for(let day of days) {
     console.log(word);
 }
 ```
+
+## 14. Spread... Operator
+Time to switch gears for a moment and check out the spread operator!
+
+### Spread operator
+The **spread operator**, written with three consecutive dots ( `...` ), is new in ES6 and gives you the ability to expand, or _spread_, [iterable objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#Iterators) into multiple elements.
+
+Let’s take a look at a few examples to see how it works.
+
+```js
+const books = ["Don Quixote", "The Hobbit", "Alice in Wonderland"];
+console.log(...books);
+```
+
+> **Prints:** Don Quixote The Hobbit Alice in Wonderland
+
+```js
+const primes = new Set([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]);
+console.log(...primes);
+```
+
+> **Prints:** 2 3 5 7 11 13 17 19 23 29
+
+If you look at the output from the examples, notice that both the array and set have been expanded into their individual elements. So how is this useful?
+
+> **NOTE:** Sets are a new built-in object in ES6 that we’ll cover in more detail in a future lesson.
+
+### Combining arrays with concat
+
+One example of when the spread operator can be useful is when combining arrays.
+
+If you’ve ever needed to combine multiple arrays, prior to the spread operator, you were forced to use the Array’s `concat()` method.
+
+```js
+const fruits = ["apples", "bananas", "pears"];
+const vegetables = ["corn", "potatoes", "carrots"];
+const produce = fruits.concat(vegetables);
+console.log(produce);
+```
+
+> **Prints:** ["apples", "bananas", "pears", "corn", "potatoes", "carrots"]
+
+This isn’t terrible, but wouldn’t it be nice if there was a shorthand way to write this code?
+
+For example, something like…
+
+> ### ⚠️ Upcoming `const` Warning ⚠️
+>If you're following along by copy/pasting the code, then you've already declared the `produce` variable with the `const` keyword. The following code will try to redeclare and reassign the variable, so depending on how you're running the code, it might throw an error.
+>
+> Remember that variables declared with `const` cannot be redeclared or reassigned in the same scope.
+
+```js
+const produce = [fruits, vegetables];
+console.log(produce);
+```
+
+Unfortunately, that doesn’t work.
+
+Instead of combining both arrays, this code actually adds the `fruits` array at the first index and the `vegetables` array at the second index of the `produce` array.
+
+How about trying the spread operator?
+
+```js
+/*
+ * Instructions: Use the spread operator to combine the `fruits` and `vegetables`
+ * arrays into the `produce` array.
+ */
+
+const fruits = ["apples", "bananas", "pears"];
+const vegetables = ["corn", "potatoes", "carrots"];
+
+const produce = [...fruits, ...vegetables];
+
+console.log(produce);
+
+```
+
+## 15. ...Rest Parameter
+If you can use the spread operator to _spread_ an array into multiple elements, then certainly there should be a way to bundle multiple elements back into an array, right?
+
+In fact, there is! It’s called the _rest parameter_, and it’s another new addition in ES6.
+
+**Rest parameter**
+The **rest parameter**, also written with three consecutive dots ( `...` ), allows you to represent an indefinite number of elements as an array. This can be helpful in a couple of different situations.
+
+One situation is when assigning the values of an array to variables. For example,
+
+```js
+const order = [20.17, 18.67, 1.50, "cheese", "eggs", "milk", "bread"];
+const [total, subtotal, tax, ...items] = order;
+console.log(total, subtotal, tax, items);
+```
+
+> **Prints:** 20.17 18.67 1.5 ["cheese", "eggs", "milk", "bread"]
+
+This code takes the values of the `order` array and assigns them to individual variables using destructuring. `total`, `subtotal`, and `tax` are assigned the first three values in the array, however, `items` is where you want to pay the most attention.
+
+By using the rest parameter, `items` is assigned the _rest_ of the values in the array (as an array).
+
+```js
+// spread
+const myPackage = ['cheese', 'eggs', 'milk', 'bread'];
+console.log(...myPackage);
+```
+
+> **Prints:** cheese eggs milk bread
+
+```js
+// rest
+printPackageContents('cheese', 'eggs', 'milk', 'bread');
+
+function printPackageContents(...items) {
+  for (const item of items) {
+    console.log(item);
+  }
+}
+```
+
+You can think of the rest parameter like the opposite of the spread operator; if the spread operator is like unboxing all of the contents of a package, then the rest parameter is like taking all the contents and putting them back into the package.
+
+### Variadic functions
+Another use case for the rest parameter is when you’re working with variadic functions. **Variadic functions** are functions that take an indefinite number of arguments.
+
+For example, let’s say we have a function called `sum()` which calculates the sum of an indefinite amount of numbers. How might the `sum()` function be called during execution?
+
+```js
+sum(1, 2);
+sum(10, 36, 7, 84, 90, 110);
+sum(-23, 3000, 575000);
+```
+
+There’s literally an endless number of ways the sum() function could be called. Regardless of the amount of numbers passed to the function, it should always return the total sum of the numbers.
+
+### Using the arguments object
+In previous versions of JavaScript, this type of function would be handled using the [arguments object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments). The **arguments object** is an array-like object that is available as a local variable inside all functions. It contains a value for each argument being passed to the function starting at 0 for the first argument, 1 for the second argument, and so on.
+
+If we look at the implementation of our `sum()` function, then you’ll see how the arguments object could be used to handle the variable amount of numbers being passed to it.
+
+```js
+function sum() {
+  let total = 0;
+  for(const argument of arguments) {
+    total += argument;
+  }
+  return total;
+}
+```
+
+Now this works fine, but it does have its issues:
+
+1. If you look at the definition for the `sum()` function, it doesn’t have any parameters.
+    - This is misleading because we know the `sum()` function can handle an indefinite amount of arguments.
+1. It can be hard to understand.
+    - If you’ve never used the arguments object before, then you would most likely look at this code and wonder where the arguments object is even coming from. Did it appear out of thin air? It certainly looks that way.
+
+### Using the rest parameter
+Fortunately, with the addition of the rest parameter, you can rewrite the sum() function to read more clearly.
+
+```js
+function sum(...nums) {
+  let total = 0;
+  for(const num of nums) {
+    total += num;
+  }
+  return total;
+}
+```
+
+This version of the `sum()` function is both more concise and is easier to read. Also, notice the `for..in` loop has been replaced with the new `for..of` loop.
+
+## 16. Quiz: Rest Parameter (1-5)
+### Directions
+Use the rest parameter to create an `average()` function that calculates the average of an unlimited amount of numbers.
+
+> **TIP:** Make sure to test your code with different values. For example,
+>
+> `average(2, 6)` should return `4`<br>
+> `average(2, 3, 3, 5, 7, 10)` should return `5`<br>
+> `average(7, 1432, 12, 13, 100)` should return `312.8`<br>
+> `average()` should return `0`
+
+### Your Code:
+
+```js
+/*
+ * Programming Quiz: Using the Rest Parameter (1-5)
+ */
+
+// your code goes here
+
+function average() {
+  
+}
+
+console.log(average(2, 6));
+console.log(average(2, 3, 3, 5, 7, 10));
+console.log(average(7, 1432, 12, 13, 100));
+console.log(average());
+
+```
+
+#### Solution
+
+```js
+/*
+ * Programming Quiz: Using the Rest Parameter (1-5)
+ */
+
+// your code goes here
+
+function average(...nums) {
+  let total = 0;
+  for (const num of nums) {
+    total += num;
+  }
+  if (nums.length > 0) {
+    return total / nums.length;
+  }
+  return 0;
+}
+
+console.log(average(2, 6));
+console.log(average(2, 3, 3, 5, 7, 10));
+console.log(average(7, 1432, 12, 13, 100));
+console.log(average());
+
+```
+
+## 17. Lesson 1 Summary
+That's it for Lesson 1. We've covered all of the following.
+
+- `let` and `const`
+- template literals
+- destructuring
+- object literal shorthand
+- iterators ( `for..of` )
+- spread operator ( `...` )
+- rest parameter ( `...` )
+
+In [Lesson 2: Functions](ES6-Functions.html) we'll jump into all of the updates that have been made to functions.
