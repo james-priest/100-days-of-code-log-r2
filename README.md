@@ -33,12 +33,44 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
-## 20. ES6 JavaScript Improved
-### Day 19: February 15, 2018 - Thursday
+## 21. ES6 Template Literals & Destructuring Arrays
+### Day 21: February 16, 2018 - Friday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
-[![Syntax 1](assets/images/sm_lesson6-syntax1.jpg)](assets/images/full-size/lesson6-sytnax1.png)
+```js
+// Template Literal syntax
+var note = `${teacher.name},
+
+  Please excuse ${student.name}.
+  He is recovering from the flu.
+
+  Thank you,
+  ${student.guardian}`;
+```
+
+**Progress:** Continued with my [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) Google Udacity course.
+
+The lesson covered:
+
+1. `let` and `const` syntax and when to use each
+1. Use of Template Literals for true string interpolation
+1. Destructuring of arrays & objects with simpler ES6 syntax
+
+You can read more here: [My notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html).
+
+**Link to Work:**
+- [Full Course Notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html)
+- 4-part Udacity course [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course)
+
+---
+
+## 20. ES6 JavaScript Improved
+### Day 20: February 15, 2018 - Thursday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![Syntax 1](assets/images/sm_lesson6-syntax1.jpg)](assets/images/full-size/lesson6-syntax1.png)
 
 **Progress:** Started my new Google Udacity course called [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356).
 
