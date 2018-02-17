@@ -33,6 +33,46 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 22. ES6 Object Literal Shorthand & For..of Loops
+### Day 22: February 17, 2018 - Saturday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+```js
+// Object Literal shorthand
+let type = 'quartz';
+let color = 'rose';
+let carat = 21.29;
+
+let gemstone = { type, color, carat };
+
+console.log(gemstone);
+
+// for..of loop
+const digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+for (const digit of digits) {
+  console.log(digit);
+}
+```
+
+**Progress:** Continued with my [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) Google Udacity course.
+
+The lessons covered:
+
+1. Object literal shorthand
+1. Iteration
+1. Family of For loops
+1. For..of loop
+
+You can read more here: [My notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html).
+
+**Link to Work:**
+- [Full Course Notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html)
+- 4-part Udacity course [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course)
+
+---
+
 ## 21. ES6 Template Literals & Destructuring Arrays
 ### Day 21: February 16, 2018 - Friday
 

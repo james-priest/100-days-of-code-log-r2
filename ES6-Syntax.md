@@ -931,9 +931,9 @@ for (const digit of digits) {
 
 ## 13. Quiz: For..of Loops (1-4)
 ### Directions
-Write a for...of loop that:
+Write a `for..of` loop that:
 
-- loops through each day in the days array
+- loops through each day in the `days` array
 - capitalizes the first letter of the day
 - and prints the day out to the console
 
