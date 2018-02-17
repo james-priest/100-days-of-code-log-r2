@@ -19,7 +19,7 @@ Fast forward from 1995 to today and javascript has undergone a renaissance of so
 
 In this course will explore the additions to the JavaScript programming language so you can write faster, cleaner, and more efficient code.
 
-[![Syntax 1](assets/images/sm_lesson6-syntax1.jpg)](assets/images/full-size/lesson6-sytnax1.png)
+[![Syntax 1](assets/images/sm_lesson6-syntax1.jpg)](assets/images/full-size/lesson6-syntax1.png)
 
 - Lesson 1 - We outline changes and additions to the JavaScript syntax.
 - Lesson 2 - We investigate updates to JavaScript functions
