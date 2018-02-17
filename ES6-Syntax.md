@@ -250,10 +250,10 @@ Denoted with backticks( \`\` ) instead of single quotes ( `''` ) or double quote
 Here's the previous examples using template literals.
 
 ```js
-let message = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
+let message = `${student.name} please see ${teacher.name} in ${teacher.room}.`;
 ```
 
-> **Returns:** Richard Kalehoff please see Mrs. Wilson in N231 to pick up your report card.
+> **Returns:** Richard Kalehoff please see Mrs. Wilson in N231.
 
 By using template literals, you can drop the quotes along with the string concatenation operator. Also, you can reference the object's properties inside expressions.
 
