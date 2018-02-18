@@ -33,6 +33,56 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 23. ES6 Arrow Functions
+### Day 23: February 18, 2018 - Sunday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+#### Before
+
+```js
+// convert to an arrow function
+const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(function(square) {
+  return square * square;
+});
+
+let output = '';
+squares.forEach(function(square){
+  output += ` ${square}`;
+});
+console.log(output.trim());
+```
+
+#### After
+
+```js
+const squares = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(square => square * square);
+console.log(...squares);
+```
+
+> **Output:** 1 4 9 16 25 36 49 64 81 100
+
+**Progress:** Continued with my [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) Google Udacity course.
+
+The lessons covered:
+
+1. Spread (`...`) operator
+1. (`...`) Rest parameter
+1. Arrow functions
+1. Syntactic variations of arrow functions
+    - Parens / no parens / empty parens / underscore
+1. _"Concise body syntax"_  vs. _"block body syntax"_
+
+
+**Links:**
+- [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course) on Udacity
+- Course Notes - [Offline First (1) - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- Course Notes - [Offline First (2) - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Course Notes - [ES6 JavaScript Improved (1) - Syntax](ES6-Syntax.html)
+- Course Notes - [ES6 JavaScript Improved (2) - Functions](ES6-Functions.html)
+
+---
+
 ## 22. ES6 Object Literal Shorthand & For..of Loops
 ### Day 22: February 17, 2018 - Saturday
 
@@ -65,11 +115,11 @@ The lessons covered:
 1. Family of For loops
 1. For..of loop
 
-You can read more here: [My notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html).
-
-**Link to Work:**
-- [Full Course Notes - ES6 JavaScript Improved - Syntax](ES6-Syntax.html)
-- 4-part Udacity course [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course)
+**Links:**
+- [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course) on Udacity
+- Course Notes - [Offline First (1) - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- Course Notes - [Offline First (2) - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Course Notes - [ES6 JavaScript Improved (1) - Syntax](ES6-Syntax.html)
 
 ---
 
