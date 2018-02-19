@@ -33,6 +33,49 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 24. ES6 'this' Keyword & Default Parameters
+### Day 24: February 19, 2018 - Monday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+```js
+// object defaults with object destructuring
+function buildHouse({floors = 1, color = 'red', walls = 'brick'} = {}) {
+    return `Your house has ${floors} floor(s) with ${color} ${walls} walls.`;
+}
+
+// tests
+console.log(buildHouse());
+console.log(buildHouse({}));
+console.log(buildHouse({floors: 3, color: 'yellow'}));
+
+// Your house has 1 floor(s) with red brick walls.
+// Your house has 1 floor(s) with red brick walls.
+// Your house has 3 floor(s) with yellow brick walls.
+```
+
+**Progress:** Continued with my [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) Google Udacity course.
+
+The lessons covered:
+
+1. `this` keyword with standard functions
+1. `this` keyword with arrow functions
+1. Default function parameters using arrays
+1. Default function parameters using objects
+1. Array defaults with array destructuring
+1. Object defaults with object destructuring
+
+My notes on [ES6 JavaScript Improved (2) - Functions](ES6-Functions.html).
+
+**Links:**
+- Course Notes - [Offline First (1) - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- Course Notes - [Offline First (2) - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Course Notes - [ES6 JavaScript Improved (1) - Syntax](ES6-Syntax.html)
+- Course Notes - [ES6 JavaScript Improved (2) - Functions](ES6-Functions.html)
+- [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course) on Udacity
+
+---
+
 ## 23. ES6 Arrow Functions
 ### Day 23: February 18, 2018 - Sunday
 
