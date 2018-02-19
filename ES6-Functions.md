@@ -8,9 +8,9 @@ Notes from _**Lesson 2: Functions**_ of _**ES6 JavaScript Improved**_ by Richard
 
 This is an Intermediate skill level course which takes approximately 4 weeks to complete and is offered for **FREE**!
 
-| Lesson 1 | Lesson 2 | Lesson 3 | Lesson 4 |
-| --- | --- | --- | --- |
-| [Syntax](ES6-Syntax.html) | **Functions** | [Built-ins](ES6-Built-ins.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
+| Lesson 1 | Lesson 2 | Lesson 2.5 | Lesson 3 | Lesson 4 |
+| --- | --- | --- | --- | --- |
+| [Syntax](ES6-Syntax.html) | **Functions** | [Classes](ES6-Classes.html) | [Built-ins](ES6-Built-ins.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
 
 ## 1. Updates to Functions
 In this lesson we're going to cover updates to functions in es6. Functions have changed a lot since the last version of JavaScript. We've now got a new way to write functions called arrow functions ( `name => name.toUpperCase()` ) and a new `class` keyword that lets you create functions as classes ( `class Cone { }` ).
@@ -327,3 +327,547 @@ With regular functions the value of `this` depends on how the function is called
 With arrow functions it depends on where that function is located in the code.
 
 We'll briefly review how the `this` keyword works in general and then we'll review how it works in arrow functions.
+
+## 7. 'this' and Regular Functions
+To get a handle on how `this` works differently with arrow functions, let's do a quick recap of how `this` works in a standard function.
+
+The value of the `this` keyword is based completely on how its function (or method) is called. `this` could be any of the following:
+
+---
+
+### 1. A new object
+If the function is called with `new`:
+
+```js
+const mySundae = new Sundae('Chocolate', ['Sprinkles', 'Hot Fudge']);
+```
+
+In the code above, the value of `this` inside the `Sundae` constructor function is a new object because it was called with `new`.
+
+---
+
+### 2. A specified object
+If the function is invoked with `call/apply`:
+
+```js
+const result = obj1.printName.call(obj2);
+```
+
+In the code above, the value of `this` inside `printName()` will refer to `obj2` since the first parameter of `call()` is to explicitly set what `this` refers to.
+
+---
+
+### 3. A context object
+If the function is a method of an object:
+
+```js
+data.teleport();
+```
+
+In the code above, the value of `this` inside `teleport()` will refer to the `data` object.
+
+---
+
+### 4. The global object or undefined
+If the function is called with no context:
+
+```js
+teleport();
+```
+
+In the code above, the value of `this` inside `teleport()` is either the global object or, if in strict mode, it's `undefined`.
+
+---
+
+> **TIP:** this in JavaScript is a complicated topic. We just did a quick overview, but for an in-depth look at how `this` is determined, check out ['this' All Makes Sense Now!](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md) from Kyle Simpson's book series [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/README.md).
+
+#### Question 1 of 2
+What is the value of `this` inside the `Train` constructor function below?
+
+```js
+const redTrain = new Train('red');
+```
+
+1. [ ] the `window` object
+1. [ ] a new object
+1. [ ] `undefined`
+
+#### Solution
+Since the new keyword was used, the correct answer is a new object.
+
+- [x] a new object
+
+#### Question 2 of 2
+What is the value of `this` inside the `increaseSpeed()` function below?
+
+```js
+const redTrain = new Train('red');
+redTrain.increaseSpeed(25);
+```
+
+1. [ ] the `window` object
+1. [ ] a new object
+1. [ ] the `redTrain` object
+1. [ ] `undefined`
+
+#### Solution
+Since the `increaseSpeed()` function is called from a context object (`redTrain`) that context object will be the value of `this` in the function.
+
+- [x] the `redTrain` object
+
+## 8. 'this' and Arrow Functions
+With regular functions, the value of `this` is set based on _how the function is called_. With arrow functions, the value of `this` is based on the _function's surrounding context_. In other words, the value of `this` _inside_ an arrow function is the same as the value of `this` _outside_ the function.
+
+Let's check out an example with `this` in regular functions and then look at how arrow functions will work.
+
+```js
+// constructor
+function IceCream() {
+  this.scoops = 0;
+}
+
+// adds scoop to ice cream
+IceCream.prototype.addScoop = function() {
+  setTimeout(function() {
+    this.scoops++;
+    console.log('scoop added!');
+  }, 500);
+};
+
+const dessert = new IceCream();
+dessert.addScoop();
+```
+
+> **Prints:**<br>
+> scoop added!
+
+After running the code above, you'd _think_ that `dessert.scoops` would be 1 after half a millisecond. But, unfortunately, it's not:
+
+```js
+console.log(dessert.scoops);
+```
+
+> **Prints:**<br>
+> 0
+
+Can you tell why?
+
+The function passed to `setTimeout()` is called without `new`, without `call()`, without `apply()`, and without a context object. That means the value of `this` inside the function is the global object and **NOT** the `dessert` object. So what actually happened was that a new `scoops` variable was created (with a default value of `undefined`) and was then incremented (`undefined + 1` results in `NaN`):
+
+```js
+console.log(scoops);
+```
+
+> **Prints:**<br>
+> NaN
+
+One way around this is to use closure:
+
+```js
+// constructor
+function IceCream() {
+  this.scoops = 0;
+}
+
+// adds scoop to ice cream
+IceCream.prototype.addScoop = function() {
+  const cone = this; // sets `this` to the `cone` variable
+  setTimeout(function() {
+    cone.scoops++; // references the `cone` variable
+    console.log('scoop added!');
+  }, 0.5);
+};
+
+const dessert = new IceCream();
+dessert.addScoop();
+```
+
+The code above _will_ work because instead of using `this` inside the function, it sets the cone variable to this and then looks up the cone variable when the function is called. This works because it's using the value of the this outside the function. So if we check the number of scoops in our dessert right now, we'll see the correct value of `1`:
+
+```js
+console.log(dessert.scoops);
+```
+
+> **Prints:**<br>
+> 1
+
+Well that's exactly what arrow functions do, so let's replace the function passed to `setTimeout()` with an arrow function:
+
+```js
+// constructor
+function IceCream() {
+  this.scoops = 0;
+}
+
+// adds scoop to ice cream
+IceCream.prototype.addScoop = function() {
+  setTimeout(() => { // an arrow function is passed to setTimeout
+    this.scoops++;
+    console.log('scoop added!');
+  }, 0.5);
+};
+
+const dessert = new IceCream();
+dessert.addScoop();
+```
+
+Since arrow functions inherit their this value from the surrounding context, this code works!
+
+```js
+console.log(dessert.scoops);
+```
+
+> **Prints:**<br>
+> 1
+
+When `addScoop()` is called, the value of `this` _inside_ `addScoop()` refers to `dessert`. Since an arrow function is passed to `setTimeout()`, it's using its surrounding context to determine what `this` refers to inside itself. So since `this` _outside_ of the arrow function refers to `dessert`, the value of `this` _inside_ the arrow function will also refer to `dessert`.`
+
+Now what do you think would happen if we changed the `addScoop()` method to an arrow function?
+
+```js
+// constructor
+function IceCream() {
+    this.scoops = 0;
+}
+
+// adds scoop to ice cream
+IceCream.prototype.addScoop = () => { // addScoop is now an arrow function
+  setTimeout(() => {
+    this.scoops++;
+    console.log('scoop added!');
+  }, 0.5);
+};
+
+const dessert = new IceCream();
+dessert.addScoop();
+```
+
+Yeah, this doesn't work for the same reason - arrow functions inherit their `this` value from their surrounding context. Outside of the `addScoop()` method, the value of `this` is the global object. So if `addScoop()` is an arrow function, the value of `this` _inside_ `addScoop()` is the global object. Which then makes the value of `this` in the function passed to `setTimeout()` also set to the global object!
+
+## 9. Default Function Parameters
+Take a look at this code:
+
+```js
+function greet(name, greeting) {
+  name = (typeof name !== 'undefined') ?  name : 'Student';
+  greeting = (typeof greeting !== 'undefined') ?  greeting : 'Welcome';
+
+  return `${greeting} ${name}!`;
+}
+
+greet(); // Welcome Student!
+greet('James'); // Welcome James!
+greet('Richard', 'Howdy'); // Howdy Richard!
+```
+
+> **Returns:**
+> Welcome Student!
+> Welcome James!
+> Howdy Richard!
+
+What is all that horrible mess in the first two lines of the `greet()` function? All of that is there to provide default values for the function if the required arguments aren't provided. It's pretty ugly, though...
+
+Fortunately, ES6 has introduced a new way to create defaults. It's called _default function parameters_.
+
+### Default function parameters
+**Default function parameters** are quite easy to read since they're placed in the function's parameter list:
+
+```js
+function greet(name = 'Student', greeting = 'Welcome') {
+  return `${greeting} ${name}!`;
+}
+
+greet(); // Welcome Student!
+greet('James'); // Welcome James!
+greet('Richard', 'Howdy'); // Howdy Richard!
+```
+
+> **Returns:**
+> Welcome Student!
+> Welcome James!
+> Howdy Richard!
+
+Wow, that's a lot less code, so much cleaner, and significantly easier to read!
+
+To create a default parameter, you add an equal sign ( `=` ) and then whatever you want the parameter to default to if an argument is not provided. In the code above, both parameters have default values of strings, but they can be any JavaScript type!
+
+#### Quiz Question
+Take a look at the following code:
+
+```js
+function shippingLabel(name, address) {
+  name = (typeof name !== 'undefined') ? name : 'Richard';
+  address = (typeof address !== 'undefined') ?  address : 'Mountain View';
+  return `To: ${name} In: ${address}`;
+}
+```
+
+Which of the following choices is the correct way to write the shippingLabel() function using default function parameters?
+
+1. [ ]
+```js
+function shippingLabel(name = '', address = '') {
+  return `To ${name} In: ${address}`;
+}
+```
+
+1. [ ]
+```js
+function shippingLabel(name, address) {
+  name = name || 'Richard';
+  address = address || 'Mountain View';
+  return `To: ${name} In: ${address}`;
+}
+```
+
+1. [ ]
+```js
+function shippingLabel(name, address) {
+  return `To: ${name} In: ${address}`;
+}
+```
+
+1. [ ]
+```js
+function shippingLabel(name = 'Richard', address = 'Mountain View') {
+  return `To: ${name} In: ${address}`;
+}
+```
+
+#### Solution
+Option 4 uses default function parameters correctly by setting the defaults directly to the parameters.
+
+- [x]
+```js
+function shippingLabel(name = 'Richard', address = 'Mountain View') {
+  return `To: ${name} In: ${address}`;
+}
+```
+
+## 10. Default and Destructuring
+You can combine default function parameters with [destructuring](ES6-Syntax.html#6-destructuring-arrays) to create some pretty powerful functions!
+
+```js
+function createGrid([width = 5, height = 5]) {
+  return `Generates a ${width} x ${height} grid`;
+}
+
+createGrid([]); // Generates a 5 x 5 grid
+createGrid([2]); // Generates a 2 x 5 grid
+createGrid([2, 3]); // Generates a 2 x 3 grid
+createGrid([undefined, 3]); // Generates a 5 x 3 grid
+```
+
+> **Returns:**
+> Generates a 5 x 5 grid
+> Generates a 2 x 5 grid
+> Generates a 2 x 3 grid
+> Generates a 5 x 3 grid
+
+The `createGrid()` function expects an array to be passed to it. It uses destructuring to set the first item in the array to the `width` and the second item to be the `height`. If the array is empty or if it has only one item in it, then the default parameters kick in and give the missing parameters a default value of `5`.
+
+There is a problem with this though, the following code will not work:
+
+```js
+createGrid(); // throws an error
+```
+
+> **Uncaught TypeError:** Cannot read property 'Symbol(Symbol.iterator)' of undefined
+
+This throws an error because `createGrid()` expects an array to be passed in that it will then destructure. Since the function was called without passing an array, it breaks. But, we can use default function parameters for this!
+
+```js
+function createGrid([width = 5, height = 5] = []) {
+  return `Generates a ${width} x ${height} grid`;
+}
+```
+
+See that new `= []` in the function's parameter? If `createGrid()` is called without any argument then it will use this default empty array. And since the array is empty, there's nothing to destructure into `width` and `height`, so their default values will apply! So by adding `= []` to give the entire parameter a default, the following code will now work:
+
+```js
+createGrid(); // Generates a 5 x 5 grid
+```
+
+> **Returns:** Generates a 5 x 5 grid
+
+#### QUESTION 1 OF 2
+Take a look at the following code:
+
+```js
+function houseDescriptor([houseColor = 'green', shutterColors = ['red']]) {
+  return `I've a ${houseColor} house w/ ${shutterColors.join(' and ')} shutters`;
+}
+```
+
+Which of the following choices will run without throwing an error?
+
+1. [ ] houseDescriptor('red', ['white', 'gray', 'pink']);
+1. [ ] houseDescriptor(['green', ['white', 'gray', 'pink']]);
+1. [ ] houseDescriptor(['blue', 'purple']);
+1. [ ] houseDescriptor(['green]);
+
+#### Solution
+Options 2 and 4 are the only choices that will run correctly without throwing an error.
+
+- [ ] Since `houseDescriptor` is expecting only a single argument (an array) to be passed in, Option 1 has to be incorrect since it's calling the function with two arguments.
+- [x] Option 2 is correct.
+- [ ] Option 3 does call the function with a single array argument, but the second item in the list is a string and `.join()` is not a method of strings, so the code throws an error.
+- [x] Option 4 is correct.
+
+### Defaults and destructuring objects
+Just like array destructuring with array defaults, a function can have an object be a default parameter and use object destructuring:
+
+```js
+function createSundae({scoops = 1, toppings = ['Hot Fudge']}) {
+  const scoopText = scoops === 1 ? 'scoop' : 'scoops';
+  return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
+}
+
+createSundae({});
+// Your sundae has 1 scoop with Hot Fudge toppings.
+createSundae({scoops: 2});
+// Your sundae has 2 scoops with Hot Fudge toppings.
+createSundae({scoops: 2, toppings: ['Sprinkles']});
+// Your sundae has 2 scoops with Sprinkles toppings.
+createSundae({toppings: ['Cookie Dough']});
+// Your sundae has 1 scoop with Cookie Dough toppings.
+```
+
+> **Returns:**
+> Your sundae has 1 scoop with Hot Fudge toppings.
+> Your sundae has 2 scoops with Hot Fudge toppings.
+> Your sundae has 2 scoops with Sprinkles toppings.
+> Your sundae has 1 scoop with Cookie Dough toppings.
+
+Just like the array example before, if you try calling the function without any arguments it won't work:
+
+```js
+createSundae(); // throws an error
+```
+
+> **Uncaught TypeError:** Cannot match against 'undefined' or 'null'.
+
+We can prevent this issue by providing a default object to the function:
+
+```js
+function createSundae({scoops = 1, toppings = ['Hot Fudge']} = {}) {
+  const scoopText = scoops === 1 ? 'scoop' : 'scoops';
+  return `Your sundae has ${scoops} ${scoopText} with ${toppings.join(' and ')} toppings.`;
+}
+```
+
+By adding an empty object as the default parameter in case no arguments are provided, calling the function without any arguments now works.
+
+```js
+createSundae(); // Your sundae has 1 scoop with Hot Fudge toppings.
+```
+
+> **Returns:** Your sundae has 1 scoop with Hot Fudge toppings.
+
+#### Question 2 of 2
+Take a look at the following code:
+
+```js
+function houseDescriptor({houseColor = 'green', shutterColors = ['red']} = {}) {
+  return `I have a ${houseColor} house with ${shutterColors.join(' and ')} shutters`;
+}
+```
+
+Which of the following choices will run without throwing an error?
+
+1. [ ] houseDescriptor({houseColor: 'red', shutterColors: ['white', 'gray', 'pink']});
+1. [ ] houseDescriptor({houseColor: 'red'});
+1. [ ] houseDescriptor();
+1. [ ] houseDescriptor({shutterColors: ['orange', 'blue']});
+1. [ ] houseDescriptor({});
+
+#### Solution
+Actually, every single one of these function calls will work correctly! 
+
+The only option that would NOT work is:
+
+- [ ] houseDescriptor({houseColor: 'red', shutterColors: 'white'});<br>
+  Uncaught TypeError: `.join` is not a function of String. The function is expecting an array as the `shutterColors` property.
+
+### Array defaults vs. object defaults
+Default function parameters are a simple addition, but it makes our lives so much easier! One benefit of object defaults over array defaults is how they handle skipped options. Check this out:
+
+```js
+function createSundae({scoops = 1, toppings = ['Hot Fudge']} = {}) { }
+```
+
+With the `createSundae()` function using object defaults with destructuring, if you want to use the default value for `scoops` but change the `toppings`, then all you need to do is pass in an object with `toppings`:
+
+```js
+createSundae({toppings: ['Hot Fudge', 'Sprinkles', 'Caramel']});
+```
+
+Compare the above example with the same function that uses array defaults with destructuring.
+
+```js
+function createSundae([scoops = 1, toppings = ['Hot Fudge']] = []) { }
+```
+
+With this function setup, if you want to use the default number of scoops but change the toppings, you'd have to call your function a little...oddly:
+
+```js
+createSundae([undefined, ['Hot Fudge', 'Sprinkles', 'Caramel']]);
+```
+
+Since arrays are positionally based, we have to pass `undefined` to "skip" over the first argument (and accept the default) to get to the second argument.
+
+**Unless you've got a strong reason to use array defaults with array destructuring, we recommend going with object defaults with object destructuring!**
+
+## 11. Quiz: Default Function Parameters
+### Directions:
+Create a `buildHouse()` function that accepts an object as a default parameter. The object should set the following properties to these default values:
+
+- `floors = 1`
+- `color = 'red'`
+- `walls = 'brick'`
+
+The function should return the following if no arguments or any empty object is passed to the function.
+
+> Your house has 1 floor(s) with red brick walls.
+
+#### Code
+
+```js
+/*
+ * Programming Quiz: Using Default Function Parameters (2-2)
+ */
+
+// your code goes here
+
+// tests
+console.log(buildHouse());
+console.log(buildHouse({}));
+console.log(buildHouse({floors: 3, color: 'yellow'}));
+
+// Your house has 1 floor(s) with red brick walls.
+// Your house has 1 floor(s) with red brick walls.
+// Your house has 3 floor(s) with yellow brick walls.
+```
+
+#### Solution
+
+```js
+/*
+ * Programming Quiz: Using Default Function Parameters (2-2)
+ */
+
+function buildHouse({floors = 1, color = 'red', walls = 'brick'} = {}) {
+    return `Your house has ${floors} floor(s) with ${color} ${walls} walls.`;
+}
+
+// tests
+console.log(buildHouse());
+console.log(buildHouse({}));
+console.log(buildHouse({floors: 3, color: 'yellow'}));
+
+// Your house has 1 floor(s) with red brick walls.
+// Your house has 1 floor(s) with red brick walls.
+// Your house has 3 floor(s) with yellow brick walls.
+```
+
+> **Note:** Remember to return the result (as shown above) rather than `console.log()` from inside the function.
