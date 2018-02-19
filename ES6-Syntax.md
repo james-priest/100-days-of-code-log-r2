@@ -8,9 +8,9 @@ Notes from _**Lesson 1: Syntax**_ of _**ES6 JavaScript Improved**_ by Richard Ka
 
 This is an Intermediate skill level course which takes approximately 4 weeks to complete and is offered for **FREE**!
 
-| Lesson 1 | Lesson 2 | Lesson 3 | Lesson 4 |
-| --- | --- | --- | --- |
-| **Syntax** | [Functions](ES6-Functions.html) | [Built-ins](ES6-Built-ins.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
+| Lesson 1 | Lesson 2 | Lesson 2.5 | Lesson 3 | Lesson 4 |
+| --- | --- | --- | --- | --- |
+| **Syntax** | [Functions](ES6-Functions.html) | [Classes](ES6-Classes.html) | [Built-ins](ES6-Built-ins.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
 
 ## 1. Harmony, ES6, ES2015
 Technically Harmony, ES6 and ES2015 they're all different names for virtually the same thing. The important thing is that these names represent the biggest update to the JavaScript programming language to date.
