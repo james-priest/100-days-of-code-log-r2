@@ -34,6 +34,42 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 26. ES6 Built-ins, Symbols, Sets & WeakSets
+### Day 26: February 21, 2018 - Wednesday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+```js
+const bowl = {
+  [Symbol('apple')]: { color: 'red', weight: 136.078 },
+  [Symbol('banana')]: { color: 'yellow', weight: 183.15 },
+  [Symbol('orange')]: { color: 'orange', weight: 170.097 },
+  [Symbol('banana')]: { color: 'yellow', weight: 176.845 }
+};
+console.log(bowl);
+```
+
+**Progress:** Continued with my [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) Google Udacity course.
+
+The lessons covered:
+
+1. Symbols
+1. Iteration & Iterable protocols
+1. Sets & Weak Sets
+
+My notes on [ES6 JavaScript Improved (3) - Built-ins](ES6-Built-ins.html).
+
+**Links:**
+- Course Notes - [Offline First (1) - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- Course Notes - [Offline First (2) - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Course Notes - [ES6 JavaScript Improved (1) - Syntax](ES6-Syntax.html)
+- Course Notes - [ES6 JavaScript Improved (2) - Functions](ES6-Functions.html)
+- Course Notes - [ES6 JavaScript Improved (2.5) - Classes](ES6-Classes.html)
+- Course Notes - [ES6 JavaScript Improved (3) - Built-ins](ES6-Built-ins.html)
+- [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course) on Udacity
+
+---
+
 ## 25. ES6 Classes, Subclasses, & Prototypal Inheritance
 ### Day 25: February 20, 2018 - Tuesday
 
