@@ -543,3 +543,303 @@ console.log(uniqueFlavors)
 ```
 
 > `WeakSet {Object {flavor: 'chocolate'}, Object {flavor: 'vanilla'}}`
+
+## 12. Maps
+So we just looked at Sets and WeakSets but I want to turn your attention towards Maps and WeakMaps.
+
+Maps and WeakMaps share a lot of things in common with Sets and WeakSets. They both have similar properties and methods.
+
+- Maps and Sets are both **iterable** which means you can loop over them
+- WeakMaps and WeakSets **don't prevent objects from being garbage collected**.
+
+However, Maps are unique because they are **collections of key value pairs**.
+
+```js
+{
+  key1: value1
+  richard: 'is awesome'
+  james: 'is also cool'
+}
+```
+
+Whereas Sets are **collections of unique values**.
+
+```js
+[val1, val2, val3]
+```
+
+You could say that Sets are to arrays as maps are to objects.
+
+> Sets :: Arrays<br>
+> Maps :: Objects
+
+In this next section we'll look at how you can create and use Maps and WeakMaps.
+
+## 13. Creating and Modifying Maps
+### Maps
+If Sets are similar to Arrays, then Maps are similar to Objects because Maps store key-value pairs similar to how objects contain named properties with values.
+
+Essentially, a Map is an object that lets you store key-value pairs where both the keys and the values can be objects, primitive values, or a combination of the two.
+
+### How to Create a Map
+To create a Map, simply type:
+
+```js
+const employees = new Map();
+console.log(employees);
+```
+
+> `Map {}`
+
+This creates an empty Map `employee` with no key-value pairs.
+
+### Modifying Maps
+Unlike Sets, you can’t create Maps from a list of values; instead, you add key-values by using the Map’s `.set()` method.
+
+```js
+const employees = new Map();
+
+employees.set('james.parkes@udacity.com', { 
+    firstName: 'James',
+    lastName: 'Parkes',
+    role: 'Content Developer' 
+});
+employees.set('julia@udacity.com', {
+    firstName: 'Julia',
+    lastName: 'Van Cleve',
+    role: 'Content Developer'
+});
+employees.set('richard@udacity.com', {
+    firstName: 'Richard',
+    lastName: 'Kalehoff',
+    role: 'Content Developer'
+});
+
+console.log(employees);
+```
+
+> `Map {'james.parkes@udacity.com' => Object {...}, 'julia@udacity.com' => Object {...}, 'richard@udacity.com' => Object {...}}`
+
+The `.set()` method takes two arguments. The first argument is the key, which is used to reference the second argument, the value.
+
+To remove key-value pairs, simply use the `.delete()` method.
+
+```js
+employees.delete('julia@udacity.com');
+employees.delete('richard@udacity.com');
+console.log(employees);
+```
+
+> `Map {'james.parkes@udacity.com' => Object {firstName: 'James', lastName: 'Parkes', role: 'Course Developer'}}`
+
+Again, similar to Sets, you can use the `.clear()` method to remove all key-value pairs from the Map.
+
+```js
+employees.clear()
+console.log(employees);
+```
+
+> `Map {}`
+
+**TIP:** If you `.set()` a key-value pair to a Map that already uses the same key, you won’t receive an error, but the key-value pair will overwrite what currently exists in the Map. Also, if you try to `.delete()` a key-value that is not in a Map, you won’t receive an error, and the Map will remain unchanged.
+
+The `.delete()` method returns `true` if a key-value pair is successfully deleted from the `Map` object, and `false` if unsuccessful. The return value of `.set()` is the `Map` object itself if successful.
+
+## 14. Working with Maps
+After you’ve built your Map, you can use the `.has()` method to check if a key-value pair exists in your Map by passing it a key.
+
+```js
+const members = new Map();
+
+members.set('Evelyn', 75.68);
+members.set('Liam', 20.16);
+members.set('Sophia', 0);
+members.set('Marcus', 10.25);
+
+console.log(members.has('Xavier'));
+console.log(members.has('Marcus'));
+```
+
+> `false`<br>
+> `true`
+
+And you can also retrieve values from a Map, by passing a key to the `.get()` method.
+
+```js
+console.log(members.get('Evelyn'));
+```
+
+> `75.68`
+
+## 15. Looping Through Maps
+You’ve created a Map, added some key-value pairs, and now you want to loop through your Map. Thankfully, you’ve got three different options to choose from:
+
+1. Step through each key or value using the Map’s default iterator
+1. Loop through each key-value pair using the new `for..of` loop
+1. Loop through each key-value pair using the Map’s `.forEach()` method
+
+### 1. Using the MapIterator
+Using both the `.keys()` and `.values()` methods on a Map will return a new iterator object called MapIterator. You can store that iterator object in a new variable and use `.next()` to loop through each key or value. Depending on which method you use, will determine if your iterator has access to the Map’s keys or the Map’s values.
+
+```js
+let iteratorObjForKeys = members.keys();
+iteratorObjForKeys.next();
+```
+
+> `Object {value: 'Evelyn', done: false}`
+
+Use `.next()` to the get the next key value.
+
+```js
+iteratorObjForKeys.next();
+```
+
+> `Object {value: 'Liam', done: false}`
+
+And so on.
+
+```js
+iteratorObjForKeys.next();
+```
+
+> `Object {value: 'Sophia', done: false}`
+
+On the flipside, use the `.values()` method to access the Map’s values, and then repeat the same process.
+
+```js
+let iteratorObjForValues = members.values();
+iteratorObjForValues.next();
+```
+
+> `Object {value: 75.68, done: false}`
+
+### 2. Using a for...of Loop
+Your second option for looping through a Map is with a `for..of` loop.
+
+```js
+for (const member of members) {
+  console.log(member);
+}
+```
+
+> ['Evelyn', 75.68]<br>
+> ['Liam', 20.16]<br>
+> ['Sophia', 0]<br>
+> ['Marcus', 10.25]
+
+However, when you use a `for..of` loop with a Map, you don’t exactly get back a key or a value. Instead, the key-value pair is split up into an array where the first element is the key and the second element is the value. If only there were a way to fix this?
+
+#### Question
+```js
+/*
+ * Using array destructuring, fix the following code to print the
+ * keys and values of the `members` Map to the console.
+ */
+
+const members = new Map();
+
+members.set('Evelyn', 75.68);
+members.set('Liam', 20.16);
+members.set('Sophia', 0);
+members.set('Marcus', 10.25);
+
+for (const member of members) {
+    // console.log(key, value);
+}
+```
+
+#### Solution
+```js
+/*
+ * Using array destructuring, fix the following code to print the
+ * keys and values of the `members` Map to the console.
+ */
+
+const members = new Map();
+
+members.set('Evelyn', 75.68);
+members.set('Liam', 20.16);
+members.set('Sophia', 0);
+members.set('Marcus', 10.25);
+
+for (const member of members) {
+    const [key, value] = member;
+    console.log(key, value);
+}
+```
+
+> Evelyn 75.68<br>
+> Liam 20.16<br>
+> Sophia 0<br>
+> Marcus 10.25
+
+### 3. Using a forEach Loop
+Your last option for looping through a Map is with the `.forEach()` method.
+
+```js
+members.forEach((key, value) => console.log(key, value));
+```
+
+> ['Evelyn', 75.68]<br>
+> ['Liam', 20.16]<br>
+> ['Sophia', 0]<br>
+> ['Marcus', 10.25]
+
+Notice how with the help of an arrow function, the `forEach` loop reads fairly straightforward. For each `value` and `key` in `members`, log the `value` and `key` to the console.
+
+## 16. WeakMaps
+
+> **TIP:** If you’ve gone through the WeakSets section, then this section should be somewhat of a review. WeakMaps exhibit the same behavior as a WeakSets, except WeakMaps work with key-values pairs instead of individual items.
+
+### What is a WeakMap?
+
+A WeakMap is just like a normal Map with a few key differences:
+
+1. a WeakMap can only contain objects as keys,
+1. a WeakMap is not iterable which means it can’t be looped and
+1. a WeakMap does not have a `.clear()` method.
+
+You can create a WeakMap just like you would a normal Map, except that you use the `WeakMap` constructor.
+
+```js
+let book1 = { title: 'Pride and Prejudice', author: 'Jane Austen' };
+let book2 = { title: 'The Catcher in the Rye', author: 'J.D. Salinger' };
+let book3 = { title: 'Gulliver’s Travels', author: 'Jonathan Swift' };
+
+const library = new WeakMap();
+library.set(book1, true);
+library.set(book2, false);
+library.set(book3, true);
+
+console.log(library);
+```
+
+> `WeakMap {Object {title: 'Pride and Prejudice', author: 'Jane Austen'} => true, Object {title: 'The Catcher in the Rye', author: 'J.D. Salinger'} => false, Object {title: 'Gulliver’s Travels', author: 'Jonathan Swift'} => true}`
+
+…but if you try to add something other than an object as a key, you’ll get an error!
+
+```js
+library.set('The Grapes of Wrath', false);
+```
+
+> `Uncaught TypeError: Invalid value used as weak map key(…)`
+
+This is expected behavior because **WeakMap can only contain objects as keys**. Again, similar to WeakSets, WeakMaps leverage garbage collection for easier use and maintainability.
+
+### Garbage Collection
+In JavaScript, memory is allocated when new values are created and is "automatically" freed up when those values are no longer needed. This process of freeing up memory after it is no longer needed is what is known as garbage collection.
+
+WeakMaps take advantage of this by exclusively working with objects as keys. If you set an object to null, then you’re essentially deleting the object. And when JavaScript’s garbage collector runs, the memory that object previously occupied will be freed up to be used later in your program.
+
+```js
+book1 = null;
+console.log(library);
+```
+
+> `WeakMap {Object {title: 'The Catcher in the Rye', author: 'J.D. Salinger'} => false, Object {title: 'Gulliver’s Travels', author: 'Jonathan Swift'} => true}`
+
+What makes this so useful is you don’t have to worry about deleting keys that are referencing deleted objects in your WeakMaps, JavaScript does it for you! When an object is deleted, the object key will also be deleted from the WeakMap when garbage collection runs.
+
+**This makes WeakMaps useful in situations where you want an efficient, lightweight solution for creating groupings of objects with metadata.**
+
+The point in time when garbage collection happens is dependent on a lot of different factors. Check out [MDN’s documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#Garbage_collection) to learn more about the algorithms used to handle garbage collection in JavaScript.
