@@ -34,6 +34,51 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 27. ES6 Maps & WeakMaps
+### Day 27: February 22, 2018 - Thursday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+```js
+/*
+ * Using array destructuring, fix the following code to print the
+ * keys and values of the `members` Map to the console.
+ */
+
+const members = new Map();
+
+members.set('Evelyn', 75.68);
+members.set('Liam', 20.16);
+members.set('Sophia', 0);
+members.set('Marcus', 10.25);
+
+for (const member of members) {
+    const [key, value] = member;
+    console.log(key, value);
+}
+```
+
+**Progress:** Continued with my [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) Google Udacity course.
+
+The lessons covered:
+
+1. Maps & WeakMaps
+1. Iteration & Looping
+1. Creating & modifying Map objects
+
+My notes on [ES6 JavaScript Improved (3) - Built-ins](ES6-Built-ins.html).
+
+**Links:**
+- Course Notes - [Offline First (1) - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- Course Notes - [Offline First (2) - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Course Notes - [ES6 JavaScript Improved (1) - Syntax](ES6-Syntax.html)
+- Course Notes - [ES6 JavaScript Improved (2) - Functions](ES6-Functions.html)
+- Course Notes - [ES6 JavaScript Improved (2.5) - Classes](ES6-Classes.html)
+- Course Notes - [ES6 JavaScript Improved (3) - Built-ins](ES6-Built-ins.html)
+- [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course) on Udacity
+
+---
+
 ## 26. ES6 Built-ins, Symbols, Sets & WeakSets
 ### Day 26: February 21, 2018 - Wednesday
 
