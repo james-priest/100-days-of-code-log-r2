@@ -8,9 +8,9 @@ Notes from _**Lesson 2: Functions**_ of _**ES6 JavaScript Improved**_ by Richard
 
 This is an Intermediate skill level course which takes approximately 4 weeks to complete and is offered for **FREE**!
 
-| Lesson 1 | Lesson 2 | Lesson 2.5 | Lesson 3 | Lesson 4 |
-| --- | --- | --- | --- | --- |
-| [Syntax](ES6-Syntax.html) | **Functions** | [Classes](ES6-Classes.html) | [Built-ins](ES6-Built-ins.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
+| Lesson 1 | Lesson 2 | Lesson 2.5 | Lesson 3 | Lesson 3.5 | Lesson 4 |
+| --- | --- | --- | --- | --- | --- |
+| [Syntax](ES6-Syntax.html) | **Functions** | [Classes](ES6-Classes.html) | [Built-ins](ES6-Built-ins.html) | [Built-ins Pt2](ES6-Built-ins-Pt2.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
 
 ## 1. Updates to Functions
 In this lesson we're going to cover updates to functions in es6. Functions have changed a lot since the last version of JavaScript. We've now got a new way to write functions called arrow functions ( `name => name.toUpperCase()` ) and a new `class` keyword that lets you create functions as classes ( `class Cone { }` ).

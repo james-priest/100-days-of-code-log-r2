@@ -8,9 +8,9 @@ Notes from _**Lesson 2: Functions**_ of _**ES6 JavaScript Improved**_ by Richard
 
 This is an Intermediate skill level course which takes approximately 4 weeks to complete and is offered for **FREE**!
 
-| Lesson 1 | Lesson 2 | Lesson 2.5 | Lesson 3 | Lesson 4 |
-| --- | --- | --- | --- | --- |
-| [Syntax](ES6-Syntax.html) | [Functions](ES6-Functions.html) | **Classes** | [Built-ins](ES6-Built-ins.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
+| Lesson 1 | Lesson 2 | Lesson 2.5 | Lesson 3 | Lesson 3.5 | Lesson 4 |
+| --- | --- | --- | --- | --- | --- |
+| [Syntax](ES6-Syntax.html) | [Functions](ES6-Functions.html) | **Classes** | [Built-ins](ES6-Built-ins.html) | [Built-ins Pt2](ES6-Built-ins-Pt2.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
 
 ## 12. Class Preview
 Here's a quick peek of what a JavaScript class look like:

@@ -8,9 +8,9 @@ Notes from _**Lesson 3: Built-ins**_ of _**ES6 JavaScript Improved**_ by Richard
 
 This is an Intermediate skill level course which takes approximately 4 weeks to complete and is offered for **FREE**!
 
-| Lesson 1 | Lesson 2 | Lesson 2.5 | Lesson 3 | Lesson 4 |
-| --- | --- | --- | --- | --- |
-| [Syntax](ES6-Syntax.html) | [Functions](ES6-Functions.html) | [Classes](ES6-Classes.html) | **Built-ins** | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
+| Lesson 1 | Lesson 2 | Lesson 2.5 | Lesson 3 | Lesson 3.5 | Lesson 4 |
+| --- | --- | --- | --- | --- | --- |
+| [Syntax](ES6-Syntax.html) | [Functions](ES6-Functions.html) | [Classes](ES6-Classes.html) | **Built-ins** | [Built-ins Pt2](ES6-Built-ins-Pt2.html) | [Professional Developer-fu](ES6-Professional-Developer-fu.html) |
 
 ## 1. New Built-ins
 In this lesson we'll explore the latest batch of new built-ins provided in the ES6. We now have **Sets**, **Maps**, **Promises**, and a whole new bunch of other built-ins at our disposal.
