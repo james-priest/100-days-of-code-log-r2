@@ -34,6 +34,41 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 29. ES6 Polyfills
+### Day 29: February 24, 2018 - Saturday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![9-3](assets/images/sm_lesson9-3.jpg)](assets/images/full-size/lesson9-3.png)
+
+**Progress:** Continued with my [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) Google Udacity course.
+
+The lessons covered:
+
+1. Overview of browser support for ES6
+1. Feature testing
+1. Polyfills to patch missing JS features
+1. Polyfills for areas other than JavaScript core. Includes the following
+  - SVG, Canvas, Accessibility
+  - WebStorage (local / session), Web Sockets
+  - HTML5 elements & more...
+
+My notes on [ES6 JavaScript Improved (4) - Professional Developer-fu](ES6-Professional-Developer-fu.html).
+
+**Links:**
+- Course Notes - [Offline First (1) - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- Course Notes - [Offline First (2) - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Course Notes - [ES6 JavaScript Improved (1) - Syntax](ES6-Syntax.html)
+- Course Notes - [ES6 JavaScript Improved (2) - Functions](ES6-Functions.html)
+- Course Notes - [ES6 JavaScript Improved (2.5) - Classes](ES6-Classes.html)
+- Course Notes - [ES6 JavaScript Improved (3) - Built-ins](ES6-Built-ins.html)
+- Course Notes - [ES6 JavaScript Improved (3.5) - Built-ins-Pt2](ES6-Built-ins-Pt2.html)
+- Course Notes - [ES6 JavaScript Improved (4) - Professional Developer-fu](ES6-Professional-Developer-fu.html).
+
+- [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course) on Udacity
+
+---
+
 ## 28. ES6 Promises, Proxies, & Generators
 ### Day 28: February 23, 2018 - Friday
 
