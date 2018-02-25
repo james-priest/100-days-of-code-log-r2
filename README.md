@@ -34,6 +34,41 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 30. ES6 Transpiling & Babel
+### Day 30: February 25, 2018 - Sunday
+
+**Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
+
+[![9-5](assets/images/sm_lesson9-5.jpg)](assets/images/full-size/lesson9-5.png)
+
+**Progress:** Completed [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) Google Udacity course.
+
+This completes the Google Udacity Scholarship challenge! It took 30 days from start to finish and was exactly the push I needed to stay on track with my 100DaysOfCode challenge.
+
+Now I wait until April 17th to see if I'm selected to complete the remainder of the Mobile Web Nanodegree program!
+
+The lessons covered:
+
+1. Transpiling defined
+1. babel-cli & babel-preset-es2015
+1. package.json & build scripts
+
+My notes on [ES6 JavaScript Improved (4) - Professional Developer-fu](ES6-Professional-Developer-fu.html).
+
+**Links:**
+- Course Notes - [Offline First (1) - Introducing the Service Worker](Introducing-the-Service-Worker.html)
+- Course Notes - [Offline First (2) - IndexedDB and Caching](IndexedDB-and-Caching.html)
+- Course Notes - [ES6 JavaScript Improved (1) - Syntax](ES6-Syntax.html)
+- Course Notes - [ES6 JavaScript Improved (2) - Functions](ES6-Functions.html)
+- Course Notes - [ES6 JavaScript Improved (2.5) - Classes](ES6-Classes.html)
+- Course Notes - [ES6 JavaScript Improved (3) - Built-ins](ES6-Built-ins.html)
+- Course Notes - [ES6 JavaScript Improved (3.5) - Built-ins-Pt2](ES6-Built-ins-Pt2.html)
+- Course Notes - [ES6 JavaScript Improved (4) - Professional Developer-fu](ES6-Professional-Developer-fu.html).
+
+- [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course) on Udacity
+
+---
+
 ## 29. ES6 Polyfills
 ### Day 29: February 24, 2018 - Saturday
 
