@@ -205,18 +205,118 @@ JavaScript is the language used to create a polyfill, but a polyfill doesn't jus
 
 For a more-complete list of polyfills, check out [this link](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills)
 
-<!--
 ## 10. Transpiling
-You've probably heard the term compiler before. A compiler is a computer program that takes a program written in some source code language, let's say C++, and then converts it to a target language like machine code.
+You've probably heard the term _compiler_ before. A compiler is a computer program that takes source code language, let's say C++, and then converts it to a target language like machine code.
 
-Running code through a compiler changes its level of abstraction- how close it is to human readable code vs machine runnable code.
+Running code through a compiler changes its level of abstraction - meaning how close it is to human readable code vs machine runnable code.
 
-So that's compiling. Taking a source language and converting it into a lower level language.
+> _Compiling_ is taking a source language and converting it into a lower level language.
 
-Transpiling is a subset of compiling so it takes source code and converts it into target code - just like a compiler, but the source code and the target code are at the same level of abstraction. Basically if the source code starts out as human readable then the output language will also be human readable.
+> _Transpiling_ is a subset of compiling so it takes source code and converts it into target code, just like a compiler, but the source code and the target code are at the same level of abstraction.
+
+Basically if the source code starts out as human readable then the output language will also be human readable.
 
 But why would we want this? Well, we just saw that older browsers do not fully support ES6 but they do support ES5 code. This way we could write our JavaScript using ES6 syntax and
-functionality and then use a transpiler to convert it from Es6 code to ES5.
+functionality and then use a transpiler to convert it from ES6 code to ES5.
 
 So, we write code using the newest and best but convert it so that it'll run everywhere.
--->
+
+#### Quiz Question
+To convert Java to JavaScript, would you use a compiler or a transpiler?
+
+1. [ ] a compiler
+1. [ ] a transpiler
+
+#### Solution
+Since both the Java source code and the JavaScript target code are of the same level of abstraction (they're both human-readable), a transpiler would be used.
+
+- [x] a transpiler
+
+## 11. Using Babel
+The most popular JavaScript transpiler is called [Babel](https://babeljs.io/).
+
+Babel's original name was slightly more descriptive - 6to5. This was because, originally, Babel converted ES6 code to ES5 code. Now, Babel does a lot more. It'll convert ES6 to ES5, JSX to JavaScript, and Flow to JavaScript.
+
+Before we look at transpiling code on our computer, let's do a quick test by transpiling some ES6 code into ES5 code directly on the Babel website. Check out [Babel's REPL](http://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015)(Read-Eval-Print Loop) and paste the following code into the section on the left:
+
+```js
+class Student {
+  constructor (name, major) {
+    this.name = name;
+    this.major = major;
+  }
+
+  displayInfo() {
+    console.log(`${this.name} is a ${this.major} student.`);
+  }
+}
+
+const richard = new Student('Richard', 'Music');
+const james = new Student('James', 'Electrical Engineering');
+```
+
+### Babel REPL
+[![9-5](assets/images/sm_lesson9-5.jpg)](assets/images/full-size/lesson9-5.png)
+
+### Transpiling project in repo
+If you check in the [repo for this project](https://github.com/udacity/course-es6/tree/master/lesson-4/walk-through-transpiling), inside the Lesson 4 directory is a little project that's all set up for transpiling ES6 code to ES5 code. There's an "ES6" directory that contains the ES6 code we'll be transpiling (using Babel) to ES5 code that will be able to run in every browser.
+
+The way Babel transforms code from one language to another is through plugins. There are plugins that transform ES6 arrow functions to regular ES5 functions (the [ES2015 arrow function plugin](http://babeljs.io/docs/plugins/transform-es2015-arrow-functions/)). There are plugins that transform ES6 template literals to regular string concatenation (the [ES2015 template literals transform](http://babeljs.io/docs/plugins/transform-es2015-template-literals/)). For a full list, check out [all of Babel's plugins](http://babeljs.io/docs/plugins/).
+
+[![9-6](assets/images/sm_lesson9-6.jpg)](assets/images/full-size/lesson9-6.png)
+
+Now, you're busy and you don't want to have to sift through a big long list of plugins to see which ones you need to convert your code from ES6 to ES5. So instead of having to use a bunch of individual plugins, Babel has **presets** which are groups of plugins bundled together. So instead of worrying about which plugins you need to install, we'll just use the [ES2015 preset](http://babeljs.io/docs/plugins/preset-es2015/) that is a collection of all the plugins we'll need to convert all of our ES6 code to ES5.
+
+You can see that the project has a `.babelrc` file. This is where you'd put all of the plugins and/or presets that the project will use. Since we want to convert all ES6 code, we've set it up so that it has the ES2015 preset.
+
+#### .babelrc
+
+```json
+{
+    "presets": ["es2015"]
+}
+```
+
+> **WARNING:** Babel uses both **Node** and **NPM** to distribute its plugins. So before you can install anything, make sure you have both of these tools installed:
+>
+> - install [Node](https://nodejs.org/) (which will automatically install NPM)
+
+## 12. Transpiling Walkthrough
+The project's `package.json` file lists all of the NPM packages that this project depends on.
+
+[![9-7](assets/images/sm_lesson9-7.jpg)](assets/images/full-size/lesson9-7.png)
+
+This project depends on
+
+- bable-cli
+- babel-preset-es2015
+
+The babel 2015 preset is a collection of all es6 plugins. So these are the plugins that will be downloaded and installed.
+
+Once they're installed we need to tell the Babel CLI which plugins it should use to do the
+transpiling. The CLI will check the `.babelrc` file for which plugins and presets to
+use.
+
+So the `package.json` file lists what should be installed and the .`babelrc` file tells babel which plugins to use when it does its transpiling.
+
+Now that babel knows to use this preset we need to tell it to actually transpile the code. To do that we've added a build script that will tell babel to take the files in the ES6 directory, transpile them using the es2015 preset, and then put the transformed code in the ES5 directory.
+
+## 13. Transpiling Recap
+> NOTE: As of the creation of this course (circa Winter 2016), most of ES6 is supported by the current set of browsers. But that's "most", not "all", unfortunately. And that's also referring to "current" browsers. There are plenty of older browsers that do not support many, if any, of the new ES6 additions. However, it is safe to say that pretty much every browser supports the previous version of the language (ES5.1).
+
+It's important to stay on top of all the changes JavaScript is going through. The best way to do that is to start making use of the new features that are added. The problem is that not all browsers support these new features.
+
+So, to have your cake and eat it too, you can write in ES6 and then use a transpiler to convert it to ES5 code. This lets you transform your project's code base to the newest version of the language while still letting it run everywhere. Then, once all of the browsers your app has to run on fully support ES6 code, you can stop transpiling your code and just serve the straight ES6 code, directly!
+
+## 14. Course Recap
+Congratulations! You've made it to the end of this course on ES6 / ES2015. Before we wrap up let's go over the things learned in this course.
+
+[![6-1](assets/images/sm_lesson6-syntax1.jpg)](assets/images/full-size/lesson6-syntax1`.png)
+
+- In lesson one we learned about the most recent syntax
+additions to the JavaScript language
+- In lesson two we discovered new ways for writing functions and how to create JavaScript classes
+- In lesson three we were exposed to the latest built-ins provided us in ES6
+- In lesson four we wrapped it up by showing how to incorporate ES6 into our next JavaScript project
+
+Hopefully you've found this course to be insightful and that it will inspire you to start using Es6 in whatever projects you work on in the future.
