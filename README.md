@@ -34,6 +34,29 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 31. XMLHttpRequest & Ajax
+### Day 31: February 26, 2018 - Monday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![8-1](assets/images/sm_chap8-1.jpg)](assets/images/full-size/chap8-1.png)
+
+**Progress:** Covered using Ajax to access Web Services created with node.js. The web services were created to use Representational State Transfer (REST) and are also known as RESTful services.
+
+REST attempts to use standard operations of HTTP by mapping _create_, _retrieve_, _update_, & _delete (CRUD) operations to HTTP methods.
+
+The object that makes this call from the browser DOM is the XMLHttpRequest object. It is either invoked directly, or through one of jQuery's many wrapper methods. The ones I used were the following:
+
+- Async XMLHttpRequest (for old-school backwards compatability)
+- $.ajax()
+- $.get()
+- $.getJSON()
+- $.post()
+
+**Links:** [AJAX examples on GitHub](https://github.com/james-priest/node_samples/tree/master/math_service) - These are some XMLHttpRequests() & jQuery $.ajax() methods
+
+---
+
 ## 30. ES6 Transpiling & Babel
 ### Day 30: February 25, 2018 - Sunday
 
