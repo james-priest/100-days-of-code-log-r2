@@ -33,6 +33,27 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 -->
 ---
+## 32. jQuery Ajax & Promises
+### Day 32: February 27, 2018 - Tuesday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![9-1](assets/images/sm_chap9-1.jpg)](assets/images/full-size/chap9-1.png)
+
+**Progress:** This lesson went into various asynchronous operations using jQuery ajax and jQuery promises. These are still in use as part of the jQuery library but not as modern an implementation as using ES6 Promises with the Fetch API.
+
+Nonetheless, it's still helpful to know these patterns since a huge majority of code-bases are using jQuery's implementation. What was covered is the following:
+
+- $.Deferred() object as a wrapper to the jquery promise() object
+- jQuery .pipe() method for serialized(chained) async operations
+- $.when() method for parallel async operations
+- conditional async operations based on the result of prior async calls for both parallel and chained patterns
+
+**Links:**
+- [Asynchronous operations examples on GitHub](https://github.com/james-priest/node_samples/tree/master/ch09-Async) - These are some jQuery $.ajax() $.Deferred object and .promise() method examples
+- [Ajax - Async, Callback & Promise](https://medium.com/front-end-hacking/ajax-async-callback-promise-e98f8074ebd7) - Great Medium article on XMLHttpRequest, jQuery Ajax, & Promises 
+
+---
 
 ## 31. XMLHttpRequest & Ajax
 ### Day 31: February 26, 2018 - Monday
