@@ -33,6 +33,35 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 -->
 ---
+
+## 33. Web Workers
+### Day 33: February 28, 2018 - Wednesday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![9-2](assets/images/sm_chap9-2.jpg)](assets/images/full-size/chap9-2.png)
+
+**Progress:** This lesson covered the use of Web Workers as a non-blocking (async) way of performing work. The worker can send messages back to the spawning task by posting  messages to an event handler specified by the creator (calling script). Messages can be any object that can be serialized.
+
+When messages are posted to and from the web worker, the message object is serialized. This **creates a copy** of the message, so the web worker and the creator never reference the same object.
+
+Web workers also don't have access to the DOM. If something needs to be posted to the DOM then that has to happen in the form of a message sent back to the creator, and the creator must access the DOM as needed.
+
+Here's a quick bullet list of take-away's:
+
+- A web worker provides asynchronous code execution.
+- Communication to and from the web worker is accomplished by using the `postMessage()` method.
+- The `postMessage()` method accepts a serializable object.
+- The web worker and the creator cannot access the same object since a copy is made.
+- The web worker does not have access to DOM elements.
+
+**Links:**
+- [Web Worker example on GitHub](https://github.com/james-priest/node_samples/tree/master/ch09-WebWorker) - A very basic set of scripts that converts a string to uppercase.
+- [Demystifying Web Workers and Service Workers](https://nolanlawson.github.io/cascadia-2016/#) - Awesome slide deck with a big picture overview of Web Workers and Service Workers.
+- [Web Workers vs Service Workers in JavaScript](http://tech.ovoenergy.com/web-workers-vs-service-workers/) - Great article with sample code.
+
+---
+
 ## 32. jQuery Ajax & Promises
 ### Day 32: February 27, 2018 - Tuesday
 
