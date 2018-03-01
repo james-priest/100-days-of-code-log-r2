@@ -52,7 +52,7 @@ Here's a quick bullet list of take-away's:
 - It contains the following events: `onclose`, `onmessage`, `onerror`, and `onopen`.
 - You can check the `readyState` property on the WebSocket object to obtain the state of the connection.
 - Use `ws://` for WebSocket protocol or `wss://` for secure WebSocket protocol.
-- Timeouts, dropped connections, web farm implementations, and browser incompatibility are problems you must resolve when implementing WebSocket or you can use a pre-built library such as Redis.
+- Timeouts, dropped connections, web farm implementations, and browser incompatibility are problems you must resolve when implementing WebSocket or you can use a pre-built library such as SignalR or Socket.IO.
 
 **Links:**
 - Course Notes - [Chapter 10 - WebSocket Communications](CH10-WebSocket.html)
