@@ -34,6 +34,32 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 34. WebSocket API
+### Day 34: February 28, 2018 - Thursday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![10-2](assets/images/sm_chap10-2.jpg)](assets/images/full-size/chap10-2.png)
+
+**Progress:** This lesson covered the use of the WebSocket protocol which establishes a two-way, bidirectional connection between the browser and the web server.
+
+This is done with little overhead (2 bytes) and no headers. The light weight structure of the WebSocket protocol makes is an easy choice for any real-time applications such as chat, gaming, and live content.
+
+Here's a quick bullet list of take-away's:
+
+- The WebSocket protocol provides a standardized way to establish a two-way (bi-directional) connection between the browser and the web server while keeping the connection open.
+- The WebSocket object contains methods to open connections, send data, & close connections
+- It contains the following events: `onclose`, `onmessage`, `onerror`, and `onopen`.
+- You can check the `readyState` property on the WebSocket object to obtain the state of the connection.
+- Use `ws://` for WebSocket protocol or `wss://` for secure WebSocket protocol.
+- Timeouts, dropped connections, web farm implementations, and browser incompatibility are problems you must resolve when implementing WebSocket or you can use a pre-built library such as Redis.
+
+**Links:**
+- Course Notes - [Chapter 10 - WebSocket Communications](CH10-WebSocket.html)
+- [WebSocket example on GitHub](https://github.com/james-priest/node_samples/tree/master/ch10-WebSocket) - A basic WebSocket proof-of-concept app that calls the WebSocket.org echo server and returns a message sent to it.
+
+---
+
 ## 33. Web Workers
 ### Day 33: February 28, 2018 - Wednesday
 
