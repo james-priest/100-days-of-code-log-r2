@@ -34,8 +34,33 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 35. HTML5 Media
+### Day 35: March 2, 2018 - Friday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![11-1](assets/images/sm_chap11-1.jpg)](assets/images/full-size/chap11-1.png)
+
+**Progress:** This lesson covered the use of the `<video>` and `<audio>` HTML elements as well as the `HTMLMediaElement` object and API.
+
+Also covered:
+
+- `<source>` &  `<track>` elements
+- Video formats
+- Closed captioning and subtitles
+- HTMLMediaElement properties, methods, & events
+- Controlling media playback through code
+
+[![11-2](assets/images/sm_chap11-2.jpg)](assets/images/full-size/chap11-2.png)
+
+**Links:** 
+- Course Notes - [Chapter 11 - HTML5 Media](CH11-HTML5-Media.html)
+- [HTML5 Media code on GitHub](https://github.com/james-priest/node_samples/tree/master/ch11-HTML5-Media) - Sample code showing how to embed video and audio elements in page.
+
+---
+
 ## 34. WebSocket API
-### Day 34: February 28, 2018 - Thursday
+### Day 34: March 1, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
