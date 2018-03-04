@@ -34,6 +34,30 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 37. HTML5 Canvas Pt2
+### Day 37: March 4, 2018 - Sunday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![12-4](assets/images/sm_chap12-4.jpg)](assets/images/full-size/chap12-4.png)
+
+**Progress:** This lesson got into combining `fillStyle` with `fillRect()` for some interesting drawings.
+
+Specifically covered:
+
+- Using CSS color with `fillStyle`
+- Using gradients with `fillStyle`
+- Using patterns with `fillStyle`
+
+[![12-3](assets/images/sm_chap12-3.jpg)](assets/images/full-size/chap12-3.png)
+
+**Links:**
+- Course Notes - [Chapter 12 - HTML5 Canvas](CH12-Canvas.html)
+- Code samples - [Index page of code samples](https://james-priest.github.io/node_samples/ch12-Canvas/samples.html)
+- GitHub Repo - [HTML5 Canvas GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch12-Canvas)
+
+---
+
 ## 36. HTML5 Canvas Pt1
 ### Day 36: March 3, 2018 - Saturday
 
