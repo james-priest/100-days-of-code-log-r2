@@ -172,7 +172,6 @@ In this example, the `fillRect()` method is used to create four rectangles. Each
 
 So, drawing on the canvas does indeed require knowledge of JavaScript and the canvas context object.
 
-<!--
 ## 6. Configuring drawing state
 In the previous example, we did not set the fill color for `fillRect()` or the line thickness and color for `strokeRect()`. The canvas context has properties we can set before calling any of the drawing methods.
 
@@ -333,6 +332,7 @@ In this example, instead of creating an `<img>` element, the image is dynamicall
 [![12-5](assets/images/sm_chap12-5.jpg)](assets/images/full-size/chap12-4.png)<br>
 **Example:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/c-fillStyle3.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/c-fillStyle3.html</a>
 
+<!--
 ## 11. Setting lineWidth
 The `lineWidth` property specifies the thickness of any line you draw. The following code example draws rectangles by using different `lineWidth` settings.
 
