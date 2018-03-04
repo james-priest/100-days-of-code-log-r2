@@ -34,6 +34,28 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 36. HTML5 Canvas Pt1
+### Day 36: March 3, 2018 - Saturday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![12-2](assets/images/sm_chap12-2.jpg)](assets/images/full-size/chap12-2.png)
+
+**Progress:** This lesson covered the use of the `<canvas>` element as well as the `CanvasRenderingContext2D` object and API.
+
+Also covered:
+
+- Properties and methods of context object for drawing with JavaScript
+- Implementing the canvas
+- Basic rectangle methods: `fillRect()`, `strokeRect()`, & `clearRect()`
+
+**Links:**
+- Course Notes - [Chapter 12 - HTML5 Canvas](CH12-Canvas.html)
+- Code samples - [Index page of code samples](https://james-priest.github.io/node_samples/ch12-Canvas/samples.html)
+- GitHub Repo - [HTML5 Canvas GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch12-Canvas)
+
+---
+
 ## 35. HTML5 Media
 ### Day 35: March 2, 2018 - Friday
 
