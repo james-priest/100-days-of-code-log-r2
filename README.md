@@ -13,8 +13,8 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 ## Goals
 
-- [ ] Code daily
-- [ ] Complete the Intermediate Mobile Web track of the [#GoogleUdacityScholars](https://twitter.com/search?q=%23GoogleUdacityScholars&src=tyah) program.
+- [x] Code daily
+- [x] Complete the Intermediate Mobile Web track of the [#GoogleUdacityScholars](https://twitter.com/search?q=%23GoogleUdacityScholars&src=tyah) program.
 - [ ] Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
 
 # Log
@@ -32,6 +32,32 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Link to Work:**
 
 -->
+---
+
+## 38. HTML5 Canvas Pt3
+### Day 38: March 5, 2018 - Monday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+![12-14](assets/images/full-size/chap12-13.png)
+
+**Progress:** This lesson covered lots of areas, including:
+
+- Setting lineWidth, lineJoin, & strokeStyle
+- Saving and restoring drawing state
+- Drawing with paths
+- Creating lines & rectangles
+- Using fill &  methods
+- Order of method calls
+- Creating arcs using arcTo method
+
+![12-14](assets/images/full-size/chap12-14.png)
+
+**Links:**
+- Course Notes - [Chapter 12 - HTML5 Canvas](CH12-Canvas.html)
+- Code samples - [Index page of code samples](https://james-priest.github.io/node_samples/ch12-Canvas/samples.html)
+- GitHub Repo - [HTML5 Canvas GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch12-Canvas)
+
 ---
 
 ## 37. HTML5 Canvas Pt2
