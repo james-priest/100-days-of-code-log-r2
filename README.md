@@ -39,7 +39,8 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
-![12-14](assets/images/full-size/chap12-13.png)
+[![12-17](assets/images/sm_chap12-17.jpg)](assets/images/full-size/chap12-17.png)
+<!-- ![12-14](assets/images/full-size/chap12-13.png) -->
 
 **Progress:** This lesson covered lots of areas, including:
 
@@ -51,7 +52,8 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 - Order of method calls
 - Creating arcs using arcTo method
 
-![12-14](assets/images/full-size/chap12-14.png)
+[![12-18](assets/images/sm_chap12-18.jpg)](assets/images/full-size/chap12-18.png)
+<!-- ![12-14](assets/images/full-size/chap12-14.png) -->
 
 **Links:**
 - Course Notes - [Chapter 12 - HTML5 Canvas](CH12-Canvas.html)
