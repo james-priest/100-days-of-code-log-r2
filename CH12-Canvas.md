@@ -1,9 +1,9 @@
 ---
-title: HTML5 Canvas & SVG
+title: HTML5 Canvas
 description: Programming in HTML5 with JavaScript & CSS3 Training Guide
 ---
 <!-- markdownlint-disable MD022 MD024 MD032 -->
-# Chapter 12 - HTML5 Canvas & SVG
+# Chapter 12 - HTML5 Canvas
 
 Notes from [Programming in HTML5 with JavaScript & CSS3 Training Guide](https://www.amazon.com/Training-Guide-Programming-JavaScript-Microsoft/dp/0735674388) by Glenn Johnson.
 
@@ -637,10 +637,9 @@ However, if the `fill()` method is called after the stroke method, the fill over
 [![12-12](assets/images/sm_chap12-12.jpg)](assets/images/full-size/chap12-12.png)<br>
 **Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/i-drawRect2.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/i-drawRect2.html</a>
 
-
 The rendered output of the outline of the second shape is narrow compared to the outline of the first shape, and the second shape does not have the horizontal line of the triangle. These differences result from the fill method being called after the stroke method so that fill overwrites and previous color.
 
-## 17. Drawing arcs using arcTo
+## 18. Drawing arcs using arcTo
 In addition to drawing straight lines, you can draw curved lines by using the `arc()` and `arcTo()` methods on the context object.
 
 The `arcTo()` method accepts `x1` and `y1` coordinate that define a point through which the arc lines must pass, followed by an x2 and y2 coordinate that define the endpoint, followed by the radius of the arc. Although only two points are provided as parameters, a third point (x0, y0) is the starting point of the arc. The third point is the ending point of the previous sub-path.
@@ -741,7 +740,290 @@ The radius of this circle has a profound impact on the rendered arc. In addition
 [![12-16](assets/images/sm_chap12-16.jpg)](assets/images/full-size/chap12-16.png)<br>
 **Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/j-arcTo4.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/j-arcTo4.html</a>
 
-<!--
-## 18. Drawing arcs using arc
-The `arc()` method is much simpler to use than the `arcTo()` method. The `arc()` method can be used to draw a circle or any part of a circle.
--->
+## 19. Drawing arcs using arc
+The `arc()` method is much simpler to use than the `arcTo()` method. The `arc()` method can be used to draw a circle or any part of a circle. This is different from the behavior of the `arcTo()` method, which cannot draw more than half a circle and might produce line with the arc in an effort to continue a path without breaking te stroke.
+
+the `arc()` method accepts x and y coordinates as the center of the circle used to draw the arc, followed by the radius of the circle that the arc will use, followed by the starting angle and the ending angle. You can add a direction parameter that indicates the direction of the arc. The following example code shows how to create a circle by using the arc method.
+
+```js
+function drawArc() {
+    // var canvas = document.getElementById('myCanvas');
+    var canvas = document.createElement('canvas'),
+        ctx = canvas.getContext('2d');
+    
+    canvas.id = 'myCanvas';
+    canvas.width = 800;
+    canvas.height = 600;
+    document.body.appendChild(canvas);
+
+    ctx.strokeStyle = 'blue';
+    ctx.fillStyle = 'gold';
+    ctx.lineWidth = 5;
+
+    ctx.beginPath();
+    ctx.arc(400, 300, 100, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+}
+```
+
+In this example, the center of the circle is 400, 300, which is the middle of the canvas. The radius is set to 100. The starting location must be a value between 0 and 6.283185, which is 2 * PI. The ending location must also be a value between 0 and 6.283185. 
+
+The value 0 and 6.283185 can be used to represent the farthest right-side point of the circle. The value of 3.14159 (PI) is the farthes left-side point of the circle. The uppermost point of the circle is 1.5 * PI, while the lowermost point of the circle is .5 * PI. The rendered canvas is shown below.
+
+[![12-19](assets/images/sm_chap12-19.jpg)](assets/images/full-size/chap12-19.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/k-arc1.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/k-arc1.html</a>
+
+To draw an arc that represents part of the circle, you need valid start and end locations, and you need to consider the optional direction parameter. By default, the stroke is rendered clockwise, which means that the direction is set to false. Consider the following example where you provide a start location of 0 and an end location of 1.5 * PI.
+
+```js
+function drawArc() {
+    // var canvas = document.getElementById('myCanvas');
+    var canvas = document.createElement('canvas'),
+        ctx = canvas.getContext('2d');
+
+    canvas.id = 'myCanvas';
+    canvas.width = 800;
+    canvas.height = 600;
+    document.body.appendChild(canvas);
+
+    ctx.strokeStyle = 'blue';
+    ctx.fillStyle = 'gold';
+    ctx.lineWidth = 5;
+
+    ctx.beginPath();
+    ctx.arc(400, 300, 100, 0, 1.5 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+}
+```
+
+The image of the arc below shows that three-quarters of the circle is rendered. If you wanted to render only the quarter of the circle that's missing you have two options.
+
+[![12-20](assets/images/sm_chap12-20.jpg)](assets/images/full-size/chap12-20.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/k-arc2.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/k-arc2.html</a>
+
+One solution is to set the start location to 1.5 * Math.PI and the end location to 0. This is because the engine renders the stroke clockwise, so the arc will start rendering at the uppermost point of the circle and stop at the rightmost point of the circle.
+
+```js
+function drawArc() {
+    // var canvas = document.getElementById('myCanvas');
+    var canvas = document.createElement('canvas'),
+        ctx = canvas.getContext('2d');
+
+    canvas.id = 'myCanvas';
+    canvas.width = 800;
+    canvas.height = 600;
+    document.body.appendChild(canvas);
+
+    ctx.strokeStyle = 'blue';
+    ctx.fillStyle = 'gold';
+    ctx.lineWidth = 5;
+
+    ctx.beginPath();
+    ctx.arc(400, 300, 100, 0, 1.5 * Math.PI, true);
+    ctx.fill();
+    ctx.stroke();
+}
+```
+
+The other solution is to leave the start at 0 and the end at 1.5 * Math.PI but add the optional direction parameter, passing in a value of `true`.
+
+[![12-21](assets/images/sm_chap12-21.jpg)](assets/images/full-size/chap12-21.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/k-arc3.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/k-arc3.html</a>
+
+This causes the stroke rendering to go counterclockwise, which renders the quarter circle.
+
+## 20. Drawing text
+You can also draw text on the canvas by using the `fillText()` or `strokeText()` method. Support for drawing text is somewhat basic. Both methods require you to pass the text to be drawn as the first parameter, followed by x and y coordinates that specify where the text is drawn.
+
+The exact meaning of the coordinates depends on the value of the `textAlign` and the `textBaseline` properties, but the default is that the coordinate is at the lower-left corner of the text that's drawn.
+
+In addition to the methods, the following properties can be set to control the look of the rendered text.
+
+- **font** Sets the font type, size, and family, delimited by spaces. The style can be normal, italic, or bold. The size can be a CSS size. The family represents the font family, which can be a generic font, such as `sans serif`, or a specific font such as `Arial` or `Courier`.
+- **textAlign** Sets the horizontal alignment of the text in relation to the coordinate that is passed into the `fillText()` or `strokeText()` method. Can be `start`, `end`, `left`, `right`, or `center`. Note that `start` and `left` are the same, and `end` and `right` are the same.
+- **textBaseline** Sets the vertical alignment of the text in relation to the coordinate that is passed into the `fillText()` or `strokeText()` method. Can be top, hanging, middle, alpha-betic, ideographic, or bottom.
+
+The following example draws a line across the canvas, through its center point (400, 300). After that, "Hello" is drawn using the coordinate of 400, 300.
+
+```js
+function drawText() {
+    // var canvas = document.getElementById('myCanvas');
+    var canvas = document.createElement('canvas'),
+        ctx = canvas.getContext('2d');
+
+    canvas.id = 'myCanvas';
+    canvas.width = 800;
+    canvas.height = 600;
+    document.body.appendChild(canvas);
+
+    ctx.strokeStyle = 'magenta';
+    ctx.fillStyle = 'gold';
+    ctx.lineWidth = 2;
+    ctx.font = "bold 100pt TimesNewRoman";
+
+    ctx.beginPath();
+    ctx.moveTo(100, 300);
+    ctx.lineTo(700, 300);
+    ctx.stroke();
+
+    ctx.strokeStyle = "blue";
+    ctx.fillText('Hello', 400, 300);
+    ctx.strokeText('Hello', 400, 300);
+}
+```
+
+The line is drawn as its own path, and then the stroke color is changed to blue, but there is no need to start a new path because `fillText()` and `strokeText()` create their own path.
+
+The `fillText()` method automatically fills the text without requiring a call to the fill method. The `strokeText()` automatically outlines the text;
+
+[![12-22](assets/images/sm_chap12-22.jpg)](assets/images/full-size/chap12-22.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/l-text1.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/l-text1.html</a>
+
+The provided coordinate of 400, 300 is at the lower left of the rendered text, which means that the default value of the `textAlign` property is `start` or `left`, and the defgault value of the `textBaseline` is `bottom`.
+
+If you change the `textAlign` property to `center` and change the `textBaseline` property to `middle`, the text will centered horizontally and vertically within the canvas.
+
+[![12-23](assets/images/sm_chap12-23.jpg)](assets/images/full-size/chap12-23.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/l-text2.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/l-text2.html</a>
+
+## 21. Drawing with images
+In addition to drawing shapes, you might want to place images on the canvas. You can do this by using the `drawImage()` method of the context object.
+
+The `drawImage()` method can accept either three or five arguments. The first argument is the source of the image, which can be an `<img>` or `<video>` element or another `<canvas>` element. When the `<video>` element is used, a snapshot of the frame that is currently displayed is used as the image.
+
+When passing three arguments to the `drawImage()` method, the second and third arguments are the x and y  coordinates of the upper-left corder of the image.
+
+You can also create the `<img>` element in your JavaScript, which is great for when the presentation of the image might be conditional and you don't want to waste time loading the image unless its required.
+
+The following code example demonstrates the creation of the `<img>` element dynamically, loading it with a photo of an iceboat. When the image is loaded, the `drawImage()` method is called, and the image is passed in as the first argument.
+
+```js
+function drawImage() {
+    // var canvas = document.getElementById('myCanvas');
+    var canvas = document.createElement('canvas'),
+        ctx = canvas.getContext('2d');
+
+    canvas.id = 'myCanvas';
+    canvas.width = 800;
+    canvas.height = 600;
+    document.body.appendChild(canvas);
+
+    var img = new Image();
+    img.src = './assets/images/full-size/IceBoat.jpg';
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+    };
+}
+```
+
+The image is drawn at its native width and height. if the image is larger than the canvas , it's clipped.
+
+[![12-24](assets/images/sm_chap12-24.jpg)](assets/images/full-size/chap12-24.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/m-image1.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/m-image1.html</a>
+
+You might need to control the size of the drawn image. Specify this with two more arguments when calling the `drawImage()` method, the width and height. Here width is set to 300 and height is set to 448.
+
+```js
+function drawImage() {
+    // var canvas = document.getElementById('myCanvas');
+    var canvas = document.createElement('canvas'),
+        ctx = canvas.getContext('2d');
+
+    canvas.id = 'myCanvas';
+    canvas.width = 800;
+    canvas.height = 600;
+    document.body.appendChild(canvas);
+
+    var img = new Image();
+    img.src = './assets/images/full-size/IceBoat.jpg';
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0, 300, 448);
+    };
+}
+```
+
+When setting the width and height, you should try to maintain the proportions of the image to prevent skewing.
+
+[![12-25](assets/images/sm_chap12-25.jpg)](assets/images/full-size/chap12-25.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/m-image2.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/m-image2.html</a>
+
+Keep in mind you can draw your image and then overlay other shapes as necessary.
+
+```js
+function drawImage() {
+    // var canvas = document.getElementById('myCanvas');
+    var canvas = document.createElement('canvas'),
+        ctx = canvas.getContext('2d');
+
+    canvas.id = 'myCanvas';
+    canvas.width = 800;
+    canvas.height = 600;
+    document.body.appendChild(canvas);
+
+    var img = new Image();
+    img.src = './assets/images/full-size/IceBoat.jpg';
+    img.onload = function() {
+        ctx.font = 'bold 24pt Arial';
+
+        ctx.drawImage(img, 120, -170, 450, 673);
+
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 2;
+
+        ctx.beginPath();
+        ctx.moveTo(400, 180);
+        ctx.lineTo(329, 180);
+        ctx.stroke();
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 1;
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('Mast', 325, 180);
+        ctx.strokeText('Mast', 325, 180);
+
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(455, 120);
+        ctx.lineTo(496, 120);
+        ctx.stroke();
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 1;
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('Sail', 500, 120);
+        ctx.strokeText('Sail', 500, 120);
+
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(304, 294);
+        ctx.lineTo(430, 294);
+        ctx.stroke();
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 1;
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('Boom', 300, 290);
+        ctx.strokeText('Boom', 300, 290);
+    };
+}
+```
+
+Here the results.
+
+[![12-26](assets/images/sm_chap12-26.jpg)](assets/images/full-size/chap12-26.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch12-Canvas/m-image3.html" target="_blank">https://james-priest.github.io/node_samples/ch12-Canvas/m-image3.html</a>
+
+## 22. Lesson Summary
+
+- The `<canvas>` element is new in HTML5 and provides a drawing context that is accessible using JavaScript.
+- Use the `getContext()` method on the `<canvas>` element to get a reference to the context object.
+- Use the `fillRect()` and `strokeRect()` methods to draw rectangles.
+- Methods that start with _fill_ are used to fill the shape with the value of the `fillStyle` property. the `fillStyle` property can be set to a color, gradient, or pattern.
+- Methods that begin with _stroke_ create an outline of the shape with the value of the `strokeStyle` property. The `strokeStyle` property can be set to a color, gradient, or pattern.
+- The context object's properties can be pushed onto a stack by using the `save()` method or popped from the stack using the `restore()` method.
+- Use paths to create complex shapes using lines, rectangles, and arcs.
+- Use the `fillText()` and `strokeText()` methods to draw text on the canvas. Use the `drawImage()` method to draw images on the canvas.
