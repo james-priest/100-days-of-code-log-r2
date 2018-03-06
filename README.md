@@ -34,13 +34,36 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 39. HTML5 Canvas Pt4
+### Day 39: March 6, 2018 - Tuesday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![12-26](assets/images/sm_chap12-26.jpg)](assets/images/full-size/chap12-26.png)
+
+**Progress:** This completes the lesson on HTML5 `<canvas>` element. In the last section we covered:
+
+- Using the `arc()` method to create circles and circle fragments
+- Setting text with the `font` property
+- Drawing text on the canvas with `fillText()` and `strokeText()` methods
+- Including images on the canvas with `drawImage()`
+- Tying it all together by including text, lines, and images.
+
+[![12-22](assets/images/sm_chap12-22.jpg)](assets/images/full-size/chap12-22.png)
+
+**Links:**
+- Course Notes - [Chapter 12 - HTML5 Canvas](CH12-Canvas.html)
+- Code samples - [Index page of code samples](https://james-priest.github.io/node_samples/ch12-Canvas/samples.html)
+- GitHub Repo - [HTML5 Canvas GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch12-Canvas)
+
+---
+
 ## 38. HTML5 Canvas Pt3
 ### Day 38: March 5, 2018 - Monday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
 [![12-17](assets/images/sm_chap12-17.jpg)](assets/images/full-size/chap12-17.png)
-<!-- ![12-14](assets/images/full-size/chap12-13.png) -->
 
 **Progress:** This lesson covered lots of areas, including:
 
@@ -48,12 +71,11 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 - Saving and restoring drawing state
 - Drawing with paths
 - Creating lines & rectangles
-- Using fill &  methods
+- Using fill & stroke methods
 - Order of method calls
 - Creating arcs using arcTo method
 
 [![12-18](assets/images/sm_chap12-18.jpg)](assets/images/full-size/chap12-18.png)
-<!-- ![12-14](assets/images/full-size/chap12-14.png) -->
 
 **Links:**
 - Course Notes - [Chapter 12 - HTML5 Canvas](CH12-Canvas.html)
