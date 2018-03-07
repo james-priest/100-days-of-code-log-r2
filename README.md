@@ -50,6 +50,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Links:**
 - Course Notes - [Chapter 12 - SVG](CH12-SVG.html)
+- Online SVG Editor - [SVG-edit](https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html)
 - GitHub Repo - [SVG GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch12-SVG)
 
 ---
