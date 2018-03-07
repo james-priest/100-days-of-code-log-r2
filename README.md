@@ -34,6 +34,26 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 40. HTML5 SVG
+### Day 40: March 7, 2018 - Wednesday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![12-26](assets/images/sm_chap12-29.jpg)](assets/images/full-size/chap12-26.png)
+
+**Progress:** This lesson covered some of the basics behind SVG. This included:
+
+- Use of `<svg>`, `<path>`, and `<circle>` elements
+- Various path commands to create complex shapes
+- Assigning an `.svg` file to an `<img>` element
+- Making SVG's scalable
+
+**Links:**
+- Course Notes - [Chapter 12 - SVG](CH12-SVG.html)
+- GitHub Repo - [SVG GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch12-SVG)
+
+---
+
 ## 39. HTML5 Canvas Pt4
 ### Day 39: March 6, 2018 - Tuesday
 
