@@ -89,7 +89,8 @@ The `body` rule centers the container `<div>` horizontally on the page. The `#co
 
 The rules under `.hole` set flexbox display to center each item element (`<div id="item">`) within each hole. The final rule is for the items and it sets a gray square with a large, centered number. The last part of the style sets `user-select: none;` to keep the user from accidentally selecting the text when trying to do a drag.
 
-[![13-1](assets/images/sm_chap13-1.jpg)](assets/images/full-size/chap13-1.png)
+[![13-1](assets/images/sm_chap13-1.jpg)](assets/images/full-size/chap13-1.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble1.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble1.html</a>
 
 ## 2. Browser support
 There are two tools I use to make sure the code I write works in as many browsers and platforms as possible. In other words, I get cross-browser compliance and as wide a coverage as possible for the CSS, JavaScript, and HTML5 features I use.
@@ -157,7 +158,8 @@ In this HTML sample the item is a `<div>` element, and it's not draggable by def
 
 After adding the `draggable` attribute to the items, you can drag them.
 
-[![13-2](assets/images/sm_chap13-2.jpg)](assets/images/full-size/chap13-2.png)
+[![13-2](assets/images/sm_chap13-2.jpg)](assets/images/full-size/chap13-2.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble2.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble2.html</a>
 
 You can drag and item, but the item contains the _no-entry_ cursor symbol to indicate that the item cannot be dropped.
 
@@ -200,7 +202,8 @@ In the CSS file the dragging rule is defined as follows.
 
 This changes the background of the dragged item until the dragging stops.
 
-[![13-5](assets/images/sm_chap13-5.jpg)](assets/images/full-size/chap13-5.png)
+[![13-5](assets/images/sm_chap13-5.jpg)](assets/images/full-size/chap13-5.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble3.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble3.html</a>
 
 ## 7. Dropping
 After dragging, the drop must be made operational. The following events are based on the drop target.
@@ -255,7 +258,8 @@ When the item is in a hole, the drop event bubbles up and executes the drop even
 
 If the drop target is a hole with no children, jQuery detaches the dragged item from the DOM and then appends `$draggedItem` to the drop target.
 
-[![13-6](assets/images/sm_chap13-6.jpg)](assets/images/full-size/chap13-6.png)
+[![13-6](assets/images/sm_chap13-6.jpg)](assets/images/full-size/chap13-6.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html</a>
 
 > ### Quick check
 > - Which two events' default operations must be prevented to allow the drop event to operate?
