@@ -34,6 +34,28 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 41. HTML5 Drag & Drop
+### Day 41: March 8, 2018 - Thursday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![13-6](assets/images/sm_chap13-6.jpg)](assets/images/full-size/chap13-6.png)
+
+**Progress:** This lesson covered some of the basics behind of Drag and Drop with HTML5. This includes:
+
+- HTML5 `draggable` attribute
+- CSS autoprefixing ([https://autoprefixer.github.io/](https://autoprefixer.github.io/)) and [https://caniuse.com/](https://caniuse.com/)
+- Drag events (`dragstart`, `drag`, and `dragend`)
+- Drop events (`dragenter`, `dragover`, `dragleave`, and `drop`)
+- Moving the dropped node from one part of the DOM to another
+
+**Links:**
+- Course Notes - [Chapter 13 - Drag and Drop](CH13-Drag-Drop.html)
+- Drag & Drop sample - [Scramble](https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html)
+- GitHub Repo - [Drag and Drop GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch13-Drag-Drop)
+
+---
+
 ## 40. HTML5 SVG
 ### Day 40: March 7, 2018 - Wednesday
 
