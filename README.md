@@ -34,6 +34,34 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 42. HTML5 Drag & Drop Pt2
+### Day 42: March 9, 2018 - Friday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![13-7](assets/images/sm_chap13-7.jpg)](assets/images/full-size/chap13-7.png)
+
+**Progress:** This lesson got into the DataTransfer object and how to use it to effectively move data from the drag location to the drop location.
+
+This covered:
+
+- Using DataTransfer with jQuery
+- Using DataTransfer methods `getData()`, `setData()`, & `clearData()`
+- Using DataTransfer properties `dropeffect`, `effectAllowed`, `files`, and `types`
+- Working with the `drop` event
+- Dragging and dropping files with FileList and the Files API object
+
+[![13-9](assets/images/sm_chap13-9.jpg)](assets/images/full-size/chap13-9.png)
+
+**Links:**
+- Course Notes - [Chapter 13 - Drag and Drop](CH13-Drag-Drop.html)
+- Drag & Drop sample 1- [Scramble](https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html)
+- Drag & Drop sample 2- [List](https://james-priest.github.io/node_samples/ch13-Drag-Drop/b-cars1.html)
+- Drag & Drop sample 3- [Files](https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html)
+- GitHub Repo - [Drag and Drop GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch13-Drag-Drop)
+
+---
+
 ## 41. HTML5 Drag & Drop
 ### Day 41: March 8, 2018 - Thursday
 

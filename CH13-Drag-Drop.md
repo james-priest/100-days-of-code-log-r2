@@ -38,8 +38,8 @@ To illustrate the drag and drop technique, consider the following HTML page, whi
         <div id="hole4" class="hole"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
     crossorigin="anonymous"></script>
     <script src="a-scramble1.js"></script>
 </body>
@@ -268,7 +268,7 @@ If the drop target is a hole with no children, jQuery detaches the dragged item 
 > - The `dragenter` and `dragover` events
 
 ## 8. Using the DataTransfer object
-The previous example demonstrates a complete drag and drop operation, but you can also use the `DataTransfer` boject to pass data from the `dragstart` event to the `drop` event.
+The previous example demonstrates a complete drag and drop operation, but you can also use the `DataTransfer` object to pass data from the `dragstart` event to the `drop` event.
 
 By using the DataTransfer object, you don't need to create a global variable to reference the item being dragged. Using the DataTransfer object also empowers you to pass any data to the `drop` event as long as it can be represented as a string or URL. The `DragStart` object is referenced as a `dataTransfer` property on the `dragstart` event.
 
@@ -313,8 +313,8 @@ In the following example, the HTML document has an unordered list of cars, from 
     <p>Drop your favorite cars below:</p>
     <ul id="favoriteCars"></ul>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
     crossorigin="anonymous"></script>
     <script src="b-cars1.js"></script>
 </body>
@@ -421,8 +421,8 @@ The following HTML document has a `<div>` element onto which files can be droppe
     </div>
     <table id="fileInfo"></table>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
-    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
     crossorigin="anonymous"></script>
     <script src="c-cars1.js"></script>
 </body>
