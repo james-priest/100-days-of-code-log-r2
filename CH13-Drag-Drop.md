@@ -267,3 +267,278 @@ If the drop target is a hole with no children, jQuery detaches the dragged item 
 > ### Solution
 > - The `dragenter` and `dragover` events
 
+## 8. Using the DataTransfer object
+The previous example demonstrates a complete drag and drop operation, but you can also use the `DataTransfer` boject to pass data from the `dragstart` event to the `drop` event.
+
+By using the DataTransfer object, you don't need to create a global variable to reference the item being dragged. Using the DataTransfer object also empowers you to pass any data to the `drop` event as long as it can be represented as a string or URL. The `DragStart` object is referenced as a `dataTransfer` property on the `dragstart` event.
+
+> ### NOTE: Using the DataTransfer object with jQuery
+> jQuery's event system normalizes the event object according to W3C standards. Most properties from the original event are copied over and normalized to the new event object.
+>
+> `dataTransfer` is one property that does not get copied to jQuery's standardized Event object. ThereforeIt can be accessed using the `event.originalEvent` object as follows.
+>
+> `var dt = event.originalEvent.dataTransfer;`
+
+You can pass data to the drop event by using the `dataTransfer` property. The DataTransfer object has the following members.
+
+- **clearData()** Method that clears the data in the DataTransfer object
+- **dropeffect** Property that gets or sets the type of drag and drop operation and the cursor type. It can be set to `copy`, `link`, `move`, or `none`.
+- **effectAllowed** Property that gets or sets the allowed operations on the source element. It can be set to `copy`, `copyLink`, `copyMove`, `link`, `linkMove`, `move`, `all`, `uninitialized`, or `none`.
+- **files** Property that gets a file list of the files being dragged .If files aren't involved the property is an empty list.
+- **getData()** Method that gets the data in the DataTransfer object
+- **setData()** Method that sets the data in the DataTransfer object
+- **types** Property that gets a string list of types being sent.
+
+In the following example, the HTML document has an unordered list of cars, from which you can drag and drop any of the cars to a different unordered list of favorite cars as follows.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cars 1</title>
+    <style>
+        #favoriteCars { min-height:100px; background-color:gold; }
+    </style>
+</head>
+<body>
+    <p>What cars do you like?</p>
+    <ul>
+        <li draggable="true" data-value="car,Chevrolet">Chevrolet</li>
+        <li draggable="true" data-value="car,Ford">Ford</li>
+        <li draggable="true" data-value="car,BMW">BMW</li>
+    </ul>
+    <p>Drop your favorite cars below:</p>
+    <ul id="favoriteCars"></ul>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" 
+    crossorigin="anonymous"></script>
+    <script src="b-cars1.js"></script>
+</body>
+</html>
+```
+
+Here, each of the car list items is draggable and uses the data attributes to provide data that will be collected when the dragging starts and then passed to the `drop` event. The JavaScript file is similar to the previous example, which was used to move numbers, but this time, the data is passed to the drop event by using the DataTransfer object as follows.
+
+```js
+$(document).ready(function() {
+    $('#carList').on('dragstart', dragging);
+    $('#favoriteCars').on('dragenter', preventDefault);
+    $('#favoriteCars').on('dragover', preventDefault);
+    $('#favoriteCars').on('drop', dropItem);
+});
+
+function dragging(e) {
+    var val = e.target.dataset.value;
+    e.originalEvent.dataTransfer.setData('text/plain', val);
+    e.originalEvent.dataTransfer.effectAllowed = 'copy';
+}
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function dropItem(e) {
+    var data = e.originalEvent.dataTransfer.getData('text').split(',');
+    if (data[0] === 'car') {
+        var li = document.createElement('li');
+        li.textContent = data[1];
+        e.target.appendChild(li);
+    }
+}
+```
+
+In the document ready function we subscribe to the required events. The `dragging()` function is called when the dragging starts. It collects the data from the data-value attribute and assigns it to the DataTransfer object. The `effectAllowed` property is set to 'copy', which changes the mouse pointer to a pointer with a plus sign under it. If it were set to 'move', the pointer would be a pointer with a small box under it.
+
+The `dropItem` function is called from the `drop` event. The DataTransfer object is also available on the drop event through the `dataTransfer` property. The data is retrieved, split into an array, and assigned to a variable. Next the element is tested to see if its a car. If so, a new list item is created and appended to the drop element. Lastly, we call `preventDefault()` method of the event that's handled the drop so that the default browser handling does not handle the dropped data as well.
+
+[![13-7](assets/images/sm_chap13-7.jpg)](assets/images/full-size/chap13-7.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/b-cars1.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/b-cars1.html</a>
+
+## 9. Summary
+
+- The drag and drop functionality in HTML5 is now consistent and compatible across browsers.
+- The drag and drop attribute must be set to true and added to each element that needs to be draggable.
+- The `dragstart` and `dragend` events can be used to change the style of the element being dragged.
+- The `dragenter` and `dragover` events must be coded to prevent the default operation and enable dropping.
+- The `drop` event triggers when the item is dropped on a drop target.
+- The DataTransfer object is used to pass data between the `dragstart` event and the `drop` event.
+
+## 10. Review Questions
+
+1. Which of the following events trigger continuously during a drag and drop operation?
+    - [ ] dragstart
+    - [x] drag
+    - [ ] dragend
+    - [ ] dragenter
+    - [x] dragover
+    - [ ] dragleave
+    - [ ] drop
+
+1. Which of the following events are associated with the item being dragged?
+    - [x] dragstart
+    - [x] drag
+    - [x] dragend
+    - [ ] dragenter
+    - [ ] dragover
+    - [ ] dragleave
+    - [ ] drop
+
+1. Using the DataTransfer object, what kind of data can you pass to the drop event?
+    - [ ] Any valid string, number, date/time, or Boolean value
+    - [ ] Any URL that is within the dame domain as the webpage
+    - [ ] Any JSON object
+    - [x] Any object that can be represented as a string or URL
+
+## 11. Dragging & dropping files
+You can drag and drop files using the File API (application programming interface), which is also part of HTML5. The File API provides indirect access to files in a tightly controlled manner.
+
+## 12. Using FileList & File objects
+When dropping a file, the DataTransfer object returns a `FileList` object which is a collection of `File` objects that were dropped. The `File` object has the following properties.
+
+- **name** Property that gets the file name and extension without a path.
+- **type** Property that gets the MIME type of the file.
+- **size** Property that gets the file size in bytes.
+
+The following HTML document has a `<div>` element onto which files can be dropped and a `<table>` element that is populated with information about the dropped files.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Files 1</title>
+    <link rel="stylesheet" href="c-files1.css">
+</head>
+<body>
+    <div id="target">
+        <p>Drag and drop files here...</p>
+    </div>
+    <table id="fileInfo"></table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" 
+    crossorigin="anonymous"></script>
+    <script src="c-cars1.js"></script>
+</body>
+</html>
+```
+
+The css file contains rules to size the drag and drop target as well as tules to format the information table.
+
+```css
+body { font-family: Arial, Helvetica, sans-serif; }
+#target {
+    border: solid;
+    width: 500px;
+    height: 150px;
+    background-color: gold;
+    text-align: center;
+}
+#fileInfo {
+    width: 500px;
+}
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #333;
+}
+th, td {
+    padding: 5px;
+}
+```
+
+There is no JavaScript yet, so you might think that you can't drag and drop any files here, but there is a default behavior for files that are dragged and dropped. If you drop a file anywhere on the webpage, the file will open in-page if the browser can render the file otherwise it will open in another window.
+
+[![13-8](assets/images/sm_chap13-8.jpg)](assets/images/full-size/chap13-8.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files1.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files1.html</a>
+
+To process the dropped files and display the file information in a table below the drop box, the following JavaScript is added.
+
+```js
+$(document).ready(function() {
+  $('#target').on('dragenter', preventDefault);
+  $('#target').on('dragover', preventDefault);
+});
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+```
+
+In the document ready function, jQuery is set up to expose the DataTransfer object. The `dragenter` and `dragover` events are then programmed to prevent the default operation that prevents dropping. Once the `drop` event is added, the dragged file can be dropped.
+
+We subscribe to that `drop` event and add the `dropItem()` function handler. The JavaScript is completed with the following code.
+
+```js
+$(document).ready(function() {
+  $('#target').on('dragenter', preventDefault);
+  $('#target').on('dragover', preventDefault);
+  $('#target').on('drop', dropItem);
+});
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+function dropItem(e) {
+  var files = e.originalEvent.dataTransfer.files,
+      $table = $('#fileInfo'),
+      i = 0;
+
+  $table.html('<thead><tr><th>Name</th><th>Type</th><th>Size</th></tr></thead>');
+  for (i = 0; i < files.length; i++) {
+      $('<tr><td>' + files[i].name +
+        '</td><td>' + files[i].type +
+        '</td><td>' + files[i].size +
+        '</td></tr>').appendTo($table);
+  }
+  e.preventDefault();
+}
+```
+
+The `dropItem` function retrieves the files collection from the DataTransfer object. The content in the file information table is overwritten with the header, which also clears any existing information that was in the table. Next, a for loop is used to loop over the files and add a row of information to the file info table for each file. Finally, we prevent the browser's default behavior which is to open each of the files.
+
+Now we can grab a series of files and drag them on the yellow drop area.
+
+[![13-9](assets/images/sm_chap13-9.jpg)](assets/images/full-size/chap13-9.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html</a>
+
+Once several files are dragged and dropped the file information table populates and displays the information.
+
+[![13-10](assets/images/sm_chap13-10.jpg)](assets/images/full-size/chap13-10.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html</a>
+
+> ### Quick check
+> - Which object provides access to the dropped files?
+>
+> ### Solution
+> - The DataTransfer object
+
+## 13. Lesson summary
+
+- The File object provides the name, type, and size properties.
+- To enable dropping of files, the `dragenter` and `dragover` events must be programmed to prevent the default behavior that prevents dropping.
+- The DataTransfer object provides access to the list of dropped files.
+- The `drop` event provides access to the DataTransfer object.
+
+## 14. Lesson review
+
+1. To which events do you need to subscribe to program file drag and drop?
+    - [ ] dragstart
+    - [ ] drag
+    - [ ] dragend
+    - [ ] dragenter
+    - [ ] dragover
+    - [ ] dragleave
+    - [x] drop
+
+2. Which of the following is not a property on the File object?
+    - [ ] name
+    - [x] path
+    - [ ] type
+    - [ ] size
