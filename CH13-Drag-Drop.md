@@ -542,3 +542,161 @@ Once several files are dragged and dropped the file information table populates 
     - [x] path
     - [ ] type
     - [ ] size
+
+## 15. Create a number scramble game
+In this exercise we apply our knowledge of drag and drop by creating a number scramble game.
+
+[![13-11](assets/images/sm_chap13-11.jpg)](assets/images/full-size/chap13-10.png)
+
+The game consists of a board with four rows and four columns providing sixteen squares in which a sliding tile can exist. Fifteen of the squares are occupied by numbered tiles. One square is empty and can be used when moving tiles. Only a tile that is adjacent to the empty square can be moved.
+
+The object of the game is to arrange the tiles in numerical order from a scrambled position.
+
+## 16. Basic code structure
+We first start with a basic HTML page that has a reference to the latest jQuery and references to a supporting stylesheet and JavaScript file.
+
+We add in a 'message' and 'gameBoard' `<div>`.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Scramble</title>
+    <link rel="stylesheet" href="scramble.css">
+</head>
+<body>
+    <div id="message"><h1>Number Scramble</h1></div>
+    <div id="gameBoard"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="scramble.js"></script>
+</body>
+</html>
+```
+
+In the stylesheet we add the following rules for the game board, message and squares which will be programmatically created.
+
+```css
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color: darkslategray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#message {
+    position: relative;
+    width: 430px;
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    display: inline-block;
+}
+#gameBoard {
+    background-color: darkgoldenrod;
+    border: solid darkgoldenrod;
+    width: 425px;
+    height: 425px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.square {
+    background-color: burlywood;
+    border: 1px firebrick solid;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tile {
+    font-size: 3em;
+    width: 100px;
+    height: 100px;
+    background-color: wheat;
+    color: darkslategrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+.dragged {
+    background-color: rgb(255, 248, 225);
+}
+```
+
+In the scramble.js file we declare two variables. One to specify the square count and the other to track the number position of the empty square.
+
+
+
+```js
+var squareCount = 16;
+var emptySquare;
+```
+
+Then we add a call to a `createBoard()` and `addTiles()` methods within jQuery document ready function.
+
+```js
+$(document).ready(function() {
+    createBoard();
+    addTiles();
+});
+```
+
+Lastly, we create the `createBoard()` and `addTiles()` methods. Each of these use a for loop to create the child squares and child tiles for the game board.
+
+The completed JavaScript looks like this.
+
+```js
+var squareCount = 16;
+var emptySquare;
+
+$(document).ready(function() {
+    createBoard();
+    addTiles();
+});
+
+function createBoard() {
+    for (var i = 0; i < squareCount; i++) {
+        var $square = $('<div id="square' + i + '" data-square="' +
+            i + '" class="square"></div>');
+        $square.appendTo($('#gameBoard'));
+    }
+}
+
+function addTiles() {
+    emptySquare = squareCount - 1;
+    for (var i = 0; i < emptySquare; i++) {
+        var $square = $('#square' + i);
+        var $tile = $('<div draggable="true" id="tile' + i +
+            '"  class="tile">' + (i + 1) + '</div>');
+        $tile.appendTo($square);
+    }
+}
+```
+
+> **NOTE:**
+> There are cleaner, more efficient ways to build this code. This includes
+> - Creating a namespace or object literal for better code organization
+> - Wrapping everything in an IIFE to avoid polluting the global namespace
+> - Creating a document fragment and updating this within the for loops so as to avoid the cost of updating the DOM on every iteration
+>
+> For now though, we will be keeping it simple.
+
+At this point we  have the rendered game board with the tiles but there is not drag and drop functionality yet and the numbers don't scramble.
+
+[![13-11](assets/images/sm_chap13-11.jpg)](assets/images/full-size/chap13-10.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble1.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble1.html</a>
