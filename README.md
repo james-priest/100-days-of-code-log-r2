@@ -34,6 +34,32 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 43. Scramble Game Pt1
+### Day 43: March 10, 2018 - Saturday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![13-11](assets/images/sm_chap13-11.jpg)](assets/images/full-size/chap13-11.png)
+
+**Progress:** Here we gain experience implementing HTML5 Drag & Drop by building a number scramble game.
+
+The first section covers:
+
+- Basic layout and structure of the game
+- Starting point for HTML, CSS, JavaScript, & jQuery
+
+The work in progress page is here : [Scramble Game v1](https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble1.html)
+
+**Links:**
+- Course Notes - [Chapter 13 - Drag and Drop](CH13-Drag-Drop.html)
+- Drag & Drop sample 1- [Numbers](https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html)
+- Drag & Drop sample 2- [List](https://james-priest.github.io/node_samples/ch13-Drag-Drop/b-cars1.html)
+- Drag & Drop sample 3- [Files](https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html)
+- Drag & Drop sample 4- [Scramble Game](https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble3.html)
+- GitHub Repo - [Drag and Drop GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch13-Drag-Drop)
+
+---
+
 ## 42. HTML5 Drag & Drop Pt2
 ### Day 42: March 9, 2018 - Friday
 
@@ -55,14 +81,14 @@ This covered:
 
 **Links:**
 - Course Notes - [Chapter 13 - Drag and Drop](CH13-Drag-Drop.html)
-- Drag & Drop sample 1- [Scramble](https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html)
+- Drag & Drop sample 1- [Numbers](https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html)
 - Drag & Drop sample 2- [List](https://james-priest.github.io/node_samples/ch13-Drag-Drop/b-cars1.html)
 - Drag & Drop sample 3- [Files](https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html)
 - GitHub Repo - [Drag and Drop GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch13-Drag-Drop)
 
 ---
 
-## 41. HTML5 Drag & Drop
+## 41. HTML5 Drag & Drop Pt1
 ### Day 41: March 8, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
