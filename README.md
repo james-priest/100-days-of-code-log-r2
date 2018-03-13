@@ -34,6 +34,34 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 45. Scramble Game Pt3
+### Day 45: March 12, 2018 - Monday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![13-12](assets/images/sm_chap13-14.jpg)](assets/images/full-size/chap13-14.png)
+
+**Progress:** We finish part 3 of the HTML5 Drag & Drop number scramble game by adding keyboard controls and wrapping up some game functions.
+
+This includes:
+
+- Allowing tile movement with arrow keys
+- Creating a key press animation to show the user what key was pressed
+- Creating a `scramble()` tile function
+- Building a `checkForWinner()` function
+
+Here's the completed game: [Scramble Game](https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble3.html)
+
+**Links:**
+- Course Notes - [Chapter 13 - Drag and Drop](CH13-Drag-Drop.html)
+- Drag & Drop sample 1- [Numbers](https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html)
+- Drag & Drop sample 2- [List](https://james-priest.github.io/node_samples/ch13-Drag-Drop/b-cars1.html)
+- Drag & Drop sample 3- [Files](https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html)
+- Drag & Drop sample 4- [Scramble Game](https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble3.html)
+- GitHub Repo - [Drag and Drop GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch13-Drag-Drop)
+
+---
+
 ## 44. Scramble Game Pt2
 ### Day 44: March 11, 2018 - Sunday
 
@@ -49,7 +77,7 @@ This includes:
 - Using the DataTransfer object to send data from the drag source to the drop destination
 - Logic to evaluate which drops are allowed and to carry those out
 
-The work in progress page is here : [Scramble Game v2](https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble2.html)
+Here's the work in progress: [WIP - Scramble Game v2](https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble2.html)
 
 **Links:**
 - Course Notes - [Chapter 13 - Drag and Drop](CH13-Drag-Drop.html)
