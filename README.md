@@ -34,6 +34,33 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 44. Scramble Game Pt2
+### Day 44: March 11, 2018 - Sunday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![13-12](assets/images/sm_chap13-12.jpg)](assets/images/full-size/chap13-12.png)
+
+**Progress:** In part 2 of the HTML5 Drag & Drop number scramble game we actually write the bulk of the actual drag and drop code
+
+This includes:
+
+- Wiring up drag and drop events
+- Using the DataTransfer object to send data from the drag source to the drop destination
+- Logic to evaluate which drops are allowed and to carry those out
+
+The work in progress page is here : [Scramble Game v2](https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble2.html)
+
+**Links:**
+- Course Notes - [Chapter 13 - Drag and Drop](CH13-Drag-Drop.html)
+- Drag & Drop sample 1- [Numbers](https://james-priest.github.io/node_samples/ch13-Drag-Drop/a-scramble4.html)
+- Drag & Drop sample 2- [List](https://james-priest.github.io/node_samples/ch13-Drag-Drop/b-cars1.html)
+- Drag & Drop sample 3- [Files](https://james-priest.github.io/node_samples/ch13-Drag-Drop/c-files2.html)
+- Drag & Drop sample 4- [Scramble Game](https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble3.html)
+- GitHub Repo - [Drag and Drop GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch13-Drag-Drop)
+
+---
+
 ## 43. Scramble Game Pt1
 ### Day 43: March 10, 2018 - Saturday
 
@@ -246,7 +273,7 @@ Also covered:
 
 [![11-2](assets/images/sm_chap11-2.jpg)](assets/images/full-size/chap11-2.png)
 
-**Links:** 
+**Links:**
 - Course Notes - [Chapter 11 - HTML5 Media](CH11-HTML5-Media.html)
 - [HTML5 Media code on GitHub](https://github.com/james-priest/node_samples/tree/master/ch11-HTML5-Media) - Sample code showing how to embed video and audio elements in page.
 
@@ -324,7 +351,7 @@ Nonetheless, it's still helpful to know these patterns since a huge majority of 
 
 **Links:**
 - [Asynchronous operations examples on GitHub](https://github.com/james-priest/node_samples/tree/master/ch09-Async) - These are some jQuery $.ajax() $.Deferred object and .promise() method examples
-- [Ajax - Async, Callback & Promise](https://medium.com/front-end-hacking/ajax-async-callback-promise-e98f8074ebd7) - Great Medium article on XMLHttpRequest, jQuery Ajax, & Promises 
+- [Ajax - Async, Callback & Promise](https://medium.com/front-end-hacking/ajax-async-callback-promise-e98f8074ebd7) - Great Medium article on XMLHttpRequest, jQuery Ajax, & Promises
 
 ---
 
@@ -437,7 +464,7 @@ const handler = {
     }
 };
 const agent = new Proxy(richard, handler);
-agent.status; // (1)logs the richard object, (2)logs the property being accessed, 
+agent.status; // (1)logs the richard object, (2)logs the property being accessed,
               // (3)returns the text in richard.status
 ```
 
@@ -997,7 +1024,7 @@ You can read more here: [My notes - Triggering an Update](Introducing-the-Servic
 
 When a new Service Worker instance is installed it remains in a 'waiting' state until the current Service Worker is done servicing all pages in its scope and is released. This usually requires navigating off site and back again.
 
-These changes alert the user to new content so they may update with a button click. 
+These changes alert the user to new content so they may update with a button click.
 
 You can read more here: [My notes - Adding UX to the Update Process](Introducing-the-Service-Worker.html#22-adding-ux-to-the-update-process).
 
@@ -1120,7 +1147,7 @@ Chrome Stable has the Service Worker features already baked in and might be a be
 
 [![service worker](assets/images/sm_lesson3-service-worker5.jpg)](assets/images/full-size/lesson3-service-worker5.png)
 
-**Progress:** Learned about the Service Worker Lifecycle. 
+**Progress:** Learned about the Service Worker Lifecycle.
 
 This is part of a larger, 3-part Udacity series called [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899). It contains the following lessons and is **FREE**!
 
