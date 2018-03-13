@@ -871,3 +871,212 @@ The scramble game will now have working drag and drop capability.
 [![13-12](assets/images/sm_chap13-12.jpg)](assets/images/full-size/chap13-12.png)<br>
 **Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble2.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble2.html</a>
 
+## 19. Add keyboard controls
+In order to provide a faster and smoother method of game play, we allow the player to use the keyboard's arrow keys to move tiles.
+
+We do this by wiring up a `keydown` event listener on the page body. This kicks off the `keyDown()` function passing it the event object with information on which key kicked off the event. We chose  to use `keydown` because `keypress` doesn't capture special keys such as Home, End, Delete, Insert, PgDown, PgUp, arrow keys, etc. but `keydown` does.
+
+We will also display to the user which arrow key was pressed. To do this we fist update our HTML with a `<div>` that has an `id` of 'key'. We also set `display: none;` for the style attribute since we'll be using jQuery to animate this notification.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Scramble</title>
+    <link rel="stylesheet" href="scramble.css">
+</head>
+<body>
+    <div id="message">
+        <h1>Number Scramble</h1>
+        <div id="key" style="display: none;"></div>
+    </div>
+    <div id="gameBoard"></div>
+    <p>Drag tiles to move a squares.</p>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="scramble.js"></script>
+</body>
+</html>
+```
+
+Next, we'll add a rule to our stylesheet for the '#key' `<div>`.
+
+```css
+#key {
+    position: absolute;
+    background-size: 154px 108px;
+    width: 49px;
+    height: 52px;
+    background-image: url('./assets/images/full-size/arrowKeys.png');
+    right: 0;
+    bottom: 10px;
+}
+```
+
+This sets the `<div>` background image to use a `.png` which contains images for each of the arrow keys. We set the `background-size` to exactly half of the image's actual size since the button images are too big as is.
+
+![Arrow keys](assets/images/full-size/arrowKeys.png)
+
+We also set the `<div>` width & height so that only one arrow image will be visible at a time. We do this by adjusting the `background-position` in code based on which arrow key pressed. Lastly, we set `position : absolute;` and specify where in relation to `right` and `bottom` the image should appear.
+
+Next, we modify our JavaScript. We start by subscribing to the `keydown` event. We do this from within jQuery's document ready function.
+
+```js
+$(document).ready(function() {
+    createBoard();
+    addTiles();
+    $('#gameBoard').on('dragstart', dragStarted);
+    $('#gameBoard').on('dragend', dragEnded);
+    $('#gameBoard').on('dragenter', preventDefault);
+    $('#gameBoard').on('dragover', preventDefault);
+    $('#gameBoard').on('drop', drop);
+
+    $('body').on('keydown', keyDown);
+});
+```
+
+Next we create the `keyDown()` function. This creates a `sourceLocation` variable to track the source tile position. Next, we add a `switch` statement to capture which arrow key was pressed. If none were pressed we have a `default:` case that returns from the function.
+
+```js
+function keyDown(e) {
+    var sourceLocation = 0;
+    switch (e.key) {
+        case 'ArrowUp':
+            if (emptySquare > 11) return;
+            sourceLocation = emptySquare + 4;
+            $('#key').css('background-position', 'top center');
+            break;
+        case 'ArrowDown':
+            if (emptySquare < 4) return;
+            sourceLocation = emptySquare - 4;
+            $('#key').css('background-position', 'bottom');
+            break;
+        case 'ArrowRight':
+            if (emptySquare < 1 || (emptySquare) % 4 === 0) return;
+            sourceLocation = emptySquare - 1;
+            $('#key').css('background-position', 'bottom right');
+            break;
+        case 'ArrowLeft':
+            if (emptySquare > 14 || (emptySquare+1) % 4 === 0) return;
+            sourceLocation = emptySquare + 1;
+            $('#key').css('background-position', 'bottom left');
+            break;
+        default:
+            return;
+    }
+    $('#key').show().delay(200).fadeOut('fast');
+    moveTile(sourceLocation);
+}
+```
+
+Within each case statement we test if the last tile in a particular direction has been moved. If so, we exit with a return. Next we determine the `sourceLocation` based on the empty square plus the arrow key direction. Then we set the style rule to target the proper arrow graphic based on the arrow key that was pressed.
+
+Finally, we display the key pressed by chaining some jQuery animation methods. Lastly, we call `moveTile()` to perform the swap.
+
+[![13-13](assets/images/sm_chap13-13.jpg)](assets/images/full-size/chap13-12.png)
+
+## 20. Add tile scramble code
+We will also be creating code to scramble the tiles.
+
+We'll provide a 'scramble' link to allow the player to do this from the game page. We update the HTML by adding the following below `<div id="gameBoard"></div>`.
+
+```html
+<p>Drag tiles or use arrow keys to move.
+    Click to <a href="#" id="scramble">scramble</a>.
+</p>
+```
+
+Next, we wire up the link's `click` event from within the jQuery document ready function.
+
+```js
+$(document).ready(function() {
+    createBoard();
+    addTiles();
+    $('#gameBoard').on('dragstart', dragStarted);
+    $('#gameBoard').on('dragend', dragEnded);
+    $('#gameBoard').on('dragenter', preventDefault);
+    $('#gameBoard').on('dragover', preventDefault);
+    $('#gameBoard').on('drop', drop);
+
+    $('body').on('keydown', keyDown);
+    $('#scramble').on('click', scramble);
+    // scramble();
+});
+```
+
+If we want the game to start in a scrambled state we can uncomment the `scramble()` function call as well. Next we create the `scramble()` function.
+
+```js
+function scramble(e) {
+    for (var i = 0; i < 128; i++) {
+        var random = Math.random();
+        var sourceLocation;
+        if (random < 0.5) {
+            var column = emptySquare % 4;
+            if (column === 0 || (random < 0.25 && column != 3)) {
+                sourceLocation = emptySquare + 1;
+            } else {
+                sourceLocation = emptySquare - 1;
+            }
+        } else {
+            var row = Math.floor(emptySquare / 4);
+            if (row === 0 || (random < 0.75 && row != 3)) {
+                sourceLocation = emptySquare + 4;
+            } else {
+                sourceLocation = emptySquare - 4;
+            }
+        }
+        swapTileAndEmptySquare(sourceLocation);
+    }
+    e.preventDefault();
+}
+```
+
+This function executes a loop of 128 random movements to scramble the tiles. Each time the loop executes, a new random number is created, and, based on its value, an adjacent tile is moved to an empty square.
+
+## 21.Add win check
+First we add a call to `checkForWinner()` at the end of the `moveTile()` function. It should look like this.
+
+```js
+function moveTile(sourceLocation) {
+    var distance = sourceLocation - emptySquare;
+    if (distance < 0) { distance = -(distance); }
+    if (distance === 1 || distance === 4) {
+        swapTileAndEmptySquare(sourceLocation);
+    }
+    checkForWinner();
+}
+```
+
+Next we add the following `checkForWinner()` function.
+
+```js
+function checkForWinner() {
+    if (emptySquare !== squareCount - 1) {
+        $('#message>h1').html('Number Scramble!');
+        return;
+    }
+    for (var i = 0; i < emptySquare; i++) {
+        if ($('#tile' + i).parent().attr('id') !== 'square' + i) {
+            $('#message>h1').html('Number Scramble!');
+            console.log('old');
+            return;
+        }
+    }
+    $('#message>h1').html('Winner!');
+}
+```
+
+This will check if the final square is empty. If not, we exit. Next we loop through each of the tiles and check if the square number and tile numbers match (e.g. tile1 in square1, tile2 in square2, etc.). If the numbers don't match we exit.
+
+Lastly, we update the message to indicate a winner.
+
+[![13-14](assets/images/sm_chap13-14.jpg)](assets/images/full-size/chap13-14.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble3.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble3.html</a>
+
+That wraps up the Number Scramble game.
