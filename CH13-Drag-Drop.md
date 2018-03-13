@@ -640,8 +640,6 @@ h1 {
 
 In the scramble.js file we declare two variables. One to specify the square count and the other to track the number position of the empty square.
 
-
-
 ```js
 var squareCount = 16;
 var emptySquare;
@@ -698,5 +696,178 @@ function addTiles() {
 
 At this point we  have the rendered game board with the tiles but there is not drag and drop functionality yet and the numbers don't scramble.
 
-[![13-11](assets/images/sm_chap13-11.jpg)](assets/images/full-size/chap13-10.png)<br>
+[![13-11](assets/images/sm_chap13-11.jpg)](assets/images/full-size/chap13-11.png)<br>
 **Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble1.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble1.html</a>
+
+## 17. Add drag and drop
+Next we need to subscribe to the `dragstart`, `dragend`, `dragenter`, `dragover`, and `drop` events. This will allow us to handle each of the events necessary to manage drag and drop.
+
+```js
+$(document).ready(function() {
+    createBoard();
+    addTiles();
+    $('#gameBoard').on('dragstart', dragStarted);
+    $('#gameBoard').on('dragend', dragEnded);
+    $('#gameBoard').on('dragenter', preventDefault);
+    $('#gameBoard').on('dragover', preventDefault);
+    $('#gameBoard').on('drop', drop);
+});
+```
+
+For `dragstart` we create the following code.
+
+```js
+function dragStarted(e) {
+    var $tile = $(e.target);
+    $tile.addClass('dragged');
+    var sourceLocation = $tile.parent().data('square');
+    e.originalEvent.dataTransfer.setData('text', sourceLocation.toString());
+    e.originalEvent.dataTransfer.effectAllowed = 'move';
+}
+```
+
+This code creates a `$tile` variable that is a jQuery wrapper for `e.target`. We use it to add a 'dragged' class to the tile. We then create a `sourceLocation` variable and assign to it the value of the `data-square` data attribute of the tile's parent square.
+
+Lastly, we assign the string value of `sourceLocation` to the DataTransfer object and set the `effectAllowed` property to 'move'.
+
+Next, we handle `dragend` by removing the 'dragged' class. We then prevent the default behavior for both `drageneter` and `dragover` which allows us to perform a dra operation.
+
+```js
+function dragEnded(e) {
+    $(e.target).removeClass('dragged');
+}
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+```
+
+Next, we create the `drop()` function.
+
+```js
+function drop(e) {
+    var $square = $(e.target);
+    if ($square.hasClass('square')) {
+        var destinationLocation = $square.data('square');
+        if (emptySquare !== destinationLocation) return;
+        var sourceLocation = Number(e.originalEvent.dataTransfer.getData('text'));
+        moveTile(sourceLocation);
+    }
+    e.preventDefault();
+}
+```
+
+This function takes an `e` event parameter. We create a `$square` variable and use a jQuery wrapper for `e.target`. We then test that the element which the event is attached to has a class called 'square'. If so, we read the `data-square` attribute and place the value in a `destinationLocation` variable. If the destination location does not equal the  available empty square, we exit.
+
+Next we get the `sourceLocation` from the DataTransfer object & pass that as a parameter to the `moveTile()` function call.
+
+`moveTile()` subtracts the empty square number from the source location square number. It then makes the integer positive and if the difference between the two numbers is one (adjacent square) or four (above or below square), the `swapTileAndEmptySquare()` function is called.
+
+```js
+function moveTile(sourceLocation) {
+    var distance = sourceLocation - emptySquare;
+    if (distance < 0) distance = -(distance);
+    if (distance === 1 || distance === 4) {
+        swapTileAndEmptySquare(sourceLocation);
+    }
+}
+```
+
+The `swapTileAndEmptySquare()` function assigned the source tile (and all its children) to the `$draggedItem` variable. It then uses jQuery `detach()` method to remove the tile element from the DOM.
+
+```js
+function swapTileAndEmptySquare(sourceLocation) {
+    var $draggedItem = $('#square' + sourceLocation).children();
+    $draggedItem.detach();
+    var $target = $('#square' + emptySquare);
+    $draggedItem.appendTo($target);
+    emptySquare = sourceLocation;
+}
+```
+
+We then get a reference to the empty square and assign it to the `$target` variable. We then call the `appendTo()` function to complete the move and lastly, we assign the newly empty square number to the `emptySquare` variable.
+
+## 18. Completed drag & drop
+This is the completed code thus far.
+
+```js
+var squareCount = 16;
+var emptySquare;
+
+$(document).ready(function() {
+    createBoard();
+    addTiles();
+    $('#gameBoard').on('dragstart', dragStarted);
+    $('#gameBoard').on('dragend', dragEnded);
+    $('#gameBoard').on('dragenter', preventDefault);
+    $('#gameBoard').on('dragover', preventDefault);
+    $('#gameBoard').on('drop', drop);
+});
+
+function createBoard() {
+    for (var i = 0; i < squareCount; i++) {
+        var $square = $('<div id="square' + i + '" data-square="' +
+            i + '" class="square"></div>');
+        $square.appendTo($('#gameBoard'));
+    }
+}
+
+function addTiles() {
+    emptySquare = squareCount - 1;
+    for (var i = 0; i < emptySquare; i++) {
+        var $square = $('#square' + i);
+        var $tile = $('<div draggable="true" id="tile' + i +
+            '"  class="tile">' + (i + 1) + '</div>');
+        $tile.appendTo($square);
+    }
+}
+
+function dragStarted(e) {
+    var $tile = $(e.target);
+    $tile.addClass('dragged');
+    var sourceLocation = $tile.parent().data('square');
+    e.originalEvent.dataTransfer.setData('text', sourceLocation.toString());
+    e.originalEvent.dataTransfer.effectAllowed = 'move';
+}
+
+function dragEnded(e) {
+    $(e.target).removeClass('dragged');
+}
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+function drop(e) {
+    var $square = $(e.target);
+    if ($square.hasClass('square')) {
+        var destinationLocation = $square.data('square');
+        if (emptySquare !== destinationLocation) return;
+        var sourceLocation = Number(e.originalEvent.dataTransfer.getData('text'));
+        moveTile(sourceLocation);
+    }
+    e.preventDefault();
+}
+
+function moveTile(sourceLocation) {
+    var distance = sourceLocation - emptySquare;
+    if (distance < 0) distance = -(distance);
+    if (distance === 1 || distance === 4) {
+        swapTileAndEmptySquare(sourceLocation);
+    }
+}
+
+function swapTileAndEmptySquare(sourceLocation) {
+    var $draggedItem = $('#square' + sourceLocation).children();
+    $draggedItem.detach();
+    var $target = $('#square' + emptySquare);
+    $draggedItem.appendTo($target);
+    emptySquare = sourceLocation;
+}
+```
+
+The scramble game will now have working drag and drop capability.
+
+[![13-12](assets/images/sm_chap13-12.jpg)](assets/images/full-size/chap13-12.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble2.html" target="_blank">https://james-priest.github.io/node_samples/ch13-Drag-Drop/d-scramble2.html</a>
+
