@@ -34,6 +34,28 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 46. Geolocation Pt1
+### Day 46: March 13, 2018 - Tuesday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![14-1](assets/images/sm_chap14-1.jpg)](assets/images/full-size/chap14-1.png)
+
+**Progress:** This lesson covers the basics of the Geolocation API which at its most basic returns latitude and longitude positions from which to use with multiple third-party apps and services.
+
+This lesson detailed the following.
+
+- `navigator.geolocation.getCurrentPosition()` method
+- Position object which is returned from `getCurrentPosition()` method. It contains the `coords` and `timestamp` properties
+- Coordinates object which contains properties for `latitude`, `longitude`, `altitude`, `accuracy`, `altitudeAccuracy`, `heading`, & `speed`.
+
+**Links:**
+- Course Notes - [Chapter 14 - Geolocation](CH14-Geolocation.html)
+- Geolocation sample- [Latitude, longitude, & timestamp output](https://james-priest.github.io/node_samples/ch14-Geolocation/a-geolocation2.html)
+- GitHub Repo - [Geolocation GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch14-Geolocation)
+
+---
+
 ## 45. Scramble Game Pt3
 ### Day 45: March 12, 2018 - Monday
 
