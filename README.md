@@ -39,6 +39,29 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
+```js
+$(document).ready(function() {
+    getLocation();
+});
+function supportsGeolocation() {
+    return 'geolocation' in navigator;
+}
+function getLocation() {
+    if (supportsGeolocation()) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        showMessage("Geolocation isn't supported by your browser");
+    }
+}
+function showPosition(position) {
+    var datetime = new Date(position.timestamp).toLocaleString();
+
+    showMessage('Latitude: ' + position.coords.latitude + '<br>' +
+        'Longitude: ' + position.coords.longitude + '<br>' +
+        'Timestamp: ' + datetime);
+}
+```
+
 [![14-1](assets/images/sm_chap14-1.jpg)](assets/images/full-size/chap14-1.png)
 
 **Progress:** This lesson covers the basics of the Geolocation API which at its most basic returns latitude and longitude positions from which to use with multiple third-party apps and services.
