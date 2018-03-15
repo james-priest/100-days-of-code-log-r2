@@ -34,6 +34,32 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 47. Geolocation Pt2
+### Day 47: March 14, 2018 - Wednesday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![14-5](assets/images/sm_chap14-5.jpg)](assets/images/full-size/chap14-5.png)
+
+**Progress:** This lesson covered the use of the `watchPosition()` method to continuously monitor changes in GPS positioning and call a success function in order to respond to the changes.
+
+This lesson detailed the following.
+
+- `navigator.geolocation.watchPosition()` method.
+- Use of `watchPosition()`'s return value `watchId` with the `clearWatch()` method.
+- Various methods to calculate distance between two points over a curved surface (earth).
+- Calculation of distance traveled using the _haversine_ formula.
+
+The live sample can be viewed here: [GPS Watch Position](https://james-priest.github.io/node_samples/ch14-Geolocation/b-watchPosition2.html)
+
+**Links:**
+- Course Notes - [Chapter 14 - Geolocation](CH14-Geolocation.html)
+- Geolocation sample 1- [Latitude, longitude, & timestamp output](https://james-priest.github.io/node_samples/ch14-Geolocation/a-geolocation2.html)
+- Geolocation sample 2- [GPS Watch Position](https://james-priest.github.io/node_samples/ch14-Geolocation/b-watchPosition2.html)
+- GitHub Repo - [Geolocation GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch14-Geolocation)
+
+---
+
 ## 46. Geolocation Pt1
 ### Day 46: March 13, 2018 - Tuesday
 
