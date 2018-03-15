@@ -228,3 +228,305 @@ function getLocation() {
     - [ ] Position options object
     - [ ] Success callback function
     - [x] Use GPS only
+
+# Lesson 2
+## 9. Monitored positioning
+If you were writing an application that plotted your current location on a map, it would be more efficient to let the Geolocation API tell you when the location changes than write code that continues to poll for the current location. That's the focus of this lesson.
+
+## 10. Where are you now? How about now?
+You can you the Geolocation object's `watchPosition()` method to retrieve continuous position updates. This method takes the same parameters as the `getCurrentPosition()` method. The difference is that when you call `watchPosition()` once, it continues calling the success function until you call the `clearWatch()` method to stop monitoring your position.
+
+The `watchPosition()` method returns an id, which is passed to the `clearWatch()` method to end the monitoring. In this example, the webpage is modified with the addition of a button to start location monitoring and another one to end location monitoring.
+
+```js
+var watchId = 0;
+
+$(document).ready(function() {
+    $('#startMonitoring').on('click', getLocation);
+    $('#stopMonitoring').on('click', endWatch);
+});
+
+function supportsGeolocation() {
+    return 'geolocation' in navigator;
+}
+
+function showMessage(message) {
+    $('#message').html(message);
+}
+
+function getLocation() {
+    if (supportsGeolocation()) {
+        var options = { enableHighAccuracy: true };
+        watchId = navigator.geolocation.watchPosition(showPosition, showError, options);
+    } else {
+        showMessage("Geolocation isn't supported by your browser");
+    }
+}
+
+function endWatch() {
+    if (watchId != 0) {
+        navigator.geolocation.clearWatch(watchId);
+        watchId = 0;
+        showMessage("Monitoring ended.");
+    }
+}
+
+function showPosition(position) {
+    var datetime = new Date(position.timestamp).toLocaleString();
+    showMessage('Latitude: ' + position.coords.latitude + '<br>' +
+        'Longitude: ' + position.coords.longitude + '<br>' +
+        'Timestamp: ' + datetime);
+}
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            showMessage("User denied Geolocation access request.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            showMessage("Location Information unavailable.");
+            break;
+        case error.TIMEOUT:
+            showMessage("Get user location request timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            showMessage("An unknown error occurred.");
+            break;
+    }
+}
+```
+
+This code doesn't require many changes to get the benefit of continuous monitoring. The big change is the addition of the `endWatch()` function that uses the `watchId` global variable to stop location monitoring.
+
+[![14-4](assets/images/sm_chap14-4.jpg)](assets/images/full-size/chap14-4.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch14-Geolocation/b-watchPosition1.html" target="_blank">https://james-priest.github.io/node_samples/ch14-Geolocation/b-watchPosition1.html</a>
+
+## 11. Calculating distance
+When you're continuously monitoring the user's location, you might want to calculate the distance between samples.
+
+Calculating the distance traveled is relatively easy if you are traveling over a flat plane. Because people are traveling over the earth, you need to use spherical geometry to calculate the distance traveled. There are several formulas for this calculation, based primarily on accuracy.
+
+In addition, all calculations are based on the earth being perfectly round with no hills and valleys.
+
+This example shows implementation of the haversine formula to calculate the distance. This formula is a bit more complex than other formulas, such as the spherical law of cosines, but it provides better accuracy.
+
+The following is a `getDistance()` function using the haversine formula.
+
+```js
+function getDistance(lat1, lon1, lat2, lon2) {
+    var earthRadius = 3959; //miles
+    var latRadians = getRadians(lat2 - lat1);
+    var lonRadians = getRadians(lon2 - lon1);
+    var a = Math.sin(latRadians / 2) * Math.sin(latRadians / 2) +
+        Math.cos(getRadians(lat1)) * Math.cos(getRadians(lat2)) *
+        Math.sin(lonRadians / 2) * Math.sin(lonRadians / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var distance = earthRadius * c;
+    return distance;
+}
+
+function getRadians(latlongDistance) {
+    return latlongDistance * Math.PI / 180;
+}
+```
+
+## 12. GPS Watch Position
+The following code uses the `getDistance()` function from above to continuously calculate the distance traveled once the 'Start Monitoring' button is clicked. This relies on your device's GPS so Geolocation done through IP won't show any change in distance traveled.
+
+Here's the updated HTML.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>watchPosition 2</title>
+    <link rel="stylesheet" href="a-geolocation.css">
+</head>
+<body>
+    <h1>GPS Watch Position</h1>
+    <div id="message"></div><br>
+    Distance traveled: <span id="distance">0</span> miles<br><br>
+    <button id="startMonitoring">Start Monitoring</button>
+    <button id="stopMonitoring">Stop Monitoring</button>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="b-watchPosition2.js"></script>
+</body>
+</html>
+```
+
+The stylesheet is minimal and is unchanged.
+
+```css
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color: darkslategray;
+}
+```
+
+The JavaScript introduces three additional global variable. These are `firstCall`, `lat1`, and `lon1`. We use these to get a starting position.
+
+```js
+var watchId = 0,
+    firstCall = true,
+    lat1 = 0,
+    lon1 = 0;
+
+function getLocation() {
+    if (supportsGeolocation()) {
+        var options = { enableHighAccuracy: true };
+        watchId = navigator.geolocation.watchPosition(showPosition, showError, options);
+    } else {
+        showMessage("Geolocation isn't supported by your browser");
+    }
+}
+
+function showPosition(position) {
+    var dateTime = new Date(position.timestamp).toLocaleString();
+    var lat2 = position.coords.latitude,
+        lon2 = position.coords.longitude;
+
+    showMessage('Latitude: ' + lat2 + '<br>' +
+        'Longitude: ' +lon2 + '<br>' +
+        'Timestamp: ' + dateTime);
+
+    if (firstCall) {
+        lat1 = lat2;
+        lon1 = lon2;
+        firstCall = false;
+    }
+    var dist = getDistance(lat1, lon1, lat2, lon2);
+    $('#distance').html(dist.toFixed(3));
+}
+```
+
+Next, we update the `showPosition()` function to save the starting position to `lat1` and `lat2`. We then set `firstCall` to `false` so as to not overwrite our starting position.
+
+Finally, we call `getDistance()` and write the output to screen. Remember that the `watchPosition()` method continues to call the success callback, in this case `showPosition()` function, until the watch is explicitly stopped with the `clearWatch()` method.
+
+Here's the completed JavaScript.
+
+```js
+var watchId = 0,
+    firstCall = true,
+    lat1 = 0,
+    lon1 = 0;
+
+$(document).ready(function() {
+    $('#startMonitoring').on('click', getLocation);
+    $('#stopMonitoring').on('click', endWatch);
+});
+
+function supportsGeolocation() {
+    return 'geolocation' in navigator;
+}
+
+function showMessage(message) {
+    $('#message').html(message);
+}
+
+function getLocation() {
+    if (supportsGeolocation()) {
+        var options = { enableHighAccuracy: true };
+        watchId = navigator.geolocation.watchPosition(showPosition, showError, options);
+    } else {
+        showMessage("Geolocation isn't supported by your browser");
+    }
+}
+
+function endWatch() {
+    if (watchId !== 0) {
+        navigator.geolocation.clearWatch(watchId);
+        watchId = 0;
+        showMessage("Monitoring ended.");
+    }
+}
+
+function showPosition(position) {
+    var dateTime = new Date(position.timestamp).toLocaleString();
+    var lat2 = position.coords.latitude,
+        lon2 = position.coords.longitude;
+
+    showMessage('Latitude: ' + lat2 + '<br>' +
+        'Longitude: ' +lon2 + '<br>' +
+        'Timestamp: ' + dateTime);
+
+    if (firstCall) {
+        lat1 = lat2;
+        lon1 = lon2;
+        firstCall = false;
+    }
+    var dist = getDistance(lat1, lon1, lat2, lon2);
+    $('#distance').html(dist.toFixed(3));
+}
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            showMessage("User denied Geolocation access request.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            showMessage("Location Information unavailable.");
+            break;
+        case error.TIMEOUT:
+            showMessage("Get user location request timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            showMessage("An unknown error occurred.");
+            break;
+    }
+}
+
+function getDistance(lat1, lon1, lat2, lon2) {
+    var earthRadius = 3959; //miles
+    var latRadians = getRadians(lat2 - lat1);
+    var lonRadians = getRadians(lon2 - lon1);
+    var a = Math.sin(latRadians / 2) * Math.sin(latRadians / 2) +
+        Math.cos(getRadians(lat1)) * Math.cos(getRadians(lat2)) *
+        Math.sin(lonRadians / 2) * Math.sin(lonRadians / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var distance = earthRadius * c;
+    return distance;
+}
+
+function getRadians(latlongDistance) {
+    return latlongDistance * Math.PI / 180;
+}
+```
+
+The final result looks like this.
+
+[![14-5](assets/images/sm_chap14-5.jpg)](assets/images/full-size/chap14-5.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch14-Geolocation/b-watchPosition2.html" target="_blank">https://james-priest.github.io/node_samples/ch14-Geolocation/b-watchPosition2.html</a>
+
+> ### Quick check
+> - Which method monitors your location?
+>
+> ### Answer
+> - The `watchPosition()` method.
+
+## 13. Lesson summary
+
+- The `watchPosition()` method monitors your location and takes the same parameters as the `getCurrentPosition()` method.
+- The `watchPosition()` method returns an `id` that is used when you want to stop monitoring.
+- The `clearWatch()` method stops monitoring.
+- The `clearWatch()` method requires a watch id.
+
+## 14. Lesson review
+
+1. Which method continuously monitors your current location from the Geolocation object?
+    - [x] watchPosition()
+    - [ ] watchLocation()
+    - [ ] getCurrentPosition()
+    - [ ] getCurrentLocation()
+1. Which of the following formulas can you use to calculate the distance between two samples?
+    - [x] haversine
+    - [ ] Pythagorean theorem
+    - [ ] quadratic
+    - [ ] hyperbolic
