@@ -530,3 +530,132 @@ The final result looks like this.
     - [ ] Pythagorean theorem
     - [ ] quadratic
     - [ ] hyperbolic
+
+## 15. Google Maps exercise
+In this exercise, we apply our knowledge of the Geolocation API by creating a web application that retrieves your current location and displays it on a Google map. This exercise uses the Google Maps API.
+
+The HTML has a reference to both jQuery and Google Maps API as follows:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Position Mapper 1</title>
+    <link rel="stylesheet" href="c-position-mapper1.css">
+</head>
+<body>
+    <h1>Position Mapper</h1>
+    <div id="map"></div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<YOUR_API_KEY>&callback=initMap"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="c-position-mapper1.js"></script>
+</body>
+</html>
+```
+
+This html also has a single `<div>` with an id of 'map'. The stylesheet is defined as follows.
+
+```css
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color: darkslategray;
+}
+#map {
+    width: 800px;
+    height: 400px;
+    display: flex;
+    margin: auto;
+    border: solid;
+}
+#message {
+    width: 800px;
+    height: 50px;
+    display: flex;
+    margin: auto;
+    border: solid;
+}
+```
+
+In the JavaScript file we have the following framework code from before.
+
+```js
+$(document).ready(function() {
+    getLocation();
+});
+
+function supportsGeolocation() {
+    return 'geolocation' in navigator;
+}
+
+function showMessage(message) {
+    $('#message').html(message);
+}
+
+function getLocation() {
+    if (supportsGeolocation()) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        showMessage("Geolocation isn't supported by your browser");
+    }
+}
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            showMessage("User denied Geolocation access request.");
+            break;
+        case error.POSITION_UNAVAILABLE:
+            showMessage("Location Information unavailable.");
+            break;
+        case error.TIMEOUT:
+            showMessage("Get user location request timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            showMessage("An unknown error occurred.");
+            break;
+    }
+}
+```
+
+The `showPosition()` function is called when the `getCurrentPosition()` function call is successful.
+
+This is where the mapping takes place. The first line gets a reference to the `<div>` element for the map and assigns it to the `mapCanvas` variable. The second statement creates a `coords` object that will be passed to the Google API.
+
+```js
+function showPosition(position) {
+    var mapCanvas = document.getElementById('map');
+    var coords = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+    };
+
+    var options = {
+        zoom: 13,
+        center: coords,
+        mapTypeId: google.maps.MapTypeId.TERRAIN
+    };
+    var map = new google.maps.Map(mapCanvas, options);
+    var marker = new google.maps.Marker({
+        position: coords,
+        map: map,
+        title: 'You are here!'
+    });
+}
+```
+
+The next statement creates an object with the map settings and assigns it to the `options` variable. Finally, the `Map()` method in the Google API is called, which renders the map in the `mapCanvas` variable.
+
+Lastly, the Google API is used to create a marker with the current location.
+
+The completed map looks like this.
+
+[![14-6](assets/images/sm_chap14-6.jpg)](assets/images/full-size/chap14-6.png)<br>
+**Live sample:** <a href="https://james-priest.github.io/node_samples/ch14-Geolocation/c-position-mapper1.html" target="_blank">https://james-priest.github.io/node_samples/ch14-Geolocation/c-position-mapper1.html</a>
