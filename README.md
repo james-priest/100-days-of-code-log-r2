@@ -34,6 +34,32 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 48. Geolocation Pt3
+### Day 48: March 15, 2018 - Thursday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![14-6](assets/images/sm_chap14-6.jpg)](assets/images/full-size/chap14-6.png)
+
+**Progress:** This last lesson covered the use of Geolocation API with Google Maps API.
+
+This lesson detailed the following.
+
+- Properly referencing the Google Maps API
+- Setting the `options` object for use with the Google Maps API
+- Creating and setting a Map and Marker object
+
+The live sample can be viewed here: [Position Mapper](https://james-priest.github.io/node_samples/ch14-Geolocation/c-position-mapper1.html)
+
+**Links:**
+- Course Notes - [Chapter 14 - Geolocation](CH14-Geolocation.html)
+- Geolocation sample 1- [Latitude, longitude, & timestamp output](https://james-priest.github.io/node_samples/ch14-Geolocation/a-geolocation2.html)
+- Geolocation sample 2- [GPS Watch Position](https://james-priest.github.io/node_samples/ch14-Geolocation/b-watchPosition2.html)
+- Geolocation sample 3- [Position Mapper](https://james-priest.github.io/node_samples/ch14-Geolocation/c-position-mapper1.html)
+- GitHub Repo - [Geolocation GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch14-Geolocation)
+
+---
+
 ## 47. Geolocation Pt2
 ### Day 47: March 14, 2018 - Wednesday
 
