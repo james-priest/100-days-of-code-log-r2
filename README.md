@@ -34,6 +34,29 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 49. VSCode from Scratch
+### Day 49: March 16, 2018 - Friday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![vscode plugins](assets/images/sm_vscode-plugins.jpg)](assets/images/full-size/chap14-6.png)
+
+**Progress:** Today I decided to wipe clean my Visual Studio Code installation and start fresh. I had many plug-ins installed that were using resources and keeping me from a streamlined coding experience.
+
+I also had quite a few modifications to my user settings, including linting, code formatting, themes, icons, plugin settings, etc.
+
+I did a number of things before a fresh install:
+
+1. Made a list of all currently used plugins (so I could reinstall the ones I wanted)
+2. Uninstalled Visual Studio Code
+3. Renamed the `extensions` directory (to clear out old extensions)
+4. Renamed the `Code` directory within %UserDir%/AppData/Roaming  (to start with a fresh user settings)
+5. Installed fresh copy
+
+Once this was done, I proceeded to install the extensions I wanted along with some new ones. Everything runs clean and smooth now.
+
+---
+
 ## 48. Geolocation Pt3
 ### Day 48: March 15, 2018 - Thursday
 
