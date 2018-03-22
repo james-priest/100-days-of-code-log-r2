@@ -37,7 +37,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ## 49. VSCode from Scratch
 ### Day 49: March 16, 2018 - Friday
 
-**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+**Project:** Reinstall Visual Studio Code & plugins
 
 [![vscode plugins](assets/images/sm_vscode-plugins.jpg)](assets/images/full-size/chap14-6.png)
 
