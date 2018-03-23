@@ -33,6 +33,63 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 -->
 ---
+<!-- 
+## 55. JS Tutorial Pt6 - Properties
+
+## 54. JS Tutorial Pt5 - Private Members
+
+## 53. JS Tutorial Pt4 - Namespaces
+
+## 52. JS Tutorial Pt3 - Global Namespace Pollution
+
+## 51. JS Tutorial Pt2 - Object Literal vs Constructor -->
+
+## 50. JS Tutorial Pt1 - Object Oriented Programming
+### Day 50: March 17, 2018 - Saturday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** Learned about two distinct ways to create custom objects in JavaScript.
+
+1. Constructor functions
+2. Object literal notation
+
+The lesson covered code examples of each.
+
+```js
+// Constructor function
+function Employee(firstName, lastName)
+{
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    this.getFullName = function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+var employee = new Employee("Pragim", "Tech");
+```
+
+```js
+// Object literal notation
+var employee = {
+    firstName: "Pragim",
+    lastName: "Tech",
+
+    getFullName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
+```
+
+Notes on this lesson can be found here: [Object Oriented JavaScript - OOP](http://localhost:4000/OO-JavaScript.html#53-javascript-and-object-oriented-programming).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
 
 ## 49. VSCode from Scratch
 ### Day 49: March 16, 2018 - Friday
