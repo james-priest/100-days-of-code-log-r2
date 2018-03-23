@@ -36,8 +36,21 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 <!-- 
 ## 55. JS Tutorial Pt6 - Properties
 
-## 54. JS Tutorial Pt5 - Private Members -->
+## 54. JS Tutorial Pt5 - Private Members
+### Day 54: March 21, 2018 - Wednesday
 
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson 
+
+You can read a more complete example which includes full code and explanation in my notes on this lesson: [Object Oriented JavaScript - Namespaces in JavaScript](OO-JavaScript.html#56-namespaces-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
+ -->
 ## 53. JS Tutorial Pt4 - Namespaces
 ### Day 53: March 20, 2018 - Tuesday
 
@@ -56,7 +69,7 @@ myApp.utilities.validateData = function(data) {
 };
 ```
 
-You can read a more complete example which includes full code and explanation in my notes on this lesson: [Object Oriented JavaScript - Namespaces in JavaScript](http://localhost:4000/OO-JavaScript.html#56-namespaces-in-javascript).
+You can read a more complete example which includes full code and explanation in my notes on this lesson: [Object Oriented JavaScript - Namespaces in JavaScript](OO-JavaScript.html#56-namespaces-in-javascript).
 
 **Links:**
 - Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
@@ -75,7 +88,7 @@ This is most common in large code bases but can occur anytime variables, objects
 
 This lesson creates an example of how this can occur.
 
-Notes on this lesson: [Object Oriented JavaScript - Global namespace pollution](http://localhost:4000/OO-JavaScript.html#55-global-namespace-pollution).
+Notes on this lesson: [Object Oriented JavaScript - Global namespace pollution](OO-JavaScript.html#55-global-namespace-pollution).
 
 **Links:**
 - Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
@@ -110,7 +123,7 @@ var employee = new emp();
 
 The bottom line is that when we need multiple instances we should use a constructor function. When one instance is needed we can define the object using literal notation.
 
-Notes on this lesson can be found here: [Object Oriented JavaScript - Object literal vs. object constructor](http://localhost:4000/OO-JavaScript.html#54-object-literal-vs-object-constructor).
+Notes on this lesson can be found here: [Object Oriented JavaScript - Object literal vs. object constructor](OO-JavaScript.html#54-object-literal-vs-object-constructor).
 
 **Links:**
 - Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
@@ -157,7 +170,7 @@ var employee = {
 }
 ```
 
-Notes on this lesson can be found here: [Object Oriented JavaScript - OOP](http://localhost:4000/OO-JavaScript.html#53-javascript-and-object-oriented-programming).
+Notes on this lesson can be found here: [Object Oriented JavaScript - OOP](OO-JavaScript.html#53-javascript-and-object-oriented-programming).
 
 **Links:**
 - Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
