@@ -40,9 +40,43 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 ## 53. JS Tutorial Pt4 - Namespaces
 
-## 52. JS Tutorial Pt3 - Global Namespace Pollution
+## 52. JS Tutorial Pt3 - Global Namespace Pollution -->
 
-## 51. JS Tutorial Pt2 - Object Literal vs Constructor -->
+## 51. JS Tutorial Pt2 - Object Literal vs Constructor
+### Day 51: March 18, 2018 - Sunday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson gets more in depth with the differences between using  literal notation to define a custom object vs using a constructor function to create one.
+
+The lesson shows how an object literal is a singleton, and objects defined with a constructor and the `new` keyword are separate individual instances.
+
+
+```js
+// object literal notation
+var employee = {
+    name: "John"
+}
+```
+
+```js
+// constructor function
+var emp = function () {
+    this.name = "John";
+}
+// Create an instance of employee
+var employee = new emp();
+```
+
+The bottom line is that when we need multiple instances we should use a constructor function. When one instance is needed we can define the object using literal notation.
+
+Notes on this lesson can be found here: [Object Oriented JavaScript - Object literal vs. object constructor](http://localhost:4000/OO-JavaScript.html#54-object-literal-vs-object-constructor).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
 
 ## 50. JS Tutorial Pt1 - Object Oriented Programming
 ### Day 50: March 17, 2018 - Saturday
