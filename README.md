@@ -36,9 +36,33 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 <!-- 
 ## 55. JS Tutorial Pt6 - Properties
 
-## 54. JS Tutorial Pt5 - Private Members
+## 54. JS Tutorial Pt5 - Private Members -->
 
-## 53. JS Tutorial Pt4 - Namespaces -->
+## 53. JS Tutorial Pt4 - Namespaces
+### Day 53: March 20, 2018 - Tuesday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson takes the code scenario posed in the previous lesson and solves for it by creating namespaces. JavaScript does not have namespaces as such but uses objects to accomplish the same kind of encapsulation.
+
+Furthermore, we can create nested namespaces by creating a nested object hierarchy. A nested namespace is a namespace inside another namespace.
+
+```js
+var myApp = myApp || {};
+var myApp.utilities = myApp.utilities || {};
+
+myApp.utilities.validateData = function(data) {
+  // some code...
+};
+```
+
+You can read a more complete example which includes full code and explanation in my notes on this lesson: [Object Oriented JavaScript - Namespaces in JavaScript](http://localhost:4000/OO-JavaScript.html#56-namespaces-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
 
 ## 52. JS Tutorial Pt3 - Global Namespace Pollution
 ### Day 52: March 19, 2018 - Monday
