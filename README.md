@@ -38,9 +38,26 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 ## 54. JS Tutorial Pt5 - Private Members
 
-## 53. JS Tutorial Pt4 - Namespaces
+## 53. JS Tutorial Pt4 - Namespaces -->
 
-## 52. JS Tutorial Pt3 - Global Namespace Pollution -->
+## 52. JS Tutorial Pt3 - Global Namespace Pollution
+### Day 52: March 19, 2018 - Monday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson details the pitfalls of writing code that lives in the global namespace. Global namespace pollution occurs when we declare variables or functions globally which have the possibility of overwriting code from included libraries or third-parties.
+
+This is most common in large code bases but can occur anytime variables, objects, or functions are being declared globally.
+
+This lesson creates an example of how this can occur.
+
+Notes on this lesson: [Object Oriented JavaScript - Global namespace pollution](http://localhost:4000/OO-JavaScript.html#55-global-namespace-pollution).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
 
 ## 51. JS Tutorial Pt2 - Object Literal vs Constructor
 ### Day 51: March 18, 2018 - Sunday
@@ -50,7 +67,6 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 **Progress:** This lesson gets more in depth with the differences between using  literal notation to define a custom object vs using a constructor function to create one.
 
 The lesson shows how an object literal is a singleton, and objects defined with a constructor and the `new` keyword are separate individual instances.
-
 
 ```js
 // object literal notation
