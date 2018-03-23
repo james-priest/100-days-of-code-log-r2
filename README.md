@@ -34,23 +34,59 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 <!-- 
-## 55. JS Tutorial Pt6 - Properties
+## 55. JS Tutorial Pt6 - Properties -->
 
 ## 54. JS Tutorial Pt5 - Private Members
 ### Day 54: March 21, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
-**Progress:** This lesson 
+**Progress:** This lesson dives deeper into how to create the kind of encapsulation found in traditional class-based inheritance structures of C# and Java.
 
-You can read a more complete example which includes full code and explanation in my notes on this lesson: [Object Oriented JavaScript - Namespaces in JavaScript](OO-JavaScript.html#56-namespaces-in-javascript).
+```js
+// JavaScript
+function Employee(firstName, lastName) {
+    // Private Field
+    var privateFullName;
+
+    // Public Fields
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    // Private Function
+    var privateGetFullName = function () {
+        privateFullName = firstName + " " + lastName;
+        return privateFullName;
+    };
+
+    // Privileged Function
+    this.privilegedGetFullName = function () {
+        return privateGetFullName();
+    };
+
+    // Public Function
+    Employee.prototype.publicGetFullName = function () {
+        return this.privilegedGetFullName();
+    };
+}
+```
+
+This lesson covers:
+
+- **Private fields** - variables that can only be accessed by private functions and privileged methods.
+- **Public fields** - variables available outside the object.
+- **Private functions** - available only to privileged methods or other private functions.
+- **Privileged methods** - available both inside and outside the object. Has access to private fields and functions.
+- **Public methods** - available inside and outside the object. No access to private fields or functions but can access privileged methods.
+
+You can read a more complete example which includes full code and explanation in my notes on this lesson: [Object Oriented JavaScript - Private members in JavaScript](OO-JavaScript.html#57-private-members-in-javascript).
 
 **Links:**
 - Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
 - GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
 
 ---
- -->
+
 ## 53. JS Tutorial Pt4 - Namespaces
 ### Day 53: March 20, 2018 - Tuesday
 
