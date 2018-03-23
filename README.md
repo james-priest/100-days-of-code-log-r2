@@ -33,8 +33,49 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 -->
 ---
-<!-- 
-## 55. JS Tutorial Pt6 - Properties -->
+
+## 55. JS Tutorial Pt6 - Property Getters & Setters
+### Day 55: March 22, 2018 - Thursday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** Today we cover getters and setters in JavaScript. This allows us to control how we update private properties and control what is returned upon request. It provides encapsulation which is one of the four pillars of object-oriented design.
+
+Here is an example in code.
+
+```js
+function Employee(name, age) {
+    var _name = name;
+    var _age = age;
+
+    Object.defineProperty(this, 'age', {
+        get: function () {
+            return _age;
+        },
+        set: function (value) {
+            if (value > 100 || value < 1) {
+                alert("Invalid age");
+            } else {
+                _age = value;
+            }
+        }
+    });
+
+    Object.defineProperty(this, "name", {
+        get: function () {
+            return _name;
+        }
+    });
+}
+```
+
+You can read a more complete example which includes full code and explanation in my notes on this lesson: [Object Oriented JavaScript - Properties in JavaScript](OO-JavaScript.html#58-properties-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
 
 ## 54. JS Tutorial Pt5 - Private Members
 ### Day 54: March 21, 2018 - Wednesday
