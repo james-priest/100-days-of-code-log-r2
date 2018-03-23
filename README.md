@@ -33,6 +33,45 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 -->
 ---
+## 56. JS Tutorial Pt7 - Static Fields & Methods
+### Day 56: March 23, 2018 - Friday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson covers what a static member is and how to create one. It also discusses when to use this construct.
+
+A static member is a static field (variable) or static method (function). The term static means that there is only ever one copy created in memory for that field or method.
+
+```js
+function Shape(shapeName) {
+    // Instance field
+    this.ShapeName = shapeName;
+
+    // Static field
+    Shape.Count = ++Shape.Count || 1;
+
+    // Static method
+    Shape.ShowCount = function() {
+        return Shape.Count;
+    };
+}
+
+var shape1 = new Shape('Circle');
+var shape2 = new Shape('Rectangle');
+var shape3 = new Shape('triangle');
+
+document.write('Shape.Count = ' + Shape.ShowCount());  // Shape.Count = 3
+```
+
+Five instances of an object can be created from a constructor function but if that constructor defines a static member, only one copy of that member will be created in memory.
+
+Here are more complete examples: [Object Oriented JavaScript - Static Members in JavaScript](OO-JavaScript.html#59-static-members-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
 
 ## 55. JS Tutorial Pt6 - Property Getters & Setters
 ### Day 55: March 22, 2018 - Thursday
