@@ -34,6 +34,51 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 58. JS Tutorial Pt9 - Overriding JS functions
+### Day 58: March 25, 2018 - Sunday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson covers the process of overriding a function on the prototype object in cases where this behavior is desired.
+
+The lesson covers:
+
+- Creating an object constructor
+- Defining a member function on the prototype object.
+- Overriding that prototype member function with a new function definition
+
+```js
+function Employee(name) {
+    this.name = name;
+}
+
+Employee.prototype.getName = function () {
+    return this.name;
+}
+
+function GetEmployeeDetails() {
+    Employee.prototype.getName = function () {
+        return this.name.toUpperCase();
+    }
+
+    var e1 = new Employee("Mark");
+    var e2 = new Employee("Sara");
+
+    document.write("e1.name = " + e1.getName() + "<br/>");
+    document.write("e2.name = " + e2.getName() + "<br/>");
+}
+
+GetEmployeeDetails();
+```
+
+Here are the lesson notes: [Object Oriented JavaScript - Overriding JavaScript Functions](OO-JavaScript.html#61-overriding-javascript-functions).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
+
 ## 57. JS Tutorial Pt8 - The Prototype Object
 ### Day 57: March 24, 2018 - Saturday
 
