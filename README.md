@@ -33,6 +33,46 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 -->
 ---
+
+## 57. JS Tutorial Pt8 - The Prototype Object
+### Day 57: March 24, 2018 - Friday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson covers the prototype object and how to add methods you wish to make public to this object in order to limit memory consumption.
+
+The lesson covers:
+
+- Creating a privileged method for the function
+- Creating the function as a static method
+- Creating the function as a public method on the prototype object.
+
+```js
+function Employee(name) {
+    // public instance field
+    this.name = name;
+}
+
+// Public prototype method
+Employee.prototype.getName = function() {
+    return this.name;
+};
+
+var e1 = new Employee("Mark");
+var e2 = new Employee("Sara");
+
+document.write("e1.name = " + e1.getName() + "<br/>"); // Mark
+document.write("e2.name = " + e2.getName() + "<br/>"); // Sara
+```
+
+Here are the lesson notes: [Object Oriented JavaScript - Prototype in JavaScript](OO-JavaScript.html#60-prototype-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
+
 ## 56. JS Tutorial Pt7 - Static Fields & Methods
 ### Day 56: March 23, 2018 - Friday
 
