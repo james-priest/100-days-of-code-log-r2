@@ -6,7 +6,7 @@ description: Pragim Technologies JavaScript Tutorial (Lessons 53-65)
 # JavaScript Tutorial
 This [JavaScript Tutorial](https://www.youtube.com/playlist?list=PL6n9fhu94yhUA99nOsJkKXBqokT3MBK0b) series consists of 75 videos published by Pragim Technologies.
 
-It was published from Oct 2014 thru Oct 2015 and covers JavaScript ES5 in the context of ASP.NET. While JavaScript and it's coding conventions have evolved since this series was released, many of the concepts covered are still relevant and applicable today.
+It was published from Oct 2014 thru Oct 2015 and covers JavaScript ES5 in the context of ASP.NET. While JavaScript and it's coding conventions have evolved since this series was released, many of the concepts are still relevant and applicable today.
 
 The section of the series covered here, lessons 53-65, relates to using JavaScript in an object-oriented manner to replicate class-based inheritance. This is the style of JavaScript most commonly promoted by Microsoft for use in developing enterprise-based web application systems.
 
@@ -884,13 +884,14 @@ JavaScript built-in methods can also be overridden. The following example overri
 Output : Hello JavaScript
 ```
 
-<!--
 ## 62. Inheritance in JavaScript
 In this lesson we will discuss **Inheritance in JavaScript** with an example.
 
 Object oriented programming languages support inheritance. Since JavaScript is also an object oriented programming language, it supports inheritance.
 
-In object-oriented programming, languages like C# and Java implement inheritance when a *class* inherits from another *class*. In JavaScript, we don't have a traditional class inheritance model. Instead, **JavaScript inheritance is prototype-based**. This means to implement inheritance in JavaScript, an *object* inherits from another *object*. Let us understand this with an example.
+In object-oriented programming, languages like C# and Java implement inheritance when a *class* inherits from another *class*.
+
+In JavaScript, we don't have a traditional class inheritance model. Instead, **JavaScript inheritance is prototype-based**. This means that to implement inheritance in JavaScript, an *object* inherits from another *object*. Let us understand this with an example.
 
 ```html
 <script type="text/javascript">
@@ -993,4 +994,3 @@ Employee.annualSalary: false
 PermanentEmployee.name: false
 PermanentEmployee.annualSalary: true
 ```
--->
