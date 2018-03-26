@@ -35,7 +35,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ---
 
 ## 57. JS Tutorial Pt8 - The Prototype Object
-### Day 57: March 24, 2018 - Friday
+### Day 57: March 24, 2018 - Saturday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
