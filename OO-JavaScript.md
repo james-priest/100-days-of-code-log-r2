@@ -684,9 +684,9 @@ e1.name = Mark
 e2.name = Sara
 ```
 
-We don't want to be creating copies of functions, instead **we want all the objects to share the same function code**. This can be achieved using JavaScript prototype object.
+Another option is to create the function on a specific object instance.
 
-In this example, the `getName()` function is added just to the `e1` object, and not to `e2` object. So `e2.getName()` would throw an `undefined` error.
+In this example, the `getName()` function is added just to the `e1` object, and not to `e2` object. So if we try to invoke `getName()` from the `e2` instance, `e2.getName()` would throw an `undefined` error.
 
 ```js
 function Employee(name) {
@@ -705,7 +705,9 @@ document.write("e1.name = " + e1.getName() + "<br/>");
 document.write("e2.name = " + e2.getName() + "<br/>");
 ```
 
-In the following example `getName()` function is added to the Employee object using the name of the constructor function. **This would also result in `undefined` error.**
+The next option we could try is to create a static method by adding `getName()` directly to the `Employee` object. This would not work because a static method would not have access to individual instance data. (e.g. `this` would refer to the constructor function and not the object instance.)
+
+This example attempts adding `getName()` to the Employee object as a static method. **This results in `undefined` error.**
 
 ```js
 function Employee(name) {
@@ -723,7 +725,9 @@ document.write("e1.name = " + e1.getName() + "<br/>");
 document.write("e2.name = " + e2.getName() + "<br/>");
 ```
 
-### Using the prototype object to add functions
+### Use the prototype object to add functions
+When we use the prototype object to define functions we end up sharing the function code across instances. We also have access to the individual instance data through closure.
+
 The following are the advantages of using the prototype object to add functions.
 
 1. No matter how many objects you create, functions are loaded only once into memory
@@ -751,6 +755,7 @@ e1.name = Mark
 e2.name = Sara
 ```
 
+<!--
 ## 61. Overriding JavaScript Functions
 In this lesson we will discuss **how to override a JavaScript function**. This is continuation to Part 60. Please review Part 60 from JavaScript tutorial before proceeding.
 
@@ -988,3 +993,4 @@ Employee.annualSalary: false
 PermanentEmployee.name: false
 PermanentEmployee.annualSalary: true
 ```
+-->
