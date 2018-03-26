@@ -755,7 +755,6 @@ e1.name = Mark
 e2.name = Sara
 ```
 
-<!--
 ## 61. Overriding JavaScript Functions
 In this lesson we will discuss **how to override a JavaScript function**. This is continuation to Part 60. Please review Part 60 from JavaScript tutorial before proceeding.
 
@@ -885,6 +884,7 @@ JavaScript built-in methods can also be overridden. The following example overri
 Output : Hello JavaScript
 ```
 
+<!--
 ## 62. Inheritance in JavaScript
 In this lesson we will discuss **Inheritance in JavaScript** with an example.
 
