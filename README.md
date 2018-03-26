@@ -34,6 +34,49 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 59. JS Tutorial Pt10 - Inheritance in JavaScript
+### Day 59: March 26, 2018 - Monday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson covers the basics of object inheritance in ES5. We do this using a pattern that sets a derived object 's prototype to the base object. This allows the derived object access to the base object's prototype methods and properties.
+
+```js
+// Employee will be the base object (Similar to base class in C#)
+var Employee = function (name) {
+    this.name = name;
+};
+
+// getName() function is added to the base object (Employee)
+Employee.prototype.getName = function () {
+    return this.name;
+};
+
+// PermanentEmployee will be the derived object
+var PermanentEmployee = function (annualSalary) {
+    this.annualSalary = annualSalary;
+};
+
+// Use prototype to set Employee as the base object for PermanentEmployee
+PermanentEmployee.prototype = new Employee("Mark");
+
+var pe = new PermanentEmployee(50000);
+// Derived object (permanentEmployee) can see the
+// base object (Employee) getName() method
+document.write(pe.getName());
+
+alert(pe instanceof Employee);          // Returns true
+alert(pe instanceof PermanentEmployee); // Returns true
+```
+
+Here are the lesson notes: [Object Oriented JavaScript - Inheritance in JavaScript](OO-JavaScript.html#62-inheritance-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
+
 ## 58. JS Tutorial Pt9 - Overriding JS functions
 ### Day 58: March 25, 2018 - Sunday
 
