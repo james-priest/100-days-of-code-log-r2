@@ -33,16 +33,51 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 -->
 ---
-<!--
+
 ## 61. JS Tutorial Pt12 - Object Reflection
 ### Day 61: March 28, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
-**Progress:** This lesson covers 
+**Progress:** This lesson covers object reflection in JavaScript. In C# reflection allows us to inspect meta data of assemblies, modules, and types. In JavaScript it allows the examination of objects with regards to the object's properties, methods, and inheritance.
 
 ```js
+var Employee = function (firstName, lastName, gender, email) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.gender = gender;
+    this.email = email;
+}
 
+Employee.prototype.getFullName = function () {
+    return this.firstName + " " + this.lastName;
+}
+
+Employee.prototype.getEmail = function () {
+    return this.email;
+}
+
+Employee.prototype.getGender = function () {
+    return this.gender;
+}
+
+var employee1 = new Employee("Mark", "Matt", "Male", "a@a.com");
+
+for (var property in employee1) {
+    document.write(property + " : " + employee1[property] + "<br/>");
+}
+```
+
+**Output**
+
+```text
+firstName: Mark
+lastName: Matt
+gender: Male
+email: a@a.com
+getFullName: function () { return this.firstName + " " + this.lastName; }
+getEmail: function () { return this.email; }
+getGender: function () { return this.gender; }
 ```
 
 Here are the lesson notes:
@@ -54,7 +89,7 @@ Here are the lesson notes:
 - GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
 
 ---
--->
+
 ## 60. JS Tutorial Pt11 - Abstract Classes
 ### Day 60: March 27, 2018 - Tuesday
 
