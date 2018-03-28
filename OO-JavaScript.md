@@ -349,6 +349,8 @@ On any given HTML page you should be able to access both the versions of custome
 </html>
 ```
 
+**Live Sample:** [56-index.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/56-index.html)
+
 ## 57. Private members in JavaScript
 In any object oriented programming language, **classes can have private and public members**. For example a class in C# can have private and public fields and functions.
 
@@ -430,10 +432,12 @@ employee.privateGetFullName();      // Calling private method - Uncaught TypeErr
 employee.privateFullName;           // Calling private field - undefined error
 ```
 
+**Live Sample:** [57-member-calls.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/57-member-calls.html)
+
 **Can we modify a private field outside of the constructor function?**
 Straight answer, no you can't.
 
-In the example below, when we call the private field `employee.privateFullName`, it results in undefined error. On the next line we are adding a new public field with same name as the private field to the employee object. Is this going to change the private field (privateFullName). The answer is NO. You cannot access or modify private fields outside of the object. In this example, you are just adding new public field (employee.privateFullName) to the employee object.
+In the example below, when we call the private field `employee.privateFullName`, it results in `undefined` error. On the next line we are adding a new public field with same name as the private field to the employee object. Is this going to change the private field (privateFullName). The answer is NO. You cannot access or modify private fields outside of the object. In this example, you are just adding new public field (employee.privateFullName) to the employee object.
 
 ```js
 var employee = new Employee("Tom", "Grover");
@@ -517,9 +521,9 @@ public class Employee
 Since JavaScript is also an object oriented programming language, objects in JavaScript can also have properties.
 
 **Why do we need properties when we have public fields**
-Encapsulation is one of the pillars of object oriented programming language. Properties provide encapsulation. **If you use public fields you cannot control what is assigned and returned from that public field.**
+Encapsulation is one of the pillars of object oriented programming language. Properties provide encapsulation. If you use public fields you cannot control on what is assigned and returned from that public field.
 
-In the example below we have an Employee object with `age` public field. There is nothing stopping us from setting the age value of the employee object to 1000. Using properties you can control on what values can be assigned. You can also use properties to create just read-only or write-only properties.
+In the example below we have an employee object with age public field. There is nothing stopping us from setting the age value of the employee object to 1000. Using properties you can control on what values can be assigned. You can also use properties to create just read-only or write-only properties.
 
 ```js
 function Employee(age) {
@@ -565,6 +569,8 @@ employee.age = 195;         // Will alert an error - Invalid age
 
 document.write(employee.name + " " + employee.age); // "Tom 55"
 ```
+
+**Live Sample:** [58-properties.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/58-properties.html)
 
 ## 59. Static Members in JavaScript
 In an object oriented programming language, classes can have **static members**, that is **static methods** and **static fields**. For example a class in C# is shown below. In this example PI is a static field and _radius is an instance field.
@@ -615,6 +621,8 @@ var circleObject = new Circle(10);
 document.write('Area = ' + circleObject.CalculateArea());
 ```
 
+**Live Sample:** [59-static-field.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/59-static-field.html)
+
 ### Points to remember
 
 1. Define a static member using the name of the constructor function.
@@ -642,10 +650,12 @@ function Shape(shapeName) {
 
 var shape1 = new Shape('Circle');
 var shape2 = new Shape('Rectangle');
-var shape3 = new Shape('triangle');
+var shape3 = new Shape('Triangle');
 
 document.write('Shape.Count = ' + Shape.ShowCount());
 ```
+
+**Live Sample:** [59-static-method.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/59-static-method.html)
 
 Since we have created 3 shapes, the output will be 3.
 
@@ -664,8 +674,9 @@ There are several ways to add a function to the Employee object. One way is as s
 
 ```js
 function Employee(name) {
-    this.name = name; 
+    this.name = name;
 
+    // privileged method
     this.getName = function () {
         return this.name;
     }
@@ -684,9 +695,11 @@ e1.name = Mark
 e2.name = Sara
 ```
 
-Another option is to create the function on a specific object instance.
+**Live Sample:** [60-privileged-method.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/60-privileged-method.html)
 
-In this example, the `getName()` function is added just to the `e1` object, and not to `e2` object. So if we try to invoke `getName()` from the `e2` instance, `e2.getName()` would throw an `undefined` error.
+We don't want to be creating copies of functions, instead **we want all the objects to share the same function code**. This can be achieved using JavaScript prototype object.
+
+In this example, the `getName()` function is added just to the `e1` object, and not to `e2` object. So `e2.getName()` would throw an `undefined` error.
 
 ```js
 function Employee(name) {
@@ -695,6 +708,7 @@ function Employee(name) {
 
 var e1 = new Employee("Mark");
 
+// instance method
 e1.getName = function () {
     return this.name;
 }
@@ -705,15 +719,16 @@ document.write("e1.name = " + e1.getName() + "<br/>");
 document.write("e2.name = " + e2.getName() + "<br/>");
 ```
 
-The next option we could try is to create a static method by adding `getName()` directly to the `Employee` object. This would not work because a static method would not have access to individual instance data. (e.g. `this` would refer to the constructor function and not the object instance.)
+**Live Sample:** [60-instance-method.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/60-instance-method.html)
 
-This example attempts adding `getName()` to the Employee object as a static method. **This results in `undefined` error.**
+In the following example `getName()` function is added to the Employee object using the name of the constructor function. **This would also result in `undefined` error.**
 
 ```js
 function Employee(name) {
     this.name = name;
 }
 
+// static method
 Employee.getName = function () {
     return this.name;
 }
@@ -725,9 +740,9 @@ document.write("e1.name = " + e1.getName() + "<br/>");
 document.write("e2.name = " + e2.getName() + "<br/>");
 ```
 
-### Use the prototype object to add functions
-When we use the prototype object to define functions we end up sharing the function code across instances. We also have access to the individual instance data through closure.
+**Live Sample:** [60-static-method.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/60-static-method.html)
 
+### Using the prototype object to add functions
 The following are the advantages of using the prototype object to add functions.
 
 1. No matter how many objects you create, functions are loaded only once into memory
@@ -754,6 +769,8 @@ Output:
 e1.name = Mark
 e2.name = Sara
 ```
+
+**Live Sample:** [60-prototype-method.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/60-prototype-method.html)
 
 ## 61. Overriding JavaScript Functions
 In this lesson we will discuss **how to override a JavaScript function**. This is continuation to Part 60. Please review Part 60 from JavaScript tutorial before proceeding.
@@ -816,6 +833,8 @@ e1.name = MARK
 e2.name = SARA
 ```
 
+**Live Sample:** [61-override-function1.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/61-override-function1.html)
+
 In this example, all the JavaScript is in the same file. i.e
 
 1. The JavaScript that creates Employee constructor function and `getName()` function
@@ -862,6 +881,8 @@ The JavaScript that creates Employee constructor function and `getName()` functi
     </html>
     ```
 
+**Live Sample:** [61-override-function2.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/61-override-function2.html)
+
 Run the page and the output should be exactly the same as the previous example.
 
 JavaScript built-in methods can also be overridden. The following example overrides the built-in JavaScript `alert()` function.
@@ -883,6 +904,8 @@ JavaScript built-in methods can also be overridden. The following example overri
 ```text
 Output : Hello JavaScript
 ```
+
+**Live Sample:** [61-override-alert.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/61-override-alert.html)
 
 ## 62. Inheritance in JavaScript
 In this lesson we will discuss **Inheritance in JavaScript** with an example.
@@ -923,6 +946,8 @@ In JavaScript, we don't have a traditional class inheritance model. Instead, **J
 </script>
 ```
 
+**Live Sample:** [62-derived-object.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/62-derived-object.html)
+
 Notice that the derived object (PermanentEmployee) can see the base object (Employee) `getName()` method. When `getName()` method is called, JavaScript first tries to find this method in the derived object. If it can't find the method there, it goes up the chain to the parent object and finds it there.
 
 If you add a new method to the parent object, it becomes available in the derived object.
@@ -952,9 +977,11 @@ If you add a new method to the parent object, it becomes available in the derive
 
     var pe = new PermanentEmployee(50000);
     // Call getNameLength() method added to the parent object
-    document.write(pe.getNameLength()); // Output : 4 characters
+    document.write(pe.getNameLength()); // Output: 4 characters
 </script>
 ```
+
+**Live Sample:** [62-derived-object2.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/62-derived-object2.html)
 
 Use `hasOwnProperty()` method to determine if a property is defined on the actual object or it's prototype. Here is an example.
 
@@ -986,11 +1013,103 @@ Use `hasOwnProperty()` method to determine if a property is defined on the actua
 </script>
 ```
 
+**Output**
+
 ```text
-Output :
 Employee.name: true
 Employee.annualSalary: false
 
 PermanentEmployee.name: false
 PermanentEmployee.annualSalary: true
 ```
+
+**Live Sample:** [62-hasOwn.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/62-hasOwn.html)
+
+## 63. Abstract classes in JavaScript
+In this lesson we will discuss, **how to implement the concept of abstract classes in JavaScript**.
+
+Object oriented programming languages like C# and Java, support **abstract classes**. Abstract classes are incomplete in and of themselves. So, trying to create an instance of an abstract class raises a compiler error. Abstract classes can only be used as base classes.
+
+Let us first look at a simple C# example.
+
+1. Open visual studio and create a new empty asp.net web application project.
+
+2. Add a web form to the project. Name it WebForm1.aspx. Copy and past the following code in the code-behind file.
+
+```csharp
+using System;
+namespace Demo
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // Error: Cannot create an instance of an abstract class
+            // Shape s = new Shape();
+
+            Circle circle = new Circle();
+            circle.shapeName = "Circle";
+            Response.Write(circle.draw() + "<br/><br/>");
+
+            Response.Write(circle is Shape + "<br/>");  // Returns true
+            Response.Write(circle is Circle + "<br/>"); // Returns true
+        }
+    }
+
+    public abstract class Shape
+    {
+        public string shapeName = "None";
+        public string draw()
+        {
+            return "Drawing " + this.shapeName;
+        }
+    }
+
+    public class Circle : Shape
+    {
+        // Code specific to Circle class
+    }
+}
+```
+
+Since JavaScript is also an object oriented programming language, it also supports the concept of abstract classes. Here is an example.
+
+Add a new HTML page to the project. Name it HTMLPage1.htm. Copy and paste the following code in HTMLPage1.htm. 
+
+```html
+<script type="text/javascript">
+    // Create a Shape object which is abstract
+    var Shape = function () {
+        this.shapeName = "None";
+        throw new Error("Cannot create an instance of abstract class");
+    };
+
+    // Error : Cannot create an instance of abstract class
+    // var shape = new Shape();
+
+    // Add draw function to the Shape prototype
+    // Objects derived from Shape should be able to call draw() method
+    Shape.prototype.draw = function () {
+        return "Drawing " + this.shapeName;
+    };
+
+    // Create a Circle object
+    var Circle = function (shapeName) {
+        this.shapeName = shapeName;
+    };
+
+    // Make shape the parent for Circle
+    // Object.create() allows to create an object without using constructor
+    Circle.prototype = Object.create(Shape.prototype);
+
+    var circle = new Circle("Circle");
+    // Since Circle inherits from abstract Shape object, it can call draw() method
+    document.write(circle.draw());
+
+    alert(circle instanceof Circle); // Returns true
+    alert(circle instanceof Shape);  // Returns true
+</script>
+```
+
+**Live Sample:** [63-abstract-class.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/63-abstract-class.html)
+
