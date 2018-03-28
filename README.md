@@ -33,6 +33,74 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 -->
 ---
+<!--
+## 61. JS Tutorial Pt12 - Object Reflection
+### Day 61: March 28, 2018 - Wednesday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson covers 
+
+```js
+
+```
+
+Here are the lesson notes:
+
+- [Object Oriented JavaScript - Object Reflection in JavaScript](OO-JavaScript.html#64-object-reflection-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
+-->
+## 60. JS Tutorial Pt11 - Abstract Classes
+### Day 60: March 27, 2018 - Tuesday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson covers abstract classes which cannot be instantiated in an of themselves but rather, act as a base class from which create a sub-class from.
+
+```js
+// Create a Shape object which is abstract
+var Shape = function () {
+    this.shapeName = "None";
+    throw new Error("Cannot create an instance of abstract class");
+};
+
+// Add draw function to the Shape prototype
+// Objects derived from Shape should be able to call draw() method
+Shape.prototype.draw = function () {
+    return "Drawing " + this.shapeName;
+};
+
+// Create a Circle object
+var Circle = function (shapeName) {
+    this.shapeName = shapeName;
+};
+
+// Make shape the parent for Circle
+// Object.create() allows to create an object without using constructor
+Circle.prototype = Object.create(Shape.prototype);
+
+var circle = new Circle("Circle");
+// Since Circle inherits from abstract Shape object, it can call draw() method
+document.write(circle.draw());
+
+alert(circle instanceof Circle); // Returns true
+alert(circle instanceof Shape);  // Returns true
+```
+
+Here are the lesson notes:
+
+- [Object Oriented JavaScript - Abstract Classes in JavaScript](OO-JavaScript.html#63-abstract-classes-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
 
 ## 59. JS Tutorial Pt10 - Inheritance in JavaScript
 ### Day 59: March 26, 2018 - Monday
