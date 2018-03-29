@@ -23,7 +23,7 @@ Pragim Technologies publishes video tutorials on a broad range of Dot Net subjec
 
 ## 53. JavaScript and object oriented programming
 
-JavaScript is object oriented programming language. The following are the 4 pillars of any object oriented programming language. We will discuss examples of these in a later lesson.
+**JavaScript is object oriented programming language. The following are the 4 pillars of any object oriented programming language.** We will discuss examples of these in a later lesson.
 
 1. Inheritance
 1. Encapsulation
@@ -52,13 +52,11 @@ document.write(currentDate.getFullYear());
 ```html
 <script type="text/javascript">
     // Constructor function
-    function Employee(firstName, lastName)
-    {
+    function Employee(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
 
-        this.getFullName = function ()
-        {
+        this.getFullName = function () {
             return this.firstName + " " + this.lastName;
         }
     }
@@ -71,27 +69,29 @@ document.write(currentDate.getFullYear());
 </script>
 ```
 
+**Live Sample:** [53-constructor-function.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/53-constructor-function.html)
+
 ### Creating an object in JavaScript using literal notation
 
 ```html
 <script type="text/javascript">
     // Object literal notation
-    var employee =
-    {
+    var employee = {
         firstName: "Pragim",
         lastName: "Tech",
 
-        getFullName: function ()
-        {
+        getFullName: function () {
             return this.firstName + " " + this.lastName;
         }
-    }
+    };
 
     document.write("FirstName = " + employee.firstName + "<br/>");
     document.write("LastName = " + employee.lastName + "<br/>");
     document.write("FullName = " + employee.getFullName() + "<br/>");
 </script>
 ```
+
+**Live Sample:** [53-literal-notation.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/53-literal-notation.html)
 
 Both the examples above produce the same output
 
@@ -121,7 +121,7 @@ In this lesson we will discuss the main **difference between objects created usi
 ```js
 var employee = {
     name: "John"
-}
+};
 
 // Create a new variable and assign the employee object
 var newEmployee = employee;
@@ -134,26 +134,28 @@ newEmployee.name = "Mary";
 document.write(employee.name);
 ```
 
+**Live Sample:** [54-literal-notation.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/54-literal-notation.html)
+
 ```text
 Output: Mary
 ```
 
-**Objects created using object literals are singletons.** This means when a change is made to the object, it affects that object across the entire script.
+**Objects created using object literals are singletons.** This means when a change is made to the object, it effects that object across the entire script.
 
 ### Creating an object using constructor function
 
 ```js
-var emp = function () {
+var Emp = function () {
     this.name = "John";
-}
+};
 
 // Create an instance of employee
 // employee.name will return John
-var employee = new emp();
+var employee = new Emp();
 
 // Create an other instance of employee
 // newEmployee.name will return John
-var newEmployee = new emp();
+var newEmployee = new Emp();
 
 // Change the name property of the newEmployee object
 newEmployee.name = "Mary";
@@ -163,14 +165,22 @@ newEmployee.name = "Mary";
 document.write(employee.name);
 ```
 
-> Output : John
+**Live Sample:** [54-constructor-function.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/54-constructor-function.html)
 
-**Objects defined with a function constructor lets you have multiple instances of that object.** This means changes made to one instance, will not affect other instances.
+```text
+Output : John
+```
+
+**Objects defined with the `new` keyword are created with the function acting as constructor function. Constructors function lets you have multiple instances of that object.** This means changes made to one instance, will not affect other instances.
+
+If a function invocation is preceded with the **new** keyword, it is a constructor invocation.
+
+> Note: It's good practice to name constructor functions with an upper-case first letter. (e.g. `Emp`)
 
 ### When to use one over the other
 If you need **multiple instances** of the object **use constructor function** where as if you need just **one instance** of the object then **use literal notation**.
 
-## 55. Global namespace pollution
+## 55. Global namespace pollution in JavaScript
 
 In this lesson we will understand the **problem of global namespace pollution in JavaScript** with an example. When working with JavaScript on a big project, you might hear senior developers saying during the code review, this code pollutes the global scope.
 
@@ -181,12 +191,10 @@ Let us say we have 2 software development teams (**TeamA** & **TeamB**) working 
 **TeamA** has created a `customer` constructor function with 2 parameters (`firstName` & `lastName`) and added it to **TeamA.js** file
 
 ```js
-function customer(firstName, lastName)
-{
+function customer(firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
-    this.getFullName = function ()
-    {
+    this.getFullName = function () {
         return this.firstName + " " + this.lastName;
     }
 }
@@ -195,14 +203,12 @@ function customer(firstName, lastName)
 **TeamB** has also created a `customer` constructor function but with 3 parameters (`firstName`, `middleName` & `lastName`) and added it **TeamB.js** file.
 
 ```js
-function customer(firstName, middleName, lastName)
-{
+function customer(firstName, middleName, lastName) {
     this.firstName = firstName;
     this.middleName = middleName;
     this.lastName = lastName;
 
-    this.getFullName = function ()
-    {
+    this.getFullName = function () {
         return this.firstName + " " + this.middleName + " " + this.lastName;
     }
 }
@@ -220,9 +226,10 @@ So at the moment we have **2 customer constructor functions**. One version has 2
     </head>
     <body>
         <div id="resultDiv"></div>
+
         <script type="text/javascript">
-            document.getElementById("resultDiv").innerHTML =
-                        new customer("Tom", "Grover").getFullName();
+            var customer1 = new customer('Tom', 'Grover');
+            document.getElementById('resultDiv').innerHTML = customer1.getFullName();
         </script>
     </body>
 </html>
@@ -244,6 +251,30 @@ The reason, one of the `customer()` constructor function got overwritten is beca
 1. When **TeamA.js** script file is loaded, the `customer()` function in **TeamA.js** file is added to the global namespace.
 1. When **TeamB.js** script file is loaded, the `customer()` function in **TeamB.js** file is added to the global namespace. Since 2 functions with the same name cannot exist in the global namespace, the `customer()` function in **TeamB.js** overwrites the `customer()` function in **TeamA.js**. As a result we cannot use the `customer()` function in **TeamA.js** file.
 1. In JavaScript if you declare a variable or a function second time, it simply overwrites the one you created earlier. JavaScript does not raise any errors like C# or Java if you redefine a variable or a function.
+
+If we were to `console.log(this)` from the `customer()` function in TeamB.js as such.
+
+```js
+function customer(firstName, middleName, lastName) {
+    this.firstName = firstName;
+    this.middleName = middleName;
+    this.lastName = lastName;
+
+    this.getFullName = function () {
+        return this.firstName + " " + this.middleName + " " + this.lastName;
+    };
+
+    console.log(this);
+}
+```
+
+**Live Sample:** [55-collision.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/55-collision.html)
+
+It would produce this.
+
+```text
+customer {firstName: "Tom", middleName: "Grover", lastName: undefined, getFullName: f}
+```
 
 ### Summary
 Polluting global namespace causes name collision. This is especially true in large projects where you may be using several JavaScript libraries (both internally developed as well as third party libraries). That's why it is very important not to add everything to the global namespace. If someone else use the same variable or function names it can lead to name collision.
@@ -282,7 +313,8 @@ PragimTech.TeamA.customer = function (firstName, lastName) {
         return this.firstName + " " + this.lastName;
     };
 
-    return this;
+    console.log(this);
+    // {customer: f, firstName: "Tom", lastName: "Grover", getFullName: f}
 };
 ```
 
@@ -313,7 +345,8 @@ PragimTech.TeamB.customer = function (firstName, middleName, lastName) {
         return this.firstName + " " + this.middleName + " " + this.lastName;
     };
 
-    return this;
+    console.log(this);
+    // {customer: f, firstName: "Tom", middleName: "T", lastName: "Grover", getFullName: f}
 };
 ```
 
@@ -339,8 +372,8 @@ On any given HTML page you should be able to access both the versions of custome
     </head>
     <body>
         <script type="text/javascript">
-            var cust1 = PragimTech.TeamA.customer("Tom", "Grover");
-            var cust2 = PragimTech.TeamB.customer("Tom", "T", "Grover");
+            var cust1 = new PragimTech.TeamA.customer("Tom", "Grover");
+            var cust2 = new PragimTech.TeamB.customer("Tom", "T", "Grover");
 
             document.writeln(cust1.getFullName() + '<br>');
             document.writeln(cust2.getFullName());
@@ -349,7 +382,7 @@ On any given HTML page you should be able to access both the versions of custome
 </html>
 ```
 
-**Live Sample:** [56-index.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/56-index.html)
+**Live Sample:** [56-namespaces.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/56-namespaces.html)
 
 ## 57. Private members in JavaScript
 In any object oriented programming language, **classes can have private and public members**. For example a class in C# can have private and public fields and functions.
@@ -1344,3 +1377,114 @@ getGender : function () { return this.gender; }
 ```
 
 **Live Sample:** [64-object-reflection7.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/64-object-reflection7.html)
+
+## 65. Polymorphism in JavaScript
+In this lesson we will discuss, **how to implement polymorphism in JavaScript** with an example.
+
+Object oriented programming languages like C# and Java, support polymorphism. Here is a C# example.
+
+```csharp
+public partial class WebForm1 : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Shape[] shapes = new Shape[]
+        {
+            new Shape(), new Circle(), new Square(), new Triangle()
+        };
+
+        foreach (Shape shape in shapes)
+        {
+            Response.Write(shape.draw() + "<br/>");
+        }
+    }
+}
+
+public class Shape
+{
+    public virtual string draw()
+    {
+        return "I am a generic shape";
+    }
+}
+
+public class Circle : Shape
+{
+    public override string draw()
+    {
+        return "I am a circle";
+    }
+}
+
+public class Square : Shape
+{
+    public override string draw()
+    {
+        return "I am a square";
+    }
+}
+
+public class Triangle : Shape
+{ }
+```
+
+**Output**
+
+```text
+I am a generic shape
+I am a circle
+I am a square
+I am a generic shape 
+```
+
+Since JavaScript is also an object oriented programming language, it also supports the concept of polymorphism. Here is an example.
+
+```html
+<script type="text/javascript">
+    // Shape object is be the base object
+    var Shape = function () { };
+
+    // Add draw function to the Shape prototype
+    // Objects derived from Shape will be able to override the draw() method
+    Shape.prototype.draw = function () {
+        return "I am a generic shape";
+    };
+
+    // Create a Circle object
+    var Circle = function () { }
+
+    // Make shape the parent for Circle
+    Circle.prototype = Object.create(Shape.prototype);
+
+    // Circle object overrides draw() method
+    Circle.prototype.draw = function () {
+        return "I am a circle";
+    };
+
+    var Square = function () { };
+    Square.prototype = Object.create(Shape.prototype);
+    Square.prototype.draw = function () {
+        return "I am a square";
+    };
+
+    var Triangle = function () { };
+    Triangle.prototype = Object.create(Shape.prototype);
+
+    var shapes = [new Shape(), new Circle(), new Square(), new Triangle()];
+
+    shapes.forEach(function (shape) {
+        document.write(shape.draw() + "<br/>");
+    });
+</script>
+```
+
+**Live Sample:** [65-polymorphism.html](https://james-priest.github.io/code-exercises/javascript_exercises/javascript-csharp/public/65-polymorphism.html)
+
+**Output**
+
+```text
+I am a generic shape
+I am a circle
+I am a square
+I am a generic shape
+```
