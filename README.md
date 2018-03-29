@@ -34,6 +34,68 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 62. JS Tutorial Pt13 - Polymorphism
+### Day 62: March 29, 2018 - Thursday
+
+**Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
+
+**Progress:** This lesson covers polymorphism in JavaScript. It starts with an example of polymorphism in C# and shows how to accomplish the same task with JavaScript.
+
+```js
+ // Shape object is be the base object
+var Shape = function () { };
+
+// Add draw function to the Shape prototype
+// Objects derived from Shape will be able to override the draw() method
+Shape.prototype.draw = function () {
+    return "I am a generic shape";
+};
+
+// Create a Circle object
+var Circle = function () { }
+
+// Make shape the parent for Circle
+Circle.prototype = Object.create(Shape.prototype);
+
+// Circle object overrides draw() method
+Circle.prototype.draw = function () {
+    return "I am a circle";
+};
+var Square = function () { };
+Square.prototype = Object.create(Shape.prototype);
+Square.prototype.draw = function () {
+    return "I am a square";
+};
+
+var Triangle = function () { };
+Triangle.prototype = Object.create(Shape.prototype);
+
+var shapes = [new Shape(), new Circle(), new Square(), new Triangle()];
+
+shapes.forEach(function (shape) {
+    document.write(shape.draw() + "<br/>");
+});
+```
+
+**Output**
+
+```text
+I am a generic shape
+I am a circle
+I am a square
+I am a generic shape
+```
+
+Here are the lesson notes:
+
+- [Object Oriented JavaScript - Polymorphism in JavaScript](OO-JavaScript.html#65-polymorphism-in-javascript).
+
+**Links:**
+- Course Notes - [Object Oriented JavaScript](OO-JavaScript.html)
+- GitHub Repo - [OO JavaScript GitHub Repo](https://github.com/james-priest/code-exercises/tree/master/javascript_exercises/javascript-csharp)
+
+---
+
 ## 61. JS Tutorial Pt12 - Object Reflection
 ### Day 61: March 28, 2018 - Wednesday
 
