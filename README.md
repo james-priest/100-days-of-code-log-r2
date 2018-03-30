@@ -31,7 +31,32 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Link to Work:**
 
+It also touches on some other storage initiatives that were brought about with the introduction of HTML5.
 -->
+---
+
+## 63. Web Storage Pt1 - Cookies
+### Day 63: March 30, 2018 - Friday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![15-1](assets/images/sm_chap15-1.jpg)](assets/images/full-size/chap15-1.png)
+
+**Progress:** This chapter covers Web Storage (`localStorage` & `sessionStorage`) along with a basic overview of cookies, their use, and their limitations.
+
+This lesson detailed the following.
+
+- Introduction to Web Storage
+- Understanding the use of cookies
+- How to set and retrieve cookie values.
+
+The live sample can be viewed here: [a-cookie-original.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html)
+
+**Links:**
+- Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
+- Cookie sample - [Get/Set browser cookie (a-cookie-original.html)](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
+
 ---
 
 ## 62. JS Tutorial Pt13 - Polymorphism
