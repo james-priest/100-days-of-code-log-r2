@@ -59,15 +59,24 @@ window.onload = function() {
 
 **Live sample:** <a href="https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html" target="_blank">ch15-WebStorage/a-cookie-original.html</a>
 
-<!--
 ## 3. Structuring code with Namespace patterns
 
-While the code above illustrates how to set and retrieve cookie values at a basic level, it's not the best example of how to properly structure code.
+While the code above illustrates how to set and retrieve cookie values, it's not the best example of how to properly structure your code.
 
-It might be out of place here, but I decided to show four additional methods of structuring this code using four of Addy Osmani's [Essential JavaScript Namespacing Patterns](https://addyosmani.com/blog/essential-js-namespacing/#beginners).
+That said, this is a good place to show some additional ways of structuring code using four of Addy Osmani's [Essential JavaScript Namespacing Patterns](https://addyosmani.com/blog/essential-js-namespacing/#beginners).
+
+The namespace patterns we'll cover are:
+
+1. Single global variable
+2. Object literal notation
+3. Nested namespace pattern
+4. Immediately Invoked Function Expression (IIFE)
+
+### Namespace patterns
 
 1. **Functions in global namespace** - This is the code from above. It pollutes the global namespace and is prone to code collision. It is not one of the four examples but is included here for comparison.
     ```js
+    // pattern
     var someValue = '';
     var anotherValue = '';
     thisFunction(/*...*/) { /*...*/ }
@@ -78,7 +87,6 @@ It might be out of place here, but I decided to show four additional methods of 
     function setCookie(/*...*/) {
         /*...*/
     }
-
     function getCookie(/*...*/) {
         /*...*/
     }
@@ -87,8 +95,10 @@ It might be out of place here, but I decided to show four additional methods of 
     var firstName = getCookie('firstName');
     ```
     **Live sample:** <a href="https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html" target="_blank">ch15-WebStorage/a-cookie-original.html</a>
+
 2. **Single global variable** - This uses a single global variable and assigns to it an Immediately Invoked Function Expression (IIFE).
     ```js
+    // pattern
     var myApplication =  (function() {
         var myProp = '';
         var myFunc = function() {
@@ -120,8 +130,10 @@ It might be out of place here, but I decided to show four additional methods of 
     var firstName = cookieApp.getCookie('firstName1');
     ```
     **Live sample:** <a href="https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie1-global-var.html" target="_blank">ch15-WebStorage/a-cookie1-global-var.html</a>
+
 3. **Object literal notation** - This can be thought of as an object containing a collection of key/value pairs. Object literals have the advantage of not polluting the global namespace and helping organize code and parameters logically.
     ```js
+    // pattern
     var myApplication = {
         getInfo: function(){ /*...*/ },
 
@@ -151,8 +163,10 @@ It might be out of place here, but I decided to show four additional methods of 
     var firstName = cookieApp.getCookie('firstName2');
     ```
     **Live sample:** <a href="https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie2-literal-notation.html" target="_blank">ch15-WebStorage/a-cookie2-literal-notation.html</a>
+
 4. **Nested namespace pattern** - An extension of the object literal pattern is nested namespacing. It allows further segmentation and organization of code beyond a single level.
     ```js
+    // pattern
     var myApp =  myApp || {};
 
     /* perform a similar existence check when defining nested children */
@@ -178,8 +192,10 @@ It might be out of place here, but I decided to show four additional methods of 
     var firstName = myApp.cookie.getCookie('firstName3');
     ```
     **Live sample:** <a href="https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie3-nested-namespace.html" target="_blank">ch15-WebStorage/a-cookie3-nested-namespace.html</a>
+
 5. **Immediately Invoked Function Expression** - An IIFE is effectively an unnamed function which is immediately invoked after it's been defined.
     ```js
+    // pattern
     var namespace = namespace || {};
 
     /* here a namespace object is passed as a function parameter.
@@ -190,8 +206,6 @@ It might be out of place here, but I decided to show four additional methods of 
             return "bar";
         };
     })(namespace);
-
-    console.log(namespace);
     ```
 
     ```js
@@ -236,6 +250,7 @@ Cookies will continue to be an effective tool for the foreseeable future, but th
 - **Capacity limitations** Cookies are limited to about 4KB of data, which is not large, although you can create more than 30 cookies per site. (The actual maximum limit depends on the browser being used; the average is between 30 and 50.)
 - **Overhead** Every cookie is sent with each HTTP request/response made, regardless of whether the values are needed. This is often true even for requests for static content (such as images, css files, and js files), which can create heavier-than-necessary HTTP messages.
 
+<!--
 ## 6. Understanding HTML5 storage
 Existing solutions leave a lot to be desired; HTML5 breaks new group with several innovative tools. Each is unique and carries its own set of pros and cons, which will be discussed individually.
 
