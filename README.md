@@ -35,6 +35,51 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 64. Web Storage Pt2 - Namespace Patterns
+### Day 64: March 31, 2018 - Saturday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+```js
+// IIFE namespace pattern
+var namespace = namespace || {};
+
+/* here a namespace object is passed as a function parameter.
+ * this allows us to assign public methods and properties to it. */
+(function( o ){
+    o.foo = "foo";
+    o.bar = function(){
+        return "bar";
+    };
+})(namespace);
+```
+
+**Progress:** Much of my cert study material puts code right in the global namespace. This is done to keep proof-of-concept code simple and under control but it misses an opportunity to reinforce good coding practices.
+
+Today I took the time to re-write code to get and set cookies using four different namespace patterns from Addy Osmani's [Essential JavaScript Namespacing Patterns](https://addyosmani.com/blog/essential-js-namespacing/#beginners).
+
+The namespace patterns include:
+
+1. Single global variable
+2. Object literal notation
+3. Nested namespace pattern
+4. Immediately Invoked Function Expression (IIFE)
+
+The live sample can be viewed below.
+
+**Links:**
+- Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
+- Get/Set Browser Cookie samples
+    - Original code - [a-cookie-original.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html)
+    - Single global variable - [a-cookie1-global-var.html](ttps://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie1-global-var.html)
+    - Object literal notation - [a-cookie2-literal-notation.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie2-literal-notation.html)
+    - Nested namespace pattern - [a-cookie3-nested-namespace.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie3-nested-namespace.html)
+    - Immediately Invoked Function Expression (IIFE) - [a-cookie4-iife-wrapped.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie4-iife-wrapped.html)
+
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
+
+---
+
 ## 63. Web Storage Pt1 - Cookies
 ### Day 63: March 30, 2018 - Friday
 
