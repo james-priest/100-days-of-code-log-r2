@@ -71,7 +71,7 @@ The live sample can be viewed below.
 - Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
 - Get/Set Browser Cookie samples
     - Original code - [a-cookie-original.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html)
-    - Single global variable - [a-cookie1-global-var.html](ttps://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie1-global-var.html)
+    - Single global variable - [a-cookie1-global-var.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie1-global-var.html)
     - Object literal notation - [a-cookie2-literal-notation.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie2-literal-notation.html)
     - Nested namespace pattern - [a-cookie3-nested-namespace.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie3-nested-namespace.html)
     - Immediately Invoked Function Expression (IIFE) - [a-cookie4-iife-wrapped.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie4-iife-wrapped.html)
