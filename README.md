@@ -35,6 +35,31 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 65. Web Storage Pt3 - HTML5 Storage APIs
+### Day 65: April 1, 2018 - Sunday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![15-2](assets/images/sm_chap15-2.jpg)](assets/images/full-size/chap15-2.png)
+
+**Progress:** This discusses and breaks down the different HTML5 storage APIs and how they compare and contrast to old style cookies.
+
+This includes:
+
+1. Local Storage (Web Storage)
+2. Session Storage (Web Storage)
+3. IndexedDB
+4. Web SQL (`deprecated`)
+5. Filesystem API (`deprecated`)
+
+Read about HTML5 storage here: [Chapter 15 - Web Storage: Understanding HTML5 storage](CH15-WebStorage.html#6-understanding-html5-storage).
+
+**Links:**
+- Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
+
+---
+
 ## 64. Web Storage Pt2 - Namespace Patterns
 ### Day 64: March 31, 2018 - Saturday
 
@@ -65,16 +90,16 @@ The namespace patterns include:
 3. Nested namespace pattern
 4. Immediately Invoked Function Expression (IIFE)
 
-The live sample can be viewed below.
+The notes explaining how to use these four patterns are here: [Chapter 15 - Web Storage: Structuring code with Namespace patterns](CH15-WebStorage.html#3-structuring-code-with-namespace-patterns).
 
 **Links:**
 - Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
 - Get/Set Browser Cookie samples
-    - Original code - [a-cookie-original.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html)
-    - Single global variable - [a-cookie1-global-var.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie1-global-var.html)
-    - Object literal notation - [a-cookie2-literal-notation.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie2-literal-notation.html)
-    - Nested namespace pattern - [a-cookie3-nested-namespace.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie3-nested-namespace.html)
-    - Immediately Invoked Function Expression (IIFE) - [a-cookie4-iife-wrapped.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie4-iife-wrapped.html)
+  - Original code - [a-cookie-original.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html)
+  - Single global variable - [a-cookie1-global-var.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie1-global-var.html)
+  - Object literal notation - [a-cookie2-literal-notation.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie2-literal-notation.html)
+  - Nested namespace pattern - [a-cookie3-nested-namespace.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie3-nested-namespace.html)
+  - Immediately Invoked Function Expression (IIFE) - [a-cookie4-iife-wrapped.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie4-iife-wrapped.html)
 
 - GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
 
