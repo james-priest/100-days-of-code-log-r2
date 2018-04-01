@@ -250,13 +250,177 @@ Cookies will continue to be an effective tool for the foreseeable future, but th
 - **Capacity limitations** Cookies are limited to about 4KB of data, which is not large, although you can create more than 30 cookies per site. (The actual maximum limit depends on the browser being used; the average is between 30 and 50.)
 - **Overhead** Every cookie is sent with each HTTP request/response made, regardless of whether the values are needed. This is often true even for requests for static content (such as images, css files, and js files), which can create heavier-than-necessary HTTP messages.
 
-<!--
 ## 6. Understanding HTML5 storage
-Existing solutions leave a lot to be desired; HTML5 breaks new group with several innovative tools. Each is unique and carries its own set of pros and cons, which will be discussed individually.
+Older solutions such as plug-ins, flash player, or java applets left a lot to be desired; HTML5 broke new ground with several innovative tools. Each is unique and carries its own set of pros and cons.
 
 - **Web Storage** Easily the simplest new form of storage, web storage provides a way to store key/value pairs of data in a manner that rivals cookies in ease of use. It is currently the most widely supported option and consists of both `localStorage` and `sessionStorage`.
-- **Web SQL** `(deprecated)` For more complex applications, this was a good alternative to web storage. It provides the power of a full relational database, including support for SQL commands, transactions, and performance tuning. It is currently supported by Chrome and Safari. It is not supported by IE, Firefox or Edge.
-- **IndexedDB** This option is a non-relational (NoSQL) database. It provides simplicity that's similar to web storage while still accommodating common needs such as indexing and transactions.
-- **Filesystem API** `(deprecated)` This tool is useful for storing larger data types such as text files, images, and movies. However, it suffers from a lack of adoption. It is currently only supported by Chrome.
+- **Web SQL** `(deprecated)` For more complex applications, this was a good alternative to web storage. It provided the power of a full relational database, including support for SQL commands, transactions, and performance tuning. It's currently only supported by Chrome and Safari and does not work in IE, Firefox, or Edge.
+- **IndexedDB** This option is a non-relational (NoSQL) database. It provides a simplicity that is similar to web storage while still accommodating common needs such as indexing and transactions. It has emerged as the clear winner with 95% browser coverage. It is promoted extensively by Google as part of their Progressive Web App (PWA) initiative and is used in tandem with Service Workers to provide a sophisticated *offline first* user experience.
+- **Filesystem API** `(deprecated)` This tool was useful for storing larger data types such as text files, images, and movies. However, it suffers from a lack of adoption. It is currently only supported by Chrome.
 
--->
+## 7. Security considerations
+Although the four storage types have many differences, they also have some striking similarities beyond all being vehicles for storing data on the client's machine.
+
+One property they all have in common is that the data being stored is tied to the URL (or, more specifically, the origin), which ensures that data can't be accessed by other sites. Therefore, the same **host**, **port**, and **protocol** must be provided before a webpage can access data written by another page.
+
+So, consider the following if data storage was created using this URL: **http://www.example.com/area1/page1.html**.
+
+- **http://www.otherexample.com/area1/page1.html** - No, different domain
+- **http://store.example.com/area1/page1.html** - No, different host
+- **http://example.com/area1/page1.html** - No, different host
+- **https://www.example.com/area1/page1.html** - No, different protocol
+- **http://www.example.com:8080/area1/page1.html** - No, different ports
+- **http://www.example.com/area1/page2.html** - Yes
+- **http://www.example.com/area2/page1.html** - Yes
+
+The strict association to the origin is an important consideration when developing sites that may be hosted on a shared domain. Keep in mind that if you are hosting on a shared domain, any of the sub-sites within the domain would also be able to access your data.
+
+## 8. Browser support
+Many HTML5 features have different levels of implementation and compatibility by the different browser manufacturers. This is especially true when working with different storage options. **Coverage** refers to the  percentage of browsers in use worldwide that support this feature as of April 1, 2018, according to statistics provided by [https://caniuse.com](https://caniuse.com).
+
+- **Web Storage**
+  - **Supported** - IE, Edge, Firefox, Chrome, Safari, iOS Safari, Chrome for Android, UC Browser Android, Samsung
+  - **Not supported** - Opera Mini
+  - **Coverage** - 96%
+- **Web SQL** `(deprecated) support may be dropped`
+  - **Supported** - Chrome, Safari, iOS Safari, Chrome for Android, UC Browser Android, Samsung
+  - **Not supported** - IE, Edge, Firefox, Opera Mini
+  - **Coverage** - 85%
+- **IndexedDB**
+  - **Supported** - IE, Edge, Firefox, Chrome, Safari, iOS Safari, Chrome for Android, UC Browser Android, Samsung
+  - **Not supported** - Opera Mini
+  - **Coverage** - 95%
+- **FileSystem API** `(deprecated) support may be dropped`
+  - **Supported** - Chrome, Chrome for Android, Samsung
+  - **Not Supported** - IE, Edge, Firefox, Safari, iOS Safari, Opera Mini, UC Browser Android
+  - **Coverage** - 62%
+
+This chapter examines two types of web storage: **localStorage** and **sessionStorage**.
+
+## 9. Exploring localStorage
+The `localStorage` global variable is a Storage object. One of the greatest strengths of `localStorage` is its simple API for reading and writing key/value pairs of strings. Because it's essentially a NoSQL store, it's easy to use by nature.
+
+### localStorage object reference
+The following is a list of methods and attributes available on the Storage object as it pertains to `localStorage`.
+
+- **setItem(key, value)** Method that stores a value by using the associated key. The following is an example of how you can store the value of a text box in `localStorage`. The syntax for setting a value is the same for a new key as for overwriting an existing value.
+
+  ```js
+  localStorage.setItem('firstName', $('#firstName').val());
+
+  // Since it's treated like many other JavaScript dictionaries,
+  // you could also set values using other common syntaxes.
+
+  localStorage['firstName'] = $('#firstName').val();
+  // or
+  localStorage.firstName = $('#firstName').val();
+  ```
+
+- **getItem(key)** Method of retrieving a value by using the associated key. The following example retrieves the value for the `firstName` key. If an entry with the specified key does not exist, `null` will be returned.
+
+  ```js
+  var firstName = localStorage.getItem('firstName');
+
+  // And like setItem, you also have the ability to use other
+  // syntaxes to retrieve values from the dictionary
+
+  var firstName = localStorage['firstName'];
+  // or
+  var firstName = localStorage.firstName;
+  ```
+
+- **removeItem(key)** Method to remove a value from `localStorage` by using the associated key. The following example removes the entry with the given key. However, it does nothing if the key is not present in the collection.
+
+  ```js
+  localStorage.removeItem('firstName');
+  ```
+
+- **clear()** Method to remove all items from storage. If no entries are present, it does nothing.  The following is an example of clearing the `localStorage` object.
+
+  ```js
+  localStorage.clear();
+  ```
+
+- **length** Property that gets the number of entries currently being stored. The following example demonstrates the use of the length property.
+
+  ```js
+  var itemcount = localStorage.length;
+  ```
+
+- **key(index)** Method that finds a key at a given index. The World Wide Web Consortium (W3C) indicates that if an attempt is made to access a key by using an index that is out of the range of the collection, `null` should be returned. However, some browsers will throw an exception if an out-of-range index is used, so it's recommended to check the length before indexing keys.
+
+  ```js
+  var key = localStorage.key(1);
+  ```
+
+### High browser support
+Another benefit of `localStorage`, as seen in the previous section, is that `localStorage`, in addition to `sessionStorage`, and `IndexedDB` is well supported in all browsers. This is the case for both desktop and mobile browsers across various platforms.
+
+### Feature detection
+Although most browsers support web storage, it's still a good idea to verify that it's available in case the user is running an older browser version. If it's not available, you could experience a null reference exception the first time an attempt is made to access `localStorage` or `sessionStorage`. There are several ways to check availability; the following is one example.
+
+```js
+function isWebStorageSupported() {
+    return 'localStorage' in window;
+}
+if 
+(isWebStorageSupported()) {
+    localStorage.setItem('firstName', $('#firstName').val());
+}
+```
+
+The popular JavaScript library Modernizr  comes with a method that could do this check for you.
+
+```js
+if (Modernizr.localstorage) {
+    localStorage.setItem('firstName', $('#firstName').val());
+}
+```
+
+### Amount of data that can be kept in web storage
+The `localStorage` object provides much more space than was unavailable with older tools. Modern browsers support a minimum of 5 MB of data, which is substantially more than is allowed through cookies (which is 4KB each).
+
+### Reaching the storage limit
+If the storage limit is reached, or if the user manually turns off storage capabilities, a `QuotaExceededError` exception is thrown. The following is an example of how you can use a try/catch block to keep your application from failing if that happens.
+
+```js
+try {
+    localStorage.setItem('firstName', $('#firstName').val());
+}
+catch(e) {
+    // degrade gracefully
+}
+```
+
+### Storing complex objects
+Currently, only string values can be stored in web storage, but sometimes you might need to store more interesting items such as arrays or JavaScript object. To accomplish this, you can take advantage of some of the available JSON utility methods.
+
+The following example creates a JSON object and uses the `stringify()` method to convert the value to a string that can then be placed in web storage.
+
+```js
+var person = { firstName: 'James', lastName: 'Priest' };
+localStorage.setItem('james', JSON.stringify(person));
+```
+
+You can then use the `parse()` method to deserialize a new instance of the object from the string representation that was stored in the previous example.
+
+```js
+var person = JSON.parse(localStorage.getItem('glenn'));
+```
+
+Don't forget that a potential drawback to cookies is that they are always included in web requests and responses, even if you don't use them. The situation when using web storage is the opposite; its values are never automatically passed to the server. You can do this yourself by including vales in an AJAX call or by using JavaScript to copy the values into posted form elements.
+
+## 10. Using short-term persistence with sessionStorage
+In the previous section, you learned how to use `localStorage`, which , like cookies, is designed to retain data across multiple sessions. However, if you want topurge stored information, you must use the `removeItem()` or `clear()` method.
+
+In addition to `localStorage`, you can use `sessionStorage`; it is also a Storage object, so the same methods and properties exist. The difference is that `sessionStorage` retains data for a single session only. After the user closes the browser window, records stored are automatically cleared. This is an important advantage because only a limited amount of space is available.
+
+At their core, both `localStorage` and `sessionStorage` are firmly dedicated to their respective browser context. Because that context for `localStorage` includes other tabs and windows within the same URL base, its data is shared among all open instances.
+
+In contrast, `sessionStorage` has a context that, by design, is extremely confined. It's limited to a single browser tab or window. Its data cannot be passed from one tab to the next. However, the data can be shared among any `<iframe>` elements that exist on the page.
+
+> ### Quick check
+> - What object type are `localStorage` and `sessionStorage`?
+>
+> ### Answer
+> - They are Storage objects.
