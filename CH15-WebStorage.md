@@ -424,3 +424,81 @@ In contrast, `sessionStorage` has a context that, by design, is extremely confin
 >
 > ### Answer
 > - They are Storage objects.
+
+## 11. Anticipating potential performance pitfalls
+Web storage doesn't come without a few drawbacks. This section covers some of the pitfalls of using `localStorage` and `sessionStorage`.
+
+### Synchronously reading and writing to the hard drive
+One of the biggest issues with the Storage object is that it operates synchronously, which can block the page from rendering while read/writes occur. The synchronous read/writes are even more costly because they are committed directly to the client's hard drive. By itself, that might not be a cause for concern, but the following activities can make these interactions annoyingly slow for the user.
+
+- Indexing services on the client machine
+- Scanning for viruses
+- Writing larger amounts of data
+
+Although the amount of time it usually takes to perform these actions is typically too small to notice, they could lock the browser from rendering while it's reading and writing values to the hard disk. With that in mind, it's a good idea to use web storage for very small amounts of data and use alternative methods for larger items.
+
+> #### **NOTE** Why not use Web Workers to read/write asynchronously?
+> Web storage is not available within web workers. If you need to write a value while in web workers, you must use the `postMessage()` method to notify the parent thread and allow it to perform the work instead.
+
+### Anticipating slow search capabilities
+Because web storage does not have indexing features, searching large data sets can be time consuming. This usually involves iterating over each item in the list to find items that match the search criteria.
+
+### No transaction support
+Another benefit of storage options that is missing from web storage is support for transactions. Although difficulties are unlikely in the majority of applications, applications using web storage can run into problems if a user is modifying the same value in `localStorage` within multiple open browser tabs. The result would be a race condition in which the second tab immediately overwrites the value inserted by the first tab.
+
+> ### Quick Check
+> - You would like to store the user's name after he authenticates on your site, but he will need to authenticate again on his next visit, at which time you would reload his information  (including name). Which storage mechanism should you use?
+>
+> ### Answer
+> - `sessionStorage`. Although you could use `localStorage` to store the user's name, it would be held permanently. Placing it in `sessionStorage` would purge it automatically after the window is closed.
+
+## 12. Google's storage recommendations
+Google makes some clear storage recommendations in these two articles:
+
+- [Web Storage Overview](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/)
+- [Offline Storage for Progressive Web Apps](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/offline-for-pwa).
+
+While these articles specifically target offline and progressive web apps (PWAs), the recommendations hold true for online caching and storage needs as well.
+
+Here are the highlights of these two articles...
+
+### Storage comparisons
+
+[![15-3](assets/images/sm_chap15-3.jpg)](assets/images/full-size/chap15-3.png)
+
+The two data points you should pay attention to in this chart are the Async APIs (which prevent blocking of the main thread) and highest browser support percentage.
+
+The chart can be used to choose APIs that are most widely supported across many browsers and which offer asynchronous call models. This will help maximize interoperability with the UI by not blocking UI interactions.
+
+These criteria lead naturally to the following technology choices:
+
+| Need | Solution | Why |
+| ---  | --- | --- |
+| App state | IndexedDB | App state & user-generated content should use IndexedDB. This enables users to work offline in more browsers than just those that support the Cache API. |
+| Offline Storage | Cache API | This API is available in any browser that supports Service Workers (The technology necessary for creating offline apps.) The Cache API is ideal for storing resources associated with a known URL. |
+| Global byte data | Cloud Storage | Provides global persistence and is good for file systems and other hierarchically organized blobs of data. |
+
+### Recommendations
+
+Let’s get right to the point with a general recommendation for storing data offline:
+
+- For the network resources necessary to load your app while offline, use the Cache API (part of service workers).
+- For all other data, use IndexedDB (with a promises wrapper).
+
+Here’s the rationale:
+
+Both APIs are asynchronous (IndexedDB is event based and the Cache API is Promise based). They also work with web workers, window, and service workers.
+
+IndexedDB is available everywhere. Service Workers (and the Cache API) are now available in Chrome, Firefox, Opera and are in development for Edge.
+
+Promise wrappers for IndexedDB hide some of the powerful but also complex machinery (e.g. transactions, schema versioning) that comes with the IndexedDB library. IndexedDB will support observers, which allow easy synchronization between tabs.
+
+For PWAs, you can cache static resources, composing your application shell (JS/CSS/HTML files) using the Cache API and fill in the offline page data from IndexedDB. Debugging support for IndexedDB is now available in Chrome (Application tab), Opera, Firefox (Storage Inspector) and Safari (see the Storage tab).
+
+### Limitations of other storage mechanisms
+
+- **Web Storage** (e.g LocalStorage and SessionStorage) is synchronous, has no Web Worker support and is size and type (strings only) limited
+- **Cookies** have their uses but are synchronous, lack web worker support and are also size-limited.
+- **Web SQL** does not have broad browser support and its use is not recommended.
+- The **File System API** is not supported on any browser besides Chrome.
+- The **File API** is being improved in the File and Directory Entries API and File API specs but neither is sufficiently mature or standardized to encourage widespread adoption yet.
