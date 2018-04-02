@@ -35,6 +35,33 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 66. Web Storage Pt4 - Google's Storage Recommendations
+### Day 66: April 2, 2018 - Monday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![15-3](assets/images/sm_chap15-3.jpg)](assets/images/full-size/chap15-3.png)
+
+**Progress:** This lesson starts by describing the performance pitfalls of some of these storage techniques including size limitations and synchronous only blocking operations.
+
+It then gets into Google's recommendation for specific storage methods based on browser adoption and performance considerations. These are IndexedDB & Cache API used in Service Workers.
+
+It describes the inherent limitations of other storage methods.
+
+- **Web Storage** (e.g LocalStorage and SessionStorage) is synchronous, has no Web Worker support and is size and type (strings only) limited
+- **Cookies** have their uses but are synchronous, lack web worker support and are also size-limited.
+- **Web SQL** does not have broad browser support and its use is not recommended.
+- The **File System API** is not supported on any browser besides Chrome.
+- The **File API** is being improved in the File and Directory Entries API and File API specs but neither is sufficiently mature or standardized to encourage widespread adoption yet.
+
+Read about HTML5 storage here: [Chapter 15 - Web Storage: Anticipating potential performance pitfalls](CH15-WebStorage.html#11-anticipating-potential-performance-pitfalls).
+
+**Links:**
+- Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
+
+---
+
 ## 65. Web Storage Pt3 - HTML5 Storage APIs
 ### Day 65: April 1, 2018 - Sunday
 
