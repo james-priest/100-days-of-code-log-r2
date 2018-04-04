@@ -35,6 +35,29 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 67. Web Storage Pt5 - Sample Code
+### Day 67: April 3, 2018 - Tuesday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![15-4](assets/images/sm_chap15-4.jpg)](assets/images/full-size/chap15-4.png)
+
+**Progress:** This lesson summarizes the key take-aways regarding local and session storage, collectively known as web storage.
+
+I also created some sample code to test various methods regarding local and session storage.
+
+[![15-6](assets/images/sm_chap15-6.jpg)](assets/images/full-size/chap15-6.png)
+Code Samples - [Cookies, Local Storage, & Session Storage](https://james-priest.github.io/node_samples/ch15-WebStorage/b-index.html)
+
+Read about HTML5 storage here: [Chapter 15 - Web Storage: Lesson summary](CH15-WebStorage.html#13-lesson-summary).
+
+**Links:**
+- Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
+- Code Samples - [Cookies, Local Storage, & Session Storage](https://james-priest.github.io/node_samples/ch15-WebStorage/b-index.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
+
+---
+
 ## 66. Web Storage Pt4 - Google's Storage Recommendations
 ### Day 66: April 2, 2018 - Monday
 
@@ -42,9 +65,9 @@ It also touches on some other storage initiatives that were brought about with t
 
 [![15-3](assets/images/sm_chap15-3.jpg)](assets/images/full-size/chap15-3.png)
 
-**Progress:** This lesson starts by describing the performance pitfalls of some of these storage techniques including size limitations and synchronous only blocking operations.
+**Progress:** This lesson starts by describing the performance pitfalls of some of these storage techniques including size limitations and synchronous-only blocking operations.
 
-It then gets into Google's recommendation for specific storage methods based on browser adoption and performance considerations. These are IndexedDB & Cache API used in Service Workers.
+It then gets into Google's recommendation for specific storage methods based on browser adoption and performance considerations. These are IndexedDB & Cache API which are used extensively with Service Workers to provide good *offline first* user experience.
 
 It describes the inherent limitations of other storage methods.
 
@@ -58,6 +81,7 @@ Read about HTML5 storage here: [Chapter 15 - Web Storage: Anticipating potential
 
 **Links:**
 - Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
+- Cookie namespace patterns - [Code Samples](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-index.html)
 - GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
 
 ---
@@ -83,6 +107,7 @@ Read about HTML5 storage here: [Chapter 15 - Web Storage: Understanding HTML5 st
 
 **Links:**
 - Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
+- Cookie namespace patterns - [Code Samples](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-index.html)
 - GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
 
 ---
@@ -121,12 +146,12 @@ The notes explaining how to use these four patterns are here: [Chapter 15 - Web 
 
 **Links:**
 - Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
-- Get/Set Browser Cookie samples
-  - Original code - [a-cookie-original.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-original.html)
-  - Single global variable - [a-cookie1-global-var.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie1-global-var.html)
-  - Object literal notation - [a-cookie2-literal-notation.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie2-literal-notation.html)
-  - Nested namespace pattern - [a-cookie3-nested-namespace.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie3-nested-namespace.html)
-  - Immediately Invoked Function Expression (IIFE) - [a-cookie4-iife-wrapped.html](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie4-iife-wrapped.html)
+- Cookie namespace patterns - [Code Samples](https://james-priest.github.io/node_samples/ch15-WebStorage/a-cookie-index.html)
+  - Original code
+  - Single global variable
+  - Object literal notation
+  - Nested namespace pattern
+  - Immediately Invoked Function Expression (IIFE)
 
 - GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
 
