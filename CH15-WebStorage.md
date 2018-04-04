@@ -19,7 +19,7 @@ This chapter begins with an overview of the two storage mechanisms (`localStorag
 
 # Lesson 1
 ## 1. Introducing web storage
-Most web applications rely on some method of data storage, which usually involves a server-side solution such as a SQL Server database. However, in many scenarios, that might be excessive, and the ability to store simple, non-sensitive data in you browser would easily meet you needs.
+Most web applications rely on some method of data storage, which usually involves a server-side solution such as a SQL Server database. However, in many scenarios, that might be excessive, and the ability to store simple, non-sensitive data in your browser would easily meet your needs.
 
 > ### After this lesson, you'll be able to
 > - Understand web storage.
@@ -254,8 +254,8 @@ Cookies will continue to be an effective tool for the foreseeable future, but th
 Older solutions such as plug-ins, flash player, or java applets left a lot to be desired; HTML5 broke new ground with several innovative tools. Each is unique and carries its own set of pros and cons.
 
 - **Web Storage** Easily the simplest new form of storage, web storage provides a way to store key/value pairs of data in a manner that rivals cookies in ease of use. It is currently the most widely supported option and consists of both `localStorage` and `sessionStorage`.
-- **Web SQL** `(deprecated)` For more complex applications, this was a good alternative to web storage. It provided the power of a full relational database, including support for SQL commands, transactions, and performance tuning. It's currently only supported by Chrome and Safari and does not work in IE, Firefox, or Edge.
 - **IndexedDB** This option is a non-relational (NoSQL) database. It provides a simplicity that is similar to web storage while still accommodating common needs such as indexing and transactions. It has emerged as the clear winner with 95% browser coverage. It is promoted extensively by Google as part of their Progressive Web App (PWA) initiative and is used in tandem with Service Workers to provide a sophisticated *offline first* user experience.
+- **Web SQL** `(deprecated)` For more complex applications, this was a good alternative to web storage. It provided the power of a full relational database, including support for SQL commands, transactions, and performance tuning. It's currently only supported by Chrome and Safari and does not work in IE, Firefox, or Edge.
 - **Filesystem API** `(deprecated)` This tool was useful for storing larger data types such as text files, images, and movies. However, it suffers from a lack of adoption. It is currently only supported by Chrome.
 
 ## 7. Security considerations
@@ -282,14 +282,14 @@ Many HTML5 features have different levels of implementation and compatibility by
   - **Supported** - IE, Edge, Firefox, Chrome, Safari, iOS Safari, Chrome for Android, UC Browser Android, Samsung
   - **Not supported** - Opera Mini
   - **Coverage** - 96%
-- **Web SQL** `(deprecated) support may be dropped`
-  - **Supported** - Chrome, Safari, iOS Safari, Chrome for Android, UC Browser Android, Samsung
-  - **Not supported** - IE, Edge, Firefox, Opera Mini
-  - **Coverage** - 85%
 - **IndexedDB**
   - **Supported** - IE, Edge, Firefox, Chrome, Safari, iOS Safari, Chrome for Android, UC Browser Android, Samsung
   - **Not supported** - Opera Mini
   - **Coverage** - 95%
+- **Web SQL** `(deprecated) support may be dropped`
+  - **Supported** - Chrome, Safari, iOS Safari, Chrome for Android, UC Browser Android, Samsung
+  - **Not supported** - IE, Edge, Firefox, Opera Mini
+  - **Coverage** - 85%
 - **FileSystem API** `(deprecated) support may be dropped`
   - **Supported** - Chrome, Chrome for Android, Samsung
   - **Not Supported** - IE, Edge, Firefox, Safari, iOS Safari, Opera Mini, UC Browser Android
@@ -502,3 +502,55 @@ For PWAs, you can cache static resources, composing your application shell (JS/C
 - **Web SQL** does not have broad browser support and its use is not recommended.
 - The **File System API** is not supported on any browser besides Chrome.
 - The **File API** is being improved in the File and Directory Entries API and File API specs but neither is sufficiently mature or standardized to encourage widespread adoption yet.
+
+## 13. Lesson summary
+
+- Web storage provides you with an easy method for storing key/value pairs of data without relying on a server.
+- With nearly universal support across current desktop and mobil browsers, web storage is the most supported form of offline data storage.
+- Web storage comes in two forms, which have the same methods.
+  - **localStorage** Shares data across all windows and tabs within the same origin.
+  - **sessionStorage** Data is sandboxed to only the current tab or window and is cleared when closed.
+- Reads/writes to web storage can be performed only synchronously
+- Only storage for string values is currently supported within web storage, but storage for more complex objects can be achieved by using the `JSON.stringify()` and `JSON.parse()` utility methods.
+
+## 14. Lesson review
+
+1. Which of the following URLs can access data stored on *http://www.example.com/lesson1/page1.html*?
+    - [ ] *http://www2.example.com/lesson1/page1.html*
+    - [ ] *http://www.example.com:8081/lesson1/page1.html*
+    - [ ] *https://www.example.com/lesson1/page1.html*
+    - [x] *http://www.example.com/lesson2/page1.html*
+    - [ ] *http://example.com/lesson1/page1.html*
+2. What is the web storage currently recommended by the W3C?
+    - [ ] 4 KB
+    - [x] 5 MB
+    - [ ] 500 MB
+    - [ ] 10 MB
+3. What is the correct syntax for removing all values existing in `localStorage()`?
+    - [x] `localStorage.clear();`
+    - [ ] `localStorage.removeAll();`
+    - [ ] `localStorage.abandon();`
+    - [ ] `localStorage.reset()`
+4. Which of the following storage mechanisms has the highest level of crsos-browser support?
+    - [x] Web storage
+    - [ ] Web SQL
+    - [ ] IndexedDB
+    - [ ] FileSystem API
+5. Which of the following features does web storage support?
+    - [ ] Indexing
+    - [ ] Transactions
+    - [ ] Asynchronous read/write
+    - [x] Simple key/value pair storage
+
+<!--
+# Lesson 2
+## 15. Handling storage events
+One of the biggest challenges you'll face when working with web storage is keeping everything in sync when a user has multiple tabs or browser instances open at the same time.
+
+For example, browser tab one might have displayed a value it retrieved from `localStorage` just before that entry was updated in browser tab two. In this scenario, tab one doesn't know the value it displayed has just become stale.
+
+To solve this problem, web storage has a storage event that is raised whenever an entry is added, updated, or removed. You can subscribe to this event within you application to provide notification when something has changed and inform you of specific details about those changes. These events work in both `localStorage` and `sessionStorage`.
+
+> ### After this lesson, you'll be able to
+> - Understand the StorageEvent object.
+> - Implement event handling on the `localStorage` object.-->
