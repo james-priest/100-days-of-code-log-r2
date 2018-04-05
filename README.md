@@ -35,6 +35,25 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 68. Web Storage Pt5 - Sample Code
+### Day 68: April 4, 2018 - Wednesday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![15-7](assets/images/sm_chap15-7.jpg)](assets/images/full-size/chap15-7.png)
+Code Samples - [Storage Events](https://james-priest.github.io/node_samples/ch15-WebStorage/b-storageEvent1.html)
+
+**Progress:** This lesson covers the StorageEvent object and how to use it to effectively notify other tabs and windows of data changes to local or session storage.
+
+Read about HTML5 storage here: [Chapter 15 - Web Storage: Handling storage events](CH15-WebStorage.html#15-handling-storage-events).
+
+**Links:**
+- Course Notes - [Chapter 15 - Web Storage](CH15-WebStorage.html)
+- Code Samples - [Cookies, Local Storage, Session Storage, & Storage events](https://james-priest.github.io/node_samples/ch15-WebStorage/b-index.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch15-WebStorage)
+
+---
+
 ## 67. Web Storage Pt5 - Sample Code
 ### Day 67: April 3, 2018 - Tuesday
 
