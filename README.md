@@ -35,7 +35,7 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
-## 68. Web Storage Pt5 - Sample Code
+## 68. Web Storage Pt6 - Storage Events
 ### Day 68: April 4, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
