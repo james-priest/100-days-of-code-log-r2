@@ -300,7 +300,7 @@ This chapter examines two types of web storage: **localStorage** and **sessionSt
 ## 9. Exploring localStorage
 The `localStorage` global variable is a Storage object. One of the greatest strengths of `localStorage` is its simple API for reading and writing key/value pairs of strings. Because it's essentially a NoSQL store, it's easy to use by nature.
 
-### localStorage object reference
+## 9a. localStorage object reference
 The following is a list of methods and attributes available on the Storage object as it pertains to `localStorage`.
 
 - **setItem(key, value)** Method that stores a value by using the associated key. The following is an example of how you can store the value of a text box in `localStorage`. The syntax for setting a value is the same for a new key as for overwriting an existing value.
@@ -353,10 +353,10 @@ The following is a list of methods and attributes available on the Storage objec
   var key = localStorage.key(1);
   ```
 
-### High browser support
+## 9b. High browser support
 Another benefit of `localStorage`, as seen in the previous section, is that `localStorage`, in addition to `sessionStorage`, and `IndexedDB` is well supported in all browsers. This is the case for both desktop and mobile browsers across various platforms.
 
-### Feature detection
+## 9c. Feature detection
 Although most browsers support web storage, it's still a good idea to verify that it's available in case the user is running an older browser version. If it's not available, you could experience a null reference exception the first time an attempt is made to access `localStorage` or `sessionStorage`. There are several ways to check availability; the following is one example.
 
 ```js
@@ -377,10 +377,10 @@ if (Modernizr.localstorage) {
 }
 ```
 
-### Amount of data that can be kept in web storage
+## 9d. Amount of data that can be kept in web storage
 The `localStorage` object provides much more space than was unavailable with older tools. Modern browsers support a minimum of 5 MB of data, which is substantially more than is allowed through cookies (which is 4KB each).
 
-### Reaching the storage limit
+## 9e. Reaching the storage limit
 If the storage limit is reached, or if the user manually turns off storage capabilities, a `QuotaExceededError` exception is thrown. The following is an example of how you can use a try/catch block to keep your application from failing if that happens.
 
 ```js
@@ -392,7 +392,7 @@ catch(e) {
 }
 ```
 
-### Storing complex objects
+## 9f. Storing complex objects
 Currently, only string values can be stored in web storage, but sometimes you might need to store more interesting items such as arrays or JavaScript object. To accomplish this, you can take advantage of some of the available JSON utility methods.
 
 The following example creates a JSON object and uses the `stringify()` method to convert the value to a string that can then be placed in web storage.
@@ -428,7 +428,7 @@ In contrast, `sessionStorage` has a context that, by design, is extremely confin
 ## 11. Anticipating potential performance pitfalls
 Web storage doesn't come without a few drawbacks. This section covers some of the pitfalls of using `localStorage` and `sessionStorage`.
 
-### Synchronously reading and writing to the hard drive
+## 11a. Synchronous read & write to the hard drive
 One of the biggest issues with the Storage object is that it operates synchronously, which can block the page from rendering while read/writes occur. The synchronous read/writes are even more costly because they are committed directly to the client's hard drive. By itself, that might not be a cause for concern, but the following activities can make these interactions annoyingly slow for the user.
 
 - Indexing services on the client machine
@@ -440,10 +440,10 @@ Although the amount of time it usually takes to perform these actions is typical
 > #### **NOTE** Why not use Web Workers to read/write asynchronously?
 > Web storage is not available within web workers. If you need to write a value while in web workers, you must use the `postMessage()` method to notify the parent thread and allow it to perform the work instead.
 
-### Anticipating slow search capabilities
+## 11b. Anticipating slow search capabilities
 Because web storage does not have indexing features, searching large data sets can be time consuming. This usually involves iterating over each item in the list to find items that match the search criteria.
 
-### No transaction support
+## 11c. No transaction support
 Another benefit of storage options that is missing from web storage is support for transactions. Although difficulties are unlikely in the majority of applications, applications using web storage can run into problems if a user is modifying the same value in `localStorage` within multiple open browser tabs. The result would be a race condition in which the second tab immediately overwrites the value inserted by the first tab.
 
 > ### Quick Check
@@ -462,7 +462,7 @@ While these articles specifically target offline and progressive web apps (PWAs)
 
 Here are the highlights of these two articles...
 
-### Storage comparisons
+## 12a. Storage comparisons
 
 [![15-3](assets/images/sm_chap15-3.jpg)](assets/images/full-size/chap15-3.png)
 
@@ -478,7 +478,7 @@ These criteria lead naturally to the following technology choices:
 | Offline Storage | Cache API | This API is available in any browser that supports Service Workers (The technology necessary for creating offline apps.) The Cache API is ideal for storing resources associated with a known URL. |
 | Global byte data | Cloud Storage | Provides global persistence and is good for file systems and other hierarchically organized blobs of data. |
 
-### Recommendations
+## 12b. The bottom line
 
 Let’s get right to the point with a general recommendation for storing data offline:
 
@@ -495,7 +495,7 @@ Promise wrappers for IndexedDB hide some of the powerful but also complex machin
 
 For PWAs, you can cache static resources, composing your application shell (JS/CSS/HTML files) using the Cache API and fill in the offline page data from IndexedDB. Debugging support for IndexedDB is now available in Chrome (Application tab), Opera, Firefox (Storage Inspector) and Safari (see the Storage tab).
 
-### Limitations of other storage mechanisms
+## 12c. Limitations of other storage mechanisms
 
 - **Web Storage** (e.g LocalStorage and SessionStorage) is synchronous, has no Web Worker support and is size and type (strings only) limited
 - **Cookies** have their uses but are synchronous, lack web worker support and are also size-limited.
@@ -542,7 +542,6 @@ For PWAs, you can cache static resources, composing your application shell (JS/C
     - [ ] Asynchronous read/write
     - [x] Simple key/value pair storage
 
-<!--
 # Lesson 2
 ## 15. Handling storage events
 One of the biggest challenges you'll face when working with web storage is keeping everything in sync when a user has multiple tabs or browser instances open at the same time.
@@ -553,4 +552,78 @@ To solve this problem, web storage has a storage event that is raised whenever a
 
 > ### After this lesson, you'll be able to
 > - Understand the StorageEvent object.
-> - Implement event handling on the `localStorage` object.-->
+> - Implement event handling on the `localStorage` object.
+
+## 16. Sending notifications only to other windows
+The W3C recommends that events not be received in the tab (or window) that made the change when working with storage events. This makes sense because the intent is to allow other windows to respond when a storage value changes.
+
+However, some browsers (such as earlier versions of Internet Explorer) have implemented storage events in a way that allows the source window to receive the notification, too. It is only safe to rely on this implementation if your application will target those browsers specifically.
+
+## 17. StorageEvent object reference
+Subscribers to the storage event receive a StorageEvent object containing detailed information about what has changed. The following is a list of properties included on the StorageEvent object.
+
+- **key** Gets the key of the record that was added, updated, or removed; will be a `null` or empty if the event was triggered by the `clear()` method
+- **oldValue** Gets the initial value if the entry was updated or removed; will be a `null` or empty if a new item was added or the `clear()` method was invoked
+- **newValue** Gets the new value for new and updated entries; will be a `null` or empty if the event was triggered by either the `removeItem()` or `clear()` methods
+- **url** Gets the URL of the page on which the storage action was made
+- **storageArea** Gets a reference to either the window's `localStorage` or `sessionStorage` object, depending on which was changed
+
+Many browsers initially began supporting storage events without fully implementing the properties of the StorageEvent interface specification, so some older browsers might trigger storage events, but the properties outlined here might be `null` or empty.
+
+## 18. Bubbling & canceling events
+Unlike some other types of events, the storage event cannot be canceled from within a callback; it's simply a means for informing subscribers when a change occurs. It also does not bubble up like other events.
+
+## 19. Subscribing to events
+To begin listening for event notifications, add an event handler to the storage event as a follows.
+
+```js
+function respondToChange(e) {
+    console.log(e.newValue);
+}
+window.addEventListener('storage', respondToChange, false);
+```
+
+To trigger this event, perform an operation like the following in a new tab within the same site.
+
+```js
+localStorage.setItem('name', 'James');
+```
+
+### Binding to storage events using jQuery
+An alternative method to using `addEventListener()` for your subscriptions  is to use the event binding features jQuery provides. You have to update your `responsToChange()` method because it will now return a different event that actually wraps the raw event you were working with in the previous example.
+
+```js
+function respondToChange(e) {
+    console.log(e.originalEvent.newValue);
+}
+
+$(window).on('storage'), respondToChange);
+```
+
+## 20. Using events with sessionStorage
+In the previous lesson, you learned that browser context dictates when data can be shared. Because the context for `localStorage` includes other tabs and windows, notifications are passed to each open instance. However, `sessionStorage` gains little benefit from events because its context includes the active tab only. Current browsers have included `<iframe>` elements within that context definition, so it is possible to pass notifications to and from them if necessary.
+
+## 21. Lesson summary
+
+- Other tabs and windows can subscribe to storage events to receive notifications when a change occurs to `localStorage`
+- The StorageEvent object passed to subscribers contains detailed information regarding what changes were made.
+- Because `sessionStorage` data is not shared beyond the current tab or windows, others will not receive notifications when a change occurs.
+- Storage events cannot be cnaceled and do not bubble up.
+
+## 22 Lesson review
+
+1. Which of the following is not a property of the StorageEvent object?
+    - [ ] oldValue
+    - [ ] key
+    - [x] changeType
+    - [ ] storageArea
+2. If you modify a value stored in `sessionStorage`, which of the following could receive notifications of the change (if subscribed)?
+    - [ ] Another tab opened to a page on the same domain
+    - [ ] A second browser window open to the same page
+    - [x] An iframe on the same page whose source is within the same domain
+    - [ ] The operating system that is hosting the browser
+3. Which of the following is the correct way to cancel a storage event?
+    - [ ] event.returnValue = false;
+    - [ ] event.preventDefault();
+    - [ ] event.stopPropagation();
+    - [x] Storage events cannot be canceled after they are triggered.
