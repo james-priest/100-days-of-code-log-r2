@@ -35,6 +35,36 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 69. Offline - Web SQL Pt1
+### Day 69: April 5, 2018 - Thursday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![16-1](assets/images/sm_chap16-1.jpg)](assets/images/full-size/chap16-1.png)
+Code Samples - [Web SQL](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+
+**Progress:** This lesson served as an introduction to Web SQL. It is currently only supported by Safari and Chrome so it is best suited for:
+
+- Use in iOS apps (iPad or iPhone)
+- A data repository for Chrome extensions
+
+This first lesson consisted of learning how to:
+
+- Open or create a database and set the DB name, version, displayName, & size
+- Update the schema by creating a table along with incrementing the version number
+- Using transactions
+- Inserting records as part of a transaction
+- Using parameterized queries
+
+Read about Web SQL here: [Chapter 16 - Offline Web Applications: Lesson 1: Web SQL](CH16-Offline.html#lesson-1-web-sql).
+
+**Links:**
+- Course Notes - [Chapter 16 - Offline Web Applications: Lesson 1: Web SQL](CH16-Offline.html)
+- Code Samples - [Web SQL - Create a database, add a table, insert records](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch16-OfflineWeb)
+
+---
+
 ## 68. Web Storage Pt6 - Storage Events
 ### Day 68: April 4, 2018 - Wednesday
 
