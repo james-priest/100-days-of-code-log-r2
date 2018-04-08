@@ -35,7 +35,32 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
-## 69. Offline - Web SQL Pt1
+## 70. Offline - Web SQL Pt2 - Insert, Update, Delete
+### Day 70: April 6, 2018 - Friday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+[![16-2](assets/images/sm_chap16-2.jpg)](assets/images/full-size/chap16-2.png)
+**Live Sample** - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+
+**Progress:** Today was spent completing a proof-of-concept page that does the following.
+
+1. Creates and opens a Web SQL database
+2. Adds a table
+3. Inserts a record
+4. Updates a record
+5. Deletes a record
+
+Read about Web SQL here: [Chapter 16 - Offline Web Applications: Web SQL - Creating and opening the database](CH16-Offline.html#2-creating--opening-the-database).
+
+**Links:**
+- Course Notes - [Chapter 16 - Offline Web Applications: Lesson 1: Web SQL](CH16-Offline.html)
+- Code Samples - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch16-OfflineWeb)
+
+---
+
+## 69. Offline - Web SQL Pt1 - Open Database
 ### Day 69: April 5, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
