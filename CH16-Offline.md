@@ -67,7 +67,7 @@ As your application grows, your data requirements change. You might need to add 
   - **errorCallback** Optional; callback method is invoked if an error occurs while the transaction is being processed
   - **successCallback** Optional; callback method is invoked if all statements successfully execute within the transaction
 
-## 3a. Adding a table
+## 4. Adding a table
 You can add an `authors` table to the `Library` created earlier. You need a callback method that accepts a transaction object, which executes the `CREATE TABLE` script.
 
 The transaction object allows multiple actions within it, and it automatically rolls back all changes if any fail. For now, this example keeps the idea simple by adding just one table.
@@ -92,6 +92,8 @@ var db = openDatabase('Library', '1.0', 'My  library', 5 * 1024 * 1024);
 db.changeVersion('1.0', '2.0', migrateDB, onError, onSuccess);
 ```
 
+**Live Sample** - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+
 Later in the chapter, you can read the version property of the Database object to determine the schema version with which you are working.
 
 Note that version updates are applied asynchronously, so if the following line was placed immediately after the `db.changeVersion()` call in the preceding code, it would still display 1.0 because the `console.log()` method would fire before the migrations had a chance to complete.
@@ -107,7 +109,7 @@ Now that the migration has been applied, you have a new table in your database w
 - **lastName** Text field for storing a person's last name.
 - **dateCreated** Time stamp; when a record is first created, this column defaults to the current time with the help of the SQLite datetime method. Instead of using of using its default mode of GMT, you can indicate that it should use the local time zone.
 
-## 4. Using transactions
+## 5. Using transactions
 Now that you have a schema in place, you can use transactions to execute SQL statements. To do this, the Database object provides the following two methods.
 
 - **transaction** Starts a new transaction that executes SQL statements; allows both read and write command
@@ -127,7 +129,7 @@ The callback method will receive a transaction object that includes an `executeS
 
 In the next section, you see how you can use the transactions to execute some of the most commonly used SQL commands.
 
-## 4a. Inserting a new record
+## 6. Inserting a new record
 Now that you have a database and table in place, add a new record. Like creating a new table, do this by using the `executeSql` method on the transaction instance.
 
 ```js
@@ -167,3 +169,37 @@ db.transaction(function(t) {
         itemInserted);
 });
 ```
+
+**Live Sample** - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+
+## 7. Updating an existing record
+In the following example, the `lastName` of the author, which has an `id` of 1, is updated. Besides the SQL syntax differences, it's very similar to the code used for adding a new record.
+
+```js
+var db = openDatabase('Library', '2.0', 'My library', 5 * 1024 * 1024);
+var authorId = 1;
+var lastName = 'Smith';
+db.transaction(function(t) {
+    t.executeSql("UPDATE authors SET lastName = ? WHERE id = ?"
+        , [lastName, authorId]);
+});
+```
+
+**Live Sample** - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+
+## 8. Deleting a record
+Removing records is also fairly straightforward. The following example deletes the author record with an `id` of 1.
+
+```js
+var db = openDatabase('Library', '2.0', 'My library', 5 * 1024 * 1024);
+var authorId = 1;
+db.transaction(function(t) {
+    t.executeSql("DELETE FROM authors WHERE id = ?", [authorId]);
+});
+```
+
+**Live Sample** - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+
+<!-- 
+## 9. Reading values from the database
+Now that you know how to add data to the database, you can read and display those records back to the user. Create a simple -->
