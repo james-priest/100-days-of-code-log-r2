@@ -35,6 +35,46 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 72. Offline - Web SQL Pt4 - JOIN & Aggregate Functions
+### Day 72: April 8, 2018 - Sunday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+**Progress:** Today's lesson focused on executing table JOINS and creating aggregate functions with with GROUP BY.  These include `COUNT()`, `MIN()`, `MAX()`, AND `SUM()`.
+
+```js
+// JOIN syntax
+var db = openDatabase('Library', '1.0', 'My library', 5 * 1024 * 1024);
+var lastName = 'D%';
+db.transaction(function(t) {
+    t.executeSql("SELECT a.firstName, a.lastName, b.title " +
+        "FROM authors a " +
+        "INNER JOIN books b on a.id = b.authorId " +
+        "WHERE lastName LIKE ?"
+        , [lastName], displayResults);
+});
+```
+
+```js
+// GROUP BY syntax
+db.transaction(function(t) {
+    t.executeSql("SELECT a.firstName, a.lastName, COUNT(b.id) as numOfBooks " +
+        "FROM authors a " +
+        "INNER JOIN books b on a.id = b.authorId " +
+        "GROUP BY a.id"
+        , [], displayResults);
+});
+```
+
+Read here: [Chapter 16 - Offline Web Applications: Web SQL - Filtering Results](CH16-Offline1-WebSQL.html#11-using-join-commands).
+
+**Links:**
+- Course Notes - [Chapter 16 - Offline Web Applications](CH16-Offline.html)
+- Code Samples - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch16-OfflineWeb)
+
+---
+
 ## 71. Offline - Web SQL Pt3 - Reading & Filtering Results
 ### Day 71: April 7, 2018 - Saturday
 
