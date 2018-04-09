@@ -35,6 +35,47 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 71. Offline - Web SQL Pt3 - Reading & Filtering Results
+### Day 71: April 7, 2018 - Saturday
+
+**Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
+
+**Progress:** Today's lesson focused on reading and filtering data.
+
+```js
+// Read & output data
+function displayResults(transaction, results) {
+  for (var i = 0; i < results.rows.length; i++) {
+    var item = results.rows.items(i);
+    $('#items').append('<li>' + item.firstName + ' ' + item.lastName + '</li>');
+  }
+}
+
+var db = openDatabase('library', '2.0', 'My library', 5 * 1024 * 1024);
+db.transaction(function(t) {
+  t.executeSql("SELECT * FROM authors", [], displayResults)
+});
+```
+
+```js
+// Filter data
+var db = openDatabase('Library', '2.0', 'My library', 5 * 1024 * 1024);
+var lastName = 'Priest';
+db.transaction(function(t) {
+    t.executeSql("SELECT * FROM authors WHERE lastName = ?"
+    , [lastName], displayResults);
+});
+```
+
+Read here: [Chapter 16 - Offline Web Applications: Web SQL - Filtering Results](CH16-Offline1-WebSQL.html#10-filtering-results).
+
+**Links:**
+- Course Notes - [Chapter 16 - Offline Web Applications](CH16-Offline.html)
+- Code Samples - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+- GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch16-OfflineWeb)
+
+---
+
 ## 70. Offline - Web SQL Pt2 - Insert, Update, Delete
 ### Day 70: April 6, 2018 - Friday
 
@@ -51,10 +92,10 @@ It also touches on some other storage initiatives that were brought about with t
 4. Updates a record
 5. Deletes a record
 
-Read about Web SQL here: [Chapter 16 - Offline Web Applications: Web SQL - Creating and opening the database](CH16-Offline.html#2-creating--opening-the-database).
+Read about Web SQL here: [Chapter 16 - Offline Web Applications: Web SQL - Working with data](CH16-Offline1-WebSQL.html#2-creating--opening-the-database).
 
 **Links:**
-- Course Notes - [Chapter 16 - Offline Web Applications: Lesson 1: Web SQL](CH16-Offline.html)
+- Course Notes - [Chapter 16 - Offline Web Applications](CH16-Offline.html)
 - Code Samples - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
 - GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch16-OfflineWeb)
 
@@ -66,7 +107,7 @@ Read about Web SQL here: [Chapter 16 - Offline Web Applications: Web SQL - Creat
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
 [![16-1](assets/images/sm_chap16-1.jpg)](assets/images/full-size/chap16-1.png)
-Code Samples - [Web SQL](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
+Code Samples - [Web SQL - Create database, add table, insert, update, delete](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
 
 **Progress:** This lesson served as an introduction to Web SQL. It is currently only supported by Safari and Chrome so it is best suited for:
 
@@ -81,10 +122,10 @@ This first lesson consisted of learning how to:
 - Inserting records as part of a transaction
 - Using parameterized queries
 
-Read about Web SQL here: [Chapter 16 - Offline Web Applications: Lesson 1: Web SQL](CH16-Offline.html#lesson-1-web-sql).
+Read about Web SQL here: [Chapter 16 - Offline Web Applications: Lesson 1: Web SQL](CH16-Offline1-WebSQL.html#lesson-1-web-sql).
 
 **Links:**
-- Course Notes - [Chapter 16 - Offline Web Applications: Lesson 1: Web SQL](CH16-Offline.html)
+- Course Notes - [Chapter 16 - Offline Web Applications](CH16-Offline.html)
 - Code Samples - [Web SQL - Create a database, add a table, insert records](https://james-priest.github.io/node_samples/ch16-OfflineWeb/a-websql1.html)
 - GitHub Repo - [Web Storage GitHub Repo](https://github.com/james-priest/node_samples/tree/master/ch16-OfflineWeb)
 
