@@ -35,6 +35,32 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 73. React Bootcamp Day 1
+### Day 73: April 9, 2018 - Monday
+
+[![React1](assets/images/sm_react-day1.jpg)](assets/images/full-size/react-day1.png)
+
+**Project:** Tyler McGinnis' React Bootcamp
+
+**Progress:** This four day class served as a great introduction to React. Each day consisted of a live YouTube session lasting about two hours in which a key concept of the library was covered. We then put what was learned into practice by following along with many code examples.
+
+The course is taught by Tyler McGinnis who created Udacity's React Nanodegree program. He also has a series of *very* current React(16.3) and related courses on his website. ([https://tylermcginnis.com/](https://tylermcginnis.com/)).
+
+Day 1 consisted of:
+
+- Overview of what React is and what it does
+- Basic setup using a minimal HTML template
+- Learning the `React.createElement()` construct
+- Creating *functional components* (aka *stateless functional components*) for components that don't need to manage state
+- Understanding & using JSX syntax
+
+**Links:**
+- Tyler's website - [https://tylermcginnis.com/](https://tylermcginnis.com/)
+- React Bootcamp: Day 1 video - [https://youtu.be/8GXXGJRDMdQ](https://youtu.be/8GXXGJRDMdQ)
+- My Code Samples - [React Bootcamp GitHub Repo](https://github.com/james-priest/react-bootcamp)
+
+---
+
 ## 72. Offline - Web SQL Pt4 - JOIN & Aggregate Functions
 ### Day 72: April 8, 2018 - Sunday
 
