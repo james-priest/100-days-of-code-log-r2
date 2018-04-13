@@ -35,33 +35,30 @@ It also touches on some other storage initiatives that were brought about with t
 
 ## 77. Azure Developer Tour
 
-
+-->
 ---
 
 ## 74. React Bootcamp Day 2
 **Day 74: April 10, 2018 - Tuesday**
 
-[![React1](assets/images/sm_react-day1.jpg)](assets/images/full-size/react-day1.png)
+[![React2](assets/images/sm_react-day2.jpg)](assets/images/full-size/react-day2.png)
 
 **Project:** Tyler McGinnis' React Bootcamp
 
-**Progress:** This four day class served as a great introduction to React. Each day consisted of a live YouTube session lasting about two hours in which a key concept of the library was covered. We then put what was learned into practice by following along with many code examples.
+**Progress:** This is a four day class which serves as a great introduction to React. The course is taught by Tyler McGinnis who created Udacity's React Nanodegree program. He also has a series of React(v16.3) courses on his website. ([https://tylermcginnis.com/](https://tylermcginnis.com/)).
 
-The course is taught by Tyler McGinnis who created Udacity's React Nanodegree program. He also has a series of *very* current React(16.3) and related courses on his website. ([https://tylermcginnis.com/](https://tylermcginnis.com/)).
+Day 2 consisted of:
 
-Day 1 consisted of:
-
-- Overview of what React is and what it does
-- Basic setup using a minimal HTML template
-- Learning the `React.createElement()` construct
-- Creating *functional components* (aka *stateless functional components*) for components that don't need to manage state
-- Understanding & using JSX syntax
+- Overview of React components
+- Learned how to create a component which is a class that extends from `React.Component`
+- Covered the `props` object
+- Explored state - the internal data store of a component
 
 **Links:**
 - Tyler's website - [https://tylermcginnis.com/](https://tylermcginnis.com/)
-- React Bootcamp: Day 1 video - [https://youtu.be/8GXXGJRDMdQ](https://youtu.be/8GXXGJRDMdQ)
+- React Bootcamp: Day 2 video - [https://youtu.be/NHfRLQuHjsU](https://youtu.be/8GXXGJRDMdQ)
 - My Code Samples - [React Bootcamp GitHub Repo](https://github.com/james-priest/react-bootcamp)
--->
+
 ---
 
 ## 73. React Bootcamp Day 1
