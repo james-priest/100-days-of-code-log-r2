@@ -38,6 +38,34 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 75. React Bootcamp Day 3
+**Day 75: April 11, 2018 - Wednesday**
+
+[![React3](assets/images/sm_react-day3.jpg)](assets/images/full-size/react-day3.png)
+
+**Project:** Tyler McGinnis' React Bootcamp
+
+**Progress:** This is a four day class which serves as a great introduction to React. The course is taught by Tyler McGinnis who created Udacity's React Nanodegree program. He also has a series of React(v16.3) courses on his website. ([https://tylermcginnis.com/](https://tylermcginnis.com/)).
+
+Day 3 covered:
+
+- Component Lifecycle
+    - componentDidMount - Fired after the component mounted
+    - componentWillUnmount - Fired before the component will unmount
+    - getDerivedStateFromProps - Fired when the component mounts and whenever the props change.
+
+**Links:**
+- Tyler's website - [https://tylermcginnis.com/](https://tylermcginnis.com/)
+- Tyler's articles
+    - [React Tutorial: A Comprehensive Guide to learning React.js in 2018](https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/)
+    - [React Elements vs React Components](https://tylermcginnis.com/react-elements-vs-react-components/)
+    - [Building User Interfaces with Pure Functions and Function Composition in React](https://tylermcginnis.com/building-user-interfaces-with-pure-functions-and-function-composition-in-react-js/)
+    - [WTF is this - Understanding the this keyword, call, apply, and bind in JavaScript](https://tylermcginnis.com/this-keyword-call-apply-bind-javascript/)
+- React Bootcamp: Day 3 video - [https://youtu.be/Xa3DGGP4mLM](https://youtu.be/Xa3DGGP4mLM)
+- My Code Samples - [React Bootcamp GitHub Repo](https://github.com/james-priest/react-bootcamp)
+
+---
+
 ## 74. React Bootcamp Day 2
 **Day 74: April 10, 2018 - Tuesday**
 
@@ -56,7 +84,7 @@ Day 2 consisted of:
 
 **Links:**
 - Tyler's website - [https://tylermcginnis.com/](https://tylermcginnis.com/)
-- React Bootcamp: Day 2 video - [https://youtu.be/NHfRLQuHjsU](https://youtu.be/8GXXGJRDMdQ)
+- React Bootcamp: Day 2 video - [https://youtu.be/NHfRLQuHjsU](https://youtu.be/NHfRLQuHjsU)
 - My Code Samples - [React Bootcamp GitHub Repo](https://github.com/james-priest/react-bootcamp)
 
 ---
