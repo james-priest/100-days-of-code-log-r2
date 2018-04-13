@@ -88,7 +88,7 @@ section>p {
 }
 hr { margin: 20px 0; }
 
-h1, h2, h3 {
+h1, h2, h3, h2+p>strong {
     line-height: 1.0;
 }
 h1 {
@@ -98,8 +98,9 @@ h1 {
 h2 {
     font-size:1.5em;
 }
-h3 {
+h3, h2+p>strong {
     font-size:1.2em;
+    color: #666;
 }
 pre{ line-height: 1em; }
 code {
