@@ -38,6 +38,29 @@ It also touches on some other storage initiatives that were brought about with t
 -->
 ---
 
+## 76. React Bootcamp Day 4
+**Day 76: April 12, 2018 - Thursday**
+
+[![React4](assets/images/sm_react-day4.jpg)](assets/images/full-size/react-day4.png)
+
+**Project:** Tyler McGinnis' React Bootcamp
+
+**Progress:** Completed this four day class which serves as a great introduction to React. The course is taught by Tyler McGinnis who created Udacity's React Nanodegree program. He also has a series of React(v16.3) courses on his website. ([https://tylermcginnis.com/](https://tylermcginnis.com/)).
+
+Day 4 covered:
+
+- Use of the `create-react-app` npm package to create a react app scaffold and build environment
+- Installation of React Router v4 (`react-router-dom` package) to create routes, nested routes, & dynamic routes
+
+**Links:**
+- Tyler's website - [https://tylermcginnis.com/](https://tylermcginnis.com/)
+- Tyler's articles
+    - [React Router v4: Philosophy and Introduction](https://tylermcginnis.com/react-router-philosophy-introduction/)
+- React Bootcamp: Day 4 video - [https://youtu.be/alZur1g2Cnw](https://youtu.be/alZur1g2Cnw)
+- My Code Samples - [React Bootcamp GitHub Repo](https://github.com/james-priest/react-bootcamp)
+
+---
+
 ## 75. React Bootcamp Day 3
 **Day 75: April 11, 2018 - Wednesday**
 
