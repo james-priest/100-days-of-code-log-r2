@@ -33,8 +33,86 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 ---
 
+## 81. Docker for Windows Desktop App
+**Day 81: April 19, 2018 - Thursday**
+
+**Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
+
+![Windows 10](assets/images/full-size/windows10-laptop.png)
+
+I finally decided to make the switch to Windows 10. I had been hesitant to upgrade because I had everything fine-tuned and working beautifully on Win 8.1.
+
+I figured I would wait until a must have feature emerged in Windows 10 that I couldn't do without. There were two...
+
+- **Docker for Windows Desktop app**
+    - Baked-in Docker support
+    - Think native Docker support on Windows without Hyper-V or VirtualBox overhead
+    - Allows you to  run other virtualization systems such as VMware Workstation
+    - Supports both Windows and Linux containers running side-by-side
+
+More on these two features in my next posts
+
+**Progress:** 
+
+**Links:**
+- [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
+
+---
+
+## 80. Linux Containers on Windows (LCOW)
+**Day 80: April 18, 2018 - Wednesday**
+
+**Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
+
+![Windows 10](assets/images/full-size/windows10-laptop.png)
+
+I finally decided to make the switch to Windows 10. I had been hesitant to upgrade because I had everything fine-tuned and working beautifully on Win 8.1.
+
+I figured I would wait until a must have feature emerged in Windows 10 that I couldn't do without. There were two...
+
+- **Linux Containers on Windows (LCOW)**
+    - Baked-in Docker support
+    - Think native Docker support on Windows without Hyper-V or VirtualBox overhead
+    - Allows you to  run other virtualization systems such as VMware Workstation
+    - Supports both Windows and Linux containers running side-by-side
+
+More on these two features in my next posts
+
+**Progress:** 
+
+**Links:**
+- [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
+
+---
+
+## 79. Windows Subsystem for Linux (WSL)
+**Day 79: April 17, 2018 - Tuesday**
+
+**Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
+
+![Windows 10](assets/images/full-size/windows10-laptop.png)
+
+I finally decided to make the switch to Windows 10. I had been hesitant to upgrade because I had everything fine-tuned and working beautifully on Win 8.1.
+
+I figured I would wait until a must have feature emerged in Windows 10 that I couldn't do without. There were two...
+
+- **Windows Subsystem for Linux (WSL)**
+    - Used to be called Bash on Ubuntu on Windows
+    - Think full Ubuntu or other distro (SUSE, Debian, Kali, etc) with native Bash shell
+    - Runs native Linux command-line tools (vim, sed, awk, etc) & first-line packages (Ruby, Python, etc.)
+    - Can use `apt` or `apt-get` to install packages
+
+More on these two features in my next posts
+
+**Progress:** 
+
+**Links:**
+- [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
+-->
+---
+
 ## 78. Windows 10 Upgrade
-**Day 78: April 13-15, 2018 - Friday-Sunday**
+**Day 78: April 14-16, 2018 - Saturday-Monday**
 
 **Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
 
@@ -45,38 +123,30 @@ I finally decided to make the switch to Windows 10. I had been hesitant to upgra
 I figured I would wait until a must have feature emerged in Windows 10 that I couldn't do without. There were two...
 
 1. **Windows Subsystem for Linux (WSL)**
-    - Used to be called Bash on Ubuntu on Windows
-    - Think full Ubuntu or other distro (SUSE, Debian, Kali, etc) with native Bash shell
-    - Runs native Linux command-line tools (vim, sed, awk, etc) & first-line packages (Ruby, Python, etc.)
-    - Can use `apt` or `apt-get` to install packages
 2. **Linux Containers on Windows (LCOW)**
-    - Baked-in Docker support
-    - Think native Docker support on Windows without Hyper-V or VirtualBox overhead
-    - Allows you to  run other virtualization systems such as VMware Workstation
-    - Supports both Windows and Linux containers running side-by-side
 
-More on these two features in my next posts
+More on these two features in upcoming posts.
 
-**Progress:** This took 3+ days due to issues with the Media Creation Tool and my slow internet connection. The tool would fail the installation step after a 5-6 hour installation media download. It would then start whole process over again.
+**Progress:** This took 3+ days due to issues with the Media Creation Tool and my slow internet connection. The tool would fail the installation after a 5-6 hour download. It would then start whole process over again.
 
-I was able to fix permission issues on the filesystem, registry, & firewall. I also virus scanned the system to make no infections were causing the problem.
+I was able to fix what turned out to be permissions issues on the filesystem, registry, & firewall. I also virus scanned the system to make no infections were causing the problem.
 
 Once this was done, I created installation media and did the following.
 
 - Downloaded all laptop mfg system drivers
 - Upgraded the Bios
-- Uninstalled unnecessary or incompatible apps
+- Uninstalled unnecessary or incompatible applications
 - Tidied up the system prior to install
 
-Once the upgrade was done I needed to:
+Once the upgrade was done I:
 
-- Install new drivers
-- Download new updates
-- Debug post-upgrade system issues (no sound, reinstall some utility apps, etc.)
+- Installed new system drivers
+- Downloaded new updates
+- Debugged post-upgrade system issues (no sound, missing utility apps, etc.)
 
 **Links:**
-- [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
--->
+- [Windows Error 0x80070005 fix](https://neosmart.net/wiki/0x80070005/) - This walks through steps to fix Access Denied errors.
+
 ---
 
 ## 77. Azure Developer Tour
