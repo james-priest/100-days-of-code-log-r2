@@ -82,33 +82,42 @@ More on these two features in my next posts
 
 **Links:**
 - [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
-
+-->
 ---
 
-## 79. Windows Subsystem for Linux (WSL)
+## 79. Linux Bash Shell on Windows (WSL)
 **Day 79: April 17, 2018 - Tuesday**
 
 **Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
 
-![Windows 10](assets/images/full-size/windows10-laptop.png)
+[![wsl1](assets/images/sm_wsl1.jpg)](assets/images/full-size/wsl1.png)
 
-I finally decided to make the switch to Windows 10. I had been hesitant to upgrade because I had everything fine-tuned and working beautifully on Win 8.1.
+I decided to make the switch to Windows 10. I had been hesitant to upgrade until I came across some new features that I couldn't do without.
 
-I figured I would wait until a must have feature emerged in Windows 10 that I couldn't do without. There were two...
+Linux Bash Shell is one...
+
+**Progress:** Once Windows was up and running properly, I had to turn this feature on. It's under *Control Panel > Programs > Turn Windows Features On Or Off*. From there you enable the "Windows Subsystem for Linux" option.
+
+After you enable the feature you must install a Linux distribution from the Windows Store. I chose Ubuntu although there are many others. Once installed, I was good to go.
+
+[![wsl2](assets/images/sm_wsl2.jpg)](assets/images/full-size/wsl2.png)
+
+Here are some highlights.
 
 - **Windows Subsystem for Linux (WSL)**
-    - Used to be called Bash on Ubuntu on Windows
-    - Think full Ubuntu or other distro (SUSE, Debian, Kali, etc) with native Bash shell
-    - Runs native Linux command-line tools (vim, sed, awk, etc) & first-line packages (Ruby, Python, etc.)
-    - Can use `apt` or `apt-get` to install packages
+  - Used to be called Bash on Ubuntu on Windows
+  - Think full Ubuntu or other distro (SUSE, Debian, Kali, etc) with native Bash shell
+  - Runs native Linux command-line tools (vim, sed, awk, etc) & first-line packages (Ruby, Python, etc.)
+  - Can use `apt` or `apt-get` to install packages
 
-More on these two features in my next posts
-
-**Progress:** 
+Now I can do things like run Ruby and Jekyll right from Windows rather than incur the overhead of running a build system in a Linux VM. That will help with this blog in particular.
 
 **Links:**
-- [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
--->
+- How-To Geek articles
+  - [How to Install the Linux Bash Shell on Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
+  - [How to Install Linux Software in Windows 10’s Ubuntu Bash Shell](https://www.howtogeek.com/261449/how-to-install-linux-software-in-windows-10s-ubuntu-bash-shell/)
+  - [How to Access Your Ubuntu Bash Files in Windows](https://www.howtogeek.com/261383/how-to-access-your-ubuntu-bash-files-in-windows-and-your-windows-system-drive-in-bash/)
+
 ---
 
 ## 78. Windows 10 Upgrade
@@ -116,7 +125,7 @@ More on these two features in my next posts
 
 **Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
 
-![Windows 10](assets/images/full-size/windows10-laptop.png)
+[![Windows 10](assets/images/sm_windows10-laptop.jpg)](assets/images/full-size/windows10-laptop.png)
 
 I finally decided to make the switch to Windows 10. I had been hesitant to upgrade because I had everything fine-tuned and working beautifully on Win 8.1.
 
