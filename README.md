@@ -56,7 +56,7 @@ More on these two features in my next posts
 
 **Links:**
 - [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
-
+-->
 ---
 
 ## 80. Linux Containers on Windows (LCOW)
@@ -64,25 +64,42 @@ More on these two features in my next posts
 
 **Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
 
-![Windows 10](assets/images/full-size/windows10-laptop.png)
+[![lcow1](assets/images/sm_lcow1.jpg)](assets/images/full-size/lcow1.png)
 
-I finally decided to make the switch to Windows 10. I had been hesitant to upgrade because I had everything fine-tuned and working beautifully on Win 8.1.
+I decided to make the switch to Windows 10. I had been hesitant to upgrade until I came across some new features that I couldn't do without.
 
-I figured I would wait until a must have feature emerged in Windows 10 that I couldn't do without. There were two...
+Linux Bash Shell is one and **Linux Containers on Windows** is another...
+
+Here's what it is and what it offers.
 
 - **Linux Containers on Windows (LCOW)**
-    - Baked-in Docker support
-    - Think native Docker support on Windows without Hyper-V or VirtualBox overhead
-    - Allows you to  run other virtualization systems such as VMware Workstation
-    - Supports both Windows and Linux containers running side-by-side
+  - Baked-in Docker support
+  - Think native Docker support on Windows without Hyper-V or VirtualBox overhead
+    - That means there's no VM or Hyper-V involved (unless you want), so Linux Containers run on Windows itself using built in container support.
+  - Allows you to run other virtualization systems such as VMware Workstation
+  - Supports Windows and Linux containers running side-by-side via LCOW
 
-More on these two features in my next posts
+Docker for Windows & LCOW will now allow you to spin up containers for both environments. This was stated in a Docker blog post:
 
-**Progress:** 
+> "Developers will be able to more easily build and test mixed Windows/Linux Docker applications by running containers for both platforms side-by-side on the same system."
+
+**Progress:** Installed Edge version of Docker for Windows Desktop app. This turned on certain Windows features such as **Containers** and **Hyper-V**.
+
+Enabling Hyper-V did prevent VMware from running due to issues with VMware running under hypervisor. This was solved by issuing the following command thru elevated Cmd prompt.
+
+```bash
+bcdedit /set hypervisorlaunchtype off
+```
 
 **Links:**
-- [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
--->
+- [Allow Hyper-V and VMware Workstation to co-exist](http://dailysysadmin.com/KB/Article/1024/vmware-workstation-and-hyper-v-are-not-compatible-remove-the-hyper-v-role-from-the-system-before-running-vmware-workstation/)
+- [Docker and Linux Containers on Windows, with or without Hyper-V Virtual Machines](https://www.hanselman.com/blog/DockerAndLinuxContainersOnWindowsWithOrWithoutHyperVVirtualMachines.aspx)
+- Docker blog posts
+  - [Preview: Linux Containers on Windows](https://blog.docker.com/2017/09/preview-linux-containers-on-windows/)
+  - [Docker for Windows 17.11 with Windows 10 Fall Creators Update](https://blog.docker.com/2017/11/docker-for-windows-17-11/)
+  - [
+Docker for Windows Desktop 18.02 with Windows 10 Fall Creators Update](https://blog.docker.com/2018/02/docker-for-windows-18-02-with-windows-10-fall-creators-update/)
+
 ---
 
 ## 79. Linux Bash Shell on Windows (WSL)
