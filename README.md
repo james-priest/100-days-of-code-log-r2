@@ -31,11 +31,82 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Link to Work:**
 
-It also touches on some other storage initiatives that were brought about with the introduction of HTML5.
+---
+
+## 78. Windows 10 Upgrade
+**Day 78: April 13-15, 2018 - Friday-Sunday**
+
+**Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
+
+![Windows 10](assets/images/full-size/windows10-laptop.png)
+
+I finally decided to make the switch to Windows 10. I had been hesitant to upgrade because I had everything fine-tuned and working beautifully on Win 8.1.
+
+I figured I would wait until a must have feature emerged in Windows 10 that I couldn't do without. There were two...
+
+1. **Windows Subsystem for Linux (WSL)**
+    - Used to be called Bash on Ubuntu on Windows
+    - Think full Ubuntu or other distro (SUSE, Debian, Kali, etc) with native Bash shell
+    - Runs native Linux command-line tools (vim, sed, awk, etc) & first-line packages (Ruby, Python, etc.)
+    - Can use `apt` or `apt-get` to install packages
+2. **Linux Containers on Windows (LCOW)**
+    - Baked-in Docker support
+    - Think native Docker support on Windows without Hyper-V or VirtualBox overhead
+    - Allows you to  run other virtualization systems such as VMware Workstation
+    - Supports both Windows and Linux containers running side-by-side
+
+More on these two features in my next posts
+
+**Progress:** This took 3+ days due to issues with the Media Creation Tool and my slow internet connection. The tool would fail the installation step after a 5-6 hour installation media download. It would then start whole process over again.
+
+I was able to fix permission issues on the filesystem, registry, & firewall. I also virus scanned the system to make no infections were causing the problem.
+
+Once this was done, I created installation media and did the following.
+
+- Downloaded all laptop mfg system drivers
+- Upgraded the Bios
+- Uninstalled unnecessary or incompatible apps
+- Tidied up the system prior to install
+
+Once the upgrade was done I needed to:
+
+- Install new drivers
+- Download new updates
+- Debug post-upgrade system issues (no sound, reinstall some utility apps, etc.)
+
+**Links:**
+- [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
+-->
+---
 
 ## 77. Azure Developer Tour
+**Day 77: April 13, 2018 - Friday**
 
--->
+**Project:** Azure Research and Evaluation
+
+[![Azure3](assets/images/sm_azure3.jpg)](assets/images/full-size/azure3.png)
+
+**Progress:** I attended the Azure Developer Tour in Los Angeles earlier this week. It was a one-day event that covered the following.
+
+- App Service - (Web Apps, Web App Containers, Functions Apps, etc.)
+- DevOps / VMs
+- Databases
+- Containers / Serverless
+- AI / Machine Learning
+
+This was a great experience. I got a chance to see how easy it is to host services in the cloud and also got some exposure to new technologies I didn't realize were ready for prime-time.
+
+You can manage your services through a cool dashboard.
+
+[![Azure1](assets/images/sm_azure1.jpg)](assets/images/full-size/azure1.png)
+
+You can access your app and write code through their App Service Editor which works Visual Studio Code. It has Version Control (Git), a File System Browser, and Integrated Debugger.
+
+[![Azure2](assets/images/sm_azure2.jpg)](assets/images/full-size/azure2.png)
+
+**Links:**
+- [Try Azure App Service](https://tryappservice.azure.com/) - Easily spin up a service for a limited time with no account sign-up
+
 ---
 
 ## 76. React Bootcamp Day 4
@@ -55,7 +126,7 @@ Day 4 covered:
 **Links:**
 - Tyler's website - [https://tylermcginnis.com/](https://tylermcginnis.com/)
 - Tyler's articles
-    - [React Router v4: Philosophy and Introduction](https://tylermcginnis.com/react-router-philosophy-introduction/)
+  - [React Router v4: Philosophy and Introduction](https://tylermcginnis.com/react-router-philosophy-introduction/)
 - React Bootcamp: Day 4 video - [https://youtu.be/alZur1g2Cnw](https://youtu.be/alZur1g2Cnw)
 - My Code Samples - [React Bootcamp GitHub Repo](https://github.com/james-priest/react-bootcamp)
 
@@ -73,17 +144,17 @@ Day 4 covered:
 Day 3 covered:
 
 - Component Lifecycle
-    - componentDidMount - Fired after the component mounted
-    - componentWillUnmount - Fired before the component will unmount
-    - getDerivedStateFromProps - Fired when the component mounts and whenever the props change.
+  - componentDidMount - Fired after the component mounted
+  - componentWillUnmount - Fired before the component will unmount
+  - getDerivedStateFromProps - Fired when the component mounts and whenever the props change.
 
 **Links:**
 - Tyler's website - [https://tylermcginnis.com/](https://tylermcginnis.com/)
 - Tyler's articles
-    - [React Tutorial: A Comprehensive Guide to learning React.js in 2018](https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/)
-    - [React Elements vs React Components](https://tylermcginnis.com/react-elements-vs-react-components/)
-    - [Building User Interfaces with Pure Functions and Function Composition in React](https://tylermcginnis.com/building-user-interfaces-with-pure-functions-and-function-composition-in-react-js/)
-    - [WTF is this - Understanding the this keyword, call, apply, and bind in JavaScript](https://tylermcginnis.com/this-keyword-call-apply-bind-javascript/)
+  - [React Tutorial: A Comprehensive Guide to learning React.js in 2018](https://tylermcginnis.com/reactjs-tutorial-a-comprehensive-guide-to-building-apps-with-react/)
+  - [React Elements vs React Components](https://tylermcginnis.com/react-elements-vs-react-components/)
+  - [Building User Interfaces with Pure Functions and Function Composition in React](https://tylermcginnis.com/building-user-interfaces-with-pure-functions-and-function-composition-in-react-js/)
+  - [WTF is this - Understanding the this keyword, call, apply, and bind in JavaScript](https://tylermcginnis.com/this-keyword-call-apply-bind-javascript/)
 - React Bootcamp: Day 3 video - [https://youtu.be/Xa3DGGP4mLM](https://youtu.be/Xa3DGGP4mLM)
 - My Code Samples - [React Bootcamp GitHub Repo](https://github.com/james-priest/react-bootcamp)
 
