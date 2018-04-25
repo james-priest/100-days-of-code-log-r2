@@ -1,5 +1,5 @@
 ---
-title: Introducing the Service Worker
+title: Service Worker
 description: Grow with Google Scholarship Challenge - Mobile Web Track
 ---
 <!-- markdownlint-disable MD022 MD024 MD032 -->

@@ -1,23 +1,28 @@
 <!-- markdownlint-disable MD022 MD032 -->
 # James Priest
 
-## 100 Days Of Code Log R2
+## 100 Days Of Code
 
-**Commitment:** ***I will code daily for the next 100 days.***
+| Log 1 (Days 1-100) | Log 2 (Days 101-200) | Log 3 (Days 201-200) |
+| --- | --- |
+| [100 Days Round 1](https://james-priest.github.io/100-days-of-code-log/) | this log | 100 Days Round 3 |
 
+### Challenge & Commitment
 This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway/100-days-of-code "the official repo") challenge. More details about the challenge can be found here: [100daysofcode.com](http://100daysofcode.com/ "100daysofcode.com").
+
+**Commitment:** *I will code daily for the next 100 days.*
 
 |  Start Date   | End Date     |
 | ------------- | ------------ |
 | January 28, 2018 | --- |
 
-## Goals
+### Goals
 
 - [x] Code daily
 - [x] Complete the Intermediate Mobile Web track of the [#GoogleUdacityScholars](https://twitter.com/search?q=%23GoogleUdacityScholars&src=tyah) program.
 - [ ] Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
 
-# Log
+# Code Log
 <!--
 
 ## 1.
