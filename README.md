@@ -37,11 +37,20 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Link to Work:**
 
-## 87. CodePen - Geolocation
-## 86. CodePen - DragDrop #2
-## 85. CodePen - DragDrop #1
-## 84. CodePen - Canvas #4
 -->
+---
+
+## 87. CodePen - Geolocation
+**Day 87: April 25, 2018 - Wednesday**
+
+**Project:** Add to CodePen work samples
+
+[![codepen7](assets/images/sm_codepen7.jpg)](assets/images/full-size/codepen7.png)
+
+**Progress:** Posted a Geolocation API code sample onto CodePen. This uses Google Maps to display a map with coords, TERRAIN map-type, marker, & zoom-level .
+
+**Links:** [https://codepen.io/james-priest/pen/gzMMod](https://codepen.io/james-priest/pen/gzMMod)
+
 ---
 
 ## 86. CodePen - DragDrop #2
