@@ -41,10 +41,20 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ## 86. CodePen - DragDrop #2
 ## 85. CodePen - DragDrop #1
 ## 84. CodePen - Canvas #4
-## 83. CodePen - Canvas #3
-
-
 -->
+---
+
+## 83. CodePen - Canvas #3
+**Day 83: April 21, 2018 - Saturday**
+
+**Project:** Add to CodePen work samples
+
+[![codepen3](assets/images/sm_codepen3.jpg)](assets/images/full-size/codepen3.png)
+
+**Progress:** Posted previously created `<canvas>` work onto CodePen. This one uses uses `beginPath()`, `arc()`, `arcTo()`, `fill()`, and `stroke()`.
+
+**Links:** [https://codepen.io/james-priest/pen/YLwKoL](https://codepen.io/james-priest/pen/YLwKoL)
+
 ---
 
 ## 82. CodePen - Canvas #2
