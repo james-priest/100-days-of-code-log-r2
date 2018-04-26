@@ -19,7 +19,8 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ### Goals
 
 - [x] Code daily
-- [x] Complete the Intermediate Mobile Web track of the [#GoogleUdacityScholars](https://twitter.com/search?q=%23GoogleUdacityScholars&src=tyah) program.
+- [x] Complete Phase 1 [Grow with Google Challenge Scholarship](https://www.udacity.com/grow-with-google) - Mobile Web Specialist
+- [x] Get accepted to Phase 2 Google Udacity Nanodegree for [Mobile Web Specialist](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024)
 - [ ] Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
 
 # Code Log
@@ -41,9 +42,22 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ## 85. CodePen - DragDrop #1
 ## 84. CodePen - Canvas #4
 ## 83. CodePen - Canvas #3
-## 82. CodePen - Canvas #2
+
 
 -->
+---
+
+## 82. CodePen - Canvas #2
+**Day 82: April 20, 2018 - Friday**
+
+**Project:** Add to CodePen work samples
+
+[![codepen2](assets/images/sm_codepen2.jpg)](assets/images/full-size/codepen2.png)
+
+**Progress:** Posted previously created `<canvas>` work onto CodePen. This one uses the `strokeRect()` method to create rectangle outlines with gradients.
+
+**Links:** [https://codepen.io/james-priest/pen/XqXryK](https://codepen.io/james-priest/pen/XqXryK)
+
 ---
 
 ## 81. CodePen - Canvas #1
@@ -55,7 +69,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Progress:** Posted previously created `<canvas>` work onto CodePen. This uses the `fillStyle()` method to create some rectangles with gradients.
 
-**Links:** [https://codepen.io/james-priest/pen/XqXryK](https://codepen.io/james-priest/pen/wjMwmQ)
+**Links:** [https://codepen.io/james-priest/pen/wjMwmQ](https://codepen.io/james-priest/pen/wjMwmQ)
 
 ---
 
