@@ -44,6 +44,19 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 86. CodePen - DragDrop #2
+**Day 86: April 24, 2018 - Tuesday**
+
+**Project:** Add to CodePen work samples
+
+[![codepen6](assets/images/sm_codepen6.jpg)](assets/images/full-size/codepen6.png)
+
+**Progress:** Posted my drag and drop samples and exercises onto CodePen. This is a scramble game to uses a bit more code and logic than the proof-of-concept.
+
+**Links:** [https://codepen.io/james-priest/pen/aGZNjb](https://codepen.io/james-priest/pen/aGZNjb)
+
+---
+
 ## 85. CodePen - DragDrop #1
 **Day 85: April 23, 2018 - Monday**
 
