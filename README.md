@@ -44,6 +44,19 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 84. CodePen - Canvas #4
+**Day 84: April 22, 2018 - Sunday**
+
+**Project:** Add to CodePen work samples
+
+[![codepen4](assets/images/sm_codepen4.jpg)](assets/images/full-size/codepen4.png)
+
+**Progress:** Posted previously created `<canvas>` work onto CodePen. Another series of lines and arcs using `beginPath()`, `arc()`, `arcTo()`, `fill()`, and `stroke()`.
+
+**Links:** [https://codepen.io/james-priest/pen/wjMvWV](https://codepen.io/james-priest/pen/wjMvWV)
+
+---
+
 ## 83. CodePen - Canvas #3
 **Day 83: April 21, 2018 - Saturday**
 
@@ -51,7 +64,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 [![codepen3](assets/images/sm_codepen3.jpg)](assets/images/full-size/codepen3.png)
 
-**Progress:** Posted previously created `<canvas>` work onto CodePen. This one uses uses `beginPath()`, `arc()`, `arcTo()`, `fill()`, and `stroke()`.
+**Progress:** Posted previously created `<canvas>` work onto CodePen. This one uses `beginPath()`, `arc()`, `arcTo()`, `fill()`, and `stroke()`.
 
 **Links:** [https://codepen.io/james-priest/pen/YLwKoL](https://codepen.io/james-priest/pen/YLwKoL)
 
