@@ -40,6 +40,41 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 88. Started Mobile Web Specialist Nanodegree
+**Day 88: April 26, 2018 - Thursday**
+
+**Project:** Google Udacity Nandegree (Mobile Web Specialist)
+
+[![scholarship-ltr](assets/images/sm_scholarship-phase2-ltr2.jpg)](assets/images/full-size/scholarship-phase2-ltr2.png)
+
+**Progress:** Started my Google Udacity Nanodegree program today! This [Grow with Google Scholarship](https://www.udacity.com/grow-with-google) program is awesome. It provides a super rich environment for learning that includes:
+
+- Full curriculum consisting of on-demand lessons with quizzes, labs, & projects
+- Community Managers that guide us in the program and help keep us engaged and on track
+- Targeted Slack channels (announcements, resources, project discussions, live help, etc.)
+- Mentors who've completed the course & provide one-on-one guidance and technical help
+- Career resources to help us get employed once we graduate
+
+I attended the live student orientation on Tuesday and spent yesterday (Wednesday) doing the following:
+
+- Getting myself set up on Slack
+- Going through the student resources
+- Reading the syllabus & coursework
+- Reviewing project deadlines
+- Checking out possible meetups
+- Reaching out to my mentor
+- Connecting with my fellow students
+
+Today is the day I actually jump into the material starting with Lesson 1: Mobile Web Specialist Nanodegree Orientation.
+
+I'm energized and ready to learn!
+
+**Links:**
+- [Grow with Google Scholarship Program](https://www.udacity.com/grow-with-google)
+- [Mobile Web Specialist Nanodegree Program](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024)
+
+---
+
 ## 87. CodePen - Geolocation
 **Day 87: April 25, 2018 - Wednesday**
 
@@ -47,7 +82,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 [![codepen7](assets/images/sm_codepen7.jpg)](assets/images/full-size/codepen7.png)
 
-**Progress:** Posted a Geolocation API code sample onto CodePen. This uses Google Maps to display a map with coords, TERRAIN map-type, marker, & zoom-level .
+**Progress:** Posted a Geolocation API code sample onto CodePen. This uses Google Maps to display a map with coords, TERRAIN map-type, marker, & zoom-level.
 
 **Links:** [https://codepen.io/james-priest/pen/gzMMod](https://codepen.io/james-priest/pen/gzMMod)
 
