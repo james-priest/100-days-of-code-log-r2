@@ -3,7 +3,7 @@
 
 ## 100 Days Of Code
 
-| Log 1 (Days 1-100) | Log 2 (Days 101-200) | Log 3 (Days 201-200) |
+| Log 1 (Days 1-100) | Log 2 (Days 101-200) | Log 3 (Days 201-300) |
 | --- | --- |
 | [100 Days Round 1](https://james-priest.github.io/100-days-of-code-log/) | this log | 100 Days Round 3 |
 
@@ -36,32 +36,27 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Link to Work:**
 
+## 87. CodePen - Geolocation
+## 86. CodePen - DragDrop #2
+## 85. CodePen - DragDrop #1
+## 84. CodePen - Canvas #4
+## 83. CodePen - Canvas #3
+## 82. CodePen - Canvas #2
+
+-->
 ---
 
-## 81. Docker for Windows Desktop App
+## 81. CodePen - Canvas #1
 **Day 81: April 19, 2018 - Thursday**
 
-**Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
+**Project:** Add to CodePen work samples
 
-![Windows 10](assets/images/full-size/windows10-laptop.png)
+[![codepen1](assets/images/sm_codepen1.jpg)](assets/images/full-size/codepen1.png)
 
-I finally decided to make the switch to Windows 10. I had been hesitant to upgrade because I had everything fine-tuned and working beautifully on Win 8.1.
+**Progress:** Posted previously created `<canvas>` work onto CodePen. This uses the `fillStyle()` method to create some rectangles with gradients.
 
-I figured I would wait until a must have feature emerged in Windows 10 that I couldn't do without. There were two...
+**Links:** [https://codepen.io/james-priest/pen/XqXryK](https://codepen.io/james-priest/pen/wjMwmQ)
 
-- **Docker for Windows Desktop app**
-    - Baked-in Docker support
-    - Think native Docker support on Windows without Hyper-V or VirtualBox overhead
-    - Allows you to  run other virtualization systems such as VMware Workstation
-    - Supports both Windows and Linux containers running side-by-side
-
-More on these two features in my next posts
-
-**Progress:** 
-
-**Links:**
-- [Windows Access Denied Error Message 0x80070005 fix](https://neosmart.net/wiki/0x80070005/)
--->
 ---
 
 ## 80. Linux Containers on Windows (LCOW)
