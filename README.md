@@ -40,6 +40,28 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 89. Mobile Device Debug with Chrome DevTools
+**Day 89: April 27, 2018 - Friday**
+
+**Project:** Google Udacity Nandegree (Mobile Web Specialist)
+
+[![devtools1](assets/images/sm_2-lesson1-devtools1.jpg)](assets/images/full-size/2-lesson1-devtools1.png)
+
+**Progress:** Today's lesson detailed the need for responsive design and set the stage for how to develop and test sites designed for mobile devices, using a mobile-first approach.
+
+Two methods of testing were discussed.
+
+- Testing on an actual device
+- Using DevTools' built-in emulator/simulator in lue of an actual device
+
+The lesson covered using Chrome DevTools' device emulators. It then covered creating a bridge to a mobile device with USB debugging so that a site run on the device's installation of Chrome can be debugged on the development machine with DevTools.
+
+**Links:**
+- [Grow with Google Scholarship Program](https://www.udacity.com/grow-with-google)
+- [Mobile Web Specialist Nanodegree Program](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024)
+
+---
+
 ## 88. Started Mobile Web Specialist Nanodegree
 **Day 88: April 26, 2018 - Thursday**
 
