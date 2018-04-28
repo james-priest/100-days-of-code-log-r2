@@ -19,9 +19,11 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ### Goals
 
 - [x] Code daily
-- [x] Complete Phase 1 [Grow with Google Challenge Scholarship](https://www.udacity.com/grow-with-google) - Mobile Web Specialist
-- [x] Get accepted to Phase 2 Google Udacity Nanodegree for [Mobile Web Specialist](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024)
-- [ ] Pass my Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
+- [x] Complete Udacity's [Grow with Google Challenge Scholarship](https://www.udacity.com/grow-with-google) - Mobile Web Specialist
+- [x] Get accepted to the Google Udacity [Mobile Web Specialist Nanodegree](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) program
+- [ ] Successfully complete the Google Udacity [Mobile Web Specialist Nanodegree](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) program
+- [ ] Pass the Microsoft Programming in HTML5 with JavaScript & CSS3 Cert - [Exam 70-480](https://www.microsoft.com/en-us/learning/exam-70-480.aspx "Exam 70-480: Programming in HTML5 with JavaScript and CSS3")
+- [ ] Pass the Google [Mobile Web Specialist Certification](https://developers.google.com/training/certification/mobile-web-specialist/) exam for Mobile Web Development
 
 # Code Log
 <!--
@@ -37,13 +39,28 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Link to Work:**
 
+
+---
+
+## 90. Jekyll Static Site Generator  
+**Day 90: April 28, 2018 - Saturday**
+
+**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
+
+[![devtools1](assets/images/sm_2-lesson1-devtools1.jpg)](assets/images/full-size/2-lesson1-devtools1.png)
+
+**Progress:** Today's
+
+**Links:**
+- Udacity's [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google)
+- Google Udacity [Mobile Web Specialist Nanodegree](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) program
 -->
 ---
 
 ## 89. Mobile Device Debug with Chrome DevTools
 **Day 89: April 27, 2018 - Friday**
 
-**Project:** Google Udacity Nandegree (Mobile Web Specialist)
+**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
 
 [![devtools1](assets/images/sm_2-lesson1-devtools1.jpg)](assets/images/full-size/2-lesson1-devtools1.png)
 
@@ -54,18 +71,30 @@ Two methods of testing were discussed.
 - Testing on an actual device
 - Using DevTools' built-in emulator/simulator in lue of an actual device
 
-The lesson covered using Chrome DevTools' device emulators. It then covered creating a bridge to a mobile device with USB debugging so that a site run on the device's installation of Chrome can be debugged on the development machine with DevTools.
+Testing using the built-in device emulators from within Chrome is fairly straight-forward and can be done right from DevTools.
+
+Using an actual device is a bit more involved in that it requires:
+
+1. Creating a bridge (with USB cable) to a mobile device.
+2. Enabling the device's *USB debugging* option
+3. Installing Chrome Beta on the device
+4. Opening Chrome on the dev machine and navigating to `chrome://inspect`
+5. Connecting the debug session to the discovered device
+
+This establishes a bridge to the target device so that pages run on it can be debugged in DevTools on your development machine.
+
+Very cool!
 
 **Links:**
-- [Grow with Google Scholarship Program](https://www.udacity.com/grow-with-google)
-- [Mobile Web Specialist Nanodegree Program](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024)
+- Udacity's [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google)
+- Google Udacity [Mobile Web Specialist Nanodegree](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) program
 
 ---
 
 ## 88. Started Mobile Web Specialist Nanodegree
 **Day 88: April 26, 2018 - Thursday**
 
-**Project:** Google Udacity Nandegree (Mobile Web Specialist)
+**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
 
 [![scholarship-ltr](assets/images/sm_scholarship-phase2-ltr2.jpg)](assets/images/full-size/scholarship-phase2-ltr2.png)
 
@@ -92,8 +121,8 @@ Today is the day I actually jump into the material starting with Lesson 1: Mobil
 I'm energized and ready to learn!
 
 **Links:**
-- [Grow with Google Scholarship Program](https://www.udacity.com/grow-with-google)
-- [Mobile Web Specialist Nanodegree Program](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024)
+- Udacity's [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google)
+- Google Udacity [Mobile Web Specialist Nanodegree](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) program
 
 ---
 
