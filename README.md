@@ -39,22 +39,39 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 **Link to Work:**
 
-
+-->
 ---
 
-## 90. Jekyll Static Site Generator  
+## 90. Linux on Windows 10
 **Day 90: April 28, 2018 - Saturday**
 
-**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
+**Project:** Install Jekyll on Windows Subsystem for Linux (WSL)
 
-[![devtools1](assets/images/sm_2-lesson1-devtools1.jpg)](assets/images/full-size/2-lesson1-devtools1.png)
+[![wsl3](assets/images/sm_wsl3.jpg)](assets/images/full-size/wsl3.png)
 
-**Progress:** Today's
+This involves switching my build system from an Ubuntu VM to the new Windows Subsystem for Linux (WSL). WSL is a Native Ubuntu Bash shell that can be run from the Windows Console or from within Visual Studio Code terminal.
+
+What this means is that we can now run our Linux build systems natively. This includes Nodejs, Jekyll, Ruby, Rails, Python, etc. without having to install Windows versions of Linux tools.
+
+**Progress:** This code log as well as other sites I use for course notes and projects are built using Jekyll and hosted on GitHub as GitHub Pages.
+
+Jekyll is a static site generator & build system.  It's written in Ruby and relies heavily on Gems. It's what GitHub uses to auto-generate GitHub Pages.
+
+It's designed to run on *nix environments and must be run locally if you want to preview your work before going live. This means, that once you push a commit, it moves the files to GitHub and immediately triggers the build system to auto-generates the site.
+
+Unitl now I've been running Ubuntu 16.04 Xenial in a local VM. This is not the most streamlined solution and is pretty clunky at best. It's an extra layer to maintain and produces some laggy behavior.
+
+The only alternatives offered before WSL was to install Windows versions of tools that are really meant to run on Linux. This always ends up being an exercise in frustration and are exactly the kinds of rabbit holes I try to avoid.
+
+Now that we have WSL, I can install Bash, set my VSCode terminal to Ubuntu and run both Windows and Linux tools side-by-side!
+
+[![vscodebash](assets/images/sm_vscode-wsl1.jpg)](assets/images/full-size/vscode-wsl1.png)
 
 **Links:**
-- Udacity's [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google)
-- Google Udacity [Mobile Web Specialist Nanodegree](https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024) program
--->
+- [Jekyll on Windows](https://jekyllrb.com/docs/windows/) - Installation Guide from the Jekyll site
+- [Setting up you GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/) - Steps from the GitHub Help site
+- [Web Dev on Windows with WSL and VS Code](https://daverupert.com/2018/04/developing-on-windows-with-wsl-and-visual-studio-code/) - Article on setting up Linux, Git, Ruby, Rails, Python, Node & VS Code on Windows 10
+
 ---
 
 ## 89. Mobile Device Debug with Chrome DevTools
