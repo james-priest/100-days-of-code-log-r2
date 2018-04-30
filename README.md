@@ -68,6 +68,7 @@ Now that we have WSL, I can install Bash, set my VSCode terminal to Ubuntu and r
 [![vscodebash](assets/images/sm_vscode-wsl1.jpg)](assets/images/full-size/vscode-wsl1.png)
 
 **Links:**
+- [How to Install and Use the Linux Bash Shell on Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) - How-To Geek article
 - [Jekyll on Windows](https://jekyllrb.com/docs/windows/) - Installation Guide from the Jekyll site
 - [Setting up you GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/) - Steps from the GitHub Help site
 - [Web Dev on Windows with WSL and VS Code](https://daverupert.com/2018/04/developing-on-windows-with-wsl-and-visual-studio-code/) - Article on setting up Linux, Git, Ruby, Rails, Python, Node & VS Code on Windows 10
