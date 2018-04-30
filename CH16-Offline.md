@@ -31,8 +31,7 @@ Last, you see how you can make an entire website offline friendly with very litt
 
 ## Lesson 2: Indexed DB
 
-<!-- - [Offline Web Applications - Lesson 2: IndexedDB](CH16-Offline2-IndexedDB.html) -->
-- Offline Web Applications - Lesson 2: IndexedDB
+- [Offline Web Applications - Lesson 2: IndexedDB](CH16-Offline2-IndexedDB.html)
 
 ## Lesson 3: Filesystem API
 
