@@ -7,7 +7,7 @@
 | --- | --- |
 | [100 Days Round 1](https://james-priest.github.io/100-days-of-code-log/) | this log | 100 Days Round 3 |
 
-### Challenge & Commitment
+## Challenge & Commitment
 This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway/100-days-of-code "the official repo") challenge. More details about the challenge can be found here: [100daysofcode.com](http://100daysofcode.com/ "100daysofcode.com").
 
 **Commitment:** *I will code daily for the next 100 days.*
@@ -16,7 +16,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 | ------------- | ------------ |
 | January 28, 2018 | --- |
 
-### Goals
+## Goals
 
 - [x] Code daily
 - [x] Complete Udacity's [Grow with Google Challenge Scholarship](https://www.udacity.com/grow-with-google) - Mobile Web Specialist
@@ -29,7 +29,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 <!--
 
 ## 1.
-**Day 1: January,10 2018 - Saturday**
+### Day 1: January,10 2018 - Saturday
 
 **Project:** Mobile Web trackS
 
@@ -43,7 +43,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ---
 
 ## 90. Linux on Windows 10
-**Day 90: April 28, 2018 - Saturday**
+### Day 90: April 28, 2018 - Saturday
 
 **Project:** Install Jekyll on Windows Subsystem for Linux (WSL)
 
@@ -59,13 +59,13 @@ Jekyll is a static site generator & build system.  It's written in Ruby and reli
 
 It's designed to run on *nix environments and must be run locally if you want to preview your work before going live. This means, that once you push a commit, it moves the files to GitHub and immediately triggers the build system to auto-generates the site.
 
-Unitl now I've been running Ubuntu 16.04 Xenial in a local VM. This is not the most streamlined solution and is pretty clunky at best. It's an extra layer to maintain and produces some laggy behavior.
+Until now I've been running Ubuntu 16.04 Xenial in a local VM. This is not the most streamlined solution and is pretty clunky at best. It's an extra layer to maintain and produces some laggy behavior.
 
 The only alternatives offered before WSL was to install Windows versions of tools that are really meant to run on Linux. This always ends up being an exercise in frustration and are exactly the kinds of rabbit holes I try to avoid.
 
 Now that we have WSL, I can install Bash, set my VSCode terminal to Ubuntu and run both Windows and Linux tools side-by-side!
 
-[![vscodebash](assets/images/sm_vscode-wsl1.jpg)](assets/images/full-size/vscode-wsl1.png)
+[![vs code bash](assets/images/sm_vscode-wsl1.jpg)](assets/images/full-size/vscode-wsl1.png)
 
 **Links:**
 - [How to Install and Use the Linux Bash Shell on Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) - How-To Geek article
@@ -76,11 +76,11 @@ Now that we have WSL, I can install Bash, set my VSCode terminal to Ubuntu and r
 ---
 
 ## 89. Mobile Device Debug with Chrome DevTools
-**Day 89: April 27, 2018 - Friday**
+### Day 89: April 27, 2018 - Friday
 
 **Project:** Google Udacity Nanodegree (Mobile Web Specialist)
 
-[![devtools1](assets/images/sm_2-lesson1-devtools1.jpg)](assets/images/full-size/2-lesson1-devtools1.png)
+[![devTools1](assets/images/sm_2-lesson1-devtools1.jpg)](assets/images/full-size/2-lesson1-devtools1.png)
 
 **Progress:** Today's lesson detailed the need for responsive design and set the stage for how to develop and test sites designed for mobile devices, using a mobile-first approach.
 
@@ -110,7 +110,7 @@ Very cool!
 ---
 
 ## 88. Started Mobile Web Specialist Nanodegree
-**Day 88: April 26, 2018 - Thursday**
+### Day 88: April 26, 2018 - Thursday
 
 **Project:** Google Udacity Nanodegree (Mobile Web Specialist)
 
@@ -145,7 +145,7 @@ I'm energized and ready to learn!
 ---
 
 ## 87. CodePen - Geolocation
-**Day 87: April 25, 2018 - Wednesday**
+### Day 87: April 25, 2018 - Wednesday
 
 **Project:** Add to CodePen work samples
 
@@ -158,7 +158,7 @@ I'm energized and ready to learn!
 ---
 
 ## 86. CodePen - DragDrop #2
-**Day 86: April 24, 2018 - Tuesday**
+### Day 86: April 24, 2018 - Tuesday
 
 **Project:** Add to CodePen work samples
 
@@ -171,7 +171,7 @@ I'm energized and ready to learn!
 ---
 
 ## 85. CodePen - DragDrop #1
-**Day 85: April 23, 2018 - Monday**
+### Day 85: April 23, 2018 - Monday
 
 **Project:** Add to CodePen work samples
 
@@ -184,7 +184,7 @@ I'm energized and ready to learn!
 ---
 
 ## 84. CodePen - Canvas #4
-**Day 84: April 22, 2018 - Sunday**
+### Day 84: April 22, 2018 - Sunday
 
 **Project:** Add to CodePen work samples
 
@@ -197,7 +197,7 @@ I'm energized and ready to learn!
 ---
 
 ## 83. CodePen - Canvas #3
-**Day 83: April 21, 2018 - Saturday**
+### Day 83: April 21, 2018 - Saturday
 
 **Project:** Add to CodePen work samples
 
@@ -210,7 +210,7 @@ I'm energized and ready to learn!
 ---
 
 ## 82. CodePen - Canvas #2
-**Day 82: April 20, 2018 - Friday**
+### Day 82: April 20, 2018 - Friday
 
 **Project:** Add to CodePen work samples
 
@@ -223,7 +223,7 @@ I'm energized and ready to learn!
 ---
 
 ## 81. CodePen - Canvas #1
-**Day 81: April 19, 2018 - Thursday**
+### Day 81: April 19, 2018 - Thursday
 
 **Project:** Add to CodePen work samples
 
@@ -236,7 +236,7 @@ I'm energized and ready to learn!
 ---
 
 ## 80. Linux Containers on Windows (LCOW)
-**Day 80: April 18, 2018 - Wednesday**
+### Day 80: April 18, 2018 - Wednesday
 
 **Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
 
@@ -279,7 +279,7 @@ Docker for Windows Desktop 18.02 with Windows 10 Fall Creators Update](https://b
 ---
 
 ## 79. Linux Bash Shell on Windows (WSL)
-**Day 79: April 17, 2018 - Tuesday**
+### Day 79: April 17, 2018 - Tuesday
 
 **Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
 
@@ -314,7 +314,7 @@ Now I can do things like run Ruby and Jekyll right from Windows rather than incu
 ---
 
 ## 78. Windows 10 Upgrade
-**Day 78: April 14-16, 2018 - Saturday-Monday**
+### Day 78: April 14-16, 2018 - Saturday-Monday
 
 **Project:** Upgrade from Windows 8.1 to Windows 10 v1709 Fall Creator's Update
 
@@ -352,7 +352,7 @@ Once the upgrade was done I:
 ---
 
 ## 77. Azure Developer Tour
-**Day 77: April 13, 2018 - Friday**
+### Day 77: April 13, 2018 - Friday
 
 **Project:** Azure Research and Evaluation
 
@@ -382,7 +382,7 @@ You can access your app and write code through their App Service Editor which wo
 ---
 
 ## 76. React Bootcamp Day 4
-**Day 76: April 12, 2018 - Thursday**
+### Day 76: April 12, 2018 - Thursday
 
 [![React4](assets/images/sm_react-day4.jpg)](assets/images/full-size/react-day4.png)
 
@@ -405,7 +405,7 @@ Day 4 covered:
 ---
 
 ## 75. React Bootcamp Day 3
-**Day 75: April 11, 2018 - Wednesday**
+### Day 75: April 11, 2018 - Wednesday
 
 [![React3](assets/images/sm_react-day3.jpg)](assets/images/full-size/react-day3.png)
 
@@ -433,7 +433,7 @@ Day 3 covered:
 ---
 
 ## 74. React Bootcamp Day 2
-**Day 74: April 10, 2018 - Tuesday**
+### Day 74: April 10, 2018 - Tuesday
 
 [![React2](assets/images/sm_react-day2.jpg)](assets/images/full-size/react-day2.png)
 
@@ -456,7 +456,7 @@ Day 2 consisted of:
 ---
 
 ## 73. React Bootcamp Day 1
-**Day 73: April 9, 2018 - Monday**
+### Day 73: April 9, 2018 - Monday
 
 [![React1](assets/images/sm_react-day1.jpg)](assets/images/full-size/react-day1.png)
 
@@ -482,7 +482,7 @@ Day 1 consisted of:
 ---
 
 ## 72. Offline - Web SQL Pt4 - JOIN & Aggregate Functions
-**Day 72: April 8, 2018 - Sunday**
+### Day 72: April 8, 2018 - Sunday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -522,7 +522,7 @@ Read here: [Chapter 16 - Offline Web Applications: Web SQL - Filtering Results](
 ---
 
 ## 71. Offline - Web SQL Pt3 - Reading & Filtering Results
-**Day 71: April 7, 2018 - Saturday**
+### Day 71: April 7, 2018 - Saturday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -563,7 +563,7 @@ Read here: [Chapter 16 - Offline Web Applications: Web SQL - Filtering Results](
 ---
 
 ## 70. Offline - Web SQL Pt2 - Insert, Update, Delete
-**Day 70: April 6, 2018 - Friday**
+### Day 70: April 6, 2018 - Friday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -588,7 +588,7 @@ Read about Web SQL here: [Chapter 16 - Offline Web Applications: Web SQL - Worki
 ---
 
 ## 69. Offline - Web SQL Pt1 - Open Database
-**Day 69: April 5, 2018 - Thursday**
+### Day 69: April 5, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -618,7 +618,7 @@ Read about Web SQL here: [Chapter 16 - Offline Web Applications: Lesson 1: Web S
 ---
 
 ## 68. Web Storage Pt6 - Storage Events
-**Day 68: April 4, 2018 - Wednesday**
+### Day 68: April 4, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -637,7 +637,7 @@ Read about HTML5 storage here: [Chapter 15 - Web Storage: Handling storage event
 ---
 
 ## 67. Web Storage Pt5 - Sample Code
-**Day 67: April 3, 2018 - Tuesday**
+### Day 67: April 3, 2018 - Tuesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -660,7 +660,7 @@ Read about HTML5 storage here: [Chapter 15 - Web Storage: Lesson summary](CH15-W
 ---
 
 ## 66. Web Storage Pt4 - Google's Storage Recommendations
-**Day 66: April 2, 2018 - Monday**
+### Day 66: April 2, 2018 - Monday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -688,7 +688,7 @@ Read about HTML5 storage here: [Chapter 15 - Web Storage: Anticipating potential
 ---
 
 ## 65. Web Storage Pt3 - HTML5 Storage APIs
-**Day 65: April 1, 2018 - Sunday**
+### Day 65: April 1, 2018 - Sunday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -714,7 +714,7 @@ Read about HTML5 storage here: [Chapter 15 - Web Storage: Understanding HTML5 st
 ---
 
 ## 64. Web Storage Pt2 - Namespace Patterns
-**Day 64: March 31, 2018 - Saturday**
+### Day 64: March 31, 2018 - Saturday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -759,7 +759,7 @@ The notes explaining how to use these four patterns are here: [Chapter 15 - Web 
 ---
 
 ## 63. Web Storage Pt1 - Cookies
-**Day 63: March 30, 2018 - Friday**
+### Day 63: March 30, 2018 - Friday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -783,7 +783,7 @@ The live sample can be viewed here: [a-cookie-original.html](https://james-pries
 ---
 
 ## 62. JS Tutorial Pt13 - Polymorphism
-**Day 62: March 29, 2018 - Thursday**
+### Day 62: March 29, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -845,7 +845,7 @@ Here are the lesson notes:
 ---
 
 ## 61. JS Tutorial Pt12 - Object Reflection
-**Day 61: March 28, 2018 - Wednesday**
+### Day 61: March 28, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -901,7 +901,7 @@ Here are the lesson notes:
 ---
 
 ## 60. JS Tutorial Pt11 - Abstract Classes
-**Day 60: March 27, 2018 - Tuesday**
+### Day 60: March 27, 2018 - Tuesday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -948,7 +948,7 @@ Here are the lesson notes:
 ---
 
 ## 59. JS Tutorial Pt10 - Inheritance in JavaScript
-**Day 59: March 26, 2018 - Monday**
+### Day 59: March 26, 2018 - Monday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -991,7 +991,7 @@ Here are the lesson notes: [Object Oriented JavaScript - Inheritance in JavaScri
 ---
 
 ## 58. JS Tutorial Pt9 - Overriding JS functions
-**Day 58: March 25, 2018 - Sunday**
+### Day 58: March 25, 2018 - Sunday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1036,7 +1036,7 @@ Here are the lesson notes: [Object Oriented JavaScript - Overriding JavaScript F
 ---
 
 ## 57. JS Tutorial Pt8 - The Prototype Object
-**Day 57: March 24, 2018 - Saturday**
+### Day 57: March 24, 2018 - Saturday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1075,7 +1075,7 @@ Here are the lesson notes: [Object Oriented JavaScript - Prototype in JavaScript
 ---
 
 ## 56. JS Tutorial Pt7 - Static Fields & Methods
-**Day 56: March 23, 2018 - Friday**
+### Day 56: March 23, 2018 - Friday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1115,7 +1115,7 @@ Here are more complete examples: [Object Oriented JavaScript - Static Members in
 ---
 
 ## 55. JS Tutorial Pt6 - Property Getters & Setters
-**Day 55: March 22, 2018 - Thursday**
+### Day 55: March 22, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1158,7 +1158,7 @@ You can read a more complete example which includes full code and explanation in
 ---
 
 ## 54. JS Tutorial Pt5 - Private Members
-**Day 54: March 21, 2018 - Wednesday**
+### Day 54: March 21, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1209,7 +1209,7 @@ You can read a more complete example which includes full code and explanation in
 ---
 
 ## 53. JS Tutorial Pt4 - Namespaces
-**Day 53: March 20, 2018 - Tuesday**
+### Day 53: March 20, 2018 - Tuesday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1235,7 +1235,7 @@ You can read a more complete example which includes full code and explanation in
 ---
 
 ## 52. JS Tutorial Pt3 - Global Namespace Pollution
-**Day 52: March 19, 2018 - Monday**
+### Day 52: March 19, 2018 - Monday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1254,7 +1254,7 @@ Notes on this lesson: [Object Oriented JavaScript - Global namespace pollution](
 ---
 
 ## 51. JS Tutorial Pt2 - Object Literal vs Constructor
-**Day 51: March 18, 2018 - Sunday**
+### Day 51: March 18, 2018 - Sunday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1289,7 +1289,7 @@ Notes on this lesson can be found here: [Object Oriented JavaScript - Object lit
 ---
 
 ## 50. JS Tutorial Pt1 - Object Oriented Programming
-**Day 50: March 17, 2018 - Saturday**
+### Day 50: March 17, 2018 - Saturday
 
 **Project:** Study for MS 70-480 Cert Exam (Object Oriented JavaScript)
 
@@ -1336,7 +1336,7 @@ Notes on this lesson can be found here: [Object Oriented JavaScript - OOP](OO-Ja
 ---
 
 ## 49. VSCode from Scratch
-**Day 49: March 16, 2018 - Friday**
+### Day 49: March 16, 2018 - Friday
 
 **Project:** Reinstall Visual Studio Code & plugins
 
@@ -1359,7 +1359,7 @@ Once this was done, I proceeded to install the extensions I wanted along with so
 ---
 
 ## 48. Geolocation Pt3
-**Day 48: March 15, 2018 - Thursday**
+### Day 48: March 15, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1385,7 +1385,7 @@ The live sample can be viewed here: [Position Mapper](https://james-priest.githu
 ---
 
 ## 47. Geolocation Pt2
-**Day 47: March 14, 2018 - Wednesday**
+### Day 47: March 14, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1411,7 +1411,7 @@ The live sample can be viewed here: [GPS Watch Position](https://james-priest.gi
 ---
 
 ## 46. Geolocation Pt1
-**Day 46: March 13, 2018 - Tuesday**
+### Day 46: March 13, 2018 - Tuesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1456,7 +1456,7 @@ This lesson detailed the following.
 ---
 
 ## 45. Scramble Game Pt3
-**Day 45: March 12, 2018 - Monday**
+### Day 45: March 12, 2018 - Monday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1484,7 +1484,7 @@ Here's the completed game: [Scramble Game](https://james-priest.github.io/node_s
 ---
 
 ## 44. Scramble Game Pt2
-**Day 44: March 11, 2018 - Sunday**
+### Day 44: March 11, 2018 - Sunday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1511,7 +1511,7 @@ Here's the work in progress: [WIP - Scramble Game v2](https://james-priest.githu
 ---
 
 ## 43. Scramble Game Pt1
-**Day 43: March 10, 2018 - Saturday**
+### Day 43: March 10, 2018 - Saturday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1537,7 +1537,7 @@ The work in progress page is here : [Scramble Game v1](https://james-priest.gith
 ---
 
 ## 42. HTML5 Drag & Drop Pt2
-**Day 42: March 9, 2018 - Friday**
+### Day 42: March 9, 2018 - Friday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1565,7 +1565,7 @@ This covered:
 ---
 
 ## 41. HTML5 Drag & Drop Pt1
-**Day 41: March 8, 2018 - Thursday**
+### Day 41: March 8, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1587,7 +1587,7 @@ This covered:
 ---
 
 ## 40. HTML5 SVG
-**Day 40: March 7, 2018 - Wednesday**
+### Day 40: March 7, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1608,7 +1608,7 @@ This covered:
 ---
 
 ## 39. HTML5 Canvas Pt4
-**Day 39: March 6, 2018 - Tuesday**
+### Day 39: March 6, 2018 - Tuesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1632,7 +1632,7 @@ This covered:
 ---
 
 ## 38. HTML5 Canvas Pt3
-**Day 38: March 5, 2018 - Monday**
+### Day 38: March 5, 2018 - Monday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1658,7 +1658,7 @@ This covered:
 ---
 
 ## 37. HTML5 Canvas Pt2
-**Day 37: March 4, 2018 - Sunday**
+### Day 37: March 4, 2018 - Sunday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1682,7 +1682,7 @@ Specifically covered:
 ---
 
 ## 36. HTML5 Canvas Pt1
-**Day 36: March 3, 2018 - Saturday**
+### Day 36: March 3, 2018 - Saturday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1704,7 +1704,7 @@ Also covered:
 ---
 
 ## 35. HTML5 Media
-**Day 35: March 2, 2018 - Friday**
+### Day 35: March 2, 2018 - Friday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1729,7 +1729,7 @@ Also covered:
 ---
 
 ## 34. WebSocket API
-**Day 34: March 1, 2018 - Thursday**
+### Day 34: March 1, 2018 - Thursday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1755,7 +1755,7 @@ Here's a quick bullet list of take-away's:
 ---
 
 ## 33. Web Workers
-**Day 33: February 28, 2018 - Wednesday**
+### Day 33: February 28, 2018 - Wednesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1783,7 +1783,7 @@ Here's a quick bullet list of take-away's:
 ---
 
 ## 32. jQuery Ajax & Promises
-**Day 32: February 27, 2018 - Tuesday**
+### Day 32: February 27, 2018 - Tuesday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1805,7 +1805,7 @@ Nonetheless, it's still helpful to know these patterns since a huge majority of 
 ---
 
 ## 31. XMLHttpRequest & Ajax
-**Day 31: February 26, 2018 - Monday**
+### Day 31: February 26, 2018 - Monday
 
 **Project:** Study for MS 70-480 Cert Exam (Programming in HTML5 with JavaScript & CSS3)
 
@@ -1828,7 +1828,7 @@ The object that makes this call from the browser DOM is the XMLHttpRequest objec
 ---
 
 ## 30. ES6 Transpiling & Babel
-**Day 30: February 25, 2018 - Sunday**
+### Day 30: February 25, 2018 - Sunday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -1863,7 +1863,7 @@ My notes on [ES6 JavaScript Improved (4) - Professional Developer-fu](ES6-Profes
 ---
 
 ## 29. ES6 Polyfills
-**Day 29: February 24, 2018 - Saturday**
+### Day 29: February 24, 2018 - Saturday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -1898,7 +1898,7 @@ My notes on [ES6 JavaScript Improved (4) - Professional Developer-fu](ES6-Profes
 ---
 
 ## 28. ES6 Promises, Proxies, & Generators
-**Day 28: February 23, 2018 - Friday**
+### Day 28: February 23, 2018 - Friday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -1940,7 +1940,7 @@ My notes on [ES6 JavaScript Improved (3.5) - Built-ins-Pt2](ES6-Built-ins-Pt2.ht
 ---
 
 ## 27. ES6 Maps & WeakMaps
-**Day 27: February 22, 2018 - Thursday**
+### Day 27: February 22, 2018 - Thursday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -1985,7 +1985,7 @@ My notes on [ES6 JavaScript Improved (3) - Built-ins](ES6-Built-ins.html).
 ---
 
 ## 26. ES6 Built-ins, Symbols, Sets & WeakSets
-**Day 26: February 21, 2018 - Wednesday**
+### Day 26: February 21, 2018 - Wednesday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2021,7 +2021,7 @@ My notes on [ES6 JavaScript Improved (3) - Built-ins](ES6-Built-ins.html).
 ---
 
 ## 25. ES6 Classes, Subclasses, & Prototypal Inheritance
-**Day 25: February 20, 2018 - Tuesday**
+### Day 25: February 20, 2018 - Tuesday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2049,7 +2049,7 @@ My notes on [ES6 JavaScript Improved (2.5) - Classes](ES6-Classes.html).
 ---
 
 ## 24. ES6 'this' Keyword & Default Parameters
-**Day 24: February 19, 2018 - Monday**
+### Day 24: February 19, 2018 - Monday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2092,7 +2092,7 @@ My notes on [ES6 JavaScript Improved (2) - Functions](ES6-Functions.html).
 ---
 
 ## 23. ES6 Arrow Functions
-**Day 23: February 18, 2018 - Sunday**
+### Day 23: February 18, 2018 - Sunday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2131,7 +2131,6 @@ The lessons covered:
     - Parens / no parens / empty parens / underscore
 1. _"Concise body syntax"_  vs. _"block body syntax"_
 
-
 **Links:**
 - [ES6 JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356) (free 4 week course) on Udacity
 - Course Notes - [Offline First (1) - Introducing the Service Worker](Introducing-the-Service-Worker.html)
@@ -2142,7 +2141,7 @@ The lessons covered:
 ---
 
 ## 22. ES6 Object Literal Shorthand & For..of Loops
-**Day 22: February 17, 2018 - Saturday**
+### Day 22: February 17, 2018 - Saturday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2182,7 +2181,7 @@ The lessons covered:
 ---
 
 ## 21. ES6 Template Literals & Destructuring Arrays
-**Day 21: February 16, 2018 - Friday**
+### Day 21: February 16, 2018 - Friday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2214,7 +2213,7 @@ You can read more here: [My notes - ES6 JavaScript Improved - Syntax](ES6-Syntax
 ---
 
 ## 20. ES6 JavaScript Improved
-**Day 20: February 15, 2018 - Thursday**
+### Day 20: February 15, 2018 - Thursday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2238,7 +2237,7 @@ You can read more here: [My notes - ES6 JavaScript Improved - Syntax](ES6-Syntax
 ---
 
 ## 19. Cache Avatars
-**Day 19: February 14, 2018 - Wednesday**
+### Day 19: February 14, 2018 - Wednesday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2260,7 +2259,7 @@ You can read more here: [My notes - IndexedDB and Caching - Cache Avatars](Index
 ---
 
 ## 18. Cache Photos
-**Day 18: February 13, 2018 - Tuesday**
+### Day 18: February 13, 2018 - Tuesday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2280,7 +2279,7 @@ You can read more here: [My notes - IndexedDB and Caching - Cache Photos](Indexe
 ---
 
 ## 17. Display Data & Clean Database
-**Day 17: February 12, 2018 - Monday**
+### Day 17: February 12, 2018 - Monday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2300,7 +2299,7 @@ You can read more here: [My notes - IndexedDB and Caching - Display IDB Data on 
 ---
 
 ## 16. Populate the IDB Database
-**Day 16: February 11, 2018 - Sunday**
+### Day 16: February 11, 2018 - Sunday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2322,7 +2321,7 @@ You can read more here: [My notes - IndexedDB and Caching - IDB Cache & Display 
 ---
 
 ## 15. IDB Cache & Display Entries
-**Day 15: February 10, 2018 - Saturday**
+### Day 15: February 10, 2018 - Saturday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2344,7 +2343,7 @@ You can read more here: [My notes - IndexedDB and Caching - IDB Cache & Display 
 ---
 
 ## 14. IDB Cursors and Indexes
-**Day 14: February 9, 2018 - Friday**
+### Day 14: February 9, 2018 - Friday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2369,7 +2368,7 @@ You can read more here: [My notes - IndexedDB and Caching - IDB Cursors and Inde
 ---
 
 ## 13. Diving Deeper into IDB
-**Day 13: February 8, 2018 - Thursday**
+### Day 13: February 8, 2018 - Thursday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2395,7 +2394,7 @@ You can read more here: [My notes - IndexedDB and Caching - Diving Deeper with I
 ---
 
 ## 12. Getting Started with IDB
-**Day 12: February 7, 2018 - Wednesday**
+### Day 12: February 7, 2018 - Wednesday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2420,7 +2419,7 @@ You can read more here: [My notes - IndexedDB and Caching](IndexedDB-and-Caching
 ---
 
 ## 11. IndexedDB Promised Library
-**Day 11: February 6, 2018 - Tuesday**
+### Day 11: February 6, 2018 - Tuesday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2442,7 +2441,7 @@ You can read more here: [My notes - IndexedDB and Caching](IndexedDB-and-Caching
 ---
 
 ## 10. Triggering a Service Worker Update
-**Day 10: February 5, 2018 - Monday**
+### Day 10: February 5, 2018 - Monday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2463,7 +2462,7 @@ You can read more here: [My notes - Triggering an Update](Introducing-the-Servic
 ---
 
 ## 9. Update Notification with Service Workers
-**Day 9: February 4, 2018 - Sunday**
+### Day 9: February 4, 2018 - Sunday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2484,7 +2483,7 @@ You can read more here: [My notes - Adding UX to the Update Process](Introducing
 ---
 
 ## 8. Updating Static Cache
-**Day 8: February 3, 2018 - Saturday**
+### Day 8: February 3, 2018 - Saturday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2507,7 +2506,7 @@ You can read more here: [My notes - Updating the Static Cache](Introducing-the-S
 ---
 
 ## 7. Cache API
-**Day 7: February 2, 2018 - Friday**
+### Day 7: February 2, 2018 - Friday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2539,7 +2538,7 @@ Full examples can be found in [my notes under - Caching and Serving Assets](Intr
 ---
 
 ## 6. Hijacking Requests
-**Day 6: February 1, 2018 - Thursday**
+### Day 6: February 1, 2018 - Thursday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2572,7 +2571,7 @@ Full examples can be found in [my notes](Introducing-the-Service-Worker.html).
 ---
 
 ## 5. Service Worker Dev Tools
-**Day 5: January,31 2018 - Wednesday**
+### Day 5: January,31 2018 - Wednesday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2590,7 +2589,7 @@ Chrome Stable has the Service Worker features already baked in and might be a be
 ---
 
 ## 4. The Service Worker Lifecycle
-**Day 4: January,30 2018 - Tuesday**
+### Day 4: January,30 2018 - Tuesday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2611,7 +2610,7 @@ This is part of a larger, 3-part Udacity series called [Offline Web Applications
 ---
 
 ## 3. An Overview of the Service Worker
-**Day 3: January,29 2018 - Monday**
+### Day 3: January,29 2018 - Monday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2631,7 +2630,7 @@ To see full notes along with screen captures click the link below.
 ---
 
 ## 2. The Benefits of Offline First
-**Day 2: January,28 2018 - Sunday**
+### Day 2: January,28 2018 - Sunday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2655,7 +2654,7 @@ It's billed as a new browser feature and a total game changer- the greatest para
 ---
 
 ## 1. Grow With Google - Mobile Web - Getting Started
-**Day 1: January,27 2018 - Saturday**
+### Day 1: January,27 2018 - Saturday
 
 **Project:** [Grow with Google Scholarship Challenge](https://www.udacity.com/grow-with-google): Mobile Web track
 
@@ -2680,7 +2679,7 @@ Looks like some nice coverage of things I want to dive into deeper!
 ---
 
 ## Round 2 Preflight Checklist
-**Day 0: January 26, 2018 - Friday**
+### Day 0: January 26, 2018 - Friday
 
 **Project:**
 - Create 100 Days of Code Round 2 Log
