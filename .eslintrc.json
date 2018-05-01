@@ -3,6 +3,7 @@
         "browser": true,
         "commonjs": false,
         "es6": true,
+        "jquery": true,
         "node": true
     },
     "parserOptions": {
