@@ -42,6 +42,62 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 91. Using Apt on Ubuntu on Windows 10
+### Day 91: April 29, 2018 - Sunday
+
+**Project:** Configuring Linux on Windows 10
+
+[![wsl4](assets/images/sm_wsl4.jpg)](assets/images/full-size/wsl4.png)
+
+Now that I have the Windows Subsystem for Linux (WSL) feature turned on and Ubuntu installed, I can proceed to configure my Linux terminal.
+
+**Progress:** The first thing I did was to check out **Apt**. It's a new package manager introduced in Ubuntu 16.04 that simplifies "apt-get" commands by providing more intuitive syntax for better usability. This is not a layer on top of "apt-get" but a new set of terminal commands to interact with packages.
+
+The first step is to update the software sources.
+
+```bash
+sudo apt update
+```
+
+You can then view what needs upgrading by issuing this command.
+
+```bash
+apt list --upgradable
+```
+
+Or you can simply tell Apt to upgrade everything that needs upgrading.
+
+```bash
+sudo apt upgrade
+```
+
+To install a package you simply issue the "install' command. You can install multiple packages like this.
+
+```bash
+sudo apt install ruby2.3 ruby2.3-dev build-essentails
+```
+
+Here's a list of basic commands
+
+#### Basic commands
+- **list** - list packages based on package names
+- **search** - search in package descriptions
+- **show** - show package details
+- **update** - update list of available packages
+- **install** - install packages
+- **remove** - remove packages
+- **upgrade** - upgrade packages
+- **full-upgrade** - upgrade the system by removing/installing/upgrading packages
+- **edit-sources** - edit the source information file
+
+**Links:**
+- [The Difference Between Apt and Apt-get on Ubuntu](https://www.maketecheasier.com/apt-vs-apt-get-ubuntu/) - maketecheasier post
+- [Simplify Command-Line Package Management with APT instead of apt-get](https://www.howtogeek.com/234583/simplify-command-line-package-management-with-apt-instead-of-apt-get/) - How-To Geek article
+- [How to Install Linux Software in Windows 10’s Ubuntu Bash Shell](https://www.howtogeek.com/261449/how-to-install-linux-software-in-windows-10s-ubuntu-bash-shell/) - How-To Geek article
+- [Difference Between apt and apt-get Explained](https://itsfoss.com/apt-vs-apt-get-difference/) - It's FOSS blog post
+
+---
+
 ## 90. Linux on Windows 10
 ### Day 90: April 28, 2018 - Saturday
 
@@ -49,7 +105,11 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 [![wsl3](assets/images/sm_wsl3.jpg)](assets/images/full-size/wsl3.png)
 
-This involves switching my build system from an Ubuntu VM to the new Windows Subsystem for Linux (WSL). WSL is a Native Ubuntu Bash shell that can be run from the Windows Console or from within Visual Studio Code terminal.
+This involves switching my build system from an Ubuntu VM to the new Windows Subsystem for Linux (WSL).
+
+WSL is a compatibility layer for running Linux binary executables natively on Windows 10.
+
+You can then install one or more distros from the Windows Store. I installed Ubuntu which provides the ability to launch a terminal window (Ubuntu Bash) from Windows taskbar, console, or from within Visual Studio Code.
 
 What this means is that we can now run our Linux build systems natively. This includes Nodejs, Jekyll, Ruby, Rails, Python, etc. without having to install Windows versions of Linux tools.
 
@@ -59,11 +119,15 @@ Jekyll is a static site generator & build system.  It's written in Ruby and reli
 
 It's designed to run on *nix environments and must be run locally if you want to preview your work before going live. This means, that once you push a commit, it moves the files to GitHub and immediately triggers the build system to auto-generates the site.
 
-Until now I've been running Ubuntu 16.04 Xenial in a local VM. This is not the most streamlined solution and is pretty clunky at best. It's an extra layer to maintain and produces some laggy behavior.
+Until now I've been running Ubuntu 16.04 Xenial in a local VM. This is not the most streamlined solution and produced build times that would take between 20-30 seconds on each save. This was pretty clunky and produced an extra layer to maintain.
 
-The only alternatives offered before WSL was to install Windows versions of tools that are really meant to run on Linux. This always ends up being an exercise in frustration and are exactly the kinds of rabbit holes I try to avoid.
+Prior to WSL, the other possible alternative was to install the Windows versions of various Linux tools and hope that you could get them configured and working well with each other within the Windows environment. This always ended up being an exercise in frustration.
 
-Now that we have WSL, I can install Bash, set my VSCode terminal to Ubuntu and run both Windows and Linux tools side-by-side!
+Now that I have WSL installed, my build time has dropped to under 5 seconds per save operation and is half of that (1-2 seconds) if I enable Jekyll's incremental build option!
+
+Now I have a legit Linux terminal running in VSCode which cracks the development universe wide open.
+
+I no longer have to fear or avoid the (`$`) prompt in online tutorials and coding exercises! I can now run Windows and Linux terminal side-by-side!
 
 [![vs code bash](assets/images/sm_vscode-wsl1.jpg)](assets/images/full-size/vscode-wsl1.png)
 
@@ -1817,7 +1881,7 @@ REST attempts to use standard operations of HTTP by mapping _create_, _retrieve_
 
 The object that makes this call from the browser DOM is the XMLHttpRequest object. It is either invoked directly, or through one of jQuery's many wrapper methods. The ones I used were the following:
 
-- Async XMLHttpRequest (for old-school backwards compatability)
+- Async XMLHttpRequest (for old-school backwards compatibility)
 - $.ajax()
 - $.get()
 - $.getJSON()
