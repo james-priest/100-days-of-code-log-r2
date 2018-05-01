@@ -42,6 +42,63 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 92. Using Vim on Ubuntu on Window 10
+### Day 92: April 30, 2018 - Monday
+
+**Project:** Configuring Linux on Windows 10
+
+[![vim2](assets/images/sm_vim2.jpg)](assets/images/full-size/vim2.png)
+
+I've now updated my software sources, upgraded existing packages, and installed new ones for my Ubuntu instance on Windows 10.
+
+**Progress:** Right now, if I use Vim to open my ".bashrc" file it show this.
+
+[![vim1](assets/images/sm_vim1.jpg)](assets/images/full-size/vim1.png)
+
+This is really hard to read with the default color scheme and currently it's not very easy to update.
+
+So, the next step was to open a browser and go to [http://vimconfig.com](http://vimconfig.com). This generates a config file (`.vimrc`) that you can drop into your home (`~`) directory.
+
+I used Vim to create the resource file. I then saved the file out to my home directory.
+
+```bash
+vim ~/.vimrc
+```
+
+The file has the following settings and the only setting I added manually was the last one which uses `set background=dark` to make everything readable until I can get around to updating the color scheme globally.
+
+```vim
+set number
+set linebreak
+set showbreak=+++
+set textwidth=100
+set showmatch
+set visualbell
+
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+
+set autoindent
+set shiftwidth=4
+set smartindent
+set smarttab
+set softtabstop=4
+
+set background=dark
+```
+
+The final result looks like this.
+
+[![vim3](assets/images/sm_vim3.jpg)](assets/images/full-size/vim3.png)
+
+**Links:**
+- [Vim Config tool](http://vimconfig.com/) - Creates config settings that can be copied to `.vimrc`
+- [Fixing dark blue colors on Windows 10 Ubuntu bash](https://medium.com/@iraklis/fixing-dark-blue-colors-on-windows-10-ubuntu-bash-c6b009f8b97c) - Medium article
+
+---
+
 ## 91. Using Apt on Ubuntu on Windows 10
 ### Day 91: April 29, 2018 - Sunday
 
