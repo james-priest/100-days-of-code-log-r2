@@ -5,12 +5,9 @@ description: Programming in HTML5 with JavaScript & CSS3 Training Guide
 <!-- markdownlint-disable MD022 MD024 MD032 -->
 # Chapter 16 - Offline Web Applications
 
-Notes from [Programming in HTML5 with JavaScript & CSS3 Training Guide](https://www.amazon.com/Training-Guide-Programming-JavaScript-Microsoft/dp/0735674388) by Glenn Johnson.
-
-This is part of my study material for passing Microsoft's [Exam 70-480: Programming in HTML5 with JavaScript & CSS3](https://www.microsoft.com/en-us/learning/exam-70-480.aspx) certification exam.
+[<-- back to Chapter 16 - Offline Web Applications](CH16-Offline.html)
 
 ---
-[<-- back to Chapter 16 Lesson TOC](CH16-Offline.html)
 
 # Lesson 1: Web SQL
 Web SQL is arguably one of the most powerful options available to you. It provides a full relational database that includes many of the features you've come to enjoy from server-side database offerings.

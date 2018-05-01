@@ -3,14 +3,9 @@ title: IndexedDB
 description: Programming in HTML5 with JavaScript & CSS3 Training Guide
 ---
 <!-- markdownlint-disable MD022 MD024 MD032 -->
+# Chapter 16 - Offline Web Applications
 
-[<-- back to Chapter 16 - Offline Web Application](CH16-Offline.html)
-
----
-
-Notes from [Programming in HTML5 with JavaScript & CSS3 Training Guide](https://www.amazon.com/Training-Guide-Programming-JavaScript-Microsoft/dp/0735674388) by Glenn Johnson.
-
-This is part of my study material for passing Microsoft's [Exam 70-480: Programming in HTML5 with JavaScript & CSS3](https://www.microsoft.com/en-us/learning/exam-70-480.aspx) certification exam.
+[<-- back to Chapter 16 - Offline Web Applications](CH16-Offline.html)
 
 ---
 
@@ -39,7 +34,7 @@ window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange;
 ```
 
 ## 2. Creating and opening the database
-The first step in working with INdexedDB is to create a database. You need to access the browser's indexedDB object, which, in the previous example, was assigned to a consistent variable.
+The first step in working with IndexedDB is to create a database. You need to access the browser's indexedDB object, which, in the previous example, was assigned to a consistent variable.
 
 ```js
 var indexedDB = window.indexedDB;

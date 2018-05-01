@@ -11,7 +11,7 @@ This is part of my study material for passing Microsoft's [Exam 70-480: Programm
 
 | Lesson 1 | Lesson 2 | Lesson 3 | Lesson 4 |
 | ---      | ---      | ---      | ---      |
-| [Web SQL](CH16-Offline1-WebSQL.html) | IndexedDB | Filesystem API | App Cache |
+| [Web SQL](CH16-Offline1-WebSQL.html) | [IndexedDB](CH16-Offline2-IndexedDB.html) | Filesystem API | App Cache |
 
 ---
 
