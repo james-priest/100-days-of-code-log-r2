@@ -42,6 +42,50 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 93. Using the Console ColorTool on Window 10
+### Day 93: May 1, 2018 - Tuesday
+
+**Project:** Configuring Console (Cmd, PowerShell, & Bash) colors on Windows 10
+
+[![color tool](assets/images/sm_wsl-colors.jpg)](assets/images/full-size/wsl-colors.png)
+
+**Progress:** The default console colors were pretty bad when **Bash on Ubuntu on Windows** was first released in August of 2016 as part of the **Windows Anniversary Update**.
+
+[![default color scheme](assets/images/sm_wsl-console1.jpg)](assets/images/full-size/wsl-console1.png)
+
+The first thing I did was to update the directory color to be more readable. This is done by making a change to the `~/.bashrc` file. I found an [Ask Ubuntu article](https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console) that details the process.
+
+```bash
+LS_COLORS=$LS_COLORS:'di=0;36:'; export LS_COLORS
+```
+
+[![new dir colors](assets/images/sm_wsl-console2.jpg)](assets/images/full-size/wsl-console2.png)
+
+This change gave windows directories a cyan color which was better but it still left the default color scheme pretty hard to read.
+
+Now with the April 2018 release Microsoft has updated the default color scheme for Console. Unfortunately, it only takes effect on new installs. For exisitng installations you have to manually do this. Fortunately, Microsoft released a tool that makes this much easier to do than before.
+
+With the [Microsoft Console ColorTool](https://github.com/Microsoft/Console/tree/master/tools/ColorTool) you can apply any iTerm2 color scheme to your console.
+
+**Monokai**
+[![monokai schema](assets/images/sm_wsl-console3.jpg)](assets/images/full-size/wsl-console3.png)
+
+**Argonaut**
+[![Argonaut schema](assets/images/sm_wsl-console4.jpg)](assets/images/full-size/wsl-console4.png)
+
+Now I have a great terminal experience that feels closer to *nix than ever before.
+
+For more information on how to do this, see the links below.
+
+**Links:**
+- [How do I change the color for directories with ls in the console](https://askubuntu.com/questions/466198/how-do-i-change-the-color-for-directories-with-ls-in-the-console) - Ask Ubuntu article
+- [Introducing the Windows Console ColorTool](https://blogs.msdn.microsoft.com/commandline/2017/08/11/introducing-the-windows-console-colortool/) - Microsoft Developer blog
+- [How to change Command Prompt's color scheme on Windows 10](https://www.windowscentral.com/how-change-command-prompts-color-scheme-windows-10) - Step-by-Step Guide
+- [Microsoft Console ColorTool](https://github.com/Microsoft/Console/tree/master/tools/ColorTool) GitHub repo
+- [iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) GitHub repo
+
+---
+
 ## 92. Using Vim on Ubuntu on Window 10
 ### Day 92: April 30, 2018 - Monday
 
@@ -94,7 +138,7 @@ The final result looks like this.
 [![vim3](assets/images/sm_vim3.jpg)](assets/images/full-size/vim3.png)
 
 **Links:**
-- [Vim Config tool](http://vimconfig.com/) - Creates config settings that can be copied to `.vimrc`
+- [Vim Config tool](http://vimconfig.com/) - Creates config settings that can be copied to `.vimrc` in home directory
 - [Fixing dark blue colors on Windows 10 Ubuntu bash](https://medium.com/@iraklis/fixing-dark-blue-colors-on-windows-10-ubuntu-bash-c6b009f8b97c) - Medium article
 
 ---
