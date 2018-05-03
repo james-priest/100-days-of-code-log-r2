@@ -42,6 +42,29 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 94. Why Responsive Design 
+### Day 94: May 2, 2018 - Wednesday
+
+**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
+
+[![Responsive course](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/sm_rwdf1.jpg)](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/full-size/rwdf1.png)
+
+**Progress:** Completed *Lesson 1: Why Responsive?* of my [Responsive Web Design Fundamentals](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893) course.
+
+The lesson covered:
+- The benefits of creating a single, responsive codebase rather than maintaining separate codebases for various devices & platforms
+- Setting up Chrome DevTools
+- Using emulators & simulators
+- Configuring remote debugging on a physical device
+
+You can read more here: [My Notes - Responsive Web Design Lesson 1: Why Responsive?](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html)
+
+**Links:**
+- [Course Notes - Responsive Web Design Fundamentals](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html)
+- Udacity's [Responsive Web Design Fundamentals by Google](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893) (free 2 week course)
+
+---
+
 ## 93. Using the Console ColorTool on Window 10
 ### Day 93: May 1, 2018 - Tuesday
 
