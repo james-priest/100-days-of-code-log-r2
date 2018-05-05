@@ -42,6 +42,31 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 96. Media Query, Breakpoint, Flexbox, & Grid
+### Day 96: May 4, 2018 - Friday
+
+**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
+
+[![Responsive course3](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/sm_rwdf41.jpg)](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/full-size/rwdf41.png)
+
+**Progress:** Completed *Lesson 3: Building Up* of my [Responsive Web Design Fundamentals](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893) course. This lesson continued discussing the building blocks of responsive design.
+
+The lesson covered:
+- Link and embedded media queries
+- Use of `min-width` & `max-width`
+- Warnings against `min-device-width` and `max-device-width`
+- Setting breakpoints and the methodology for determining where to set them
+- Introduction to CSS Grid
+- Introduction to Flexbox
+
+You can read more here: [My Notes - Responsive Web Design Lesson 3: Building Up](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html#lesson-3-building-up)
+
+**Links:**
+- [My Course Notes - Responsive Web Design Fundamentals](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html)
+- Udacity's [Responsive Web Design Fundamentals by Google](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893) (free 2 week course)
+
+---
+
 ## 95. Mobile First Design
 ### Day 95: May 3, 2018 - Thursday
 
@@ -58,7 +83,7 @@ The lesson covered:
 - Establishing large enough tap targets
 - Designing for the smallest form factor first and then expanding the design as needed
 
-You can read more here: [My Notes - Responsive Web Design Lesson 1: Starting Small](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html#2-starting-small)
+You can read more here: [My Notes - Responsive Web Design Lesson 2: Starting Small](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html#2-starting-small)
 
 **Links:**
 - [Course Notes - Responsive Web Design Fundamentals](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html)
