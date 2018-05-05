@@ -67,9 +67,26 @@ nav {
     margin-left: -574px;
     top: 190px;
     max-height: 70vh;
+    text-align: inherit;
+    overflow-x: hidden;
 }
-// End v3
-
+// End
+nav ul {
+    width: 185px;
+    padding: 52px;
+}
+nav ul li {
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    padding-left: 2.6em;
+    text-indent: -2.6em;
+}
+// nav ul a {
+//     white-space: nowrap;
+// }
+nav ul li.tag-h2 a {
+    margin-left: 10px;
+}
 nav li.active {
     background-color: #ffeca0;
     border-top: 1px solid #dba500;
