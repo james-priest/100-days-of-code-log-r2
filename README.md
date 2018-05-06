@@ -42,6 +42,34 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 97. Responsive Layout Patterns 1 & 2
+### Day 97: May 5, 2018 - Saturday
+
+**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
+
+**Progress:** Started *Lesson 4: Common Responsive Patterns* of my [Responsive Web Design Fundamentals](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893) course. This lesson details four of the most commonly used patterns.
+
+These include:
+
+1. [Column Drop]((https://codepen.io/james-priest/pen/KRXeKo))
+    [![Column Drop 4-2](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/sm_rwdf4-2.jpg)](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/full-size/rwdf4-2.png)
+
+2. [Mostly Fluid](https://codepen.io/james-priest/pen/XqeYjQ)
+    [![Mostly Fluid](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/sm_rwdf4-7.jpg)](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/full-size/rwdf4-7.png)
+
+3. Layout Shifter
+4. Off Canvas
+
+Read more: [Notes - Responsive Web Design Lesson 4: Common Responsive Pattern 4.1 - 4.3](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html#lesson-3-building-up)
+
+**Links:**
+- My Course Notes - [Responsive Web Design Fundamentals](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html)
+- CodePen - [Column Drop Pattern](https://codepen.io/james-priest/pen/KRXeKo)
+- CodePen - [Mostly Fluid Pattern](https://codepen.io/james-priest/pen/XqeYjQ)
+- Udacity's [Responsive Web Design Fundamentals by Google](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893) (free 2 week course)
+
+---
+
 ## 96. Media Query, Breakpoint, Flexbox, & Grid
 ### Day 96: May 4, 2018 - Friday
 
