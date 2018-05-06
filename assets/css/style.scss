@@ -55,8 +55,12 @@ header {
     background: #1D8C39;
     background: #1A7F33;
 }
-a { color:#1A7F33;}
+// a { color:#1A7F33;}
+// a { color:rgb(10, 192, 55);}
+a { color:rgb(9, 175, 50); }
 a:hover { color:#999999; text-decoration: underline; }
+section a { border-bottom: 1px dotted; }
+section a:hover { border-bottom: none; }
 input[type="checkbox"], input[type="radio"] {
     margin-right: 6px;
 }
