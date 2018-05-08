@@ -42,6 +42,27 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 99. Make a Site Responsive
+### Day 99: May 7, 2018 - MOnday
+
+**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
+
+**Progress:** Completed *Lesson 4: Common Responsive Patterns* from the Udacity course: [Responsive Web Design Fundamentals](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893).
+
+The end of this lesson asked us to put what we learned into practice by implementing a combination of patterns, breakpoints, and layouts to make an existing site responsive.
+
+[![The Brighton Times](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/sm_rwdf4-29.jpg)](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/full-size/rwdf4-29.png)
+Live Sample - [The Brighton Times](https://codepen.io/james-priest/pen/ZovQQp)
+
+Read more: [Notes - Responsive Web Design Lesson 4: Common Responsive Pattern 4.11 & 4.12](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html#411-quiz-project-update-part-2)
+
+**Links:**
+- My Course Notes - [Responsive Web Design Fundamentals](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html)
+- CodePen - [The Brighton Times](https://codepen.io/james-priest/pen/ZovQQp) - Responsive design exercise
+- Udacity's [Responsive Web Design Fundamentals by Google](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893) (free 2 week course)
+
+---
+
 ## 98. Responsive Layout Patterns 3 & 4
 ### Day 98: May 6, 2018 - Sunday
 
