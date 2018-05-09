@@ -42,8 +42,32 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 -->
 ---
 
+## 100. Site Optimizations
+### Day 100: May 7, 2018 - Tuesday
+
+**Project:** Google Udacity Nanodegree (Mobile Web Specialist)
+
+[![tables](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/sm_rwdf5-23.jpg)](https://james-priest.github.io/udacity-nanodegree-mws/assets/images/full-size/rwdf5-23.png)
+
+**Progress:** Completed *Lesson 5: Optimizations* from the Udacity course: [Responsive Web Design Fundamentals](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893).
+
+This lesson dealt with how to adapt:
+
+- Responsive tables for mobile (hidden columns, contained scrolling, block elements)
+- Font sizing across different viewports
+- Images resolution based on device pixel density
+- Minor breakpoints
+
+Read more: [Notes - Responsive Web Design Lesson 5: Optimizations](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html#lesson-5-optimizations)
+
+**Links:**
+- My Course Notes - [Responsive Web Design Fundamentals](https://james-priest.github.io/udacity-nanodegree-mws/course-notes/responsive-web-design-fundamentals.html)
+- Udacity's [Responsive Web Design Fundamentals by Google](https://www.udacity.com/course/responsive-web-design-fundamentals--ud893) (free 2 week course)
+
+---
+
 ## 99. Make a Site Responsive
-### Day 99: May 7, 2018 - MOnday
+### Day 99: May 7, 2018 - Monday
 
 **Project:** Google Udacity Nanodegree (Mobile Web Specialist)
 
