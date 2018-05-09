@@ -14,7 +14,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 
 |  Start Date   | End Date     |
 | ------------- | ------------ |
-| January 28, 2018 | --- |
+| January 28, 2018 | May 8, 2018 |
 
 ## Goals
 
@@ -43,7 +43,7 @@ This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway
 ---
 
 ## 100. Site Optimizations
-### Day 100: May 7, 2018 - Tuesday
+### Day 100: May 8, 2018 - Tuesday
 
 **Project:** Google Udacity Nanodegree (Mobile Web Specialist)
 
