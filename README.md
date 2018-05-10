@@ -4,8 +4,8 @@
 ## 100 Days Of Code
 
 | Log 1 (Days 1-100) | Log 2 (Days 101-200) | Log 3 (Days 201-300) |
-| --- | --- |
-| [100 Days Round 1](https://james-priest.github.io/100-days-of-code-log/) | this log | 100 Days Round 3 |
+| --- | --- | --- |
+| [100 Days Round 1](https://james-priest.github.io/100-days-of-code-log/) | this log | [100 Days Round 3](https://james-priest.github.io/100-days-of-code-log-r3/) |
 
 ## Challenge & Commitment
 This is part of Alexander Kallaway's [100DaysOfCode](https://github.com/Kallaway/100-days-of-code "the official repo") challenge. More details about the challenge can be found here: [100daysofcode.com](http://100daysofcode.com/ "100daysofcode.com").
