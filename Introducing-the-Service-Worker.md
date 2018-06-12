@@ -3,10 +3,18 @@ title: Service Worker
 description: Grow with Google Scholarship Challenge - Mobile Web Track
 ---
 <!-- markdownlint-disable MD022 MD024 MD032 -->
+
+[<-- back to Mobile Web Specialist Phase 1 Notes TOC](MWS-TOC.html)
+
+---
+
 # Introducing the Service Worker
+
 Notes from _Introducing the Service Worker_ by Jake Archibald. This class is part of the Udacity course [Offline Web Applications by Google](https://www.udacity.com/course/offline-web-applications--ud899)
 
 This is an Intermediate skill level course which takes approximately 3 weeks to complete and is offered for **FREE**!
+
+---
 
 ## 1. An Overview of the Service Worker
 
@@ -567,7 +575,7 @@ self.addEventListener('install', function(event) {
 });
 ```
 
-Now if I refresh the page, that new service worker will run andI can go to the resources panel in DevTools and there in cache storage,is the new cache recreated and the resources we added to it.
+Now if I refresh the page, that new service worker will run andI can go to the resources panel in DevTools and there in cache storage, is the new cache recreated and the resources we added to it.
 
 Success, but it's no good having cached items if we're not going to use them. So let's use them in responses.
 

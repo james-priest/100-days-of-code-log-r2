@@ -3,6 +3,11 @@ title: ES6 - Classes
 description: Grow with Google Scholarship Challenge - Mobile Web Track
 ---
 <!-- markdownlint-disable MD022 MD024 MD032 -->
+
+[<-- back to Mobile Web Specialist Phase 1 Notes TOC](MWS-TOC.html)
+
+---
+
 # Lesson 2.5: Classes
 Notes from _**Lesson 2: Functions**_ of _**ES6 JavaScript Improved**_ by Richard Kalehoff and James Parkes. This class is part of the Udacity course [ES6 - JavaScript Improved](https://www.udacity.com/course/es6-javascript-improved--ud356)
 
