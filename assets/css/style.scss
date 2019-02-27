@@ -104,7 +104,15 @@ nav li.active a {
     
 }
 a:focus { outline: none; }
-
+section {
+    padding: 10px 30px 50px 30px;
+}
+section h1:first-of-type {
+    margin-top: 20px;
+}
+section > :first-child {
+    margin: 0 0 20px 0;
+}
 section>p {
     margin: 10px;
 }
